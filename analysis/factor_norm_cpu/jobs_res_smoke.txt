@@ -1,0 +1,2 @@
+blackbox/res_smoke_g1.6
+blackbox/res_smoke_g2.2

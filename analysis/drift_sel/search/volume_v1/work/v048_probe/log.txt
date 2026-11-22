@@ -1,0 +1,677 @@
+Expected random connections:
+- I-H: 187.20000000000002
+- H-H: 121.68
+- H-P: 31.200000000000003
+- H-V: 15.600000000000001
+Expected toroidal connections:
+- I-H: 7800
+- H-H: 7800
+L1 reg strength: 0
+make: Entering directory '/home/user/repos/personal/analysis/drift_sel/search/volume_v1/work/v048_probe/snakeEPropCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/drift_sel/search/volume_v1/work/v048_probe/snakeEPropCompiler_CODE'
+/home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages/pygenn/_deprecated.py:14: FutureWarning: Call to deprecated function push_var_to_device. (Please call push_to_device directly on variable) -- Deprecated since version 4.9.0
+  warn(f"Call to deprecated function {func.__name__}."
+[ WARN:0@2.894] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.964] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.033] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.105] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.175] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.244] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.281] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.351] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.426] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.523] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.617] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.666] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 11 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.20 - Voltage running avg: 0.00 - Voltage reg loss running avg: 0.00 - Frequency running avg: 0.43 - Frame death: 62 - Alpha: 0.00000000
+[ WARN:0@3.756] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.843] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.938] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.041] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.090] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.187] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.288] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.395] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.500] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.605] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.712] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 21 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.25 - Voltage running avg: 0.00 - Voltage reg loss running avg: 0.00 - Frequency running avg: 1.06 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@4.821] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.936] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.050] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.161] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.280] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.402] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.524] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.646] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.774] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.900] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@5.966] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 31 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.23 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.00 - Frequency running avg: 1.60 - Frame death: 62 - Alpha: 0.00000000
+[ WARN:0@6.086] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@6.212] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@6.349] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@6.485] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@6.614] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@6.747] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@6.880] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@7.011] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@7.139] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@7.268] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 41 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.33 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.00 - Frequency running avg: 2.18 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@7.400] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@7.537] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@7.677] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@7.818] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@7.957] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@8.095] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@8.234] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@8.375] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@8.520] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@8.668] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 51 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.30 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.00 - Frequency running avg: 2.76 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@8.832] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@8.993] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@9.155] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@9.319] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@9.473] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@9.632] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@9.793] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@9.951] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@10.103] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@10.250] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 61 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.30 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.00 - Frequency running avg: 3.35 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@10.400] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@10.554] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@10.715] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@10.871] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@10.954] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@11.108] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@11.264] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@11.422] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@11.581] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@11.734] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@11.883] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@11.960] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 71 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.29 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.01 - Frequency running avg: 3.97 - Frame death: 62 - Alpha: 0.00000000
+[ WARN:0@12.121] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@12.282] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@12.356] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@12.503] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@12.648] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@12.803] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@12.958] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@13.126] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@13.277] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@13.424] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@13.503] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@13.651] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 81 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.26 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.01 - Frequency running avg: 4.58 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@13.798] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@13.951] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@14.102] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@14.256] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@14.407] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@14.558] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@14.721] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@14.855] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@14.989] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@15.136] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 91 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.24 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.01 - Frequency running avg: 5.01 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@15.283] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@15.425] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@15.568] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@15.712] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@15.861] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@16.014] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@16.168] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@16.324] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@16.479] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@16.635] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 101 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.23 - Voltage running avg: 0.02 - Voltage reg loss running avg: 0.01 - Frequency running avg: 5.44 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@16.797] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@16.958] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@17.042] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@17.201] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@17.367] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@17.521] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@17.665] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@17.805] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@17.946] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@18.100] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@18.263] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 111 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.24 - Voltage running avg: 0.02 - Voltage reg loss running avg: 0.01 - Frequency running avg: 6.00 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@18.450] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@18.603] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@18.752] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@18.830] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@18.985] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@19.153] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@19.315] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@19.481] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@19.636] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@19.800] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@19.972] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@20.055] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 121 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.25 - Voltage running avg: 0.02 - Voltage reg loss running avg: 0.01 - Frequency running avg: 6.61 - Frame death: 62 - Alpha: 0.00000000
+[ WARN:0@20.218] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@20.392] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@20.558] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@20.640] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@20.792] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@20.948] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@21.028] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@21.192] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@21.350] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@21.425] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@21.576] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@21.733] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@21.889] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 131 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.27 - Voltage running avg: 0.02 - Voltage reg loss running avg: 0.01 - Frequency running avg: 7.23 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@22.048] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@22.215] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@22.387] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@22.557] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@22.720] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@22.876] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@23.035] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@23.189] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@23.335] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@23.491] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 141 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.24 - Voltage running avg: 0.02 - Voltage reg loss running avg: 0.01 - Frequency running avg: 7.79 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@23.655] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@23.805] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@23.956] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@24.102] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@24.252] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@24.331] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@24.484] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@24.642] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@24.797] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@24.952] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@25.105] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 151 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.29 - Voltage running avg: 0.02 - Voltage reg loss running avg: 0.01 - Frequency running avg: 8.46 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@25.256] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@25.413] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@25.571] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@25.730] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@25.885] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@26.045] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@26.201] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@26.352] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@26.504] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@26.657] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 161 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.29 - Voltage running avg: 0.03 - Voltage reg loss running avg: 0.01 - Frequency running avg: 8.97 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@26.810] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@26.965] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@27.118] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@27.289] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@27.374] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@27.563] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@27.724] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@27.884] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@28.057] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@28.205] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@28.364] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@28.445] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 171 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.32 - Voltage running avg: 0.03 - Voltage reg loss running avg: 0.01 - Frequency running avg: 9.63 - Frame death: 62 - Alpha: 0.00000000
+[ WARN:0@28.602] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@28.759] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@28.911] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@29.064] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@29.215] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@29.291] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@29.438] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@29.588] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@29.739] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@29.887] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@30.043] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 181 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.33 - Voltage running avg: 0.03 - Voltage reg loss running avg: 0.01 - Frequency running avg: 10.16 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@30.203] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@30.375] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@30.533] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@30.691] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@30.844] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@30.998] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@31.151] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@31.305] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@31.461] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@31.615] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 191 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.33 - Voltage running avg: 0.03 - Voltage reg loss running avg: 0.01 - Frequency running avg: 10.59 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@31.768] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@31.922] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@32.075] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@32.227] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@32.303] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@32.451] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@32.605] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@32.763] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@32.920] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@33.097] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@33.259] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 201 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.38 - Voltage running avg: 0.03 - Voltage reg loss running avg: 0.01 - Frequency running avg: 11.11 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@33.417] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@33.580] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@33.733] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@33.884] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@34.031] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@34.178] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@34.328] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@34.483] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@34.634] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@34.790] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 211 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.38 - Voltage running avg: 0.04 - Voltage reg loss running avg: 0.01 - Frequency running avg: 11.60 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@34.947] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@35.101] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@35.256] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@35.404] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@35.553] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@35.703] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@35.853] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@36.004] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@36.160] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@36.316] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@36.395] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@36.469] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 221 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.38 - Voltage running avg: 0.04 - Voltage reg loss running avg: 0.01 - Frequency running avg: 12.23 - Frame death: 93 - Alpha: 0.00000000
+[ WARN:0@36.612] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@36.762] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@36.908] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@37.055] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@37.199] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@37.344] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@37.490] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@37.640] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@37.788] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@37.932] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 231 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.35 - Voltage running avg: 0.04 - Voltage reg loss running avg: 0.02 - Frequency running avg: 12.72 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@38.088] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@38.241] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@38.397] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@38.551] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@38.703] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@38.781] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@38.933] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@39.084] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@39.241] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@39.412] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@39.570] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 241 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.33 - Voltage running avg: 0.04 - Voltage reg loss running avg: 0.02 - Frequency running avg: 13.11 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@39.721] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@39.880] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@40.042] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@40.199] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@40.353] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@40.508] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@40.657] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@40.805] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@40.959] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@41.113] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 251 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.28 - Voltage running avg: 0.04 - Voltage reg loss running avg: 0.02 - Frequency running avg: 13.53 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@41.267] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@41.419] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@41.572] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@41.649] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@41.725] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@41.871] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@42.020] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@42.169] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@42.319] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@42.467] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@42.622] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@42.780] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 261 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.27 - Voltage running avg: 0.04 - Voltage reg loss running avg: 0.02 - Frequency running avg: 14.02 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@42.939] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.090] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.236] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.371] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.507] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.580] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.723] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.861] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@43.995] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@44.133] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@44.272] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 271 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.22 - Voltage running avg: 0.04 - Voltage reg loss running avg: 0.02 - Frequency running avg: 14.48 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@44.417] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@44.562] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@44.710] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@44.851] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@44.989] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@45.120] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@45.255] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@45.398] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@45.553] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@45.705] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 281 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.25 - Voltage running avg: 0.05 - Voltage reg loss running avg: 0.02 - Frequency running avg: 14.88 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@45.855] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@46.010] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@46.169] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@46.320] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@46.480] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@46.671] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@46.830] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@46.982] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@47.135] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@47.214] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@47.368] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 291 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.28 - Voltage running avg: 0.05 - Voltage reg loss running avg: 0.02 - Frequency running avg: 15.42 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@47.521] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@47.672] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@47.821] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@47.974] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@48.130] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@48.290] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@48.447] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@48.603] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@48.751] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@48.906] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 301 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.26 - Voltage running avg: 0.05 - Voltage reg loss running avg: 0.02 - Frequency running avg: 15.84 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@49.062] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@49.217] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@49.372] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@49.523] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@49.678] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@49.833] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@49.996] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@50.151] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@50.307] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@50.463] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 311 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.25 - Voltage running avg: 0.05 - Voltage reg loss running avg: 0.02 - Frequency running avg: 16.31 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@50.617] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@50.768] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@50.931] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@51.083] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@51.233] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@51.387] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@51.546] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@51.698] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@51.846] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@51.997] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 321 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.23 - Voltage running avg: 0.05 - Voltage reg loss running avg: 0.02 - Frequency running avg: 16.73 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@52.156] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@52.313] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@52.466] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@52.616] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@52.695] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@52.848] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@53.004] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@53.169] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@53.326] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@53.483] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@53.643] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 331 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.25 - Voltage running avg: 0.05 - Voltage reg loss running avg: 0.02 - Frequency running avg: 17.20 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@53.801] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@53.962] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@54.120] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@54.279] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@54.430] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@54.580] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@54.731] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@54.885] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@55.044] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@55.204] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 341 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.27 - Voltage running avg: 0.05 - Voltage reg loss running avg: 0.02 - Frequency running avg: 17.67 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@55.366] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@55.518] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@55.672] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@55.821] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@55.966] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@56.115] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@56.270] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@56.420] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@56.573] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@56.727] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 351 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.28 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.02 - Frequency running avg: 18.10 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@56.882] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@57.039] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@57.184] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@57.323] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@57.468] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@57.620] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@57.770] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@57.922] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@58.073] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@58.221] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 361 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.27 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.02 - Frequency running avg: 18.49 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@58.369] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@58.522] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@58.678] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@58.830] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@58.986] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@59.147] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@59.302] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@59.456] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@59.608] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@59.760] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 371 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.30 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.02 - Frequency running avg: 18.87 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@59.912] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@59.993] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@60.145] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@60.299] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@60.456] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@60.613] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@60.694] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@60.846] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@61.000] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@61.082] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@61.161] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@61.308] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@61.453] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@61.602] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 381 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.30 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.02 - Frequency running avg: 19.48 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@61.748] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@61.896] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.042] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.195] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.276] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.428] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.583] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.742] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.826] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@62.977] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@63.122] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@63.280] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 391 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.29 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.02 - Frequency running avg: 19.90 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@63.438] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@63.520] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@63.673] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@63.819] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@63.972] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@64.134] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@64.282] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@64.433] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@64.587] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@64.748] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@64.908] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 401 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.28 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.02 - Frequency running avg: 20.32 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@65.066] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@65.213] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@65.346] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@65.477] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@65.608] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@65.690] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@65.827] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@65.965] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@66.096] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@66.227] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@66.358] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 411 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.31 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.02 - Frequency running avg: 20.76 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@66.488] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@66.631] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@66.788] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@66.953] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@67.162] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@67.321] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@67.476] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@67.626] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@67.782] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@67.933] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 421 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.32 - Voltage running avg: 0.06 - Voltage reg loss running avg: 0.03 - Frequency running avg: 21.17 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@68.087] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@68.243] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@68.399] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@68.560] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@68.709] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@68.786] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@68.941] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@69.099] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@69.255] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@69.407] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@69.559] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 431 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.32 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 21.54 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@69.712] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@69.793] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@69.950] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@70.107] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@70.262] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@70.414] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@70.569] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@70.731] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@70.894] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@71.067] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@71.223] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 441 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.32 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 21.98 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@71.380] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@71.545] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@71.695] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@71.848] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@71.996] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@72.151] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@72.306] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@72.458] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@72.613] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@72.695] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@72.829] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 451 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.31 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 22.34 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@72.957] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@73.092] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@73.234] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@73.369] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@73.508] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@73.648] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@73.799] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@73.958] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@74.112] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@74.268] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 461 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.34 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 22.72 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@74.423] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@74.575] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@74.725] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@74.882] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@75.034] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@75.191] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@75.343] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@75.496] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@75.658] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@75.738] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@75.888] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 471 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.33 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 23.17 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@76.035] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@76.168] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@76.309] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@76.444] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@76.580] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@76.721] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@76.871] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@77.018] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@77.167] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@77.314] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 481 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.31 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 23.57 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@77.458] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@77.611] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@77.768] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@77.918] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@78.068] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@78.218] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@78.365] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@78.513] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@78.663] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@78.810] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 491 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.29 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 23.93 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@78.962] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@79.040] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@79.191] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@79.345] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@79.496] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@79.572] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@79.729] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@79.878] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@80.028] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@80.184] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@80.437] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@80.577] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 501 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.30 - Voltage running avg: 0.07 - Voltage reg loss running avg: 0.03 - Frequency running avg: 24.37 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@80.730] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@80.893] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@81.051] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@81.205] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@81.353] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@81.429] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@81.580] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@81.733] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@81.890] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@82.044] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@82.196] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 511 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.27 - Voltage running avg: 0.08 - Voltage reg loss running avg: 0.03 - Frequency running avg: 24.78 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@82.352] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@82.431] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@82.586] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@82.732] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@82.868] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@83.002] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@83.140] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@83.282] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@83.426] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@83.577] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@83.735] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 521 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.27 - Voltage running avg: 0.08 - Voltage reg loss running avg: 0.03 - Frequency running avg: 25.20 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@83.890] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@84.041] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@84.189] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@84.337] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@84.486] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@84.637] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@84.794] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@84.948] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@85.101] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@85.257] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 531 - Total reward:  1.00 - Best reward: 1.00 - Snake len:  1 - Snake len avg (last 100): 0.26 - Voltage running avg: 0.08 - Voltage reg loss running avg: 0.03 - Frequency running avg: 25.52 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@85.415] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@85.575] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@85.734] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@85.903] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.042] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.184] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.330] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.472] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.616] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.768] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.844] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@86.922] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 541 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.23 - Voltage running avg: 0.08 - Voltage reg loss running avg: 0.03 - Frequency running avg: 25.96 - Frame death: 93 - Alpha: 0.00000000
+[ WARN:0@87.078] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@87.225] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@87.369] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@87.521] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@87.667] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@87.820] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@87.980] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@88.143] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@88.296] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@88.370] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@88.514] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 551 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.22 - Voltage running avg: 0.08 - Voltage reg loss running avg: 0.03 - Frequency running avg: 26.25 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@88.663] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@88.815] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@88.965] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@89.114] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@89.244] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@89.382] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@89.531] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@89.678] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@89.826] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@89.981] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 561 - Total reward: -1.00 - Best reward: 1.00 - Snake len:  0 - Snake len avg (last 100): 0.19 - Voltage running avg: 0.08 - Voltage reg loss running avg: 0.03 - Frequency running avg: 26.56 - Frame death: 31 - Alpha: 0.00000000
+[ WARN:0@90.136] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@90.216] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.

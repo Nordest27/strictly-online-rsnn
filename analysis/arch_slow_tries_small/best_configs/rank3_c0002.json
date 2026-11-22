@@ -1,0 +1,130 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.427,
+  "p_max": 1.0,
+  "input_sigma_cells": 1.0,
+  "inhibition_scale": 5.754,
+  "feedforward_inhibition": false,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.818,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.777,
+    "mean_scale": 0.3559416713589488,
+    "sd_scale": 0.07118833427178976
+   },
+   "shape": 6,
+   "neuron": {
+    "tau_adapt": 246.1,
+    "beta": 0.0174,
+    "tau_mem": 10.0
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.5489097575054455,
+     "sd_scale": 0.05489097575054455
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    },
+    "slow": {
+     "neuron": {
+      "tau_adapt": 246.1,
+      "beta": 0.0174,
+      "tau_mem": 80.0
+     },
+     "in_gain": 0.8761397878973545
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.7997300483929342,
+     "sd_scale": 0.07997300483929343
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.7849049618058462,
+     "sd_scale": 0.07849049618058462
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.7997711065068214,
+     "sd_scale": 0.07997711065068214
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   },
+   {
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   }
+  ],
+  "input": {
+   "mean_scale": 0.18875599733565,
+   "sd_scale": 0.094377998667825
+  }
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 5,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "_meta": {
+  "architecture_search": {
+   "idx": 2,
+   "score": 0.5656065817567054,
+   "genome": {
+    "tau_adapt": 246.08792038679408,
+    "beta": 0.0174,
+    "ff_inhibition": false,
+    "ff_targets": "both",
+    "inh_sigma_ratio": 0.8184355026048374,
+    "sigma_cells": 2.426968452072953,
+    "p_max": 1.0,
+    "input_sigma_cells": 1.0,
+    "inhibition_scale": 5.754474092542364,
+    "ff_sigma": 0.6,
+    "field_sigma": 0.7774185897157924,
+    "field_shape": "excitatory",
+    "target_hz": 30.0,
+    "tau_mem_L1": 10.0,
+    "tau_mem_L2": 10.0,
+    "tau_mem_L3": 10.0,
+    "tau_mem_L4": 10.0,
+    "tau_mem_L5": 10.0,
+    "tau_mem_fields": 10.0,
+    "slow_tau_L1": 80.0
+   }
+  }
+ }
+}

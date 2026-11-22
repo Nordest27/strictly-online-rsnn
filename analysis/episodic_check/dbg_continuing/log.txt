@@ -1,0 +1,89 @@
+Expected random connections:
+- I-H: 187.20000000000002
+- H-H: 121.68
+- H-P: 62.400000000000006
+- H-V: 15.600000000000001
+Expected toroidal connections:
+- I-H: 7800
+- H-H: 7800
+Init time Pop1 Pop1 0.0010166168212890625
+Init time Pop1 Pop2 0.00034546852111816406
+Init time Pop2 Pop1 0.0007185935974121094
+Init time Pop2 Pop2 0.00032830238342285156
+Init time Pop0 Pop1 0.0015861988067626953
+Init time Pop0 Pop2 0.0006394386291503906
+Init time Pop1 Pop3 0.0003414154052734375
+Init time Pop1 Pop4 0.0003306865692138672
+L1 reg strength: 0
+make: Entering directory '/home/user/repos/personal/analysis/episodic_check/dbg_continuing/snakeEPropCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/episodic_check/dbg_continuing/snakeEPropCompiler_CODE'
+/home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages/pygenn/_deprecated.py:14: FutureWarning: Call to deprecated function push_var_to_device. (Please call push_to_device directly on variable) -- Deprecated since version 4.9.0
+  warn(f"Call to deprecated function {func.__name__}."
+[ WARN:0@2.320] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.345] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.370] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.394] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.420] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.445] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.469] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.494] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.567] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.592] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.619] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.646] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.719] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.740] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.761] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.781] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.845] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.869] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.896] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.973] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@2.996] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.019] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.041] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.062] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.085] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.107] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.130] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.152] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.173] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.197] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.220] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.244] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.316] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.343] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.370] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.395] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.419] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.443] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.504] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.526] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.547] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.569] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.634] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.656] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.725] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.746] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.815] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.839] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.864] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.888] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+Episode 11 - Total reward: -1.00 - Best reward: 0.00 - Snake len:  0 - Snake len avg (last 100): 0.10 - Voltage running avg: 0.01 - Voltage reg loss running avg: 0.00 - Frequency running avg: 1.34 - Frame death: 155 - Alpha: 0.00001000
+[ WARN:0@3.952] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@3.975] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.040] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.064] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.140] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.167] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.193] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.264] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.289] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.358] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.383] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.406] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.430] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.509] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.535] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.559] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.
+[ WARN:0@4.581] global loadsave.cpp:1675 imencodeWithMetadata An unsupported key(1) was specified and has been ignored.

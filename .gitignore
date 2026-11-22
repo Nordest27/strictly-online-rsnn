@@ -1,0 +1,16 @@
+# LaTeX build products
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+# Python / build
+__pycache__/
+*.pyc
+.venv/
+*_CODE/
+build/
+# Large raw results (kept outside git, see README)
+complete_value_traces/
+snake_checkpoints_unified/

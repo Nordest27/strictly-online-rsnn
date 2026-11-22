@@ -1,0 +1,44 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "legacy",
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 10000,
+ "dale": {
+  "every_episodes": 1,
+  "local": true
+ },
+ "_meta": {
+  "study": "cpu_explore",
+  "config": 2,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "homeo0.3_only"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "psi_target_warmup": 3000.0,
+     "homeostat": 0.3
+    }
+   }
+  },
+  "final_rung_score": -0.0386152964355863,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "proposed_homeostat",
+  "psi_target_warmup": 3000.0,
+  "homeostat": 0.3
+ }
+}

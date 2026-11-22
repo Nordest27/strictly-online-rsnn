@@ -1,0 +1,27 @@
+{
+ "hidden_rule": {
+  "preset": "reservoir"
+ },
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "ei_layers": 5,
+ "probe": {
+  "moves": 2000
+ },
+ "monitor": true,
+ "monitor_every": 1000,
+ "backend": "single_threaded_cpu",
+ "min_episodes": 0,
+ "max_timesteps": 130000,
+ "seed": 0,
+ "trace_log": false,
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "_meta": {
+  "variant": "local"
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "hidden_rule": {
+  "preset": "reservoir"
+ },
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "ei_layers": 5,
+ "probe": {
+  "moves": 2000
+ },
+ "monitor": true,
+ "monitor_every": 1000,
+ "backend": "single_threaded_cpu",
+ "min_episodes": 0,
+ "max_timesteps": 130000,
+ "seed": 0,
+ "trace_log": false,
+ "toroidal": "legacy",
+ "network": {
+  "layers": [
+   {
+    "to_next": {
+     "mean_scale": 0.5
+    },
+    "to_next_i": {
+     "mean_scale": 0.033
+    }
+   },
+   {
+    "to_next": {
+     "mean_scale": 0.5
+    },
+    "to_next_i": {
+     "mean_scale": 0.033
+    }
+   },
+   {
+    "to_next": {
+     "mean_scale": 0.5
+    },
+    "to_next_i": {
+     "mean_scale": 0.033
+    }
+   },
+   {
+    "to_next": {
+     "mean_scale": 0.5
+    },
+    "to_next_i": {
+     "mean_scale": 0.033
+    }
+   },
+   {}
+  ],
+  "fields": {
+   "conn": {
+    "mean_scale": 0.5
+   },
+   "conn_i": {
+    "mean_scale": 0.033
+   }
+  }
+ },
+ "_meta": {
+  "variant": "legacy_active"
+ }
+}

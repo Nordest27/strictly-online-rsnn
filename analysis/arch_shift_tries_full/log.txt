@@ -1,0 +1,82 @@
+seeding with 1 genomes from 
+make: Entering directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0000/c0000InferenceCompiler_CODE'
+[16:10:39] c0000 score 0.883 (208 s) | best c0000 0.883 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0001/c0001InferenceCompiler_CODE'
+[16:15:01] c0001 score 0.815 (261 s) | best c0000 0.883 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0002/c0002InferenceCompiler_CODE'
+[16:17:01] c0002 score -0.030 (120 s) | best c0000 0.883 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0003/c0003InferenceCompiler_CODE'
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 20 s in the future
+make: Warning: File 'Makefile' has modification time 20 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 13 s in the future
+make: Warning: File 'Makefile' has modification time 13 s in the future
+make: Warning: File 'Makefile' has modification time 13 s in the future
+make: Warning: File 'Makefile' has modification time 12 s in the future
+make: Warning: File 'Makefile' has modification time 12 s in the future
+make: Warning: File 'Makefile' has modification time 12 s in the future
+make: Warning: File 'Makefile' has modification time 11 s in the future
+make: Warning: File 'Makefile' has modification time 11 s in the future
+make: Warning: File 'Makefile' has modification time 11 s in the future
+make: Warning: File 'Makefile' has modification time 10 s in the future
+make: Warning: File 'Makefile' has modification time 10 s in the future
+make: Warning: File 'Makefile' has modification time 9.6 s in the future
+make: Warning: File 'Makefile' has modification time 9.1 s in the future
+make: Warning: File 'Makefile' has modification time 8.7 s in the future
+make: Warning: File 'Makefile' has modification time 8.2 s in the future
+make: Warning: File 'Makefile' has modification time 7.8 s in the future
+make: Warning: File 'Makefile' has modification time 7.3 s in the future
+make: Warning: File 'Makefile' has modification time 6.8 s in the future
+make: Warning: File 'Makefile' has modification time 6.3 s in the future
+make: Warning: File 'Makefile' has modification time 5.9 s in the future
+make: Warning: File 'Makefile' has modification time 5.5 s in the future
+make: Warning: File 'Makefile' has modification time 5 s in the future
+make: Warning: File 'Makefile' has modification time 4.6 s in the future
+make: Warning: File 'Makefile' has modification time 4.1 s in the future
+make: Warning: File 'Makefile' has modification time 3.7 s in the future
+make: Warning: File 'Makefile' has modification time 3.2 s in the future
+make: Warning: File 'Makefile' has modification time 2.8 s in the future
+make: Warning: File 'Makefile' has modification time 2.4 s in the future
+make: Warning: File 'Makefile' has modification time 2 s in the future
+make: Warning: File 'Makefile' has modification time 1.6 s in the future
+make: Warning: File 'Makefile' has modification time 1.1 s in the future
+make: Warning: File 'Makefile' has modification time 0.8 s in the future
+make: Warning: File 'Makefile' has modification time 0.47 s in the future
+make: Warning: File 'Makefile' has modification time 0.051 s in the future
+make: Leaving directory '/home/user/repos/personal/analysis/arch_shift_tries_full/work/c0003/c0003InferenceCompiler_CODE'
+[16:20:10] c0003 score -0.148 (188 s) | best c0000 0.883 | 4 done
+4 candidates; best 10:
+    idx  score    L1 field  weak   mem   mix  resp  pen  wire  kept per stage (L2.., fields)  genome
+      0  0.883  0.94  0.93  0.93  0.89  0.48  0.58  0.0  0.00  LR 0.00 | 0.96 0.94 0.94 0.93 0.93 ff_inhibition=False, ff_targets=both, inh_sigma_ratio=1.00, sigma_cells=1.75, p_max=1.00, input_sigma_cells=1.81, inhibition_scale=3.97, ff_sigma=0.45, field_sigma=0.30, field_shape=excitatory, target_hz=30.00
+      1  0.815  0.91  0.87  0.87  0.79  0.82  0.44  0.0  0.00  LR 0.00 | 0.96 0.94 0.92 0.90 0.87 sigma_cells=2.42, p_max=0.83, input_sigma_cells=1.79, inhibition_scale=3.55, ff_sigma=0.49, field_sigma=0.71, field_shape=excitatory, target_hz=20.00, ff_inhibition=True, ff_targets=both, inh_sigma_ratio=0.64
+      2 -0.030  0.96  0.72  0.72  0.78  0.39  0.42  0.8  0.00  LR 0.00 | 0.96 0.88 0.84 0.79 0.72 sigma_cells=1.73, p_max=0.40, input_sigma_cells=1.15, inhibition_scale=2.44, ff_sigma=0.57, field_sigma=0.60, field_shape=inhibitory, target_hz=20.00, ff_inhibition=True, ff_targets=e, inh_sigma_ratio=1.58
+      3 -0.148  0.90  0.53  0.51  0.71  0.56  0.47  0.8  0.00  LR 0.00 | 0.55 0.54 0.53 0.51 0.53 sigma_cells=2.67, p_max=0.37, input_sigma_cells=3.20, inhibition_scale=6.26, ff_sigma=0.32, field_sigma=1.13, field_shape=excitatory, target_hz=20.00, ff_inhibition=False, ff_targets=e, inh_sigma_ratio=0.70
+exported the best 3 as Snake configs (network keys only; add a hidden_rule) to /home/user/repos/personal/analysis/arch_shift_tries_full/best_configs

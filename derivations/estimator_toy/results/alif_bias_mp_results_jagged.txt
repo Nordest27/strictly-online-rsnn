@@ -1,0 +1,8 @@
+
+== jagged reward: sigma=0.0067, firing prob/step=0.100, N=8,000,000, 693s on 28 workers
+   truth stability: cos(h=0.0005, h=0.0002) = 1.000; halves (h=0.0002) = 1.000
+   dist_eprop   cos= 0.993 (halves 0.993/0.993)  scale=   4.02  rel.noise/sample=    2.6
+   trace_nopsi  cos= 0.982 (halves 0.982/0.982)  scale=  20.16  rel.noise/sample=    2.5
+   step_pretr   cos= 0.980 (halves 0.979/0.980)  scale=   9.75  rel.noise/sample=    2.9
+   step_psi     cos= 0.994 (halves 0.994/0.994)  scale=   2.23  rel.noise/sample=    3.4
+   exact        cos= 1.000 (halves 1.000/1.000)  scale=   1.00  rel.noise/sample=    4.0

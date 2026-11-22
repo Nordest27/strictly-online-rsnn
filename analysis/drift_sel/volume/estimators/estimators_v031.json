@@ -1,0 +1,41 @@
+{
+ "front (slab 0)": {
+  "n_syn": 109,
+  "drift~Te": 0.8849949060599214,
+  "drift~TS": 0.8774155488458504,
+  "reward~Te": 0.7947558613925648,
+  "reward~TS": 0.7931202219706598,
+  "Te~TS": 0.9988491383349412,
+  "drift split-half": 0.9961729272784182,
+  "reward split-half": 0.9746251073987945,
+  "SNR/trajectory drift (median)": 0.631099468980917,
+  "SNR/trajectory reward (median)": 0.18619104528741923,
+  "pre spikes/step (median)": 0.5002332089552238
+ },
+ "middle (slabs 2-4)": {
+  "n_syn": 78,
+  "drift~Te": 0.9271460875235863,
+  "drift~TS": 0.8848213665675565,
+  "reward~Te": 0.9076808177874595,
+  "reward~TS": 0.8376733250586983,
+  "Te~TS": 0.934866196504844,
+  "drift split-half": 0.8846194017551631,
+  "reward split-half": 0.9397166335943902,
+  "SNR/trajectory drift (median)": 0.01954307622987124,
+  "SNR/trajectory reward (median)": 0.015882862339587973,
+  "pre spikes/step (median)": 0.001127176616915423
+ },
+ "back (slabs 5-7)": {
+  "n_syn": 49,
+  "drift~Te": 0.987682723048922,
+  "drift~TS": 0.8599997534525728,
+  "reward~Te": 0.9844883350378004,
+  "reward~TS": 0.8492482102855425,
+  "Te~TS": 0.8529722284684949,
+  "drift split-half": 0.9394730188099448,
+  "reward split-half": 0.8741937164956816,
+  "SNR/trajectory drift (median)": 0.012742330073064132,
+  "SNR/trajectory reward (median)": 0.011992850056335595,
+  "pre spikes/step (median)": 7.77363184079602e-05
+ }
+}

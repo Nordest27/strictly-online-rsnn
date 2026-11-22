@@ -1,0 +1,7 @@
+L1 plateau {'plateau': {'gp': 0.08, 'thp': 0.3, 's': 0.05, 'tau': 30.0, 'gain': 0.5}}: rate 67 Hz
+   e-prop single trace (unknown model)           vs true dE[z]/dW (window sums): corr 0.72, Spearman 0.70, sign agreement 0.63  (n=11264)
+   e-prop derived trace (known model)            vs true dE[z]/dW (window sums): corr 0.64, Spearman 0.66, sign agreement 0.63  (n=11264)
+L5 plateau {'plateau': {'gp': 0.08, 'thp': 0.3, 's': 0.05, 'tau': 30.0, 'gain': 0.55}}: rate 33 Hz
+   e-prop single trace (unknown model)           vs true dE[z]/dW (window sums): corr 0.59, Spearman 0.66, sign agreement 0.53  (n=12288)
+   e-prop derived trace (known model)            vs true dE[z]/dW (window sums): corr 0.60, Spearman 0.65, sign agreement 0.53  (n=12288)
+PLATEAU DONE

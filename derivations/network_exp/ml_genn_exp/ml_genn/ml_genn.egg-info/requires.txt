@@ -1,0 +1,4 @@
+pygenn<6.0.0,>=5.1.0
+enum-compat
+tqdm>=4.27.0
+deprecated

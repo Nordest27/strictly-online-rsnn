@@ -1,0 +1,19 @@
+L5 standard {}: 30 synapses x 256 windows
+   per synapse-window: repeatability ours 0.37, truth 0.83 | ours vs truth corr 0.47 (Spearman 0.32, noise-corrected 0.85) | e-prop vs truth corr 0.36 (Spearman 0.38, noise-corrected 0.40)
+   per synapse (all windows): repeatability ours 0.95, truth 1.00 | ours vs truth corr 0.95 (Spearman 0.92, noise-corrected 0.97) | e-prop vs truth corr 0.78 (Spearman 0.83, noise-corrected 0.78)
+L5 resonator {'resonator': {'period': 25.0, 'gain': 1.7}}: 30 synapses x 256 windows
+   per synapse-window: repeatability ours 0.51, truth 0.85 | ours vs truth corr 0.52 (Spearman 0.39, noise-corrected 0.79) | e-prop vs truth corr 0.41 (Spearman 0.33, noise-corrected 0.44)
+   per synapse (all windows): repeatability ours 0.98, truth 1.00 | ours vs truth corr 0.87 (Spearman 0.92, noise-corrected 0.88) | e-prop vs truth corr 0.79 (Spearman 0.77, noise-corrected 0.79)
+L5 plateau {'plateau': {'gp': 0.08, 'thp': 0.3, 's': 0.05, 'tau': 30.0, 'gain': 0.55}}: 30 synapses x 256 windows
+   per synapse-window: repeatability ours 0.28, truth 0.89 | ours vs truth corr 0.17 (Spearman 0.18, noise-corrected 0.33) | e-prop vs truth corr 0.52 (Spearman 0.51, noise-corrected 0.55)
+   per synapse (all windows): repeatability ours 0.98, truth 1.00 | ours vs truth corr 0.92 (Spearman 0.91, noise-corrected 0.93) | e-prop vs truth corr 0.98 (Spearman 0.85, noise-corrected 0.98)
+L1 standard {}: 30 synapses x 256 windows
+   per synapse-window: repeatability ours 0.95, truth 0.82 | ours vs truth corr 0.85 (Spearman 0.72, noise-corrected 0.97) | e-prop vs truth corr 0.87 (Spearman 0.64, noise-corrected 0.96)
+   per synapse (all windows): repeatability ours 1.00, truth 1.00 | ours vs truth corr 0.99 (Spearman 0.99, noise-corrected 0.99) | e-prop vs truth corr 0.99 (Spearman 0.77, noise-corrected 0.99)
+L1 resonator {'resonator': {'period': 25.0, 'gain': 2.8}}: 30 synapses x 256 windows
+   per synapse-window: repeatability ours 0.91, truth 0.55 | ours vs truth corr 0.70 (Spearman 0.53, noise-corrected 0.99) | e-prop vs truth corr 0.65 (Spearman 0.42, noise-corrected 0.88)
+   per synapse (all windows): repeatability ours 1.00, truth 1.00 | ours vs truth corr 0.97 (Spearman 0.95, noise-corrected 0.98) | e-prop vs truth corr 0.93 (Spearman 0.72, noise-corrected 0.93)
+L1 plateau {'plateau': {'gp': 0.08, 'thp': 0.3, 's': 0.05, 'tau': 30.0, 'gain': 0.5}}: 30 synapses x 256 windows
+   per synapse-window: repeatability ours 0.72, truth 0.84 | ours vs truth corr 0.73 (Spearman 0.43, noise-corrected 0.94) | e-prop vs truth corr 0.87 (Spearman 0.56, noise-corrected 0.95)
+   per synapse (all windows): repeatability ours 1.00, truth 1.00 | ours vs truth corr 0.98 (Spearman 0.97, noise-corrected 0.98) | e-prop vs truth corr 1.00 (Spearman 0.85, noise-corrected 1.00)
+STEIN DONE

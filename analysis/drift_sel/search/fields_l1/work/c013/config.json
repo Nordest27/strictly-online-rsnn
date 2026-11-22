@@ -1,0 +1,81 @@
+{
+ "monitor": false,
+ "monitor_every": 10000,
+ "backend": "single_threaded_cpu",
+ "hidden_rule": {
+  "preset": "proposed",
+  "gradient": 0.0,
+  "diagnose_parts": true,
+  "center_drift": true,
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 1.0
+  }
+ },
+ "c_reg": 0.0001,
+ "seed": 0,
+ "max_timesteps": 46800,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "csv_prefix": "c013",
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.5,
+ "episodic_traces": true,
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 0,
+  "decoder": "lse",
+  "beta": 1.0
+ },
+ "selection": {
+  "n_candidates": 8,
+  "seed": 0
+ },
+ "move_log": {
+  "probe_every": 1000000000000,
+  "probe_moves": 800,
+  "aggregate": true,
+  "activity": 800
+ },
+ "lr": 0.0,
+ "readout_optimiser": {
+  "type": "adabelief",
+  "lr": 1e-05
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.19,
+  "p_max": 0.729,
+  "input_sigma_cells": 3.906,
+  "inhibition_scale": 2.378,
+  "feedforward_inhibition": false,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 2.964,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.48,
+    "mean_scale": 0.5406938192689531,
+    "sd_scale": 0.10813876385379062
+   },
+   "shape": 4
+  },
+  "input": {
+   "mean_scale": 0.08836443968037583,
+   "sd_scale": 0.044182219840187914
+  },
+  "layers": [
+   {}
+  ]
+ },
+ "ei_layers": 1,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50
+}

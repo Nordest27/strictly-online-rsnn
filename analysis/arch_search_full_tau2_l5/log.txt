@@ -1,0 +1,331 @@
+seeding with 4 genomes from /home/user/repos/personal/analysis/arch_search_full_v6_l5_relay
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0000/c0000InferenceCompiler_CODE'
+[14:47:53] c0000 score 0.879 (78 s) | best c0000 0.879 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0001/c0001InferenceCompiler_CODE'
+[14:49:59] c0001 score 0.881 (126 s) | best c0001 0.881 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0002/c0002InferenceCompiler_CODE'
+[14:51:41] c0002 score 0.876 (102 s) | best c0001 0.881 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0003/c0003InferenceCompiler_CODE'
+[14:53:01] c0003 score 0.883 (79 s) | best c0003 0.883 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0004/c0004InferenceCompiler_CODE'
+[14:54:42] c0004 score 0.444 (101 s) | best c0003 0.883 | 5 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0005/c0005InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0005/c0005InferenceCompiler_CODE'
+[14:56:19] c0005 score 0.397 (119 s) | best c0003 0.883 | 6 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0006/c0006InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0006/c0006InferenceCompiler_CODE'
+[14:58:07] c0006 score 0.584 (108 s) | best c0003 0.883 | 7 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0007/c0007InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0007/c0007InferenceCompiler_CODE'
+[14:59:48] c0007 score 0.583 (101 s) | best c0003 0.883 | 8 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0008/c0008InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0008/c0008InferenceCompiler_CODE'
+[15:01:21] c0008 score -0.369 (93 s) | best c0003 0.883 | 9 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0009/c0009InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0009/c0009InferenceCompiler_CODE'
+[15:03:07] c0009 score 0.345 (105 s) | best c0003 0.883 | 10 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0010/c0010InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0010/c0010InferenceCompiler_CODE'
+[15:04:53] c0010 score -0.211 (106 s) | best c0003 0.883 | 11 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0011/c0011InferenceCompiler_CODE'
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 20 s in the future
+make: Warning: File 'Makefile' has modification time 20 s in the future
+make: Warning: File 'Makefile' has modification time 20 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0011/c0011InferenceCompiler_CODE'
+[15:06:56] c0011 score 0.645 (123 s) | best c0003 0.883 | 12 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0012/c0012InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0012/c0012InferenceCompiler_CODE'
+[15:08:38] c0012 score -0.187 (102 s) | best c0003 0.883 | 13 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0013/c0013InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0013/c0013InferenceCompiler_CODE'
+[15:10:50] c0013 score -0.308 (131 s) | best c0003 0.883 | 14 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0014/c0014InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0014/c0014InferenceCompiler_CODE'
+[15:12:11] c0014 score 0.784 (81 s) | best c0003 0.883 | 15 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0015/c0015InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0015/c0015InferenceCompiler_CODE'
+[15:13:51] c0015 score 0.208 (100 s) | best c0003 0.883 | 16 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0016/c0016InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0016/c0016InferenceCompiler_CODE'
+[15:15:29] c0016 score -0.207 (97 s) | best c0003 0.883 | 17 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0017/c0017InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0017/c0017InferenceCompiler_CODE'
+[15:17:27] c0017 score -0.222 (118 s) | best c0003 0.883 | 18 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0018/c0018InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0018/c0018InferenceCompiler_CODE'
+[15:18:54] c0018 score 0.414 (86 s) | best c0003 0.883 | 19 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0019/c0019InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0019/c0019InferenceCompiler_CODE'
+[15:20:27] c0019 score -0.242 (92 s) | best c0003 0.883 | 20 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0020/c0020InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0020/c0020InferenceCompiler_CODE'
+[15:22:12] c0020 score 0.742 (105 s) | best c0003 0.883 | 21 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0021/c0021InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0021/c0021InferenceCompiler_CODE'
+[15:23:59] c0021 score 0.786 (106 s) | best c0003 0.883 | 22 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0022/c0022InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0022/c0022InferenceCompiler_CODE'
+[15:26:12] c0022 score 0.882 (133 s) | best c0003 0.883 | 23 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0023/c0023InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0023/c0023InferenceCompiler_CODE'
+[15:27:41] c0023 score 0.772 (88 s) | best c0003 0.883 | 24 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0024/c0024InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0024/c0024InferenceCompiler_CODE'
+[15:29:56] c0024 score 0.786 (135 s) | best c0003 0.883 | 25 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0025/c0025InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0025/c0025InferenceCompiler_CODE'
+[15:31:16] c0025 score 0.625 (79 s) | best c0003 0.883 | 26 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0026/c0026InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0026/c0026InferenceCompiler_CODE'
+[15:33:00] c0026 score 0.836 (104 s) | best c0003 0.883 | 27 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0027/c0027InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0027/c0027InferenceCompiler_CODE'
+[15:35:11] c0027 score 0.537 (130 s) | best c0003 0.883 | 28 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0028/c0028InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0028/c0028InferenceCompiler_CODE'
+[15:36:59] c0028 score 0.457 (108 s) | best c0003 0.883 | 29 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0029/c0029InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0029/c0029InferenceCompiler_CODE'
+[15:38:40] c0029 score 0.600 (101 s) | best c0003 0.883 | 30 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0030/c0030InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0030/c0030InferenceCompiler_CODE'
+[15:40:31] c0030 score 0.770 (111 s) | best c0003 0.883 | 31 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0031/c0031InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0031/c0031InferenceCompiler_CODE'
+[15:42:21] c0031 score 0.882 (109 s) | best c0003 0.883 | 32 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0032/c0032InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0032/c0032InferenceCompiler_CODE'
+[15:46:29] c0032 score 0.855 (248 s) | best c0003 0.883 | 33 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0033/c0033InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0033/c0033InferenceCompiler_CODE'
+[15:51:23] c0033 score 0.876 (270 s) | best c0003 0.883 | 34 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0034/c0034InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0034/c0034InferenceCompiler_CODE'
+[15:55:10] c0034 score -0.308 (227 s) | best c0003 0.883 | 35 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0035/c0035InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0035/c0035InferenceCompiler_CODE'
+[15:59:52] c0035 score 0.788 (282 s) | best c0003 0.883 | 36 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0036/c0036InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0036/c0036InferenceCompiler_CODE'
+[16:04:23] c0036 score 0.869 (270 s) | best c0003 0.883 | 37 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0037/c0037InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0037/c0037InferenceCompiler_CODE'
+[16:07:34] c0037 score 0.854 (190 s) | best c0003 0.883 | 38 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0038/c0038InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0038/c0038InferenceCompiler_CODE'
+[16:13:12] c0038 score -0.022 (338 s) | best c0003 0.883 | 39 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0039/c0039InferenceCompiler_CODE'
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 23 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 22 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 21 s in the future
+make: Warning: File 'Makefile' has modification time 20 s in the future
+make: Warning: File 'Makefile' has modification time 20 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 19 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 18 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 17 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 16 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 15 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 14 s in the future
+make: Warning: File 'Makefile' has modification time 13 s in the future
+make: Warning: File 'Makefile' has modification time 13 s in the future
+make: Warning: File 'Makefile' has modification time 13 s in the future
+make: Warning: File 'Makefile' has modification time 13 s in the future
+make: Warning: File 'Makefile' has modification time 12 s in the future
+make: Warning: File 'Makefile' has modification time 12 s in the future
+make: Warning: File 'Makefile' has modification time 12 s in the future
+make: Warning: File 'Makefile' has modification time 11 s in the future
+make: Warning: File 'Makefile' has modification time 11 s in the future
+make: Warning: File 'Makefile' has modification time 10 s in the future
+make: Warning: File 'Makefile' has modification time 10 s in the future
+make: Warning: File 'Makefile' has modification time 9.8 s in the future
+make: Warning: File 'Makefile' has modification time 9.4 s in the future
+make: Warning: File 'Makefile' has modification time 9.1 s in the future
+make: Warning: File 'Makefile' has modification time 8.7 s in the future
+make: Warning: File 'Makefile' has modification time 8.3 s in the future
+make: Warning: File 'Makefile' has modification time 8.4 s in the future
+make: Warning: File 'Makefile' has modification time 8.1 s in the future
+make: Warning: File 'Makefile' has modification time 7.7 s in the future
+make: Warning: File 'Makefile' has modification time 7.4 s in the future
+make: Warning: File 'Makefile' has modification time 7.1 s in the future
+make: Warning: File 'Makefile' has modification time 6.8 s in the future
+make: Warning: File 'Makefile' has modification time 6.4 s in the future
+make: Warning: File 'Makefile' has modification time 6.1 s in the future
+make: Warning: File 'Makefile' has modification time 5.8 s in the future
+make: Warning: File 'Makefile' has modification time 5.5 s in the future
+make: Warning: File 'Makefile' has modification time 5.2 s in the future
+make: Warning: File 'Makefile' has modification time 4.9 s in the future
+make: Warning: File 'Makefile' has modification time 4.6 s in the future
+make: Warning: File 'Makefile' has modification time 4.2 s in the future
+make: Warning: File 'Makefile' has modification time 3.9 s in the future
+make: Warning: File 'runner.d' has modification time 23 s in the future
+make: Warning: File 'runner.d' has modification time 23 s in the future
+make: Warning: File 'runner.d' has modification time 23 s in the future
+make: Warning: File 'runner.d' has modification time 23 s in the future
+make: Warning: File 'runner.d' has modification time 22 s in the future
+make: Warning: File 'runner.d' has modification time 22 s in the future
+make: Warning: File 'runner.d' has modification time 22 s in the future
+make: Warning: File 'runner.d' has modification time 21 s in the future
+make: Warning: File 'runner.d' has modification time 21 s in the future
+make: Warning: File 'runner.d' has modification time 21 s in the future
+make: Warning: File 'runner.d' has modification time 21 s in the future
+make: Warning: File 'runner.d' has modification time 20 s in the future
+make: Warning: File 'runner.d' has modification time 20 s in the future
+make: Warning: File 'runner.d' has modification time 20 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0039/c0039InferenceCompiler_CODE'
+[16:15:34] c0039 score 0.450 (142 s) | best c0003 0.883 | 40 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0040/c0040InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0040/c0040InferenceCompiler_CODE'
+[16:18:46] c0040 score 0.882 (191 s) | best c0003 0.883 | 41 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0041/c0041InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0041/c0041InferenceCompiler_CODE'
+[16:22:09] c0041 score 0.865 (202 s) | best c0003 0.883 | 42 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0042/c0042InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0042/c0042InferenceCompiler_CODE'
+[16:25:16] c0042 score 0.817 (186 s) | best c0003 0.883 | 43 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0043/c0043InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0043/c0043InferenceCompiler_CODE'
+[16:28:09] c0043 score 0.872 (173 s) | best c0003 0.883 | 44 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0044/c0044InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0044/c0044InferenceCompiler_CODE'
+[16:30:34] c0044 score 0.218 (145 s) | best c0003 0.883 | 45 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0045/c0045InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0045/c0045InferenceCompiler_CODE'
+[16:35:14] c0045 score 0.817 (280 s) | best c0003 0.883 | 46 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0046/c0046InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0046/c0046InferenceCompiler_CODE'
+[16:38:28] c0046 score 0.868 (193 s) | best c0003 0.883 | 47 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0047/c0047InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0047/c0047InferenceCompiler_CODE'
+[16:41:42] c0047 score 0.874 (194 s) | best c0003 0.883 | 48 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0048/c0048InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0048/c0048InferenceCompiler_CODE'
+[16:44:18] c0048 score 0.840 (155 s) | best c0003 0.883 | 49 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0049/c0049InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0049/c0049InferenceCompiler_CODE'
+[16:47:28] c0049 score 0.845 (190 s) | best c0003 0.883 | 50 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0050/c0050InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0050/c0050InferenceCompiler_CODE'
+[16:49:16] c0050 score 0.715 (107 s) | best c0003 0.883 | 51 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0051/c0051InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0051/c0051InferenceCompiler_CODE'
+[16:51:19] c0051 score 0.733 (122 s) | best c0003 0.883 | 52 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0052/c0052InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0052/c0052InferenceCompiler_CODE'
+[16:53:32] c0052 score 0.760 (133 s) | best c0003 0.883 | 53 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0053/c0053InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0053/c0053InferenceCompiler_CODE'
+[16:56:13] c0053 score 0.850 (161 s) | best c0003 0.883 | 54 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0054/c0054InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0054/c0054InferenceCompiler_CODE'
+[16:58:49] c0054 score 0.736 (156 s) | best c0003 0.883 | 55 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0055/c0055InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0055/c0055InferenceCompiler_CODE'
+[17:01:15] c0055 score -0.101 (145 s) | best c0003 0.883 | 56 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0056/c0056InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0056/c0056InferenceCompiler_CODE'
+[17:03:10] c0056 score 0.550 (115 s) | best c0003 0.883 | 57 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0057/c0057InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0057/c0057InferenceCompiler_CODE'
+[17:04:35] c0057 score 0.090 (85 s) | best c0003 0.883 | 58 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0058/c0058InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0058/c0058InferenceCompiler_CODE'
+[17:06:30] c0058 score 0.729 (114 s) | best c0003 0.883 | 59 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0059/c0059InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0059/c0059InferenceCompiler_CODE'
+[17:08:22] c0059 score 0.718 (112 s) | best c0003 0.883 | 60 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0060/c0060InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0060/c0060InferenceCompiler_CODE'
+[17:10:21] c0060 score 0.891 (119 s) | best c0060 0.891 | 61 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0061/c0061InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0061/c0061InferenceCompiler_CODE'
+[17:12:27] c0061 score 0.880 (126 s) | best c0060 0.891 | 62 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0062/c0062InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0062/c0062InferenceCompiler_CODE'
+[17:14:21] c0062 score 0.658 (114 s) | best c0060 0.891 | 63 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0063/c0063InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0063/c0063InferenceCompiler_CODE'
+[17:16:12] c0063 score 0.764 (111 s) | best c0060 0.891 | 64 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0064/c0064InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0064/c0064InferenceCompiler_CODE'
+[17:18:09] c0064 score 0.874 (116 s) | best c0060 0.891 | 65 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0065/c0065InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0065/c0065InferenceCompiler_CODE'
+[17:20:12] c0065 score 0.868 (124 s) | best c0060 0.891 | 66 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0066/c0066InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0066/c0066InferenceCompiler_CODE'
+[17:22:34] c0066 score 0.878 (142 s) | best c0060 0.891 | 67 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0067/c0067InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0067/c0067InferenceCompiler_CODE'
+[17:24:41] c0067 score -0.235 (127 s) | best c0060 0.891 | 68 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0068/c0068InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0068/c0068InferenceCompiler_CODE'
+[17:26:45] c0068 score 0.117 (123 s) | best c0060 0.891 | 69 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0069/c0069InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0069/c0069InferenceCompiler_CODE'
+[17:28:45] c0069 score -0.638 (120 s) | best c0060 0.891 | 70 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0070/c0070InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0070/c0070InferenceCompiler_CODE'
+[17:30:45] c0070 score 0.883 (120 s) | best c0060 0.891 | 71 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0071/c0071InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0071/c0071InferenceCompiler_CODE'
+[17:32:44] c0071 score 0.759 (119 s) | best c0060 0.891 | 72 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0072/c0072InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0072/c0072InferenceCompiler_CODE'
+[17:34:35] c0072 score 0.781 (110 s) | best c0060 0.891 | 73 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0073/c0073InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau2_l5/work/c0073/c0073InferenceCompiler_CODE'

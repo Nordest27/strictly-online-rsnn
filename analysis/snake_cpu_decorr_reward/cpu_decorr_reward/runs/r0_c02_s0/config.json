@@ -1,0 +1,40 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "legacy",
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 10000,
+ "dale": {
+  "every_episodes": 1,
+  "local": true
+ },
+ "_meta": {
+  "variant": "scale+decorr0.1"
+ },
+ "hidden_rule": {
+  "preset": "proposed",
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 0.1
+  }
+ },
+ "plastic_inhibition": {
+  "eta": 0.001,
+  "mode": "covariance",
+  "scaling": 0.01
+ },
+ "seed": 0,
+ "max_timesteps": 2000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c02_s0",
+ "repetition": 0,
+ "trace_log": false
+}

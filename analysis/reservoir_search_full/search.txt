@@ -1,0 +1,73 @@
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full/full_default-cal/full_default_calInferenceCompiler_CODE'
+make: Nothing to be done for 'all'.
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full/full_default-cal/full_default_calInferenceCompiler_CODE'
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full/full_ff0.45_fieldnarrow-cal/full_ff0p45_fieldnarrow_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full/full_ff0.45_fieldnarrow-cal/full_ff0p45_fieldnarrow_calInferenceCompiler_CODE'
+
+full_ff0.45_fieldnarrow-cal  (calibrated: True, 1544 s)  L_last/L1: dim 3.47, input R2 0.90; perturbation reach min/max 0.77
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   18.2    12.78     11.07    0.649  +0.118  0.181   0.00
+  L1_I             675   18.4    11.93     11.14    0.644  +0.108  0.181   0.00
+  L2_E            1200   16.2    40.81     12.10    0.631  +0.042  0.037   0.00
+  L2_I             675   15.2    38.15     12.27    0.621  +0.038  0.037   0.04
+  L3_E            1200   15.1    43.21     13.80    0.603  +0.012  0.023   0.08
+  L3_I             675   14.6    36.78     13.00    0.597  +0.015  0.025   0.06
+  L4_E            1200   17.2    46.55     15.37    0.586  +0.004  0.015   0.25
+  L4_I             675   17.6    37.87     14.06    0.576  +0.013  0.017   0.15
+  L5_E            1200   17.3    44.31     17.69    0.581  +0.005  0.014   0.29
+  L5_I             675   17.0    38.37     16.44    0.578  +0.027  0.017   0.13
+  policy_field     675   18.3    17.38     16.02    0.621  +0.013  0.041   0.00
+  value_field      675   18.7    17.33     15.69    0.621  +0.017  0.041   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.729  L2 0.676  L3 0.646  L4 0.562  L5 0.690
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full/full_ff0.8_fieldnarrow-cal/full_ff0p8_fieldnarrow_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full/full_ff0.8_fieldnarrow-cal/full_ff0p8_fieldnarrow_calInferenceCompiler_CODE'
+
+full_default-cal  (calibrated: True, 1569 s)  L_last/L1: dim 2.03, input R2 0.68; perturbation reach min/max 0.48
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.4    13.10     10.68    0.658  +0.134  0.179   0.00
+  L1_I             675   21.2    12.21     10.65    0.650  +0.098  0.179   0.00
+  L2_E            1200   19.3    14.00      9.71    0.575  +0.045  0.100   0.00
+  L2_I             675   20.0    12.87      9.80    0.562  +0.027  0.101   0.00
+  L3_E            1200   20.4    20.70      9.23    0.546  -0.024  0.052   0.00
+  L3_I             675   21.2    18.00      9.16    0.531  -0.007  0.053   0.00
+  L4_E            1200   21.7    21.18      8.61    0.508  -0.033  0.029   0.00
+  L4_I             675   22.5    18.03      8.51    0.506  -0.016  0.031   0.00
+  L5_E            1200   19.5    26.55      8.79    0.446  -0.060  0.021   0.03
+  L5_I             675   20.1    23.35      8.61    0.451  -0.034  0.023   0.02
+  policy_field     675   23.6     6.17      6.86    0.354  -0.038  0.063   0.00
+  value_field      675   23.6     6.18      6.83    0.354  -0.053  0.063   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.115  L2 0.118  L3 0.076  L4 0.086  L5 0.158
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full/full_ff1.2_fieldnarrow-cal/full_ff1p2_fieldnarrow_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full/full_ff1.2_fieldnarrow-cal/full_ff1p2_fieldnarrow_calInferenceCompiler_CODE'
+
+full_ff0.8_fieldnarrow-cal  (calibrated: True, 1653 s)  L_last/L1: dim 2.71, input R2 0.88; perturbation reach min/max 0.36
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.4    13.12     10.69    0.651  +0.133  0.179   0.00
+  L1_I             675   21.0    12.20     10.67    0.647  +0.100  0.179   0.00
+  L2_E            1200   18.2    23.42     10.95    0.631  +0.070  0.058   0.00
+  L2_I             675   19.0    21.39     10.94    0.624  +0.041  0.059   0.00
+  L3_E            1200   18.6    29.37     11.66    0.606  +0.020  0.034   0.01
+  L3_I             675   19.6    24.69     11.10    0.600  +0.015  0.035   0.00
+  L4_E            1200   19.0    32.39     12.13    0.588  -0.003  0.023   0.04
+  L4_I             675   20.2    27.35     11.90    0.581  -0.013  0.024   0.03
+  L5_E            1200   18.4    35.50     12.74    0.574  -0.035  0.019   0.09
+  L5_I             675   19.4    29.99     12.71    0.568  -0.016  0.020   0.07
+  policy_field     675   19.6    12.20     12.01    0.587  -0.014  0.048   0.00
+  value_field      675   20.2    12.07     11.81    0.588  -0.017  0.048   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.666  L2 0.422  L3 0.240  L4 0.255  L5 0.385
+
+full_ff1.2_fieldnarrow-cal  (calibrated: True, 1656 s)  L_last/L1: dim 2.00, input R2 0.83; perturbation reach min/max 0.34
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.5    13.22     10.72    0.653  +0.122  0.179   0.00
+  L1_I             675   21.3    12.18     10.63    0.647  +0.105  0.179   0.00
+  L2_E            1200   23.1    17.40      9.71    0.619  +0.062  0.071   0.00
+  L2_I             675   24.2    16.04      9.81    0.611  +0.038  0.072   0.00
+  L3_E            1200   19.9    23.59     10.13    0.589  +0.007  0.045   0.00
+  L3_I             675   20.8    20.46     10.21    0.581  +0.012  0.046   0.00
+  L4_E            1200   22.0    25.46      9.73    0.557  -0.006  0.025   0.03
+  L4_I             675   23.0    21.44      9.79    0.552  -0.010  0.027   0.01
+  L5_E            1200   22.4    26.50      9.75    0.545  -0.028  0.019   0.10
+  L5_I             675   23.2    22.34      9.67    0.539  -0.020  0.021   0.07
+  policy_field     675   22.0     8.99      8.84    0.532  -0.020  0.058   0.00
+  value_field      675   22.1     8.99      8.86    0.534  -0.015  0.058   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.330  L2 0.190  L3 0.113  L4 0.117  L5 0.184

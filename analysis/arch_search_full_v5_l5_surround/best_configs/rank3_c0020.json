@@ -1,0 +1,121 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.864,
+  "p_max": 0.634,
+  "input_sigma_cells": 3.319,
+  "inhibition_scale": 3.563,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.211
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.96,
+    "mean_scale": 0.75,
+    "sd_scale": 0.15000000000000002
+   },
+   "shape": 15,
+   "conn_i": {
+    "sigma_cells": 0.96,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 1.4171597205746733,
+     "sd_scale": 0.14171597205746733
+    },
+    "to_next_i": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 1.0996686220251588,
+     "sd_scale": 0.10996686220251589
+    },
+    "to_next_i": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 1.1274026949278328,
+     "sd_scale": 0.11274026949278329
+    },
+    "to_next_i": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 1.0911555611441912,
+     "sd_scale": 0.10911555611441913
+    },
+    "to_next_i": {
+     "sigma_cells": 0.413,
+     "p_surround": 0.1745,
+     "surround_ratio": 2.805,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ],
+  "input": {
+   "mean_scale": 0.06704189604115636,
+   "sd_scale": 0.03352094802057818
+  }
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 5,
+ "_meta": {
+  "architecture_search": {
+   "idx": 20,
+   "score": -0.00407097607413609,
+   "genome": {
+    "ff_inhibition": true,
+    "ff_targets": "both",
+    "inh_sigma_ratio": 1.2107326054970065,
+    "sigma_cells": 2.8642853703255122,
+    "p_max": 0.633906843586902,
+    "input_sigma_cells": 3.3187037617805597,
+    "inhibition_scale": 3.5629538623517565,
+    "ff_sigma": 0.41271299616367013,
+    "field_sigma": 0.9602268906050179,
+    "field_shape": "inhibitory",
+    "target_hz": 10.0,
+    "ff_surround_p": 0.17446124380596006,
+    "ff_surround_ratio": 2.8046519626909583
+   }
+  }
+ }
+}

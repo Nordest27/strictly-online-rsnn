@@ -1,0 +1,12 @@
+hl_reservoir_s0 done 16:37
+hl_eprop_sur_s0 done 16:44
+hl_ours_s0 done 16:45
+plain_ours_s0 done 16:46
+hl_ours_noise1p5_s0 done 17:07
+hl_eprop_s0 done 17:12
+hl_ours_noise3_s0 done 17:17
+plain_eprop_s0 done 17:25
+noisehead_ours_s0 done 17:56
+noisehead_eprop_s0 done 18:13
+vec_ours_th0p1_s0 done 18:28
+vec_ours_th0p05_s0 done 18:29

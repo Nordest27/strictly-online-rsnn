@@ -1,0 +1,98 @@
+{
+ "vreg": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9718502767882035,
+   "bias (SE units)": 0.15186332215619044,
+   "reward explained": 0.0
+  },
+  "persynapse": {
+   "variance vs none": 0.9979257889728754,
+   "bias (SE units)": 0.29805973631516214,
+   "reward explained": null
+  },
+  "afferent": {
+   "variance vs none": 0.9930121138667305,
+   "bias (SE units)": 0.6080442036209773,
+   "reward explained": 0.1131408013581135
+  },
+  "dedicated": {
+   "variance vs none": 0.9660622383922334,
+   "bias (SE units)": 0.3531477556604702,
+   "reward explained": 0.055009856117059885
+  },
+  "oracle": {
+   "variance vs none": 0.0700345238995122,
+   "bias (SE units)": 0.6357893803781305,
+   "reward explained": 0.9645940253320746
+  }
+ },
+ "rate": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9942661012729858,
+   "bias (SE units)": 0.01933258719312915,
+   "reward explained": 0.0
+  },
+  "persynapse": {
+   "variance vs none": 0.9985619746186751,
+   "bias (SE units)": 0.11986962914754004,
+   "reward explained": null
+  },
+  "afferent": {
+   "variance vs none": 0.8272487341458413,
+   "bias (SE units)": 0.21880551803313314,
+   "reward explained": 0.16206013281683868
+  },
+  "dedicated": {
+   "variance vs none": 0.9461650851422905,
+   "bias (SE units)": 0.12860833569729588,
+   "reward explained": 0.01183566200026731
+  },
+  "oracle": {
+   "variance vs none": 0.07834024137591235,
+   "bias (SE units)": 0.5272269244179884,
+   "reward explained": 0.9141159266527505
+  }
+ },
+ "decorr": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9253091386955549,
+   "bias (SE units)": 0.0672624018172311,
+   "reward explained": 0.0
+  },
+  "persynapse": {
+   "variance vs none": 0.9091436653735046,
+   "bias (SE units)": 0.16660832042071685,
+   "reward explained": null
+  },
+  "afferent": {
+   "variance vs none": 0.891817845662585,
+   "bias (SE units)": 0.2165399650928207,
+   "reward explained": 0.02102076371147349
+  },
+  "dedicated": {
+   "variance vs none": 0.8865836107322559,
+   "bias (SE units)": 0.14122330061192212,
+   "reward explained": 0.006597865929753699
+  },
+  "oracle": {
+   "variance vs none": 0.24397066760603275,
+   "bias (SE units)": 0.5740867130877824,
+   "reward explained": 0.7662839872538789
+  }
+ }
+}

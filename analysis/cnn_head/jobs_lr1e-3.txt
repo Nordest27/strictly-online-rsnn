@@ -1,0 +1,6 @@
+cnn3_reservoir_s0
+cnn3_reservoir_s1
+cnn3_ours_s0
+cnn3_ours_s1
+cnn3_eprop_s0
+cnn3_eprop_s1

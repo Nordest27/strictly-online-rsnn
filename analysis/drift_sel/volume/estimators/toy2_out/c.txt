@@ -1,0 +1,9 @@
+arch [('relu', 64), ('gsm', 32), ('relu', 64), ('gsm', 16), ('out', None)] kappa 3.0 eta 0.001; mean reward per 2000-trial block (chance 0.25), mean of seeds
+tr_d           b1  0.279  b3  0.351  b6  0.375  b11 0.366  b20 0.356   mean 0.354 (seed sd 0.043)  42s
+               feedback cos vs exact (layers 1..4): first block +0.38 +0.15 +0.49 +0.40 | last quarter +0.24 +0.13 +0.63 +0.20
+m_tr_d         b1  0.290  b3  0.471  b6  0.554  b11 0.523  b20 0.473   mean 0.492 (seed sd 0.107)  50s
+               feedback cos vs exact (layers 1..4): first block +0.49 +0.43 +0.66 +0.74 | last quarter +0.18 +0.01 +0.46 +0.27
+tr_x           b1  0.289  b3  0.347  b6  0.357  b11 0.366  b20 0.356   mean 0.352 (seed sd 0.043)  44s
+               feedback cos vs exact (layers 1..4): first block +0.32 +0.03 +0.45 +0.33 | last quarter +0.20 +0.29 +0.74 +0.25
+m_tr_x         b1  0.285  b3  0.428  b6  0.509  b11 0.494  b20 0.445   mean 0.467 (seed sd 0.100)  50s
+               feedback cos vs exact (layers 1..4): first block +0.48 +0.50 +0.66 +0.83 | last quarter +0.20 -0.04 +0.46 +0.22

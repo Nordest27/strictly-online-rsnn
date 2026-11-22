@@ -1,0 +1,127 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "ei_layers": 3,
+  "monitor": true,
+  "monitor_every": 5000,
+  "probe": {
+   "moves": 5000
+  }
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c_f40"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "f_target": 40.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "drift_homeo_c_f40"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true,
+     "gradient": 0.0
+    },
+    "f_target": 40.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "grad_homeo_f40"
+    },
+    "hidden_rule": {
+     "preset": "gradient_only_homeostat",
+     "homeostat": 1.0
+    },
+    "f_target": 40.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c_frozen_ro_f40"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "train_readout": false,
+    "f_target": 40.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed_f40"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "f_target": 40.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "node+backprop0.3_f40"
+    },
+    "hidden_rule": {
+     "preset": "node_proposed",
+     "backprop": 0.3
+    },
+    "f_target": 40.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_frozen_ro_f100"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "train_readout": false,
+    "f_target": 100.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random+drift+homeo_f100"
+    },
+    "hidden_rule": {
+     "preset": "eprop_plus_proposed_homeostat",
+     "drift": 0.1,
+     "gradient": 0.0,
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "f_target": 100.0,
+    "c_reg": 0.001
+   }
+  }
+ ]
+}

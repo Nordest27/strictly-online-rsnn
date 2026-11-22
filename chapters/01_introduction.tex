@@ -1,0 +1,56 @@
+
+\chapter{Introduction}
+\label{ch:introduction}
+
+\section{Context}
+\label{sec:context}
+
+A neural network is a computational model loosely inspired by the structure of the brain, a large collection of simple processing units, connected by weighted links, that together learn to perform complex tasks from experience. Most neural networks process their input in a single forward sweep, where each unit reads from the previous layer, computes an output, and passes it on. For many tasks, this is sufficient.
+
+Some tasks, however, are inherently stateful. Understanding spoken language, controlling a robot in motion, or responding to a continuous stream of sensor readings all require the network to maintain some memory of what has happened and use it to interpret what is happening now. Networks designed for this purpose are called recurrent neural networks, and they differ from their simpler counterparts by feeding the output of the individual neurons to the other neurons in the network, thereby influencing future outputs. This creates a form of internal memory, but it also creates a training problem. When we want to adjust the network's parameters to improve its behavior, we need to account for the fact that a change made now may only affect the network's output many steps later. Tracing that delayed influence back to its cause requires unrolling the entire computation history, storing it in memory, and performing a separate backward pass through it once a full sequence has been processed.
+
+This approach works well when sequences are short and data can be collected in batches. It is poorly suited, however, to settings where data arrives continuously, decisions must be made in real time, and no natural stopping point exists at which to pause and compute gradients. These settings (continuous control, online decision-making, real-time processing) are precisely the ones where neural networks might be most useful in practice, and yet they are where the standard training procedure is hardest to apply.
+
+This thesis contributes to the problem of training recurrent networks in these continuous, real-time settings. It does so through the lens of spiking neural networks which are a class of recurrent network in which units communicate not through continuous numerical values but through discrete binary pulses, or spikes, much like neurons in the brain. These networks present additional challenges for training, but their temporal dynamics and sparse activity patterns make them a natural fit for the kinds of tasks considered here, and for the specialized hardware increasingly being developed to run them efficiently.
+
+\section{Motivation}
+
+A major long-term motivation behind biologically inspired learning research is the striking gap between artificial and biological learning systems. Biological organisms are capable of learning continuously from ongoing interaction with the environment, adapting to new situations in real time, operating under extremely limited energy budgets, and doing so without access to the large curated datasets, repeated training epochs, or explicitly defined objective functions commonly required in modern machine learning systems.
+
+In contrast, many successful artificial learning methods rely heavily on offline optimization procedures, large-scale memory usage, and precisely structured gradient information. While these methods achieve remarkable performance in controlled settings, they remain comparatively inflexible, energy-intensive, and difficult to deploy in continuously adaptive environments.
+
+Although biological neural systems are still only partially understood, their existence suggests that efficient online learning may be achievable using mechanisms fundamentally different from those employed by standard deep learning methods. This provides strong motivation for continuing to explore biologically inspired approaches to learning, not only as models of neural computation, but also as a potential source of new principles for scalable, adaptive, and energy-efficient artificial intelligence systems.
+
+Many real-world learning problems do not come in the form of short, neatly separated sequences with clear beginnings and endings. A robot interacting with its environment, an autonomous system processing sensor streams, or an adaptive agent operating continuously in time must make decisions while new information keeps arriving. In these settings, learning cannot be treated as an offline procedure performed after the interaction has finished. The system must instead adapt continuously while it is operating, often under strict constraints on memory, latency, and energy consumption.
+
+Recurrent neural networks are naturally suited to these problems because they can maintain internal state over time. Their dynamics allow past information to influence future behavior, enabling memory, temporal integration, and sequential decision-making. However, the standard methods used to train recurrent networks are poorly matched to the conditions under which these networks are most useful in practice.
+
+The dominant approach for training recurrent systems, Backpropagation Through Time (BPTT), requires storing the full history of network activity and propagating gradients backward through it once a sequence has been processed. This works well in offline settings with finite sequences and batch processing, but becomes problematic in continuous environments where interaction may never stop and parameter updates are needed immediately. As sequences grow longer, memory usage increases, updates become delayed, and learning becomes increasingly difficult to perform online.
+
+The problem becomes even more challenging in reinforcement learning. In this setting, the network is not provided with explicit target outputs, but instead learns from scalar rewards that may arrive long after the actions or internal computations that caused them. A successful learning rule must therefore solve the temporal credit assignment problem, defined as the problem of determining which past neural activities were responsible for the current activity. Solving this problem without storing complete histories is one of the central challenges of online learning in recurrent systems.
+
+Eligibility traces provide a promising alternative. Instead of reconstructing the full history of the network during a backward pass, they maintain a running local memory of how recent neural activity has contributed to the neurons state. This makes them naturally compatible with online learning, since updates can be computed incrementally using only information available at the current timestep.
+
+Spiking neural networks provide an especially interesting setting for studying these ideas. Because neurons communicate through sparse discrete spikes and integrate information over time through their internal dynamics, temporal processing is built directly into the architecture itself. Their event-driven operation also makes them attractive for neuromorphic hardware designed for low-power, real-time computation. However, training spiking networks remains difficult, particularly in reinforcement learning settings where feedback is delayed and learning must occur continuously.
+
+Beyond their computational properties, spiking neural networks also offer a useful conceptual perspective inspired by biological learning. In biological neural systems, synaptic updates depend primarily on information locally available at each synapse, while evaluative signals such as dopamine are broadcast broadly across large populations of neurons. This suggests the possibility that effective learning may not require precise, structured error signals, but could instead emerge from the interaction between local activity traces and a shared globally broadcasted feedback signal.
+
+This observation motivates the central question of this work: whether recurrent spiking neural networks can learn effectively in fully online reinforcement learning settings using learning rules that rely only on local computations and globally broadcast reward-based signals. More specifically, this thesis investigates whether such minimal and distributed learning mechanisms can remain competitive with more structured approaches while preserving scalability, locality, and online operation.
+
+\section{Contributions}
+
+This thesis makes two main contributions.
+
+The first is the implementation of a continuously running, reinforcement-learning agent
+based on spiking neural networks, trained online using the e-prop framework of \cite{eprop2020}. The agent operates without episodic resets, in a
+GPU-accelerated event-based simulation environment, and is evaluated on tasks designed
+to probe temporal credit assignment, working memory, and behavioral adaptation.
+
+The second contribution is a new family of learning rules, which we refer to as distributed
+e-prop, that build on the theoretical connection between
+perturbation-based learning and policy gradient methods while borrowing the local structure of e-prop. Its central aim is to make
+the learning rule as distributed as possible, rather than routing structured gradient
+information back to individual neurons, every neuron receives the same single scalar
+feedback signal and relies entirely on its own local activity to determine how its
+incoming connections should be updated. Whether this minimal signal is sufficient for
+effective learning, and under what conditions it becomes a limitation, is one of the central empirical questions this work aims to answer.

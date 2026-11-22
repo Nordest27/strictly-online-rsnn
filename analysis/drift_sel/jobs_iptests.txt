@@ -1,0 +1,10 @@
+ip_tests/ref_s1
+ip_tests/ref_ip_s1
+ip_tests/ref_s2
+ip_tests/ref_ip_s2
+ip_tests/sel_dc_ip_s0
+ip_tests/sel_dc_ip_s1
+ip_tests/con_dcA_ip_s0
+ip_tests/con_dcB_ip_s0
+ip_tests/con_dcA_ip_s1
+ip_tests/con_dcB_ip_s1

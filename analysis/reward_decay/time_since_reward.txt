@@ -1,0 +1,54 @@
+
+d05_s0  (last window: 477 apples, 153 deaths)
+  moves since apple: balanced accuracy above chance, exactly k vs >= 20
+    features          k=1    k=2    k=3    k=4    k=6    k=8   k=12
+    input frame     +0.32  +0.29  +0.29  +0.26  +0.19  +0.17  +0.07
+    all hidden E    +0.31  +0.19  +0.19  +0.10  +0.09  +0.08  +0.00
+    L1_E            +0.42  +0.27  +0.25  +0.22  +0.19  +0.14  +0.06
+    L5_E            +0.11  +0.15  +0.07  +0.06  -0.01  +0.05  +0.01
+    value_field     +0.14  +0.08  +0.08  +0.06  -0.00  -0.02  -0.01
+    policy_field    +0.07  +0.11  +0.07  +0.01  +0.03  -0.00  +0.03
+  moves since death: balanced accuracy above chance, exactly k vs >= 20
+    features          k=1    k=2    k=3    k=4    k=6    k=8   k=12
+    input frame     +0.47  +0.41  +0.25  +0.25  +0.08  +0.00  +0.00
+    all hidden E    +0.50  +0.42  +0.27  +0.19  +0.17  +0.13  +0.05
+    L1_E            +0.50  +0.38  +0.08  +0.06  +0.01  +0.00  +0.00
+    L5_E            +0.50  +0.15  +0.00  +0.00  +0.00  +0.00  +0.00
+    value_field     +0.49  +0.11  +0.00  +0.00  +0.00  +0.00  +0.00
+    policy_field    +0.48  +0.13  +0.00  +0.00  +0.00  +0.00  +0.00
+
+d05_s1  (last window: 349 apples, 111 deaths)
+  moves since apple: balanced accuracy above chance, exactly k vs >= 20
+    features          k=1    k=2    k=3    k=4    k=6    k=8   k=12
+    input frame     +0.25  +0.20  +0.18  +0.10  +0.05  +0.04  +0.03
+    all hidden E    +0.38  +0.17  +0.17  +0.14  +0.11  +0.08  +0.11
+    L1_E            +0.43  +0.24  +0.16  +0.12  +0.11  +0.11  +0.05
+    L5_E            +0.18  +0.07  +0.02  +0.04  +0.03  +0.01  +0.02
+    value_field     +0.07  +0.07  +0.03  +0.01  -0.00  -0.00  +0.00
+    policy_field    +0.06  +0.06  +0.02  +0.04  -0.00  +0.00  +0.01
+  moves since death: balanced accuracy above chance, exactly k vs >= 20
+    features          k=1    k=2    k=3    k=4    k=6    k=8   k=12
+    input frame     +0.33  +0.17  +0.00  +0.00  +0.00  +0.00  +0.00
+    all hidden E    +0.50  +0.36  +0.20  +0.23  +0.02  +0.02  +0.00
+    L1_E            +0.44  +0.24  +0.00  +0.00  +0.00  +0.00  +0.00
+    L5_E            +0.40  +0.19  +0.00  +0.00  +0.00  +0.00  +0.00
+    value_field     +0.27  +0.06  +0.00  +0.00  +0.00  +0.00  +0.00
+    policy_field    +0.25  +0.07  +0.00  +0.00  +0.00  +0.00  +0.00
+
+d01_s1  (last window: 296 apples, 155 deaths)
+  moves since apple: balanced accuracy above chance, exactly k vs >= 20
+    features          k=1    k=2    k=3    k=4    k=6    k=8   k=12
+    input frame     +0.17  +0.11  +0.10  +0.05  +0.03  +0.02  +0.00
+    all hidden E    +0.47  +0.10  +0.16  +0.14  +0.01  +0.05  +0.09
+    L1_E            +0.45  +0.05  +0.09  +0.08  +0.00  +0.02  +0.01
+    L5_E            +0.06  +0.01  +0.02  +0.01  -0.00  -0.00  +0.00
+    value_field     +0.02  -0.00  +0.01  -0.00  +0.00  -0.00  +0.01
+    policy_field    +0.01  -0.00  +0.02  -0.01  +0.00  +0.00  +0.00
+  moves since death: balanced accuracy above chance, exactly k vs >= 20
+    features          k=1    k=2    k=3    k=4    k=6    k=8   k=12
+    input frame     +0.50  +0.25  +0.18  +0.15  +0.16  +0.02  +0.00
+    all hidden E    +0.49  +0.48  +0.22  +0.16  +0.07  +0.13  +0.03
+    L1_E            +0.50  +0.32  +0.02  +0.02  +0.01  +0.00  +0.00
+    L5_E            +0.49  +0.25  +0.00  +0.01  +0.00  +0.00  +0.00
+    value_field     +0.49  +0.20  +0.00  +0.00  +0.00  +0.00  +0.00
+    policy_field    +0.48  +0.19  +0.00  +0.00  +0.00  +0.00  +0.00

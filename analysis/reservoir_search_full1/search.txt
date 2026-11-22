@@ -1,0 +1,90 @@
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/legacy-cal/legacy_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/legacy-cal/legacy_calInferenceCompiler_CODE'
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/matched-cal/matched_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/matched-cal/matched_calInferenceCompiler_CODE'
+
+matched-cal  (calibrated: True, 504 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.8    10.43      9.75    0.656  +0.114  0.192   0.00
+  L1_I             675   22.2    10.24      9.60    0.648  +0.096  0.191   0.00
+  policy_field     675   21.4    10.04      9.38    0.629  +0.023  0.093   0.00
+  value_field      675   21.2    10.03      9.46    0.630  +0.028  0.094   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.655
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/local-cal/local_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/local-cal/local_calInferenceCompiler_CODE'
+
+legacy-cal  (calibrated: True, 506 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   21.0    10.33      9.39    0.649  +0.113  0.195   0.00
+  L1_I             675   22.4    10.02      9.12    0.645  +0.085  0.193   0.00
+  policy_field     675   21.2     9.45      8.13    0.607  +0.017  0.095   0.00
+  value_field      675   21.0     9.39      7.64    0.608  +0.017  0.095   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.653
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_sig1.25-cal/local_sig1p25_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_sig1.25-cal/local_sig1p25_calInferenceCompiler_CODE'
+
+local-cal  (calibrated: True, 411 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.5    13.18     10.75    0.660  +0.131  0.179   0.00
+  L1_I             675   21.5    12.30     10.54    0.649  +0.091  0.179   0.00
+  policy_field     675   22.2     7.58      8.34    0.544  +0.017  0.143   0.00
+  value_field      675   22.3     7.58      8.30    0.547  +0.012  0.143   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.383
+
+local_sig1.25-cal  (calibrated: True, 409 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   18.3    12.38     10.75    0.648  +0.113  0.183   0.00
+  L1_I             675   19.7    11.37     10.52    0.640  +0.098  0.182   0.00
+  policy_field     675   19.3     8.89      9.13    0.612  +0.033  0.117   0.00
+  value_field      675   19.2     8.86      9.21    0.611  +0.029  0.117   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.603
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_sig2.5-cal/local_sig2p5_calInferenceCompiler_CODE'
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_sparse-cal/local_sparse_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_sig2.5-cal/local_sig2p5_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_sparse-cal/local_sparse_calInferenceCompiler_CODE'
+
+local_sparse-cal  (calibrated: True, 434 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   15.9    14.80     12.54    0.737  +0.144  0.161   0.00
+  L1_I             675   16.6    14.54     12.36    0.709  +0.130  0.161   0.00
+  policy_field     675   18.7     5.91      7.40    0.524  +0.009  0.175   0.00
+  value_field      675   18.9     5.90      7.45    0.519  +0.009  0.175   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.411
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_inh4-cal/local_inh4_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_inh4-cal/local_inh4_calInferenceCompiler_CODE'
+
+local_sig2.5-cal  (calibrated: True, 442 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.1    14.55     11.12    0.695  +0.139  0.169   0.00
+  L1_I             675   20.8    13.93     11.07    0.682  +0.111  0.168   0.00
+  policy_field     675   22.9     5.70      6.92    0.495  +0.001  0.177   0.00
+  value_field      675   23.0     5.69      6.94    0.498  -0.010  0.177   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.222
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_field20_narrow-cal/local_field20_narrow_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_field20_narrow-cal/local_field20_narrow_calInferenceCompiler_CODE'
+
+local_inh4-cal  (calibrated: True, 446 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   19.8    17.11     11.51    0.664  +0.127  0.171   0.00
+  L1_I             675   20.7    15.30     11.46    0.662  +0.107  0.171   0.00
+  policy_field     675   22.1     7.53      8.17    0.545  +0.018  0.149   0.00
+  value_field      675   22.3     7.51      8.14    0.544  +0.017  0.148   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.401
+make: Entering directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_field15_narrow-cal/local_field15_narrow_calInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/reservoir_search_full1/local_field15_narrow-cal/local_field15_narrow_calInferenceCompiler_CODE'
+
+local_field20_narrow-cal  (calibrated: True, 656 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.4    13.12     10.75    0.650  +0.132  0.180   0.00
+  L1_I             675   21.2    12.27     10.58    0.647  +0.107  0.180   0.00
+  policy_field    1200   18.6    13.17     10.47    0.664  +0.071  0.074   0.00
+  value_field     1200   18.6    13.21     10.50    0.664  +0.070  0.074   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.905
+
+local_field15_narrow-cal  (calibrated: True, 338 s)  L_last/L1: dim 1.00, input R2 1.00; perturbation reach min/max 1.00
+  pop                n     Hz  eff.dim  dim(cnt)  inputR2  decode    psi  psi~0
+  L1_E            1200   20.5    13.14     10.63    0.652  +0.127  0.180   0.00
+  L1_I             675   21.2    12.27     10.61    0.651  +0.097  0.179   0.00
+  policy_field     675   20.9    11.49      9.94    0.653  +0.033  0.084   0.00
+  value_field      675   21.5    11.31      9.63    0.652  +0.045  0.084   0.00
+  perturbation reach (held-out corr. of an injected L_k perturbation with the fields): L1 0.871

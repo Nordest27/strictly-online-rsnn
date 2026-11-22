@@ -1,0 +1,2 @@
+cov_act     reward/best per 2000: 0.46 0.47 0.48 0.50 0.50 0.52 0.52 0.53 0.53 0.54  | noise |corr| 0.607  top partner same location 0.28  hidden Hz 46
+drift       reward/best per 2000: 0.45 0.46 0.47 0.46 0.46 0.45 0.45 0.45 0.45 0.46  | noise |corr| 0.000  top partner same location nan  hidden Hz 307

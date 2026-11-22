@@ -1,0 +1,87 @@
+{
+ "name": "local_sparse-cal",
+ "hp": {
+  "toroidal": "local",
+  "local": {
+   "sigma_cells": 2.5,
+   "p_max": 0.5
+  }
+ },
+ "calibrated": true,
+ "per_pop": [
+  {
+   "pop": "L1_E",
+   "n": 1200,
+   "hz": 15.933022222222224,
+   "dim": 14.795651631271761,
+   "dim_counts": 12.543774596701029,
+   "decode": 0.14444444444444443,
+   "active": 1.0,
+   "input_r2": 0.7370339477427166,
+   "psi": 0.1609700620174408,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "L1_I",
+   "n": 675,
+   "hz": 16.608928395061728,
+   "dim": 14.535238336828424,
+   "dim_counts": 12.363025786162098,
+   "decode": 0.1302222222222222,
+   "active": 1.0,
+   "input_r2": 0.7093463029406654,
+   "psi": 0.16070754826068878,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "policy_field",
+   "n": 675,
+   "hz": 18.714824691358025,
+   "dim": 5.912937700390202,
+   "dim_counts": 7.395033564821978,
+   "decode": 0.009333333333333324,
+   "active": 1.0,
+   "input_r2": 0.524252652793479,
+   "psi": 0.17459481954574585,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "value_field",
+   "n": 675,
+   "hz": 18.861550617283953,
+   "dim": 5.8995876622756835,
+   "dim_counts": 7.454911326702071,
+   "decode": 0.009333333333333351,
+   "active": 1.0,
+   "input_r2": 0.5194243892564107,
+   "psi": 0.17489992082118988,
+   "psi_dead": 0.0
+  }
+ ],
+ "reach": {
+  "L1": 0.4105571686033052
+ },
+ "score": {
+  "dim_ratio": 1.0,
+  "decode_last": 0.14444444444444443,
+  "decode_ratio": 1.0,
+  "input_r2_ratio": 1.0,
+  "reach_min_max": 1.0
+ },
+ "calibration_factors": {},
+ "snake_config": {
+  "toroidal": "local",
+  "local": {
+   "sigma_cells": 2.5,
+   "p_max": 0.5
+  },
+  "ei_layers": 1,
+  "network": {
+   "layers": [
+    {}
+   ]
+  }
+ },
+ "seconds": 434.1,
+ "log": []
+}

@@ -1,0 +1,12 @@
+seeding with 4 genomes from /home/user/repos/personal/analysis/arch_search_full_v6_l5_relay
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0000/c0000InferenceCompiler_CODE'
+[14:40:13] c0000 score 0.818 (120 s) | best c0000 0.818 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0001/c0001InferenceCompiler_CODE'
+[14:41:46] c0001 score 0.821 (92 s) | best c0001 0.821 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0002/c0002InferenceCompiler_CODE'
+[14:42:55] c0002 score 0.816 (69 s) | best c0001 0.821 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_tau_l5/work/c0003/c0003InferenceCompiler_CODE'

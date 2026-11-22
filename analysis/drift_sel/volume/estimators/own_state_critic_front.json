@@ -1,0 +1,143 @@
+{
+ "vreg": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9533907696632677,
+   "bias (SE units)": 0.34181195820311683,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.7219524175823325,
+   "bias (SE units)": 0.7703917735800159,
+   "reward explained": 0.4718196816481946
+  },
+  "linear combined": {
+   "variance vs none": 0.7211106690369301,
+   "bias (SE units)": 0.7724311172950824,
+   "reward explained": 0.474489552067367
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.738169248645282,
+   "bias (SE units)": 0.6621904875922773,
+   "reward explained": 0.4601449828160345
+  },
+  "own linear": {
+   "variance vs none": 0.9385293838768641,
+   "bias (SE units)": 0.6108799471326447,
+   "reward explained": 0.008793235549280576
+  },
+  "own nonlinear": {
+   "variance vs none": 0.7961826187487974,
+   "bias (SE units)": 0.8537896004870836,
+   "reward explained": 0.12053073671548681
+  },
+  "own + inputs linear": {
+   "variance vs none": 0.7139274795996893,
+   "bias (SE units)": 0.7348042215094073,
+   "reward explained": 0.47503324944400493
+  },
+  "oracle": {
+   "variance vs none": 0.5726975962081651,
+   "bias (SE units)": 0.6052004944426328,
+   "reward explained": 0.6448729294740689
+  }
+ },
+ "rate": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 1.0012977257542568,
+   "bias (SE units)": 0.0148136826162233,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.9319827661671163,
+   "bias (SE units)": 0.20678230222630736,
+   "reward explained": 0.1529908420342378
+  },
+  "linear combined": {
+   "variance vs none": 0.921859275552199,
+   "bias (SE units)": 0.24526886982402538,
+   "reward explained": 0.1619768987643289
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.9243595312318378,
+   "bias (SE units)": 0.20001397656112027,
+   "reward explained": 0.1360997217262892
+  },
+  "own linear": {
+   "variance vs none": 0.9936693192719066,
+   "bias (SE units)": 0.05583902038082295,
+   "reward explained": 0.00451990202124547
+  },
+  "own nonlinear": {
+   "variance vs none": 0.9946774665147659,
+   "bias (SE units)": 0.21491777535119366,
+   "reward explained": -0.019437689475475306
+  },
+  "own + inputs linear": {
+   "variance vs none": 0.9066563686387381,
+   "bias (SE units)": 0.2192516634866329,
+   "reward explained": 0.17347863304442662
+  },
+  "oracle": {
+   "variance vs none": 0.7136829531721793,
+   "bias (SE units)": 0.3351404949775173,
+   "reward explained": 0.542939134481619
+  }
+ },
+ "decorr": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.6010639436761028,
+   "bias (SE units)": 0.3937725197443852,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.5704498563502982,
+   "bias (SE units)": 0.8231036891671553,
+   "reward explained": 0.033221534153553
+  },
+  "linear combined": {
+   "variance vs none": 0.5734107449943544,
+   "bias (SE units)": 0.8190268624944248,
+   "reward explained": 0.03451543301295723
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.5740715616387364,
+   "bias (SE units)": 0.7635456823474068,
+   "reward explained": 0.0336417196378509
+  },
+  "own linear": {
+   "variance vs none": 0.5945586468420629,
+   "bias (SE units)": 0.4408935870833307,
+   "reward explained": 0.0012135950814767815
+  },
+  "own nonlinear": {
+   "variance vs none": 0.6154390238166376,
+   "bias (SE units)": 0.5814666946505145,
+   "reward explained": 0.01787550953709538
+  },
+  "own + inputs linear": {
+   "variance vs none": 0.5683373524656322,
+   "bias (SE units)": 0.847189791315935,
+   "reward explained": 0.03473479720349165
+  },
+  "oracle": {
+   "variance vs none": 0.4371766630545497,
+   "bias (SE units)": 0.6892400893596757,
+   "reward explained": 0.3490312463428924
+  }
+ }
+}

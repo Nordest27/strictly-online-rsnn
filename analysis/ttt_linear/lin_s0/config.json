@@ -1,0 +1,12 @@
+{
+ "backend": "single_threaded_cpu",
+ "ei_layers": 0,
+ "network": {
+  "fields": null
+ },
+ "hidden_rule": {
+  "preset": "proposed"
+ },
+ "seed": 0,
+ "csv_output": "outputs_ttt/lin_s0(0).csv"
+}

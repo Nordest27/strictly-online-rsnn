@@ -1,0 +1,1 @@
+route_sym       reward/250: 0.25 0.24 0.25 0.25 0.26 0.25 0.25 0.25 0.26 0.25 0.24 0.25   Hz H 42 motor 19  | neighbour pref cos +0.00 vs far +0.00

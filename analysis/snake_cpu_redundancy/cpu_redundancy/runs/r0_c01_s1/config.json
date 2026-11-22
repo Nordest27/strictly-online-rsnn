@@ -1,0 +1,34 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 20000,
+ "_meta": {
+  "variant": "plastic_inh_1e-6"
+ },
+ "hidden_rule": {
+  "preset": "proposed_homeostat",
+  "homeostat": 1.0,
+  "center_drift": true
+ },
+ "plastic_inhibition": {
+  "eta": 1e-06,
+  "rate": 20.0
+ },
+ "seed": 1,
+ "max_timesteps": 2000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c01_s1",
+ "repetition": 0,
+ "trace_log": false
+}

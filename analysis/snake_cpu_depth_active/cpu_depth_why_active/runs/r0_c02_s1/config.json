@@ -1,0 +1,27 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "ei_layers": 3,
+ "monitor": true,
+ "monitor_every": 5000,
+ "probe": {
+  "moves": 5000
+ },
+ "_meta": {
+  "variant": "grad_homeo_f40"
+ },
+ "hidden_rule": {
+  "preset": "gradient_only_homeostat",
+  "homeostat": 1.0
+ },
+ "f_target": 40.0,
+ "c_reg": 0.001,
+ "seed": 1,
+ "max_timesteps": 3000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c02_s1",
+ "repetition": 0,
+ "trace_log": false
+}

@@ -1,0 +1,12 @@
+full_reward/sel_full_s0
+full_reward/sel_noG_s0
+full_reward/sel_full_s1
+full_reward/sel_noG_s1
+full_reward/con_fullA_s0
+full_reward/con_fullB_s0
+full_reward/con_fullA_s1
+full_reward/con_fullB_s1
+depth_contrast/L3_ipfloor_s0
+depth_contrast/L3_ipfloor_s1
+depth_contrast/L2_ipfloor_s0
+depth_contrast/L2_ipfloor_s1

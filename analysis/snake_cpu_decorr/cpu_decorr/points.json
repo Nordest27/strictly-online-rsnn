@@ -1,0 +1,103 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "toroidal": "legacy",
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 10000,
+  "dale": {
+   "every_episodes": 1,
+   "local": true
+  }
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "base"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "cov"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "mode": "covariance"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "cov_norm"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "mode": "covariance",
+     "normalise": true
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "cov_norm_eta1e-4"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 0.0001,
+     "mode": "covariance",
+     "normalise": true
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "cov_norm_creg30"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "mode": "covariance",
+     "normalise": true
+    },
+    "c_reg": 0.001,
+    "f_target": 30.0
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "creg30"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "c_reg": 0.001,
+    "f_target": 30.0
+   }
+  }
+ ]
+}

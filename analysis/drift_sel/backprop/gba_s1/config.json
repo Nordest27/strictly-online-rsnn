@@ -1,0 +1,85 @@
+{
+ "monitor": true,
+ "monitor_every": 10000,
+ "backend": "single_threaded_cpu",
+ "hidden_rule": {
+  "preset": "proposed",
+  "gradient": 1.0,
+  "diagnose_parts": false,
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 1.0
+  },
+  "homeostat": 1.0,
+  "center_eligibility": 0.9999,
+  "drift": 0.0,
+  "backprop": 1.0,
+  "backprop_signal": "activity",
+  "center_drift": true
+ },
+ "c_reg": 0.0001,
+ "seed": 1,
+ "max_timesteps": 1500000,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "csv_prefix": "gba_s1",
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.5,
+ "episodic_traces": true,
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 1,
+  "decoder": "lse",
+  "beta": 1.0
+ },
+ "selection": {
+  "n_candidates": 8,
+  "seed": 1
+ },
+ "move_log": {
+  "probe_every": 1000000000,
+  "probe_moves": 16
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 0.75,
+  "p_max": 0.791,
+  "input_sigma_cells": 1.857,
+  "inhibition_scale": 7.963,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.891,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": null,
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 1.5215899595906754,
+     "sd_scale": 0.15215899595906757
+    },
+    "to_next_i": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ],
+  "input": {
+   "mean_scale": 0.18889108084731665,
+   "sd_scale": 0.09444554042365833
+  }
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 2,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50
+}

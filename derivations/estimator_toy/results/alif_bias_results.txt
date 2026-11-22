@@ -1,0 +1,32 @@
+
+== slow reward (window): sigma=0.05, firing prob/step=0.284, N=1600000, 66s
+   truth (finite diff.)      : [ 2.3572  4.3183 -0.0252 -1.5709  2.7654 12.9222]
+   dist_eprop   cos= 0.954 (halves 0.954/0.954)  scale=    2.71  rel.noise/sample=     4.1  mean=[12.756  14.3194  7.6076  1.3445  9.8341 33.1141]
+   trace_nopsi  cos= 0.976 (halves 0.976/0.976)  scale=   17.91  rel.noise/sample=     5.5  mean=[ 64.6981  87.4217  33.2773   5.9706  65.2736 224.7344]
+   step_pretr   cos= 0.868 (halves 0.867/0.869)  scale=   10.34  rel.noise/sample=     4.9  mean=[ 29.0117  47.8311 -19.2153  64.8534  33.1961 140.5234]
+   step_psi     cos= 0.962 (halves 0.961/0.963)  scale=    1.36  rel.noise/sample=     7.5  mean=[ 3.6015  5.8184 -0.9768  3.1791  4.3871 18.0832]
+   exact        cos= 0.994 (halves 0.995/0.994)  scale=    1.02  rel.noise/sample=    10.4  mean=[ 2.3786  4.2214  0.0475 -3.1047  2.7677 13.0493]
+
+== jagged reward: sigma=0.05, firing prob/step=0.284, N=1600000, 68s
+   truth (finite diff.)      : [22.8924 19.5731  5.9211 14.1862 12.4895 -1.9686]
+   dist_eprop   cos= 0.852 (halves 0.850/0.854)  scale=    1.60  rel.noise/sample=    14.0  mean=[40.2788 25.9051 23.8979 27.1004 15.1005 28.0431]
+   trace_nopsi  cos= 0.860 (halves 0.858/0.863)  scale=   15.26  rel.noise/sample=    12.7  mean=[357.4652 239.5674 214.1785 329.7302 123.1507 235.0318]
+   step_pretr   cos= 0.888 (halves 0.885/0.890)  scale=    8.45  rel.noise/sample=    13.7  mean=[213.9432 122.4329 124.7741 185.9242  39.4911  75.1723]
+   step_psi     cos= 0.916 (halves 0.912/0.921)  scale=    0.96  rel.noise/sample=    22.4  mean=[24.7198 16.0651 14.5446 15.1661  7.2799  8.7351]
+   exact        cos= 0.996 (halves 0.995/0.997)  scale=    1.08  rel.noise/sample=    21.5  mean=[25.3068 19.429   8.6323 16.5531 12.4771 -1.8017]
+
+== slow reward (window): sigma=0.02, firing prob/step=0.284, N=1600000, 65s
+   truth (finite diff.)      : [ -9.8611  -7.4318  -0.8828 -11.7656  -2.471    6.4722]
+   dist_eprop   cos= 0.842 (halves 0.842/0.843)  scale=    2.33  rel.noise/sample=     6.6  mean=[-13.5174 -11.9847   2.9843 -47.5796  -2.7904   0.9523]
+   trace_nopsi  cos= 0.795 (halves 0.794/0.796)  scale=   28.34  rel.noise/sample=     4.6  mean=[-193.7305 -165.9829   19.8674 -597.2593  -32.0454  -93.6438]
+   step_pretr   cos= 0.899 (halves 0.898/0.900)  scale=   13.41  rel.noise/sample=     6.5  mean=[ -72.5794  -68.8949    1.2411 -249.7371  -22.1374   51.9121]
+   step_psi     cos= 0.891 (halves 0.893/0.890)  scale=    1.81  rel.noise/sample=     8.6  mean=[ -9.5649  -9.3508   0.4416 -34.1949  -3.989    6.0631]
+   exact        cos= 0.897 (halves 0.895/0.898)  scale=    1.93  rel.noise/sample=     8.5  mean=[-12.2058  -9.5634   0.5871 -35.9108  -2.9854   5.129 ]
+
+== jagged reward: sigma=0.02, firing prob/step=0.284, N=1600000, 64s
+   truth (finite diff.)      : [88.5168 56.8798 75.6314 34.7179 34.0623 21.9699]
+   dist_eprop   cos= 0.945 (halves 0.945/0.945)  scale=    3.09  rel.noise/sample=     3.2  mean=[256.2783 162.399  280.1755  47.214   56.5678 186.2033]
+   trace_nopsi  cos= 0.954 (halves 0.954/0.954)  scale=   25.65  rel.noise/sample=     3.5  mean=[2160.5685 1349.8134 2148.7144  715.7368  417.1743 1551.9198]
+   step_pretr   cos= 0.945 (halves 0.944/0.945)  scale=   12.14  rel.noise/sample=     4.2  mean=[967.1592 697.7647 968.5285 369.3589 261.7656 822.9672]
+   step_psi     cos= 0.940 (halves 0.940/0.940)  scale=    1.83  rel.noise/sample=     5.0  mean=[145.4293 104.4061 156.8388  32.0379  44.6248 122.3415]
+   exact        cos= 0.986 (halves 0.985/0.987)  scale=    1.33  rel.noise/sample=     7.3  mean=[109.2804  65.7418 121.1999  39.9829  35.0014  44.6604]

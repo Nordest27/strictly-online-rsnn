@@ -1,0 +1,2 @@
+route_link      reward/250: 0.29 0.38 0.40 0.41 0.43 0.44 0.45 0.45 0.46 0.47 0.49 0.50   Hz H 51 motor 18  link corr with W_hm +0.98  | neighbour pref cos -0.02 vs far -0.01
+route_link+own  reward/250: 0.29 0.36 0.38 0.41 0.42 0.44 0.46 0.46 0.48 0.47 0.49 0.50   Hz H 45 motor 17  link corr with W_hm +0.98  | neighbour pref cos +0.00 vs far -0.00

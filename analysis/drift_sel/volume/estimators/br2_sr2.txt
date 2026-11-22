@@ -1,0 +1,2 @@
+HID=spk MOT=rate route_sym  per 2000: 0.25 0.25 0.24 0.25 0.25 0.25 0.26 0.25 0.25 0.25  hidden Hz 24
+HID=spk MOT=rate frozen     per 2000: 0.25 0.25 0.25 0.25 0.24 0.24 0.25 0.24 0.24 0.24  hidden Hz 26

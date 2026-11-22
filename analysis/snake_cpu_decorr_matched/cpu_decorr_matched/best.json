@@ -1,0 +1,50 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "legacy",
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 10000,
+ "dale": {
+  "every_episodes": 1,
+  "local": true
+ },
+ "_meta": {
+  "study": "cpu_decorr_matched",
+  "config": 0,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "cov_scale_eta1e-3_s1e-2"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 0.001,
+     "mode": "covariance",
+     "scaling": 0.01
+    }
+   }
+  },
+  "final_rung_score": -0.04989071684011365,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "proposed"
+ },
+ "plastic_inhibition": {
+  "eta": 0.001,
+  "mode": "covariance",
+  "scaling": 0.01
+ }
+}

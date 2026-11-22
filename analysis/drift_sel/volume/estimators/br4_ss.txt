@@ -1,0 +1,2 @@
+HID=spk MOT=spk route_sym  per 2000: 0.25 0.27 0.27 0.29 0.32 0.32 0.35 0.37 0.37 0.39  hidden Hz 28  action entropy 0.99
+HID=spk MOT=spk frozen     per 2000: 0.25 0.26 0.26 0.27 0.28 0.28 0.30 0.31 0.31 0.33  hidden Hz 20  action entropy 1.00

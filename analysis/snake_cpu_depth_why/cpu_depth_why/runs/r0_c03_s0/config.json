@@ -1,0 +1,27 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "ei_layers": 3,
+ "monitor": true,
+ "monitor_every": 5000,
+ "probe": {
+  "moves": 5000
+ },
+ "_meta": {
+  "variant": "prop_homeo_c_frozen_ro"
+ },
+ "hidden_rule": {
+  "preset": "proposed_homeostat",
+  "homeostat": 1.0,
+  "center_drift": true
+ },
+ "train_readout": false,
+ "seed": 0,
+ "max_timesteps": 3000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c03_s0",
+ "repetition": 0,
+ "trace_log": false
+}

@@ -1,0 +1,31 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "monitor": true,
+ "monitor_every": 20000,
+ "hidden_rule": {
+  "preset": "gradient_only"
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "seed": 0,
+ "max_timesteps": 1000000,
+ "min_episodes": 0,
+ "csv_prefix": "gradient_only_s0",
+ "repetition": 0,
+ "trace_log": false,
+ "episodic_traces": true,
+ "selection": {
+  "n_candidates": 8
+ },
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 0,
+  "motor_log_syn_sigma": 1.5
+ }
+}

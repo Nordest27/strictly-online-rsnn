@@ -1,0 +1,1621 @@
+import logging
+import numpy as np
+
+from copy import deepcopy
+from typing import Iterator, Sequence
+from pygenn import CustomUpdateVarAccess, SynapseMatrixType, VarAccess
+from . import Compiler
+from .compiled_training_network import CompiledTrainingNetwork
+from .deep_r import RewiringRecord
+from .. import Connection, Population, Network
+from ..callbacks import (BatchProgressBar, CustomUpdateOnBatchBegin,
+                         CustomUpdateOnBatchEnd, CustomUpdateOnEpochBegin,
+                         CustomUpdateOnTimestepEnd)
+from ..communicators import Communicator
+from ..losses import Loss, SparseCategoricalCrossentropy
+from ..metrics import MetricsType
+from ..neurons import (AdaptiveLeakyIntegrateFire, Input,
+                       LeakyIntegrate, LeakyIntegrateFire, 
+                       LeakyIntegrateFireInput)
+from ..optimisers import Optimiser
+from ..synapses import Delta
+from ..utils.callback_list import CallbackList
+from ..utils.model import (CustomUpdateModel, NeuronModel,
+                           SynapseModel, WeightUpdateModel)
+from ..utils.snippet import ConnectivitySnippet
+
+from copy import deepcopy
+from pygenn import create_var_ref, create_wu_var_ref
+from .compiler import create_reset_custom_update
+from .deep_r import add_deep_r
+from .dale_rewiring import add_dale_rewiring
+from ..utils.module import get_object, get_object_mapping
+from ..utils.network import get_underlying_conn
+from ..utils.value import is_value_constant
+
+from ml_genn.optimisers import default_optimisers
+from ml_genn.losses import default_losses
+from enum import Enum
+
+logger = logging.getLogger(__name__)
+
+default_params = {
+    AdaptiveLeakyIntegrateFire: {"relative_reset": True,
+                                 "integrate_during_refrac": True},
+    LeakyIntegrate: {"scale_i": False}, 
+    LeakyIntegrateFire: {"relative_reset": True, 
+                         "integrate_during_refrac": True,
+                         "scale_i": False},
+    LeakyIntegrateFireInput: {"relative_reset": True, 
+                              "integrate_during_refrac": True,
+                              "scale_i": False}}
+
+class PolicyTypes(Enum):
+    CATEGORICAL = "categorical"
+    GAUSSIAN_TRACE = "gaussian_trace"
+    GENERIC = "generic"
+
+def _has_connection_to_output(pop):
+    # Loop through population's outgoing connections
+    for c in pop.outgoing_connections:
+        # If target of connection has a readout 
+        # i.e. it's an output, return true
+        if c().target().neuron.readout is not None:
+            return True
+
+    return False
+
+def _has_feedback_from_output(pop):
+    # Loop through population's outgoing connections
+    for c in pop.outgoing_connections:
+        # If target of connection has a readout 
+        # i.e. it's an output, return true
+        if c().is_feedback:
+            return True   # Loop t
+
+    return False
+
+class CompileState:
+    def __init__(self, losses, readouts):
+        self.losses = get_object_mapping(losses, readouts,
+                                         Loss, "Loss", default_losses)
+        self._tau_mem = None
+        self._tau_adapt = None
+        self.feedback_connections = []
+        
+        self.sigma_eps_connections = []
+
+        self.tde_transport_connections = []
+        self.policy_reward_connections = []
+        self.pert_eps_transport_connections = []
+        self.value_feedback_connections = []
+        self.policy_feedback_connections = []
+        self.value_regularisation_connections = []
+        self.policy_regularisation_connections = []
+
+        self.weight_optimiser_connections = []
+        self.bias_optimiser_populations = []
+        self.softmax_populations = []
+        self._neuron_reset_vars = {}
+        self.checkpoint_connection_vars = []
+        self.checkpoint_population_vars = []
+
+    def add_neuron_readout_reset_vars(self, pop):
+        reset_vars = pop.neuron.readout.reset_vars
+        if len(reset_vars) > 0:
+            assert pop not in self._neuron_reset_vars
+            self._neuron_reset_vars[pop] = reset_vars
+
+    def create_reset_custom_updates(self, compiler, genn_model,
+                                    neuron_pops):
+        # Loop through neuron variables to reset
+        for i, (pop, reset_vars) in enumerate(self._neuron_reset_vars.items()):
+            # Create reset model
+            model = create_reset_custom_update(
+                reset_vars,
+                lambda name: create_var_ref(neuron_pops[pop], name))
+
+            # Add custom update
+            compiler.add_custom_update(genn_model, model, 
+                                       "Reset", f"CUResetNeuron{i}")
+
+    @property
+    def is_reset_custom_update_required(self):
+        return len(self._neuron_reset_vars) > 0
+
+    @property
+    def tau_mem(self):
+        assert self._tau_mem is not None
+
+        return self._tau_mem
+
+    @tau_mem.setter
+    def tau_mem(self, tau_mem):
+        if self._tau_mem is None:
+            self._tau_mem = tau_mem
+        if self._tau_mem != tau_mem:
+            raise NotImplementedError("E-prop compiler doesn't "
+                                      "support neurons with "
+                                      "different time constants")
+
+    @property
+    def tau_adapt(self):
+        assert self._tau_adapt is not None
+
+        return self._tau_adapt
+
+    @tau_adapt.setter
+    def tau_adapt(self, tau_adapt):
+        if self._tau_adapt is None:
+            self._tau_adapt = tau_adapt
+        if self._tau_adapt != tau_adapt:
+            raise NotImplementedError("E-prop compiler doesn't "
+                                      "support neurons with "
+                                      "different time constants")
+
+eprop_lif_model = {
+    "params": [("CReg", "scalar"), ("Alpha", "scalar"), 
+               ("FTarget", "scalar"), ("AlphaFAv", "scalar"),
+               ("Vthresh_post", "scalar")],
+    "vars": [("g", "scalar", VarAccess.READ_ONLY),
+             ("eFiltered", "scalar"), ("DeltaG", "scalar")],
+    "pre_vars": [("ZFilter", "scalar")],
+    "post_vars": [("Psi", "scalar"), ("FAvg", "scalar")],
+    "post_neuron_var_refs": [("RefracTime_post", "scalar"), ("V_post", "scalar"),
+                             ("E_post", "scalar")],
+
+    "pre_spike_code": """
+    ZFilter += 1.0;
+    """,
+    "pre_dynamics_code": """
+    ZFilter *= Alpha;
+    """,
+
+    "post_spike_code": """
+    FAvg += (1.0 - AlphaFAv);
+    """,
+    "post_dynamics_code": """
+    FAvg *= AlphaFAv;
+    if (RefracTime_post > 0.0) {
+      Psi = 0.0;
+    }
+    else {
+      Psi = (1.0 / Vthresh_post) * 0.3 * fmax(0.0, 1.0 - fabs((V_post - Vthresh_post) / Vthresh_post));
+    }
+    """,
+
+    "pre_spike_syn_code": """
+    addToPost(g);
+    """,
+    "synapse_dynamics_code": """
+    const scalar e = ZFilter * Psi;
+    scalar eF = eFiltered;
+    eF = (eF * Alpha) + e;
+    DeltaG += (eF * E_post) + ((FAvg - FTarget) * CReg * e);
+    eFiltered = eF;
+    """}
+
+
+eprop_lif_pert_model = {
+    "params": [("CReg", "scalar"), ("Alpha", "scalar"), 
+               ("FTarget", "scalar"), ("AlphaFAv", "scalar"),
+               ("Vthresh_post", "scalar")],
+    "vars": [("g", "scalar", VarAccess.READ_ONLY),
+             ("eFiltered", "scalar"), ("DeltaG", "scalar"),
+             ("NoiseTrace", "scalar"),
+             ("RLNoiseTrace", "scalar"),],
+    "pre_vars": [("ZFilter", "scalar")],
+    "post_vars": [("Psi", "scalar"), ("FAvg", "scalar")],
+    "post_neuron_var_refs": [("RefracTime_post", "scalar"), ("V_post", "scalar"),
+                             ("E_post", "scalar"), ("Ebase_post", "scalar"), ("Noise", "scalar")],
+
+    "pre_spike_code": """
+    ZFilter += 1.0;
+    """,
+    "pre_dynamics_code": """
+    ZFilter *= Alpha;
+    """,
+
+    "post_spike_code": """
+    FAvg += (1.0 - AlphaFAv);
+    """,
+    "post_dynamics_code": """
+    FAvg *= AlphaFAv;
+    if (RefracTime_post > 0.0) {
+      Psi = 0.0;
+    }
+    else {
+      Psi = (1.0 / Vthresh_post) * 0.3 * fmax(0.0, 1.0 - fabs((V_post - Vthresh_post) / Vthresh_post));
+    }
+    """,
+
+    "pre_spike_syn_code": """
+    scalar eps = 0.01 * Noise;
+    addToPost(g + eps);
+    NoiseTrace += eps;
+    """,
+
+    "synapse_dynamics_code": """
+    const scalar e = ZFilter * Psi;
+    scalar eF = eFiltered;
+    eF = (eF * Alpha) + e;
+    
+    DeltaG += 0.0 * (eF * E_post) + ((FAvg - FTarget) * CReg * e) + e * NoiseTrace * fabs(E_post);
+    
+    NoiseTrace *= Alpha;
+    eFiltered = eF;
+    """}
+
+eprop_alif_model = {
+    "params": [("CReg", "scalar"), ("Alpha", "scalar"), ("Rho", "scalar"),
+               ("FTarget", "scalar"),("AlphaFAv", "scalar"),
+               ("Vthresh_post", "scalar"), ("Beta_post", "scalar")],
+    "vars": [("g", "scalar", VarAccess.READ_ONLY),
+             ("eFiltered", "scalar"), ("epsilonA", "scalar"),
+             ("DeltaG", "scalar")],
+    "pre_vars": [("ZFilter", "scalar")],
+    "post_vars": [("Psi", "scalar"), ("FAvg", "scalar")],
+    "post_neuron_var_refs": [("RefracTime_post", "scalar"), ("V_post", "scalar"),
+                             ("A_post", "scalar"), ("E_post", "scalar")],
+ 
+    "pre_spike_code": """
+    ZFilter += 1.0;
+    """,
+    "pre_dynamics_code": """
+    ZFilter *= Alpha;
+    """,
+
+    "post_spike_code": """
+    FAvg += (1.0 - AlphaFAv);
+    """,
+    "post_dynamics_code": """
+    FAvg *= AlphaFAv;
+    if (RefracTime_post > 0.0) {
+      Psi = 0.0;
+    }
+    else {
+      Psi = (1.0 / Vthresh_post) * 0.3 * fmax(0.0, 1.0 - fabs((V_post - (Vthresh_post + (Beta_post * A_post))) / Vthresh_post));
+    }
+    """,
+
+    "pre_spike_syn_code": """
+    addToPost(g);
+    """,
+    "synapse_dynamics_code": """
+    // Calculate some common factors in e and epsilon update
+    scalar epsA = epsilonA;
+    const scalar psiZFilter = Psi * ZFilter;
+    const scalar psiBetaEpsilonA = Psi * Beta_post * epsA;
+
+    // Calculate e and episilonA
+    const scalar e = psiZFilter - psiBetaEpsilonA;
+    epsilonA = psiZFilter + ((Rho * epsA) - psiBetaEpsilonA);
+
+    // Calculate filtered version of eligibility trace
+    scalar eF = eFiltered;
+    eF = (eF * Alpha) + e;
+    
+    // Apply weight update
+    DeltaG += (eF * E_post) + ((FAvg - FTarget) * CReg * e);
+    eFiltered = eF;
+    """}
+
+output_learning_model = {
+    "params": [("Alpha", "scalar")],
+    "vars": [("g", "scalar", VarAccess.READ_ONLY), ("DeltaG", "scalar")],
+    "pre_vars": [("ZFilter", "scalar")],
+    "post_neuron_var_refs": [("E_post", "scalar")],
+
+    "pre_spike_code": """
+    ZFilter += 1.0;
+    """,
+    "pre_dynamics_code": """
+    ZFilter *= Alpha;
+    """,
+
+    "pre_spike_syn_code": """
+    addToPost(g);
+    """,
+    "synapse_dynamics_code": """
+    DeltaG += ZFilter * E_post;
+    addToPre(g * E_post);
+    """}
+
+output_random_learning_model = deepcopy(output_learning_model)
+output_random_learning_model["synapse_dynamics_code"] =  """
+    DeltaG += ZFilter * E_post;
+"""
+output_adaptive_feedback_learning_model = deepcopy(output_learning_model)
+del output_adaptive_feedback_learning_model["pre_spike_syn_code"] 
+ 
+eprop_alif_td_model = {
+    "params": [("CReg", "scalar"), ("Alpha", "scalar"), ("Rho", "scalar"),
+               ("FTarget", "scalar"),("AlphaFAv", "scalar"),
+               ("Vthresh_post", "scalar"),
+               ("Lambda", "scalar")],
+    "vars": [("g", "scalar", VarAccess.READ_ONLY),
+             ("eFiltered", "scalar"),
+             ("epsilonA", "scalar"),
+             ("DeltaG", "scalar"),
+             ("RLTrace", "scalar"),
+             ("RLEpsTrace", "scalar"),
+             ("NoiseTrace", "scalar"),
+             ("RLNoiseTrace", "scalar"),
+             ("ScoreMean", "scalar"),
+             ("LogSynSig", "scalar"),
+             ("SynSig", "scalar"),
+             ("SynSigTrace", "scalar"),
+             ("UpdateCount", "scalar")],
+    "pre_vars": [("ZFilter", "scalar")],
+    "post_vars": [
+        ("Psi", "scalar"), 
+        ("FAvg", "scalar"), 
+        ("FAvgTrace", "scalar"),
+        ("Z", "scalar"),
+        ("PrevV", "scalar"),
+        ("NeuronNoiseTrace", "scalar"),
+        ("PsiBar", "scalar"),
+        ("AbsTd", "scalar"),
+        ("DVc", "scalar")],
+    "pre_neuron_var_refs": [
+        ("Noise1_pre", "scalar"),
+    ],
+    "post_neuron_var_refs": [
+        ("RefracTime_post", "scalar"), 
+        ("V_post", "scalar"),
+        ("Beta_post", "scalar"),    
+        ("A_post", "scalar"), 
+        ("E_post", "scalar"),
+        ("PG_post", "scalar"),
+        ("VE_post", "scalar"),
+        ("PR_post", "scalar"),
+        ("VR_post", "scalar"),
+        ("TdE_post", "scalar"),
+        ("PertEps_post", "scalar"),
+        ("PertEpsTrace_post", "scalar"),
+        ("Sigma_post", "scalar"),
+        ("PGEps_post", "scalar"),
+        ("PRew_post", "scalar"),
+        ("Noise1", "scalar"),
+        ("Noise2", "scalar"),
+        ("Noise3", "scalar"),
+        ("Noise4", "scalar"),
+    ],
+
+    "pre_spike_code": """
+    ZFilter += 1.0;
+    """,
+    "pre_dynamics_code": """
+    ZFilter *= Alpha;
+    """,
+
+    "post_spike_code": """
+    FAvg += (1.0 - AlphaFAv);
+    Z = 1.0;
+    """,
+    "post_dynamics_code": """
+    DVc = fabs(V_post - (PrevV - Vthresh_post * Z));   // change from the previous post-reset voltage
+    Z = 0.0;
+    FAvg *= AlphaFAv;
+
+    scalar fireReg = fabs(FAvg - FTarget);
+    FAvgTrace = Lambda * FAvgTrace + (1.0 - Lambda) * fabs(fireReg);
+
+    if ( RefracTime_post > 0.0 ) {
+      Psi = 0.0;
+    }
+    else {
+      Psi = (1.0 / Vthresh_post) * 0.3 * fmax(0.0, 1.0 - fabs((V_post - (Vthresh_post + (Beta_post * A_post))) / Vthresh_post));
+    }
+
+    PrevV = V_post;
+    __POST_EXTRA__
+    """,
+
+    "pre_spike_syn_code": """
+    // Activate for better performance on PacMan with dist eprop
+    // if (RefracTime_post <= 0.0) {
+        scalar Noise = Noise1;
+        
+        // const scalar selector = ((int)(1e7*eFiltered)) % 2;
+        // if (selector == 0) Noise = Noise1;
+        // else if (selector == 1) Noise = Noise2;
+        // else if (selector == 2) Noise = Noise3;
+        // else Noise = Noise4;
+
+        SynSig = exp(LogSynSig - 5);
+        scalar eps = SynSig * Noise;
+        addToPost(g + eps);
+        NoiseTrace += eps;
+    // }
+    """,
+
+    # "pre_spike_syn_code": """
+    # // --- Use existing per-neuron Gaussian noise as entropy source, not as delivered noise ---
+    # uint32_t bitsPre  = (uint32_t)((Noise1_pre + 20.0) * 1e6);
+    # uint32_t bitsPost = (uint32_t)((Noise1 + 20.0) * 1e6);
+
+    # uint32_t tBits;
+    # { scalar tOff = t + 20.0; tBits = (uint32_t)(tOff * 1e6); }
+
+    # uint32_t synId = (uint32_t)id_pre * 73856093u ^ (uint32_t)id_post * 19349663u;
+    # uint32_t s0 = bitsPre ^ bitsPost ^ synId ^ tBits;
+
+    # // splitmix32-style mix, applied twice for two independent uniforms
+    # // (x >> n) rewritten as (x / 2^n) since GeNN's transpiler doesn't support >>
+    # uint32_t x = s0;
+    # x = x ^ (x / 65536u); x = x * 0x7feb352du;
+    # x = x ^ (x / 32768u); x = x * 0x846ca68bu;
+    # x = x ^ (x / 65536u);
+    # uint32_t h1 = x;
+
+    # x = s0 + 0x9E3779B9u;
+    # x = x ^ (x / 65536u); x = x * 0x7feb352du;
+    # x = x ^ (x / 32768u); x = x * 0x846ca68bu;
+    # x = x ^ (x / 65536u);
+    # uint32_t h2 = x;
+
+    # const scalar u1 = (h1 + 0.5) / 4294967296.0;
+    # const scalar u2 = (h2 + 0.5) / 4294967296.0;
+
+    # // Box-Muller: the actual per-synapse independent Gaussian
+    # const scalar synapseNoise = sqrt(-2.0 * log(u1)) * cos(2.0 * 3.14159265359 * u2);
+    
+    # SynSig = exp(LogSynSig - 5);
+    # scalar eps = SynSig * synapseNoise;
+    # addToPost(g + eps);
+    # NoiseTrace += eps;
+    # """,
+
+    "synapse_dynamics_code": """
+    __DELTAV__
+    __LOCAL_TRACE__
+
+    // if (g > 0) DeltaG += 1e-4;
+    // else DeltaG -= 1e-4;
+    
+    // UpdateCount *= AlphaFAv;
+    // if (DeltaG == 0.0) UpdateCount += (1.0 - AlphaFAv);
+    
+    __REWARD__
+    
+    DeltaG += reward * (RLTrace + RLNoiseTrace)
+       - 0.01 * deltaV * locTrace
+       + 0.0 * CReg * (PR_post + VR_post) * eFiltered;
+    
+    // --- Standard ALIF e-prop eligibility update ---
+    scalar epsA = epsilonA;
+    const scalar psiZFilter = Psi * ZFilter;
+    const scalar psiBetaEpsilonA = Psi * Beta_post * epsA;
+
+    const scalar e = psiZFilter - psiBetaEpsilonA;
+    epsilonA = psiZFilter + ((Rho * epsA) - psiBetaEpsilonA);
+
+    // Voltage Regularization
+    const scalar VReg = (
+        (fmax(0.0, V_post - (Vthresh_post + (Beta_post * A_post))) +  
+        fmax(0.0, -V_post - (Vthresh_post + (Beta_post * A_post)))
+        )
+    );
+    DeltaG += -CReg * VReg * locTrace + 0.0 * CReg * VReg * (ZFilter - Beta_post * epsA);
+
+    eFiltered = (eFiltered * Alpha) + e;
+
+    // Firing-rate regularisation term
+    const scalar fireReg = (FAvg - FTarget);
+    scalar fireRegReward = FAvgTrace - fabs(fireReg);
+
+    DeltaG += CReg * fireReg * eFiltered + CReg * fireRegReward * locTrace;
+
+    SynSig = exp(LogSynSig - 5);
+    // const scalar NormPertEpsTrace = (1.0 - Alpha * Alpha) * PertEpsTrace_post / (Sigma_post * Sigma_post + 1e-6);
+    const scalar NormNoiseTrace = (1.0 - Alpha * Alpha) * NoiseTrace / (SynSig * SynSig + 1e-6);
+    // const scalar NormNoiseTrace = NoiseTrace / (SynSig * SynSig + 1e-6);
+
+    // RLTrace = Lambda * RLTrace + eFiltered * ( 1.0 * PG_post - 0.1 * VE_post + 0.0 * PGEps_post );
+    // RLEpsTrace = Lambda * RLEpsTrace + e * NormPertEpsTrace;
+    __RLNOISE_UPDATE__
+    __QTRACE_UPDATE__
+
+    // SynSigTrace = SynSigTrace * 0.9 + Psi * ((1.0 - Alpha * Alpha) * NoiseTrace * NoiseTrace / (SynSig * SynSig + 1e-6) - 1.0);
+    
+    // LogSynSig = fmax(fmin(
+    //     LogSynSig + 1e-6 * TdE_post * SynSigTrace
+    //    , -2.0 + 5), -15.0 + 5);
+
+    NoiseTrace *= Alpha;
+
+    // addToPre( g * Psi * NormPertEpsTrace );
+    // addToPre( g * Psi * NormNoiseTrace );
+    
+    // addToPre( deltaV );
+    """
+}
+
+output_value_learning_model = {
+    "params": [
+        ("Alpha", "scalar"),
+        ("GammaLambda", "scalar"),
+        ("RetE", "scalar")
+    ],
+    "vars": [
+        ("g", "scalar", VarAccess.READ_ONLY), 
+        ("DeltaG", "scalar"), 
+        ("RLTrace", "scalar"),
+    ],
+    "pre_vars": [("ZFilter", "scalar")],
+    "post_neuron_var_refs": [
+        ("E_post", "scalar"),
+        ("ValReg_post", "scalar")
+    ],
+
+    "pre_spike_code": """
+    ZFilter += 1.0;
+    """,
+    "pre_dynamics_code": """
+    ZFilter *= Alpha;
+    """,
+
+    "pre_spike_syn_code": """
+    addToPost(g);
+    """,
+    "synapse_dynamics_code": """
+    DeltaG += RLTrace * E_post + ZFilter * ValReg_post;
+    RLTrace = GammaLambda * RLTrace - ZFilter;
+    
+    if (RetE == 0) 
+        addToPre(g);
+    else 
+        addToPre(g * E_post);
+
+    """}
+
+output_value_random_learning_model = deepcopy(output_value_learning_model)
+output_value_random_learning_model["synapse_dynamics_code"] =  """
+    DeltaG += RLTrace * E_post + ZFilter * ValReg_post;
+    RLTrace = GammaLambda * RLTrace - ZFilter;
+"""
+output_value_adaptive_feedback_learning_model = deepcopy(output_value_learning_model)
+del output_value_adaptive_feedback_learning_model["pre_spike_syn_code"]
+output_value_adaptive_feedback_learning_model["post_neuron_var_refs"] += [("F_post", "scalar")]
+output_value_adaptive_feedback_learning_model["synapse_dynamics_code"] =  """
+    DeltaG += RLTrace * E_post + ZFilter * ValReg_post;
+    RLTrace = GammaLambda * RLTrace - ZFilter;
+    
+    if (RetE == 0) 
+        addToPre(g);
+    else 
+        addToPre(g * F_post);
+"""
+
+# --- NEW: TD(λ) versions for policy head ---
+output_policy_learning_model = {
+    "params": [
+        ("Alpha", "scalar"),       
+        ("Lambda", "scalar")
+    ],
+    "vars": [
+        ("g", "scalar", VarAccess.READ_ONLY),
+        ("DeltaG", "scalar"),
+        ("RLTrace", "scalar"),
+    ],
+    "pre_vars": [("ZFilter", "scalar")],
+    "post_neuron_var_refs": [
+        ("E_post", "scalar"), 
+        ("PG_post", "scalar"),
+        ("TdE_post", "scalar")
+    ],
+
+    "pre_spike_code": """
+    ZFilter += 1.0;
+    """,
+    "pre_dynamics_code": """
+    ZFilter *= Alpha;
+    """,
+
+    "pre_spike_syn_code": """
+    addToPost(g);
+    """,
+    "synapse_dynamics_code": """
+    DeltaG += TdE_post * RLTrace + ZFilter * E_post;
+    RLTrace = Lambda * RLTrace + ZFilter * PG_post;
+    
+    addToPre(g * PG_post);
+    """
+}
+
+output_policy_random_learning_model = deepcopy(output_policy_learning_model)
+output_policy_random_learning_model["synapse_dynamics_code"] = """
+    DeltaG += TdE_post * RLTrace + ZFilter * E_post;
+    RLTrace = Lambda * RLTrace + ZFilter * PG_post;
+"""
+output_policy_adaptive_feedback_learning_model = deepcopy(output_policy_learning_model)
+del output_policy_adaptive_feedback_learning_model["pre_spike_syn_code"]
+output_policy_adaptive_feedback_learning_model["post_neuron_var_refs"] += [("F_post", "scalar")]
+output_policy_adaptive_feedback_learning_model["synapse_dynamics_code"] = """
+    DeltaG += TdE_post * RLTrace + ZFilter * E_post;
+    RLTrace = Lambda * RLTrace + ZFilter * PG_post;
+    
+    addToPre(g * F_post);
+"""
+
+# --- experiment switches (network_exp) ---
+import os as _os
+_EXP_VARIANT = _os.environ.get("RULE_VARIANT", "full")
+_EXP_BETA = float(_os.environ.get("SCORE_BETA", "0.99"))
+_EXP_FREEZE_READOUT = _os.environ.get("FREEZE_READOUT", "0") == "1"
+_EXP_PSIBAR = float(_os.environ.get("PSIBAR_DECAY", "0.99"))
+_EXP_MOD = _os.environ.get("HIDDEN_DELTA", "real")          # real | const | randsign
+_EXP_LOG_SYN_SIG = float(_os.environ.get("LOG_SYN_SIG", "0.0"))   # SynSig = exp(LogSynSig - 5)
+# neuron-local rewards (|dV|, VReg, firing-rate reward) x: whole trace (as before) | instantaneous gradient
+# part only (gate -PsiBar, REINFORCE sign, no lambda-trace) | off
+_EXP_LOCAL = _os.environ.get("LOCAL_REWARDS", "trace")
+# |dV| term: "reset" (as before: PrevV is the pre-reset voltage, so |PrevV - V| is the reset jump, a spike
+# penalty) or "correct" (|V - previous post-reset voltage|, computed in post_dynamics as DVc)
+_EXP_DV = _os.environ.get("DV_MODE", "reset")
+# gate variants: RLNoiseTrace input = gate * (ZFilter - Beta * epsA) * NormNoiseTrace
+_EXP_GATE = {"new": "Psi - 2.0 * PsiBar", "drift_only": "Psi - PsiBar", "grad_only": "-PsiBar"}
+_EXP_CODE = {**{k: f"const scalar eGate = ({g}) * (ZFilter - Beta_post * epsA); "
+                   f"RLNoiseTrace = Lambda * RLNoiseTrace + eGate * NormNoiseTrace;"
+                for k, g in _EXP_GATE.items()},
+    # live rule: lambda-trace of the raw (uncentred) score
+    "full":  "RLNoiseTrace = Lambda * RLNoiseTrace + e * NormNoiseTrace;",
+    # only the slowly varying mean of the score (the drift)
+    "drift": f"const scalar scExp = e * NormNoiseTrace; ScoreMean = {_EXP_BETA} * ScoreMean + {1-_EXP_BETA} * scExp; RLNoiseTrace = Lambda * RLNoiseTrace + ScoreMean;",
+    # only the fluctuation around that mean
+    "fluct": f"const scalar scExp = e * NormNoiseTrace; ScoreMean = {_EXP_BETA} * ScoreMean + {1-_EXP_BETA} * scExp; RLNoiseTrace = Lambda * RLNoiseTrace + (scExp - ScoreMean);",
+}[_EXP_VARIANT]
+eprop_alif_td_model["post_dynamics_code"] = eprop_alif_td_model["post_dynamics_code"].replace(
+    "__POST_EXTRA__",
+    f"PsiBar = {_EXP_PSIBAR} * PsiBar + {1 - _EXP_PSIBAR} * Psi; AbsTd = 0.999 * AbsTd + 0.001 * fabs(TdE_post);")
+eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__DELTAV__", {
+    "reset": "scalar deltaV = fabs(PrevV - V_post);",
+    "correct": "scalar deltaV = DVc;",
+}[_EXP_DV])
+eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__LOCAL_TRACE__", {
+    "trace": "const scalar locTrace = RLEpsTrace + RLNoiseTrace;",
+    "gradient": "const scalar locTrace = -PsiBar * (ZFilter - Beta_post * epsilonA) * "
+                "(1.0 - Alpha * Alpha) * NoiseTrace / (SynSig * SynSig + 1e-6);",
+    "off": "const scalar locTrace = 0.0;",
+    "q_trace": "const scalar locTrace = -RLEpsTrace;",       # lambda-trace of the gradient part (below)
+}[_EXP_LOCAL])
+if _EXP_LOCAL == "q_trace":
+    # Q trace: lambda-trace of the gradient part (gate PsiBar); locTrace = -RLEpsTrace gives the REINFORCE sign
+    eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace(
+        "__QTRACE_UPDATE__",
+        "RLEpsTrace = Lambda * RLEpsTrace + PsiBar * (ZFilter - Beta_post * epsA) * NormNoiseTrace;")
+else:
+    eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__QTRACE_UPDATE__", "")
+eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__REWARD__", {
+    "real": "scalar reward = TdE_post + PRew_post;",
+    "const": "scalar reward = AbsTd;",                                  # no reward information
+    "randsign": "scalar reward = (TdE_post + PRew_post) * (Noise2 < 0.5 ? -1.0 : 1.0);",   # random sign per neuron/step
+}[_EXP_MOD])
+eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__RLNOISE_UPDATE__", _EXP_CODE)
+print(f"[experiment] RULE_VARIANT={_EXP_VARIANT} SCORE_BETA={_EXP_BETA} FREEZE_READOUT={_EXP_FREEZE_READOUT} "
+      f"PSIBAR_DECAY={_EXP_PSIBAR} HIDDEN_DELTA={_EXP_MOD} LOG_SYN_SIG={_EXP_LOG_SYN_SIG} LOCAL_REWARDS={_EXP_LOCAL} DV_MODE={_EXP_DV}")
+
+output_random_feedback_model = {
+    "vars": [("g", "scalar", VarAccess.READ_ONLY)],
+    "post_neuron_var_refs": [("E_post", "scalar")],
+    
+    "synapse_dynamics_code": """
+    addToPre(g * E_post);
+    """}
+
+    
+output_random_model = {
+    "vars": [("g", "scalar", VarAccess.READ_ONLY)],
+    "post_neuron_var_refs": [("E_post", "scalar")],
+    
+    "synapse_dynamics_code": """
+    addToPre(g);
+    """}
+
+gradient_batch_reduce_model = {
+    "vars": [("ReducedGradient", "scalar", CustomUpdateVarAccess.REDUCE_BATCH_SUM)],
+    "var_refs": [("Gradient", "scalar")],
+    "update_code": """
+    ReducedGradient = Gradient;
+    Gradient = 0;
+    """}
+
+class EPropCompiler(Compiler):
+    """Compiler for training models using e-prop [Bellec2020]_.
+    
+    The e-prop compiler supports :class:`ml_genn.neurons.LeakyIntegrateFire` and
+    :class:`ml_genn.neurons.AdaptiveLeakyIntegrateFire` hidden neuron models; and 
+    :class:`ml_genn.losses.SparseCategoricalCrossentropy` loss functions for classification
+    and :class:`ml_genn.losses.MeanSquareError` for regression.
+    
+    e-prop is derived from Real-Time Recurrent Learning (RTRL) so does not require a
+    backward pass meaning that its memory overhead does not scale with sequence length.
+    However, e-prop requires a per-connection eligibility trace meaning that it is
+    incompatible with connectivity like convolutions with shared weights. Furthermore,
+    because each connection has to be updated every timestep, training performance is not
+    improved by sparse activations.
+    
+    Args:
+        example_timesteps:          How many timesteps each example will be
+                                    presented to the network for
+        losses:                     Either a dictionary mapping loss functions
+                                    to output populations or a single loss
+                                    function to apply to all outputs
+        optimiser:                  Optimiser to use when applying weights
+        tau_reg:                    Time constant with which hidden neuron
+                                    spike trains are filtered to obtain the
+                                    firing rate used for regularisation [ms]
+        c_reg:                      Regularisation strength
+        f_target:                   Target hidden neuron firing rate used for
+                                    regularisation [Hz]
+        train_output_bias:          Should output neuron biases be trained?
+        dt:                         Simulation timestep [ms]
+        batch_size:                 What batch size should be used for
+                                    training? In our experience, e-prop works
+                                    well with very large batch sizes (512)
+        rng_seed:                   What value should GeNN's GPU RNG be seeded
+                                    with? This is used for all GPU randomness
+                                    e.g. weight initialisation and Poisson 
+                                    spike train generation
+        kernel_profiling:           Should GeNN record the time spent in each
+                                    GPU kernel? These values can be extracted
+                                    directly from the GeNN model which can be 
+                                    accessed via the ``genn_model`` property
+                                    of the compiled model.
+        reset_time_between_batches: Should time be reset to zero at the start
+                                    of each example or allowed to run
+                                    continously? 
+        communicator:               Communicator used for inter-process
+                                    communications when training across
+                                    multiple GPUs.
+        
+    """
+    def __init__(self, example_timesteps: int, losses, optimiser="adam",
+                 tau_reg: float = 500.0, c_reg: float = 0.001, 
+                 f_target: float = 10.0, train_output_bias: bool = True,
+                 dt: float = 1.0, batch_size: int = 1,
+                 rng_seed: int = 0, kernel_profiling: bool = False,
+                 reset_time_between_batches: bool = True,
+                 communicator: Communicator = None, 
+                 deep_r_conns: Sequence = [],
+                 deep_r_l1_strength: float = 0.01,
+                 deep_r_record_rewirings = {},
+                 dale_rewiring_l1_strength: float = 0,
+                 feedback_type: str = "symmetric",
+                 # --- NEW ---
+                 reward_decay: float = 0.9,
+                 gamma: float = None,
+                 td_lambda: float = None,
+                 entropy_coeff: float = 1e-4,
+                 entropy_coeff_decay: float = 0.99,
+                 entropy_coeff_min: float = 1e-6,
+                 policy_heads: Population = None,
+                 value_head: Population = None,
+                 **genn_kwargs):
+        supported_matrix_types = [SynapseMatrixType.SPARSE,
+                                  SynapseMatrixType.DENSE]
+        super(EPropCompiler, self).__init__(supported_matrix_types, dt,
+                                            batch_size, rng_seed,
+                                            kernel_profiling,
+                                            communicator,
+                                            **genn_kwargs)
+        self.example_timesteps = example_timesteps
+        self.losses = losses
+        self._optimiser = get_object(optimiser, Optimiser, "Optimiser",
+                                     default_optimisers)
+        self.reward_decay = reward_decay
+        self.tau_reg = tau_reg
+        self.c_reg = c_reg
+        self.f_target = f_target
+        self.train_output_bias = train_output_bias
+        self.reset_time_between_batches = reset_time_between_batches
+        self.deep_r_conns = set(get_underlying_conn(c) for c in deep_r_conns)
+        self.deep_r_l1_strength = deep_r_l1_strength
+        self.deep_r_record_rewirings = {get_underlying_conn(c): k
+                                        for c, k in deep_r_record_rewirings.items()}
+        
+        self.dale_rewiring_l1_strength = dale_rewiring_l1_strength
+
+        self.feedback_type = feedback_type
+        # --- NEW: RL / TD(λ) parameters ---
+        self.gamma = gamma
+        self.td_lambda = td_lambda
+        self.gamma_lambda = None
+        self.entropy_coeff = entropy_coeff
+        self.entropy_coeff_decay = entropy_coeff_decay
+        self.entropy_coeff_min = entropy_coeff_min
+        if (gamma is not None) and (td_lambda is not None):
+            self.gamma_lambda = gamma * td_lambda
+            if policy_heads is None or value_head is None:
+                raise ValueError("Policy and value heads must be specified when activating the RL Eprop variant")
+            self.policy_heads = policy_heads
+            self.value_head = value_head
+        elif policy_heads is not None or value_head is not None:
+            raise ValueError("Neither policy nor value heads must be specified when not running the RL Eprop variant")
+
+    def pre_compile(self, network: Network, 
+                    genn_model, **kwargs) -> CompileState:
+        # Build list of output populations
+        readouts = [p for p in network.populations
+                    if p.neuron.readout is not None]
+
+        return CompileState(self.losses, readouts)
+
+    def build_neuron_model(self, pop: Population, model: NeuronModel,
+                           compile_state: CompileState) -> NeuronModel:
+        # Make copy of model
+        model_copy = deepcopy(model)
+
+        # If population has a readout i.e. it's an output
+        if pop.neuron.readout is not None:
+            # Get loss function associated with this output neuron
+            loss = compile_state.losses[pop]
+
+            # If loss function is sparse categorical crossentropy
+            if isinstance(loss, SparseCategoricalCrossentropy):
+                # Get output variable from neuron model
+                output_var = model_copy.output_var
+
+                # Add softmax variable with same type as 
+                # output variable and initialise to zero
+                softmax_var_name = output_var[0] + "Softmax"
+                model_copy.add_var(softmax_var_name, output_var[1], 0)
+
+                # Finally, point output variable at new softmax'd output
+                model_copy.output_var_name = softmax_var_name
+
+                # Add population to list of those needing softmax calculation
+                compile_state.softmax_populations.append(
+                    (pop, output_var[0], softmax_var_name))
+
+            # Add output logic to model
+            model_copy = pop.neuron.readout.add_readout_logic(
+                model_copy, example_timesteps=self.example_timesteps,
+                dt=self.dt)
+
+            # Add any output reset variables to compile state
+            compile_state.add_neuron_readout_reset_vars(pop)
+
+            # Add state variable to hold error
+            # **NOTE** all loss functions require this!
+            model_copy.add_var("E", "scalar", 0.0)
+            # Add loss function to neuron model
+            # **THINK** semantics of this i.e. modifying inplace 
+            # seem a bit different than others
+            loss.add_to_neuron(model_copy, pop.shape, 
+                               self.batch_size, self.example_timesteps)
+
+            # Add sim-code to calculate error
+            if self.gamma_lambda is not None:
+
+                model_copy.add_var("PRew", "scalar", 0.0)
+                if self.policy_heads.get(pop) == PolicyTypes.CATEGORICAL:
+                    model_copy.add_additional_input_var("ISynTdE", "scalar", 0.0)
+                    
+                    model_copy.add_var("PG", "scalar", 0.0)
+                    model_copy.add_var("pre_PG", "scalar", 0.0)
+                    model_copy.add_var("TdE", "scalar", 0.0)
+                    model_copy.add_var("entropyCoeff", "scalar", self.entropy_coeff)
+                    # Reward-based policy gradient + entropy reg:
+                    model_copy.append_sim_code(
+                        # const scalar p = {model_copy.output_var_name};
+                        f"""
+                        TdE = ISynTdE;
+                        // TdE = tdError;
+
+                        const scalar p = {model_copy.output_var_name};
+                        const scalar logp = log(fmax(p, (scalar)1e-8));
+                        const scalar entropyGrad = p * (logp + 1.0);
+
+                        E = entropyCoeff * entropyGrad;
+                        entropyCoeff = fmax(
+                            {self.entropy_coeff_decay} * entropyCoeff,
+                            {self.entropy_coeff_min}
+                        );
+
+                        if (actionTaken != 0) {{
+                            PG = (p - yTrue);
+                        }}
+                        else {{
+                            PG = 0;
+                        }}
+                        actionTaken = 0;
+                        tdError = 0;
+                        """
+                    )
+                elif self.policy_heads.get(pop) == PolicyTypes.GAUSSIAN_TRACE: 
+                    model_copy.add_additional_input_var("ISynTdE", "scalar", 0.0)
+                    
+                    model_copy.add_var("TanhOut", "scalar", 0.0)
+                    model_copy.add_var("TdE", "scalar", 0.0)
+                    model_copy.add_var("LogSigma", "scalar", np.log(0.01))
+                    model_copy.add_var("Action", "scalar", 0.0)
+                    model_copy.add_var("SigmaTrace", "scalar", 0.0)
+                    model_copy.add_var("SigmaLR", "scalar", 1e-4)
+                    model_copy.add_var("EpsTrace", "scalar", 0.0)
+                    model_copy.add_var("PG", "scalar", 0.0)
+                    model_copy.append_sim_code(
+                        f"""         
+                        TdE = ISynTdE;
+
+                        const scalar mu = {model_copy.output_var_name};
+
+                        // Learned sigma
+                        const scalar sigma = exp(LogSigma);
+
+                        // Sample noise (IMPORTANT: keep eps explicitly)
+                        const scalar eps = sigma * gennrand_normal();
+                        EpsTrace = EpsTrace * Alpha + eps;
+
+                        {model_copy.output_var_name} = {model_copy.output_var_name} + eps;
+                        TanhOut = tanh({model_copy.output_var_name});
+
+                        // Linear Grad
+                        // PG = PG * Alpha + ({model_copy.output_var_name} - mu) / (sigma * sigma);
+                        // Tanh Grad                        
+                        const scalar tanh_sq = TanhOut * TanhOut;
+                        //const scalar correction = 2.0 * TanhOut / (1.0 - tanh_sq + 1e-6);
+                        // PG = PG * Alpha + (({model_copy.output_var_name} - mu) / (sigma * sigma)) - correction;
+                        PG = (EpsTrace / (sigma * sigma)) * (1.0 - tanh_sq);    
+                        
+                        // ---- NEW: SIGMA TRACE (ALIF-style but WITH trace) ----
+                        // instantaneous gradient
+                        // const scalar grad_log_sigma = (eps * eps) / (sigma * sigma) - 1.0;
+
+                        // accumulate trace for sigma (NEW variable needed!)
+                        // SigmaTrace = SigmaTrace * Alpha + grad_log_sigma;
+
+                        // update log sigma using TD error and trace
+                        // LogSigma += SigmaLR * TdE * SigmaTrace;
+                    """)
+                elif self.policy_heads.get(pop) == PolicyTypes.GENERIC:
+                    model_copy.add_additional_input_var("ISynTdE", "scalar", 0.0)
+                    
+                    model_copy.add_var("PG", "scalar", 0.0)
+                    model_copy.add_var("pre_PG", "scalar", 0.0)  # CPU writes here
+                    model_copy.add_var("TdE", "scalar", 0.0)
+                    model_copy.add_var("pre_E", "scalar", 0.0)   # CPU writes here too
+                    model_copy.add_var("pre_PRew", "scalar", 0.0)
+                    
+                    model_copy.append_sim_code(
+                        """
+                        TdE = ISynTdE;
+
+                        // Consume CPU-written values for exactly one timestep,
+                        // then zero the staging vars so they don't accumulate.
+                        PG = pre_PG;
+                        pre_PG = 0.0;
+
+                        E = pre_E;
+                        pre_E = 0.0;
+
+                        PRew = pre_PRew;
+                        pre_PRew = 0;
+                        """
+                    )
+                else:
+                    model_copy.add_var("ValReg", "scalar", 0.0)
+                    model_copy.add_var("PrevVal", "scalar", 0.0)
+                    model_copy.add_var("ValTrace", "scalar", 0.0)
+                    model_copy.append_sim_code(
+                        f"""
+                        ValTrace = ValTrace*0.5 + PrevVal*0.5;
+                        // E = {model_copy.output_var_name} * {self.gamma} + reward - ValTrace;
+                        E = {model_copy.output_var_name} * {self.gamma} + reward - PrevVal; // TdE
+
+                        // ValReg = (
+                        //     0.000 * ({model_copy.output_var_name})
+                        //     + 0.1 * ({model_copy.output_var_name} - PrevVal)
+                        //     + 0.0 * ({model_copy.output_var_name} - PrevVal) * ({model_copy.output_var_name} - PrevVal)
+                        // );
+                        PrevVal = {model_copy.output_var_name};
+                        reward *= {self.reward_decay};
+                        tdError = 0;
+                        """
+                    )
+            else:
+                # Add sim-code to calculate error
+                model_copy.append_sim_code(
+                    f"""
+                    E = {model_copy.output_var_name} - yTrue;
+                    """)
+
+
+            # If we should train output biases
+            if self.train_output_bias:
+                # Convert Bias parameter into variable
+                # **THINK** do we want some sort of duck-type to get bias var
+                # or add something to model to say which variable is bias
+                model_copy.make_param_var("Bias")
+
+                # Add DeltaBias
+                model_copy.add_var("DeltaBias", "scalar", 0.0)
+
+                # Add sim-code to update DeltaBias
+                model_copy.append_sim_code("DeltaBias += E;")
+
+                # Add population to list of those with biases to optimise
+                compile_state.bias_optimiser_populations.append(pop)
+
+                # Add bias to list of checkpoint vars
+                compile_state.checkpoint_population_vars.append((pop, "Bias"))
+
+        # Otherwise, if neuron isn't an input i.e. it's hidden
+        elif not isinstance(pop.neuron, Input):
+            # Check hidden population is connected directly PGto output
+            # if self.feedback_type == "symmetric" and not _has_connection_to_output(pop):
+            #     raise RuntimeError("In models trained with symmetric e-prop, all "
+            #                        "hidden populations must be directly "
+            #                        "connected to an output population")
+            # if self.feedback_type == "random" and not _has_feedback_from_output(pop):
+            #     raise RuntimeError("In models trained with random e-prop all "
+            #                        "hidden populations must be connected with "
+            #                        "feedback connections to an output population")
+
+            # Add additional input variable to receive feedback
+            model_copy.add_additional_input_var("ISynFeedback", "scalar", 0.0)
+
+            # Add state variable to store 
+            # feedback and initialise to zero
+            model_copy.add_var("E", "scalar", 0.0)
+            model_copy.add_var("Ebase", "scalar", 0.0)
+            model_copy.add_var("Noise1", "scalar", 0.0)
+            model_copy.add_var("Noise2", "scalar", 0.0)
+            model_copy.add_var("Noise3", "scalar", 0.0)
+            model_copy.add_var("Noise4", "scalar", 0.0)
+
+            # Add sim code to store incoming feedback in new state variable
+            model_copy.append_sim_code(
+                """
+                E = ISynFeedback;
+                Ebase = Ebase * 0.999 + E * 0.001;
+                Noise1 = gennrand_normal();
+                Noise2 = gennrand_uniform();
+                Noise3 = gennrand_normal();
+                Noise4 = gennrand_normal();
+                """
+            )
+
+            # Add sim-code to calculate error
+            if self.gamma_lambda is not None:
+                model_copy.add_additional_input_var("ISynSigmaEps", "scalar", 0.0)
+                model_copy.add_additional_input_var("ISynPolicyGradient", "scalar", 0.0)
+                model_copy.add_additional_input_var("ISynValueError", "scalar", 0.0)
+                model_copy.add_additional_input_var("ISynPolicyRegularisation", "scalar", 0.0)
+                model_copy.add_additional_input_var("ISynValueRegularisation", "scalar", 0.0)
+                model_copy.add_additional_input_var("ISynTdE", "scalar", 0.0)
+                model_copy.add_additional_input_var("ISynPolicyReward", "scalar", 0.0)
+                model_copy.add_additional_input_var("ISynPertEps", "scalar", 0.0)
+                
+                model_copy.add_var("PG", "scalar", 0.0)
+                # model_copy.add_var("TdE", "scalar", 0.0)
+                model_copy.add_var("PRew", "scalar", 0.0)
+                model_copy.add_var("VE", "scalar", 0.0)
+                model_copy.add_var("PR", "scalar", 0.0)
+                model_copy.add_var("VR", "scalar", 0.0)
+                model_copy.add_var("PGEps", "scalar", 0.0)
+
+                # Reward-based policy gradient + entropy reg:
+                model_copy.append_sim_code(
+                    """
+                    PG = ISynPolicyGradient;
+                    VE = ISynValueError;
+                    PR = ISynPolicyRegularisation;
+                    VR = ISynValueRegularisation;
+                    TdE = ISynTdE;
+                    PRew = ISynPolicyReward;
+                    PGEps = ISynPertEps;
+                    """
+                )
+
+            # If neuron model is LIF or ALIF
+            if isinstance(pop.neuron, (AdaptiveLeakyIntegrateFire,
+                                       LeakyIntegrateFire)):
+                # Check e-prop constraints
+                if not pop.neuron.integrate_during_refrac:
+                    logger.warning("E-prop learning works best with (A)LIF "
+                                   "neurons which continue to integrate "
+                                   "during their refractory period")
+                if not pop.neuron.relative_reset:
+                    logger.warning("E-prop learning works best with (A)LIF "
+                                   "neurons with a relative reset mechanism")
+
+                # Set global time constants from neuron model
+                compile_state.tau_mem = pop.neuron.tau_mem
+                if isinstance(pop.neuron, AdaptiveLeakyIntegrateFire):
+                    compile_state.tau_adapt = pop.neuron.tau_adapt
+            else:
+                raise NotImplementedError(f"E-prop compiler doesn't support "
+                                          f"{type(pop.neuron).__name__} "
+                                          f"neurons")
+        else:
+            model_copy.add_additional_input_var("ISynPertEps", "scalar", 0.0)
+            model_copy.add_var("Noise1", "scalar", 0.0)
+            model_copy.add_var("Noise2", "scalar", 0.0)
+            model_copy.add_var("Noise3", "scalar", 0.0)
+            model_copy.add_var("Noise4", "scalar", 0.0)
+
+            # Add sim code to store incoming feedback in new state variable
+            model_copy.append_sim_code(
+                """
+                Noise1 = gennrand_normal();
+                Noise2 = gennrand_normal();
+                Noise3 = gennrand_normal();
+                Noise4 = gennrand_normal();
+                """
+            )
+
+        # Build neuron model and return
+        return model_copy
+
+    def build_synapse_model(self, conn: Connection, model: SynapseModel,
+                            compile_state: CompileState) -> SynapseModel:
+        if not isinstance(conn.synapse, Delta):
+            raise NotImplementedError("E-prop compiler only "
+                                      "supports Delta synapses")
+
+        # Return model
+        return model
+
+    def build_weight_update_model(self, conn: Connection,
+                                  connect_snippet: ConnectivitySnippet,
+                                  compile_state: CompileState) -> WeightUpdateModel:
+        if not is_value_constant(connect_snippet.delay):
+            raise NotImplementedError("E-prop compiler only "
+                                      "support heterogeneous delays")
+
+        # Calculate membrane persistence
+        alpha = np.exp(-self.dt / compile_state.tau_mem)
+
+        # If target neuron is LIF, create weight update model with eProp LIF
+        target_pop = conn.target()
+        target_neuron = target_pop.neuron
+
+        # Check if conn are feedback
+        if conn.is_feedback:
+            # if self.feedback_type != "random":
+            #     raise ValueError("Feedback type must be 'random' when using random feedback connections")
+
+            # Add connection to list of feedback connections
+            if self.gamma_lambda is not None:
+                if conn.name.endswith("tde_transport"):
+                    feedback_model = output_random_feedback_model
+                    compile_state.tde_transport_connections.append(conn)
+                    post_var_name = "E" 
+                    wum = WeightUpdateModel(
+                        model=feedback_model,
+                        var_vals={"g": connect_snippet.weight},
+                        post_neuron_var_refs={"E_post": post_var_name}
+                    )
+                if conn.name.endswith("policy_reward"):
+                    feedback_model = output_random_feedback_model
+                    compile_state.policy_reward_connections.append(conn)
+                    post_var_name = "PRew" 
+                    wum = WeightUpdateModel(
+                        model=feedback_model,
+                        var_vals={"g": connect_snippet.weight},
+                        post_neuron_var_refs={"E_post": post_var_name}
+                    )
+                elif conn.name.endswith("pert_eps_feedback"):
+                    feedback_model = output_random_feedback_model
+                    compile_state.pert_eps_transport_connections.append(conn)
+                    post_var_name = "PertEpsTrace"
+                    wum = WeightUpdateModel(
+                        model=feedback_model,
+                        var_vals={"g": connect_snippet.weight},
+                        post_neuron_var_refs={"E_post": post_var_name}
+                    )
+
+                elif target_pop in self.policy_heads:
+                    feedback_model = output_policy_adaptive_feedback_learning_model # output_random_feedback_model
+                    if conn.name.endswith("policy_feedback"):
+                        compile_state.policy_feedback_connections.append(conn)
+                        post_var_name = "PG"
+                    elif conn.name.endswith("policy_regularisation"):
+                        compile_state.policy_regularisation_connections.append(conn)
+                        post_var_name = "E"
+                    wum = WeightUpdateModel(
+                        model=feedback_model,
+                        param_vals={
+                            "Alpha": alpha,
+                            "Lambda": self.td_lambda
+                        },
+                        var_vals={
+                            "g": connect_snippet.weight,
+                            "DeltaG": 0.0,
+                            "RLTrace": 0.0,
+                        },
+                        pre_var_vals={"ZFilter": 0.0},
+                        post_neuron_var_refs={
+                            "E_post": "E", "PG_post": "PG",
+                            "TdE_post": "TdE", "F_post": post_var_name})
+                else:
+                    feedback_model = output_value_adaptive_feedback_learning_model
+                    if conn.name.endswith("value_feedback"):
+                        compile_state.value_feedback_connections.append(conn)
+                        post_var_name = "E"
+                    elif conn.name.endswith("value_regularisation"):
+                        compile_state.value_regularisation_connections.append(conn)
+                        post_var_name = "ValReg"
+                    wum = WeightUpdateModel(
+                        model=feedback_model,
+                        param_vals={
+                            "RetE": 1.0,
+                            "Alpha": alpha,
+                            "GammaLambda": self.gamma_lambda
+                        },
+                        var_vals={
+                            "g": connect_snippet.weight, 
+                            "DeltaG": 0.0,
+                            "RLTrace": 0.0,
+                        },
+                        pre_var_vals={"ZFilter": 0.0},
+                        post_neuron_var_refs={
+                            "E_post": "E", 
+                            "ValReg_post": "ValReg",
+                            "F_post": post_var_name})
+            else:
+                feedback_model = output_adaptive_feedback_learning_model
+                compile_state.feedback_connections.append(conn)
+                post_var_name = "E"
+                wum = WeightUpdateModel(
+                    model=feedback_model,
+                    param_vals={"Alpha": alpha},
+                    var_vals={"g": connect_snippet.weight, "DeltaG": 0.0},
+                    pre_var_vals={"ZFilter": 0.0},
+                    post_neuron_var_refs={"E_post": post_var_name})
+            """
+            wum = WeightUpdateModel(
+                   model=feedback_model,
+                   var_vals={"g": connect_snippet.weight},
+                   post_neuron_var_refs={"E_post": post_var_name}
+            )"""
+
+        elif isinstance(target_neuron, LeakyIntegrateFire):
+            wum = WeightUpdateModel(
+                model=eprop_lif_pert_model,
+                param_vals={"CReg": self.c_reg, "Alpha": alpha,
+                            "FTarget": (self.f_target * self.dt) / 1000.0, 
+                            "AlphaFAv": np.exp(-self.dt / self.tau_reg),
+                            "Vthresh_post": target_neuron.v_thresh},
+                var_vals={"g": connect_snippet.weight, "eFiltered": 0.0,
+                          "DeltaG": 0.0, "NoiseTrace": 0.0, "RLNoiseTrace": 0.0,},
+                pre_var_vals={"ZFilter": 0.0},
+                post_var_vals={"Psi": 0.0, "FAvg": 0.0},
+                post_neuron_var_refs={"RefracTime_post": "RefracTime",
+                                      "V_post": "V", "E_post": "E", 
+                                      "Ebase_post": "Ebase", 
+                                      "Noise": "Noise"})
+        # Otherise, if it's ALIF, create weight update model with eProp ALIF
+        elif isinstance(target_neuron, AdaptiveLeakyIntegrateFire):
+            compile_state.pert_eps_transport_connections.append(conn)
+            # Calculate adaptation variable persistence
+            rho = np.exp(-self.dt / compile_state.tau_adapt)
+
+            if self.gamma_lambda is None:
+                wum = WeightUpdateModel(
+                    model=eprop_alif_model,
+                    param_vals={"CReg": self.c_reg, "Alpha": alpha, "Rho": rho, 
+                                "FTarget": (self.f_target * self.dt) / 1000.0, 
+                                "AlphaFAv": np.exp(-self.dt / self.tau_reg),
+                                "Vthresh_post": target_neuron.v_thresh,
+                                "Beta_post": target_neuron.beta},
+                    var_vals={"g": connect_snippet.weight, "eFiltered": 0.0,
+                              "DeltaG": 0.0, "epsilonA": 0.0},
+                    pre_var_vals={"ZFilter": 0.0},
+                    post_var_vals={"Psi": 0.0, "FAvg": 0.0},
+                    post_neuron_var_refs={
+                        "RefracTime_post": "RefracTime",
+                        "V_post": "V", "A_post": "A", 
+                        "E_post": "E"})
+            else:
+                # TD(λ) version
+                wum = WeightUpdateModel(
+                    model=eprop_alif_td_model,
+                    param_vals={
+                        "CReg": self.c_reg,
+                        "Alpha": alpha,
+                        "Rho": rho,
+                        "FTarget": (self.f_target * self.dt) / 1000.0,
+                        "AlphaFAv": np.exp(-self.dt / self.tau_reg),
+                        "Vthresh_post": target_neuron.v_thresh,
+                        "Lambda": self.td_lambda
+                    },
+                    var_vals={"g": connect_snippet.weight,
+                              "eFiltered": 0.0,
+                              "DeltaG": 0.0,
+                              "epsilonA": 0.0,
+                              "RLTrace": 0.0,
+                              "RLEpsTrace": 0.0,
+                              "NoiseTrace": 0.0,
+                              "RLNoiseTrace": 0.0,
+                              "ScoreMean": 0.0,
+                              "LogSynSig": _EXP_LOG_SYN_SIG,
+                              "SynSig": 0.0,
+                              "SynSigTrace": 0.0,
+                              "UpdateCount": 0.0
+                    },
+                    pre_var_vals={"ZFilter": 0.0},
+                    post_var_vals={
+                        "Psi": 0.0, "FAvg": 0.0, 
+                        "FAvgTrace": 0.0, "Z": 0.0,
+                        "PrevV": 0.0, "NeuronNoiseTrace": 0.0,
+                        "PsiBar": 0.0, "AbsTd": 0.0, "DVc": 0.0},
+                    pre_neuron_var_refs={
+                        "Noise1_pre": "Noise1"
+                    },
+                    post_neuron_var_refs={
+                        "RefracTime_post": "RefracTime",
+                        "Beta_post": "Beta",
+                        "V_post": "V", "A_post": "A",
+                        "E_post": "E", "PG_post": "PG",
+                        "VE_post": "VE", "TdE_post": "TdE",
+                        "PR_post": "PR", "VR_post": "VR",
+                        "PertEpsTrace_post": "PertEpsTrace", 
+                        "PertEps_post": "PertEps",
+                        "Sigma_post": "Sigma",
+                        "PGEps_post": "PGEps",
+                        "PRew_post": "PRew",
+                        "Noise1": "Noise1",
+                        "Noise2": "Noise2",
+                        "Noise3": "Noise3",
+                        "Noise4": "Noise4"
+                    })
+        # Otherwise, if target neuron is readout, create 
+        # weight update model with simple output learning rule
+        elif target_neuron.readout is not None:
+
+            if self.gamma_lambda is not None:
+                if target_pop in self.policy_heads:
+                    # --- TD(λ) rule for policy head ---
+                    model = (output_policy_learning_model
+                            if self.feedback_type == "symmetric"
+                            else output_policy_random_learning_model)
+
+                    wum = WeightUpdateModel(
+                        model=model,
+                        param_vals={
+                            "Alpha": alpha,
+                            "Lambda": self.td_lambda
+                        },
+                        var_vals={
+                            "g": connect_snippet.weight,
+                            "DeltaG": 0.0,
+                            "RLTrace": 0.0,
+                        },
+                        pre_var_vals={"ZFilter": 0.0},
+                        post_neuron_var_refs={
+                            "E_post": "E", "PG_post": "PG",
+                            "TdE_post": "TdE"})
+                else:
+                    model = (output_value_learning_model
+                            if self.feedback_type == "symmetric"
+                            else output_value_random_learning_model)
+
+                    wum = WeightUpdateModel(
+                        model=model,
+                        param_vals={
+                            "RetE": 0.0,
+                            "Alpha": alpha,
+                            "GammaLambda": self.gamma
+                        },
+                        var_vals={
+                            "g": connect_snippet.weight, 
+                            "DeltaG": 0.0,
+                            "RLTrace": 0.0,
+                        },
+                        pre_var_vals={"ZFilter": 0.0},
+                        post_neuron_var_refs={
+                            "E_post": "E", 
+                            "ValReg_post": "ValReg"})
+            else:
+                wum = WeightUpdateModel(
+                    model=output_learning_model 
+                        if self.feedback_type == "symmetric" 
+                        else output_random_learning_model,
+                    param_vals={"Alpha": alpha},
+                    var_vals={"g": connect_snippet.weight, "DeltaG": 0.0},
+                    pre_var_vals={"ZFilter": 0.0},
+                    post_neuron_var_refs={"E_post": "E"})
+
+
+            if self.feedback_type == "symmetric" and not conn.is_feedback:
+                if self.gamma_lambda is None:
+                    compile_state.feedback_connections.append(conn)
+                elif target_neuron.readout is not None:
+                    if target_pop in self.policy_heads:
+                        compile_state.policy_feedback_connections.append(conn)
+                    else:
+                        compile_state.value_feedback_connections.append(conn)
+
+        # Add weights to list of checkpoint vars
+        compile_state.checkpoint_connection_vars.append((conn, "g"))
+        _is_head = ((self.policy_heads is not None and target_pop in self.policy_heads)
+                    or (getattr(self, "value_head", None) is not None and target_pop == self.value_head))
+        if not conn.is_feedback and not (_EXP_FREEZE_READOUT and _is_head):
+            # Add connection to list of connections to optimise
+            compile_state.weight_optimiser_connections.append(conn)
+
+        # Return weight update model
+        return wum
+
+    def create_compiled_network(self, genn_model, neuron_populations: dict,
+                                connection_populations: dict,
+                                compile_state: CompileState) -> CompiledTrainingNetwork:
+        # Fuse pre and postsynaptic updates for efficiency
+        genn_model.fuse_postsynaptic_models = True
+        genn_model.fuse_pre_post_weight_update_models = True
+
+        # Correctly target feedback
+        for c in compile_state.feedback_connections:
+            connection_populations[c].pre_target_var = "ISynFeedback"
+
+        if self.gamma_lambda is not None:
+            for c in compile_state.sigma_eps_connections:
+                connection_populations[c].post_target_var = "ISynSigmaEps"
+                connection_populations[c].pre_target_var = "ISynPertEps"
+            for c in compile_state.tde_transport_connections:
+                connection_populations[c].pre_target_var = "ISynTdE"
+            for c in compile_state.policy_feedback_connections:
+                connection_populations[c].pre_target_var = "ISynPolicyReward"
+            for c in compile_state.pert_eps_transport_connections:
+                connection_populations[c].pre_target_var = "ISynPertEps"
+            for c in compile_state.policy_feedback_connections:
+                connection_populations[c].pre_target_var = "ISynPolicyGradient"
+            for c in compile_state.policy_regularisation_connections:
+                connection_populations[c].pre_target_var = "ISynPolicyRegularisation"
+            for c in compile_state.value_feedback_connections:
+                connection_populations[c].pre_target_var = "ISynValueError"
+            for c in compile_state.value_regularisation_connections:
+                connection_populations[c].pre_target_var = "ISynValueRegularisation"
+
+        # Add optimisers to connection weights that require them
+        optimiser_custom_updates = []
+        deep_r_record_rewirings_ccus = []
+        dale_rewiring_required = False
+        for i, c in enumerate(compile_state.weight_optimiser_connections):
+            genn_pop = connection_populations[c]
+            dale_sign = c.exc_inh_sign
+            # If connection is in list of those to use Deep-R on
+            delta_g_var_ref = create_wu_var_ref(genn_pop, "DeltaG")
+            weight_var_ref = create_wu_var_ref(genn_pop, "g")
+            if c in self.deep_r_conns:
+                # Add infrastructure
+                deep_r_2_ccu = add_deep_r(genn_pop, genn_model, self,
+                                          self.deep_r_l1_strength, 
+                                          delta_g_var_ref, weight_var_ref)
+                
+                # If we should record rewirings from
+                # this connection, add to list with key
+                if c in self.deep_r_record_rewirings:
+                    deep_r_record_rewirings_ccus.append(
+                        (deep_r_2_ccu, self.deep_r_record_rewirings[c]))
+                    
+            if dale_sign is not None:
+                dale_rewiring_required = True
+                add_dale_rewiring(
+                    synapse_group=genn_pop,
+                    genn_model=genn_model,
+                    compiler=self,
+                    l1_strength=self.dale_rewiring_l1_strength,
+                    sign=dale_sign,
+                    weight_var_ref=weight_var_ref
+                )
+        
+            # Add optimiser
+            optimiser_custom_updates.append(
+                self._create_optimiser_custom_update(
+                    f"Weight{i}", weight_var_ref, delta_g_var_ref,
+                    genn_model, True))
+
+        # Add optimisers to population biases that require them
+        for i, p in enumerate(compile_state.bias_optimiser_populations):
+            genn_pop = neuron_populations[p]
+            optimiser_custom_updates.append(
+                self._create_optimiser_custom_update(
+                    f"Bias{i}", create_var_ref(genn_pop, "Bias"),
+                    create_var_ref(genn_pop, "DeltaBias"),
+                    genn_model, False))
+
+        # Loop through populations requiring softmax
+        # calculation and add requisite custom updates
+        for p, o, s in compile_state.softmax_populations:
+            genn_pop = neuron_populations[p]
+            self.add_softmax_custom_updates(genn_model, genn_pop, 
+                                            o, s)
+
+        # Create custom updates to implement variable reset
+        compile_state.create_reset_custom_updates(self, genn_model,
+                                                  neuron_populations)
+
+        # Build list of base callbacks
+        base_train_callbacks = []
+        base_validate_callbacks = []
+        deep_r_required = (len(self.deep_r_conns) > 0)
+
+        # If Deep-R and L1 regularisation are required, add callback
+        if deep_r_required and self.deep_r_l1_strength > 0.0:
+            base_train_callbacks.append(CustomUpdateOnBatchEnd("DeepRL1"))
+        if dale_rewiring_required and self.dale_rewiring_l1_strength > 0.0:
+            base_train_callbacks.append(CustomUpdateOnBatchEnd("DaleRL1"))
+
+        if len(optimiser_custom_updates) > 0:
+            if self.full_batch_size > 1:
+                base_train_callbacks.append(CustomUpdateOnBatchEnd("GradientBatchReduce"))
+            base_train_callbacks.append(CustomUpdateOnBatchEnd("GradientLearn"))
+        if compile_state.is_reset_custom_update_required:
+            base_train_callbacks.append(CustomUpdateOnBatchBegin("Reset"))
+            base_validate_callbacks.append(CustomUpdateOnBatchBegin("Reset"))
+
+        # If Deep-R is required, trigger Deep-R callbacks at end of batch
+        if deep_r_required:
+            base_train_callbacks.append(CustomUpdateOnEpochBegin("DeepRInit",
+                                                                 lambda e: e == 0))
+            base_train_callbacks.append(CustomUpdateOnBatchEnd("DeepR1"))
+            base_train_callbacks.append(CustomUpdateOnBatchEnd("DeepR2"))
+
+        # Add callbacks to record number of rewirings
+        for c, k in deep_r_record_rewirings_ccus:
+            base_train_callbacks.append(RewiringRecord(c, k))
+
+        # If softmax is required, add three stage reduction to callbacks
+        # **NOTE** this is also required for validation because readout is configured this way
+        if len(compile_state.softmax_populations) > 0:
+            base_train_callbacks.append(CustomUpdateOnTimestepEnd("Softmax1"))
+            base_train_callbacks.append(CustomUpdateOnTimestepEnd("Softmax2"))
+            base_train_callbacks.append(CustomUpdateOnTimestepEnd("Softmax3"))
+            base_validate_callbacks.append(CustomUpdateOnTimestepEnd("Softmax1"))
+            base_validate_callbacks.append(CustomUpdateOnTimestepEnd("Softmax2"))
+            base_validate_callbacks.append(CustomUpdateOnTimestepEnd("Softmax3"))
+        
+        if dale_rewiring_required:
+            base_train_callbacks.append(CustomUpdateOnEpochBegin("DaleInit",
+                                                        lambda e: e == 0))
+            base_train_callbacks.append(CustomUpdateOnBatchEnd("DalePrune"))
+            base_train_callbacks.append(CustomUpdateOnBatchEnd("DaleRewire"))
+        
+        # Build list of optimisers and their custom updates
+        optimisers = []
+        if len(optimiser_custom_updates) > 0:
+            optimisers.append((self._optimiser, optimiser_custom_updates))
+
+        return CompiledTrainingNetwork(
+            genn_model, neuron_populations, connection_populations,
+            self.communicator, compile_state.losses,
+            self.example_timesteps, base_train_callbacks,
+            base_validate_callbacks, optimisers,
+            compile_state.checkpoint_connection_vars,
+            compile_state.checkpoint_population_vars, self.reset_time_between_batches)
+
+    def _create_optimiser_custom_update(self, name_suffix, var_ref,
+                                        gradient_ref, genn_model, wu):
+        # If batch size is greater than 1
+        if self.full_batch_size > 1:
+            # Create custom update model to reduce DeltaG into a variable 
+            reduction_optimiser_model = CustomUpdateModel(
+                gradient_batch_reduce_model, {}, {"ReducedGradient": 0.0},
+                {"Gradient": gradient_ref})
+
+            # Add GeNN custom update to model
+            genn_reduction = self.add_custom_update(
+                genn_model, reduction_optimiser_model, 
+                "GradientBatchReduce", "CUBatchReduce" + name_suffix)
+            reduced_gradient = (create_wu_var_ref(genn_reduction,
+                                                  "ReducedGradient") if wu
+                                else create_var_ref(genn_reduction, 
+                                                    "ReducedGradient"))
+            # Create optimiser model without gradient zeroing
+            # logic, connected to reduced gradient
+            optimiser_model = self._optimiser.get_model(reduced_gradient,
+                                                        var_ref, False, None)
+        # Otherwise
+        else:
+            # Create optimiser model with gradient zeroing 
+            # logic, connected directly to population
+            optimiser_model = self._optimiser.get_model(gradient_ref, var_ref,
+                                                        True, None)
+
+        # Add GeNN custom update to model
+        return self.add_custom_update(genn_model, optimiser_model,
+                                      "GradientLearn",
+                                      "CUGradientLearn" + name_suffix)

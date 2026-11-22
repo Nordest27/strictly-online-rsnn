@@ -1,0 +1,3 @@
+base_s0 {"late_gap": 0.33675164207705416, "early_gap": 0.24106061162607773, "field_dead": 0.08333, "e_hz": 37.42, "decisions": 12288, "fitness": 0.3429321573025424}
+route_s0 {"late_gap": 0.2225198961265576, "early_gap": 0.14753171784839836, "field_dead": 0.08333, "e_hz": 43.2, "decisions": 12909, "fitness": 0.21834898526563723}
+route_1hop_s0 {"late_gap": 0.08685860390178979, "early_gap": 0.1236320183567905, "field_dead": 0.1458, "e_hz": 46.03, "decisions": 12682, "fitness": 0.013958603901789782}

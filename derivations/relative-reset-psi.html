@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Policy Gradient, Gaussian Actor, Reset</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+  body { max-width: 760px; margin: 2rem auto; padding: 0 1.5rem 4rem; font-size: 18px; line-height: 1.6; font-family: Georgia, serif; }
+  h2 { margin-top: 2.5rem; }
+  .eq { overflow-x: auto; margin: 1.2rem 0; }
+  .box { border: 1px solid #999; padding: 0.8rem 1rem; margin: 1.2rem 0; }
+</style>
+</head>
+<body>
+
+<h2>Setup</h2>
+<p>Gaussian actor over the LIF membrane, matching the thesis's own indexing:</p>
+<div class="eq">
+$$
+v_j^t \sim \mathcal N(\mu_j^t, \sigma_j^2), \qquad \varepsilon_j^t = v_j^t - \mu_j^t,
+$$
+$$
+\mu_j^t = \alpha v_j^{t-1} + \sum_i W_{ji} z_i^{t-1} - z_j^{t-1} v_{\mathrm{th}}, \qquad z_j^{t-1} = H(v_j^{t-1} - v_{\mathrm{th}}).
+$$
+</div>
+
+<h2>Score function</h2>
+<p>
+$\log\pi(v_j^t\mid\mu_j^t,\sigma_j^2) = -\dfrac{(\varepsilon_j^t)^2}{2\sigma_j^2} + \text{const}$, so
+</p>
+<div class="eq">
+$$
+\nabla_{W_{ji}} \log \pi(v_j^t \mid \cdot) = \frac{\varepsilon_j^t}{\sigma_j^2} \cdot \frac{\partial \mu_j^t}{\partial W_{ji}}.
+$$
+</div>
+
+<h2>Differentiate through the reset</h2>
+<div class="eq">
+$$
+\frac{\partial \mu_j^t}{\partial W_{ji}}
+= \alpha \underbrace{\frac{\partial v_j^{t-1}}{\partial W_{ji}}}_{=\ \partial \mu_j^{t-1}/\partial W_{ji}}
+\;+\; z_i^{t-1}
+\;-\; v_{\mathrm{th}} \underbrace{\frac{\partial z_j^{t-1}}{\partial W_{ji}}}_{\approx\ \psi_j^{t-1} \cdot\, \partial \mu_j^{t-1}/\partial W_{ji}}
+$$
+</div>
+<p>
+(middle term: $\varepsilon_j^{t-1}$ doesn't depend on $W_{ji}$; last term: the surrogate $\partial z/\partial v \to \psi$, already defined in the thesis, applied to the reset's own Heaviside.)
+</p>
+
+<p>Collecting terms, with $e_{ji}^t \defeq \partial \mu_j^t / \partial W_{ji}$:</p>
+
+<div class="box">
+<div class="eq">
+$$
+e_{ji}^t = \left(\alpha - v_{\mathrm{th}}\,\psi_j^{t-1}\right) e_{ji}^{t-1} + z_i^{t-1}
+$$
+</div>
+</div>
+
+<h2>Result</h2>
+<p>Per-step policy gradient:</p>
+<div class="eq">
+$$
+\nabla_{W_{ji}} \log \pi(v_j^t \mid \cdot) = \frac{\varepsilon_j^t}{\sigma_j^2} \cdot e_{ji}^t.
+$$
+</div>
+<p>Online actor update (same $\mathcal F_\lambda$ accumulation already used in the thesis):</p>
+<div class="box">
+<div class="eq">
+$$
+\Delta W_{ji} \;\propto\; \sum_t \delta_t\, \frac{\varepsilon_j^t}{\sigma_j^2}\, e_{ji}^t.
+$$
+</div>
+</div>
+
+<p>
+One trace, $e_{ji}^t$, with $\psi$ appearing exactly once, exactly where the reset is
+non-differentiable, and nowhere else. $\varepsilon_j^t/\sigma_j^2$ is used fresh at each
+step, not separately filtered. No $\xi_j^t$, no separate end-multiplication by $\psi$ — both
+are subsumed into $e_{ji}^t$'s own decay.
+</p>
+
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ]
+  });
+</script>
+</body>
+</html>

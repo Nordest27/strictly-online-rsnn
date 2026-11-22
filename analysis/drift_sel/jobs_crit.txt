@@ -1,0 +1,6 @@
+full_reward/sel_crit_s0
+full_reward/sel_crit_s1
+full_reward/con_critA_s0
+full_reward/con_critB_s0
+full_reward/con_critA_s1
+full_reward/con_critB_s1

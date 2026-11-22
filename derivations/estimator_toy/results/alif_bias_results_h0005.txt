@@ -1,0 +1,21 @@
+== slow reward: sigma=0.05, firing prob/step=0.284, N=1600000, 68s
+   truth (finite diff.)      : [ 2.3437  4.2285  0.0212 -2.9859  2.7627 12.9985]
+   dist_eprop   cos= 0.935 (halves 0.936/0.934)  scale=    2.61  rel.noise/sample=     4.1
+   trace_nopsi  cos= 0.959 (halves 0.959/0.958)  scale=   17.26  rel.noise/sample=     5.5
+   step_pretr   cos= 0.817 (halves 0.819/0.814)  scale=    9.55  rel.noise/sample=     4.9
+   step_psi     cos= 0.932 (halves 0.933/0.930)  scale=    1.30  rel.noise/sample=     7.5
+   exact        cos= 1.000 (halves 1.000/1.000)  scale=    1.01  rel.noise/sample=    10.4
+== jagged reward: sigma=0.05, firing prob/step=0.284, N=1600000, 68s
+   truth (finite diff.)      : [25.5188 19.6502  9.146  16.8347 12.5624 -0.9401]
+   dist_eprop   cos= 0.884 (halves 0.883/0.886)  scale=    1.52  rel.noise/sample=    14.0
+   trace_nopsi  cos= 0.895 (halves 0.895/0.896)  scale=   14.50  rel.noise/sample=    12.7
+   step_pretr   cos= 0.925 (halves 0.924/0.925)  scale=    8.04  rel.noise/sample=    13.7
+   step_psi     cos= 0.945 (halves 0.942/0.949)  scale=    0.91  rel.noise/sample=    22.4
+   exact        cos= 1.000 (halves 1.000/0.999)  scale=    0.99  rel.noise/sample=    21.5
+== jagged reward: sigma=0.02, firing prob/step=0.284, N=1600000, 93s
+   truth (finite diff.)      : [109.673   66.1164 120.1412  39.4321  34.836   45.0989]
+   dist_eprop   cos= 0.978 (halves 0.978/0.978)  scale=    2.38  rel.noise/sample=     3.2
+   trace_nopsi  cos= 0.980 (halves 0.980/0.980)  scale=   19.56  rel.noise/sample=     3.5
+   step_pretr   cos= 0.969 (halves 0.969/0.969)  scale=    9.24  rel.noise/sample=     4.2
+   step_psi     cos= 0.970 (halves 0.970/0.970)  scale=    1.40  rel.noise/sample=     5.0
+   exact        cos= 1.000 (halves 1.000/1.000)  scale=    1.00  rel.noise/sample=     7.3

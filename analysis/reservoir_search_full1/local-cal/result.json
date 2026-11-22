@@ -1,0 +1,98 @@
+{
+ "name": "local-cal",
+ "hp": {
+  "toroidal": "local"
+ },
+ "calibrated": true,
+ "per_pop": [
+  {
+   "pop": "L1_E",
+   "n": 1200,
+   "hz": 20.492755555555558,
+   "dim": 13.18224639653365,
+   "dim_counts": 10.745320470380783,
+   "decode": 0.13066666666666665,
+   "active": 1.0,
+   "input_r2": 0.6596180294364296,
+   "psi": 0.17909108102321625,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "L1_I",
+   "n": 675,
+   "hz": 21.48161975308642,
+   "dim": 12.301108726929892,
+   "dim_counts": 10.537984196022137,
+   "decode": 0.0911111111111111,
+   "active": 1.0,
+   "input_r2": 0.6485178768479467,
+   "psi": 0.17904815077781677,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "policy_field",
+   "n": 675,
+   "hz": 22.237372839506172,
+   "dim": 7.581597056609039,
+   "dim_counts": 8.337873893795484,
+   "decode": 0.017111111111111087,
+   "active": 1.0,
+   "input_r2": 0.5436951587026844,
+   "psi": 0.14258602261543274,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "value_field",
+   "n": 675,
+   "hz": 22.339990123456793,
+   "dim": 7.5751114147454714,
+   "dim_counts": 8.299435930107412,
+   "decode": 0.01155555555555556,
+   "active": 1.0,
+   "input_r2": 0.5466153336052437,
+   "psi": 0.14274534583091736,
+   "psi_dead": 0.0
+  }
+ ],
+ "reach": {
+  "L1": 0.38312983946561363
+ },
+ "score": {
+  "dim_ratio": 1.0,
+  "decode_last": 0.13066666666666665,
+  "decode_ratio": 1.0,
+  "input_r2_ratio": 1.0,
+  "reach_min_max": 1.0
+ },
+ "calibration_factors": {
+  "1": 0.8646147826505887,
+  "fields": 0.7720325169428643
+ },
+ "snake_config": {
+  "toroidal": "local",
+  "ei_layers": 1,
+  "network": {
+   "input": {
+    "mean_scale": 0.08646147826505887,
+    "sd_scale": 0.043230739132529436
+   },
+   "layers": [
+    {}
+   ],
+   "fields": {
+    "conn": {
+     "mean_scale": 0.19300812923571609,
+     "sd_scale": 0.03860162584714322
+    }
+   }
+  }
+ },
+ "seconds": 410.7,
+ "log": [
+  "    calibrate L1_E:   31.5 Hz -> x0.80",
+  "    calibrate L1_E:   17.0 Hz -> x1.09",
+  "    calibrate policy_field:   34.4 Hz -> x0.76",
+  "    calibrate policy_field:   25.8 Hz -> x0.88",
+  "    calibrate policy_field:   15.1 Hz -> x1.15"
+ ]
+}

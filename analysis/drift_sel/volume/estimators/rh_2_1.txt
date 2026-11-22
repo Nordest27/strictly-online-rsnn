@@ -1,0 +1,1 @@
+route_half reward/best per 2000: 0.43 0.45 0.48 0.51 0.53 0.56 0.59 0.62 0.64 0.66 0.67 0.69 0.70 0.72 0.72 0.74 0.75 0.75 0.76 0.77  | corr(dG, oracle) +nan  twin flips nan  hidden Hz 68

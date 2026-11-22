@@ -1,0 +1,10 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bbm}[2026/08/26 local outline-font-free fallback]
+% The real CTAN `bbm' package ships blackboard-bold glyphs only as
+% Metafont bitmap fonts (no Type1/OpenType outlines exist upstream),
+% which the Tectonic engine cannot rasterize/embed. This local stand-in
+% provides the same \mathbbm / \mathbbmss macros using a bold fallback,
+% matching the fallback paper.tex already defines for when bbm.sty is
+% unavailable.
+\providecommand{\mathbbm}[1]{\mathbf{#1}}
+\providecommand{\mathbbmss}[1]{\mathbf{#1}}

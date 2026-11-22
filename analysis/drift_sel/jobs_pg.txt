@@ -1,0 +1,3 @@
+pglobal/pg0
+pglobal/pg1
+pglobal/pg11

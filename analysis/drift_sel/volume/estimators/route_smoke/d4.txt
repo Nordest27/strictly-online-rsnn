@@ -1,0 +1,1 @@
+spike steps 50000 eta 0.0001 decay 0.0: corr(S, w_forward) +0.872  sign agreement 0.895  |S| mean 0.111  RtW median 0  RtScSq median 0.0456  V mean 0.03

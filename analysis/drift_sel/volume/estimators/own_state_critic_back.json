@@ -1,0 +1,143 @@
+{
+ "vreg": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9642238751912257,
+   "bias (SE units)": 0.1657411632154913,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.9923167107951173,
+   "bias (SE units)": 0.3880446637189663,
+   "reward explained": 0.11343363964501502
+  },
+  "linear combined": {
+   "variance vs none": 0.9907115833455448,
+   "bias (SE units)": 0.4409711849442337,
+   "reward explained": 0.13098497112998958
+  },
+  "nonlinear H256": {
+   "variance vs none": 1.0279902278162465,
+   "bias (SE units)": 0.4892540830834431,
+   "reward explained": 0.14060647438849294
+  },
+  "own linear": {
+   "variance vs none": 0.9963266331898121,
+   "bias (SE units)": 0.17092616249806672,
+   "reward explained": 0.014844453416769487
+  },
+  "own nonlinear": {
+   "variance vs none": 1.004654184674578,
+   "bias (SE units)": 0.2909856633184981,
+   "reward explained": 0.028930790716380717
+  },
+  "own + inputs linear": {
+   "variance vs none": 0.9916483882671461,
+   "bias (SE units)": 0.43636168985236473,
+   "reward explained": 0.13176034717848528
+  },
+  "oracle": {
+   "variance vs none": 0.07124680774975356,
+   "bias (SE units)": 0.5975260547565521,
+   "reward explained": 0.9650317101959354
+  }
+ },
+ "rate": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9939634012791172,
+   "bias (SE units)": 0.022685207726168964,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.8348264886383499,
+   "bias (SE units)": 0.2519372412098057,
+   "reward explained": 0.16126822939958385
+  },
+  "linear combined": {
+   "variance vs none": 0.6562056260402839,
+   "bias (SE units)": 0.27805989451523255,
+   "reward explained": 0.2347551805984044
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.6809515497559199,
+   "bias (SE units)": 0.33509896933306343,
+   "reward explained": 0.2207195967105191
+  },
+  "own linear": {
+   "variance vs none": 0.9957660599174231,
+   "bias (SE units)": 0.04336689559232685,
+   "reward explained": 0.0002767946790795395
+  },
+  "own nonlinear": {
+   "variance vs none": 0.968371134511533,
+   "bias (SE units)": 0.33283124622107896,
+   "reward explained": -0.027158931908211614
+  },
+  "own + inputs linear": {
+   "variance vs none": 0.66694507096087,
+   "bias (SE units)": 0.2707138170214125,
+   "reward explained": 0.2329509414662918
+  },
+  "oracle": {
+   "variance vs none": 0.06692396209234953,
+   "bias (SE units)": 0.4558566242031396,
+   "reward explained": 0.9151317187708363
+  }
+ },
+ "decorr": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.8997514486610336,
+   "bias (SE units)": 0.07971354401416407,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.8453476510282029,
+   "bias (SE units)": 0.22667876510749402,
+   "reward explained": 0.02318865764087341
+  },
+  "linear combined": {
+   "variance vs none": 0.8583819554918156,
+   "bias (SE units)": 0.26250535427556565,
+   "reward explained": 0.028291873733047868
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.9772781814434951,
+   "bias (SE units)": 0.3898781263121864,
+   "reward explained": 0.014882890884766076
+  },
+  "own linear": {
+   "variance vs none": 0.8936207256947576,
+   "bias (SE units)": 0.07267412929479915,
+   "reward explained": 8.900882808710042e-05
+  },
+  "own nonlinear": {
+   "variance vs none": 0.9256164025898996,
+   "bias (SE units)": 0.15204646358560128,
+   "reward explained": -0.0012024419281798648
+  },
+  "own + inputs linear": {
+   "variance vs none": 0.8502235869180925,
+   "bias (SE units)": 0.258507457587824,
+   "reward explained": 0.028433971563876337
+  },
+  "oracle": {
+   "variance vs none": 0.23432959890508828,
+   "bias (SE units)": 0.7432532566596495,
+   "reward explained": 0.7640279377708978
+  }
+ }
+}

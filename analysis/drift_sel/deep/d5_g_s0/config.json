@@ -1,0 +1,114 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.418,
+  "p_max": 0.831,
+  "input_sigma_cells": 1.791,
+  "inhibition_scale": 3.554,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.642
+ },
+ "network": {
+  "fields": null,
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.5141154941273796,
+     "sd_scale": 0.15141154941273796
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.1802304542566338,
+     "sd_scale": 0.11802304542566339
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.3711525032061462,
+     "sd_scale": 0.13711525032061464
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.1515770343367342,
+     "sd_scale": 0.11515770343367343
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ]
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 5,
+ "monitor": true,
+ "monitor_every": 10000,
+ "c_reg": 0.0001,
+ "hidden_rule": {
+  "preset": "proposed",
+  "drift": 0.0,
+  "gradient": 1.0,
+  "diagnose_parts": true,
+  "homeostat": 1.0,
+  "center_eligibility": 0.9999,
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 1.0
+  }
+ },
+ "seed": 0,
+ "csv_prefix": "d5_g_s0",
+ "backend": "single_threaded_cpu",
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.5,
+ "episodic_traces": true,
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 0,
+  "decoder": "lse",
+  "beta": 1.0
+ },
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "selection": {
+  "n_candidates": 8,
+  "seed": 0
+ },
+ "move_log": {
+  "probe_every": 250000,
+  "probe_moves": 1600,
+  "aggregate": true
+ },
+ "hid_e": 10,
+ "hid_i": 8,
+ "fan_in": 150,
+ "max_timesteps": 1000000
+}

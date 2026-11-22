@@ -1,0 +1,104 @@
+{
+ "sens": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0
+  },
+  "constant": {
+   "variance vs none": 1.0001573425462171,
+   "bias (SE units)": 0.024903220395026078
+  },
+  "delta*meanQ": {
+   "variance vs none": 0.9224199265893926,
+   "bias (SE units)": 0.1643126753449482
+  },
+  "delta*own": {
+   "variance vs none": 0.9333751600197302,
+   "bias (SE units)": 0.23622520860931245
+  },
+  "delta*afferent": {
+   "variance vs none": 0.35997218718600654,
+   "bias (SE units)": 0.6047872710794722
+  },
+  "delta*dedicated": {
+   "variance vs none": 0.41266384172568016,
+   "bias (SE units)": 0.5452742025862267
+  },
+  "delta*neighbours": {
+   "variance vs none": 0.5599558271061849,
+   "bias (SE units)": 0.5092876933642182
+  },
+  "delta*shadow": {
+   "variance vs none": 0.2541939312011041,
+   "bias (SE units)": 0.6258494504598628
+  },
+  "delta*shadow+nbr": {
+   "variance vs none": 0.23673559819818468,
+   "bias (SE units)": 0.6661098182799785
+  },
+  "oracle": {
+   "variance vs none": 0.20539574065079996,
+   "bias (SE units)": 0.6149006607761301
+  },
+  "Q explained": {
+   "own": 0.05812550385401216,
+   "afferent": 0.6858710418547646,
+   "dedicated": 0.5421090899909315,
+   "neighbours": 0.4555538875042129,
+   "shadow": 0.8193096970512443,
+   "shadow+nbr": 0.8263367309279894,
+   "oracle": 0.8696708860125995
+  }
+ },
+ "contr": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9999970886814076,
+   "bias (SE units)": 0.00374363138249042
+  },
+  "delta*meanQ": {
+   "variance vs none": 0.21308475568034263,
+   "bias (SE units)": 0.4296048262182597
+  },
+  "delta*own": {
+   "variance vs none": 0.20490652729298656,
+   "bias (SE units)": 0.5514826107105544
+  },
+  "delta*afferent": {
+   "variance vs none": 0.12154255195605479,
+   "bias (SE units)": 0.736309766352846
+  },
+  "delta*dedicated": {
+   "variance vs none": 0.13322359357768448,
+   "bias (SE units)": 0.6572155156331297
+  },
+  "delta*neighbours": {
+   "variance vs none": 0.1395288497357017,
+   "bias (SE units)": 0.6124789295439907
+  },
+  "delta*shadow": {
+   "variance vs none": 0.11871488597420576,
+   "bias (SE units)": 0.6000838341974815
+  },
+  "delta*shadow+nbr": {
+   "variance vs none": 0.0965395544811843,
+   "bias (SE units)": 0.6134531340794678
+  },
+  "oracle": {
+   "variance vs none": 0.07855649448532862,
+   "bias (SE units)": 0.6686319082104184
+  },
+  "Q explained": {
+   "own": 0.08729082695611834,
+   "afferent": 0.5223879251042447,
+   "dedicated": 0.4199709306527584,
+   "neighbours": 0.3898939354592061,
+   "shadow": 0.8281183962147987,
+   "shadow+nbr": 0.8401755561089543,
+   "oracle": 0.8563251008798186
+  }
+ }
+}

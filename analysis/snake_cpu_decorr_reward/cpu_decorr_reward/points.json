@@ -1,0 +1,98 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "toroidal": "legacy",
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 10000,
+  "dale": {
+   "every_episodes": 1,
+   "local": true
+  }
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "decorr0.1"
+    },
+    "hidden_rule": {
+     "preset": "proposed",
+     "local": {
+      "route": "GRADIENT_INSTANT",
+      "dv": 0.0,
+      "vreg": 0.0,
+      "rate": 0.0,
+      "decorr": 0.1
+     }
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "decorr1"
+    },
+    "hidden_rule": {
+     "preset": "proposed",
+     "local": {
+      "route": "GRADIENT_INSTANT",
+      "dv": 0.0,
+      "vreg": 0.0,
+      "rate": 0.0,
+      "decorr": 1.0
+     }
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "scale+decorr0.1"
+    },
+    "hidden_rule": {
+     "preset": "proposed",
+     "local": {
+      "route": "GRADIENT_INSTANT",
+      "dv": 0.0,
+      "vreg": 0.0,
+      "rate": 0.0,
+      "decorr": 0.1
+     }
+    },
+    "plastic_inhibition": {
+     "eta": 0.001,
+     "mode": "covariance",
+     "scaling": 0.01
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "scale+decorr1"
+    },
+    "hidden_rule": {
+     "preset": "proposed",
+     "local": {
+      "route": "GRADIENT_INSTANT",
+      "dv": 0.0,
+      "vreg": 0.0,
+      "rate": 0.0,
+      "decorr": 1.0
+     }
+    },
+    "plastic_inhibition": {
+     "eta": 0.001,
+     "mode": "covariance",
+     "scaling": 0.01
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+pilot: chosen neurons [28 18 43] REINFORCE SNR [0.052 0.042 0.041] mean psi [0.222 0.251 0.044]
+28 target synapses; 84 neurons can be perturbed
+ fraction of other neurons perturbed | SNR drift estimate |  SNR REINFORCE | sd(V_T)
+                                0.00 |              0.115 |          0.012 | 0.1422   (3 neurons perturbed)
+                                0.25 |              0.112 |          0.011 | 0.2138   (23 neurons perturbed)
+                                0.50 |              0.103 |          0.010 | 0.1938   (43 neurons perturbed)
+                                1.00 |              0.111 |          0.009 | 0.1985   (84 neurons perturbed)
+(SNR resolution ~ 0.011: values near it are indistinguishable from zero)

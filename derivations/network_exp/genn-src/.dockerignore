@@ -1,0 +1,9 @@
+.git
+build
+dist
+docs
+lib
+obj*
+tests
+**/*.so
+**/*.lib

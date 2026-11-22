@@ -1,0 +1,77 @@
+make: Entering directory '/home/user/repos/personal/analysis/slow_analysis_small/work/none/noneInferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/slow_analysis_small/work/none/noneInferenceCompiler_CODE'
+
+none
+  pop              Hz tau(fr)   cur  memory lag 1..8                            from E
+  L1_E           29.4    0.87  0.82  0.13 0.15 0.12 0.09 0.07 0.04 0.03 0.00   
+  L2_E           26.2    0.91  0.66  0.15 0.14 0.11 0.08 0.05 0.03 0.01 0.00   
+  L3_E           27.4    0.95  0.56  0.20 0.15 0.12 0.08 0.05 0.02 0.00 0.00   
+  L4_E           29.2    0.98  0.50  0.24 0.14 0.12 0.06 0.04 0.01 0.00 0.00   
+  L5_E           26.6    0.96  0.47  0.24 0.14 0.12 0.06 0.04 0.02 0.00 0.00   
+  policy_field   29.8    0.97  0.41  0.19 0.13 0.10 0.06 0.02 0.00 0.00 0.00   
+  value_field    31.8    0.99  0.42  0.19 0.14 0.12 0.05 0.02 0.00 0.00 0.00   
+make: Entering directory '/home/user/repos/personal/analysis/slow_analysis_small/work/slowL1_40/slowL1_40InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/slow_analysis_small/work/slowL1_40/slowL1_40InferenceCompiler_CODE'
+
+slowL1_40
+  pop              Hz tau(fr)   cur  memory lag 1..8                            from E
+  L1_E           28.2    0.89  0.81  0.15 0.16 0.12 0.09 0.07 0.04 0.02 0.00   
+  L1_S           28.3    0.95  0.74  0.25 0.18 0.12 0.10 0.08 0.06 0.03 0.01   0.82
+  L2_E           26.9    0.99  0.67  0.22 0.14 0.11 0.08 0.06 0.04 0.02 0.00   
+  L3_E           27.3    1.02  0.58  0.25 0.15 0.13 0.08 0.06 0.03 0.01 0.00   
+  L4_E           25.9    1.01  0.51  0.26 0.14 0.12 0.07 0.05 0.03 0.01 0.00   
+  L5_E           29.5    1.04  0.46  0.26 0.15 0.14 0.08 0.05 0.02 0.01 0.00   
+  policy_field   26.7    1.00  0.39  0.20 0.13 0.12 0.07 0.03 0.02 0.00 0.00   
+  value_field    25.4    0.99  0.38  0.20 0.13 0.12 0.07 0.03 0.01 0.00 0.00   
+  policy_field -S                0.32  0.11 0.09 0.07 0.04 0.01 0.00 0.00 0.00   (slow populations' output removed)
+  value_field -S                0.32  0.11 0.09 0.07 0.03 0.01 0.00 0.00 0.00   (slow populations' output removed)
+make: Entering directory '/home/user/repos/personal/analysis/slow_analysis_small/work/slowL1_80/slowL1_80InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/slow_analysis_small/work/slowL1_80/slowL1_80InferenceCompiler_CODE'
+
+slowL1_80
+  pop              Hz tau(fr)   cur  memory lag 1..8                            from E
+  L1_E           27.0    0.88  0.81  0.15 0.16 0.12 0.09 0.07 0.04 0.03 0.01   
+  L1_S           26.4    1.01  0.68  0.24 0.21 0.11 0.09 0.08 0.06 0.04 0.02   0.74
+  L2_E           28.3    1.03  0.66  0.23 0.15 0.11 0.09 0.06 0.04 0.03 0.00   
+  L3_E           27.6    1.05  0.56  0.25 0.13 0.11 0.09 0.05 0.04 0.02 0.00   
+  L4_E           26.2    1.03  0.50  0.27 0.13 0.12 0.08 0.06 0.03 0.02 0.00   
+  L5_E           30.2    1.04  0.44  0.26 0.14 0.12 0.08 0.05 0.02 0.01 0.00   
+  policy_field   27.1    1.00  0.37  0.19 0.12 0.11 0.07 0.05 0.02 0.00 0.00   
+  value_field    26.5    1.01  0.37  0.20 0.13 0.12 0.08 0.04 0.02 0.00 0.00   
+  policy_field -S                0.33  0.12 0.09 0.08 0.04 0.02 0.00 0.00 0.00   (slow populations' output removed)
+  value_field -S                0.33  0.12 0.10 0.08 0.04 0.03 0.01 0.00 0.00   (slow populations' output removed)
+make: Entering directory '/home/user/repos/personal/analysis/slow_analysis_small/work/fastL1_10/fastL1_10InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/slow_analysis_small/work/fastL1_10/fastL1_10InferenceCompiler_CODE'
+
+fastL1_10
+  pop              Hz tau(fr)   cur  memory lag 1..8                            from E
+  L1_E           30.8    0.88  0.82  0.14 0.17 0.12 0.09 0.07 0.04 0.02 0.00   
+  L1_S           34.5    0.88  0.82  0.15 0.16 0.12 0.09 0.07 0.04 0.03 0.00   0.88
+  L2_E           31.8    0.94  0.69  0.17 0.15 0.12 0.07 0.06 0.03 0.01 0.00   
+  L3_E           27.7    0.96  0.60  0.22 0.15 0.14 0.07 0.05 0.02 0.00 0.00   
+  L4_E           25.6    0.96  0.53  0.25 0.15 0.13 0.08 0.05 0.02 0.00 0.00   
+  L5_E           29.6    0.99  0.48  0.24 0.16 0.13 0.07 0.03 0.01 0.00 0.00   
+  policy_field   26.7    0.97  0.42  0.17 0.15 0.12 0.06 0.04 0.00 0.00 0.00   
+  value_field    25.8    0.97  0.42  0.18 0.14 0.11 0.06 0.03 0.00 0.00 0.00   
+  policy_field -S                0.29  0.10 0.09 0.08 0.03 0.02 0.00 0.00 0.00   (slow populations' output removed)
+  value_field -S                0.30  0.08 0.08 0.06 0.04 0.01 0.00 0.00 0.00   (slow populations' output removed)
+make: Entering directory '/home/user/repos/personal/analysis/slow_analysis_small/work/slowall_40/slowall_40InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/slow_analysis_small/work/slowall_40/slowall_40InferenceCompiler_CODE'
+
+slowall_40
+  pop              Hz tau(fr)   cur  memory lag 1..8                            from E
+  L1_E           28.3    0.88  0.80  0.15 0.15 0.11 0.08 0.06 0.05 0.02 0.00   
+  L1_S           28.2    0.95  0.74  0.22 0.17 0.11 0.09 0.08 0.06 0.04 0.01   0.83
+  L2_E           27.8    0.99  0.65  0.19 0.14 0.12 0.07 0.06 0.02 0.02 0.00   
+  L2_S           28.6    1.11  0.61  0.25 0.17 0.11 0.09 0.08 0.04 0.03 0.01   0.88
+  L3_E           30.4    1.13  0.55  0.24 0.14 0.11 0.08 0.05 0.03 0.01 0.00   
+  L3_S           28.8    1.18  0.52  0.24 0.17 0.12 0.08 0.07 0.05 0.03 0.00   0.90
+  L4_E           31.6    1.23  0.49  0.27 0.14 0.12 0.08 0.05 0.02 0.01 0.00   
+  L4_S           33.5    1.27  0.44  0.27 0.20 0.12 0.09 0.06 0.04 0.02 0.00   0.92
+  L5_E           32.5    1.24  0.43  0.28 0.13 0.11 0.08 0.05 0.03 0.01 0.00   
+  L5_S           26.8    1.24  0.35  0.27 0.21 0.13 0.08 0.06 0.05 0.03 0.01   0.91
+  policy_field   40.2    1.31  0.32  0.23 0.12 0.10 0.07 0.05 0.02 0.00 0.00   
+  value_field    42.3    1.33  0.32  0.24 0.11 0.10 0.07 0.04 0.03 0.01 0.00   
+  policy_field -S               -13427752895.15  0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00   (slow populations' output removed)
+  value_field -S               -4929754916.77  0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00   (slow populations' output removed)
+finished

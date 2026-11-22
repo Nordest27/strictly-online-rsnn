@@ -1,0 +1,11 @@
+fixed_plain_s0
+fixed_vr_s0
+vr_s0
+dc_s0
+vrd_s0
+vr_s1
+dc_s1
+vrd_s1
+plain_s2
+soft_s1
+soft_s2

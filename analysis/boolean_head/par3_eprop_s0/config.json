@@ -1,0 +1,29 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "monitor": true,
+ "monitor_every": 20000,
+ "hidden_rule": {
+  "preset": "eprop"
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "seed": 0,
+ "max_timesteps": 2000000,
+ "min_episodes": 0,
+ "csv_prefix": "par3_eprop_s0",
+ "repetition": 0,
+ "trace_log": false,
+ "boolean_head": {
+  "k": 3,
+  "radius": 1,
+  "seed": 0,
+  "hold": 30,
+  "tables": "parity"
+ }
+}

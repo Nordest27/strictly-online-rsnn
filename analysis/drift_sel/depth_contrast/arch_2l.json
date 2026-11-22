@@ -1,0 +1,52 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 0.75,
+  "p_max": 0.791,
+  "input_sigma_cells": 1.857,
+  "inhibition_scale": 7.963,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.891,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 1.124,
+    "mean_scale": 0.9584429076588947,
+    "sd_scale": 0.19168858153177895
+   },
+   "shape": 4,
+   "conn_i": {
+    "sigma_cells": 1.124,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 1.5763087651836543,
+     "sd_scale": 0.15763087651836544
+    },
+    "to_next_i": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ],
+  "input": {
+   "mean_scale": 0.1893116067601344,
+   "sd_scale": 0.0946558033800672
+  }
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 2,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50
+}

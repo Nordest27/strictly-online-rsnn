@@ -1,0 +1,6 @@
+L5 drift  : SNR median 0.051 | below bound 41% | of the triangle's ill-conditioned synapses now measurable: 0% | drift vs derivative of its own eligibility: corr 0.96
+L5 exp0.3 : SNR median 0.046 | below bound 44% | of the triangle's ill-conditioned synapses now measurable: 13% | drift vs derivative of its own eligibility: corr 0.98
+L5 exp0.6 : SNR median 0.051 | below bound 42% | of the triangle's ill-conditioned synapses now measurable: 12% | drift vs derivative of its own eligibility: corr 0.97
+L5 exp1.0 : SNR median 0.053 | below bound 38% | of the triangle's ill-conditioned synapses now measurable: 20% | drift vs derivative of its own eligibility: corr 0.97
+L5 fs0.3  : SNR median 0.047 | below bound 44% | of the triangle's ill-conditioned synapses now measurable: 12% | drift vs derivative of its own eligibility: corr 0.99
+L5 fs1.0  : SNR median 0.051 | below bound 40% | of the triangle's ill-conditioned synapses now measurable: 17% | drift vs derivative of its own eligibility: corr 0.97

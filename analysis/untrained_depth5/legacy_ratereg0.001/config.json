@@ -1,0 +1,26 @@
+{
+ "hidden_rule": {
+  "preset": "reservoir",
+  "fire_rate_gradient": true
+ },
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "ei_layers": 5,
+ "probe": {
+  "moves": 2000
+ },
+ "monitor": true,
+ "monitor_every": 2000,
+ "backend": "single_threaded_cpu",
+ "min_episodes": 0,
+ "max_timesteps": 600000,
+ "seed": 0,
+ "trace_log": false,
+ "toroidal": "legacy",
+ "_meta": {
+  "variant": "legacy_ratereg0.001"
+ },
+ "c_reg": 0.001,
+ "f_target": 20.0
+}

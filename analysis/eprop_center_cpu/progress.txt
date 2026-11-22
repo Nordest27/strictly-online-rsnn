@@ -1,0 +1,4 @@
+center_s1 done 10:56 1 probe
+center_s0 done 10:57 1 probe
+plain_s0 done 11:10 1 probe
+plain_s1 done 11:12 1 probe

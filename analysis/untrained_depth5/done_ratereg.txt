@@ -1,0 +1,4 @@
+legacy_ratereg0.01 exit 0
+legacy_ratereg0.001 exit 0
+legacy_active_ratereg0.01 exit 0
+legacy_active_ratereg0.001 exit 0

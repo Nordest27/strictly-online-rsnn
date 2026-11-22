@@ -1,0 +1,76 @@
+--- a/examples/eprop/snake.py	2026-10-05 10:27:35.626495393 +0200
++++ b/examples/eprop/snake.py	2026-10-05 15:54:32.137046573 +0200
+@@ -1,5 +1,6 @@
+ ##################### SNAKE ENV #####################
+ #####################################################
++import os
+ from pygenn import SynapseMatrixConnectivity
+ import multiprocessing as mp
+ from multiprocessing import Manager, Queue
+@@ -459,10 +460,10 @@
+ 
+ CONNECTIVITY_TYPE = "toroidal"
+ WINDOW_EPISODES = 100
+-BOARD_SIZE = 5
++BOARD_SIZE = int(os.environ.get("BOARD_SIZE", "5"))
+ 
+-VISIBLE_RANGE = 5
+-SCALE = 4
++VISIBLE_RANGE = int(os.environ.get("VISIBLE_RANGE", "5"))
++SCALE = int(os.environ.get("SCALE", "4"))
+ 
+ # Camera mode:
+ #   True  -> the camera viewport is clamped to the board (never samples
+@@ -484,8 +485,8 @@
+ INPUT_SHAPE = (VISIBLE_RANGE*SCALE, VISIBLE_RANGE*SCALE, INPUT_C)
+ DOWNSAMPLE_SHAPE = (30, 30, INPUT_C)
+ UNIFIED_SHAPE = (30, 30, INPUT_C)
+-HIDDEN_E_SHAPE = (20, 20, INPUT_C)
+-HIDDEN_I_SHAPE = (15, 15, INPUT_C)
++HIDDEN_E_SHAPE = (int(os.environ.get("HID_E", "20")),) * 2 + (INPUT_C,)
++HIDDEN_I_SHAPE = (int(os.environ.get("HID_I", "15")),) * 2 + (INPUT_C,)
+ INPUT_SIZE = np.prod(INPUT_SHAPE)
+ NUM_HIDDEN_E = np.prod(HIDDEN_E_SHAPE)
+ NUM_HIDDEN_I = np.prod(HIDDEN_I_SHAPE)
+@@ -494,9 +495,9 @@
+ SIGMA_IN = 0.1
+ SIGMA_H = 0.05
+ 
+-DESIRED_FAN_IN_IN = 300
+-DESIRED_FAN_IN_H1 = 300
+-DESIRED_FAN_IN_H2 = 300
++DESIRED_FAN_IN_IN = int(os.environ.get("FAN_IN", "300"))
++DESIRED_FAN_IN_H1 = DESIRED_FAN_IN_IN
++DESIRED_FAN_IN_H2 = DESIRED_FAN_IN_IN
+ 
+ # FAN_IN_SCALE_IN = 0.25
+ 
+@@ -1030,7 +1031,7 @@
+                 "mean_square_error",
+             value: "mean_square_error"
+         },
+-        optimiser=AdaBelief(1e-5, beta1=0.99, beta2=0.99999, l2_init_strength=1e-5), #, soft_grad_clip=10), 
++        optimiser=AdaBelief(float(os.environ.get("LR", "1e-5")), beta1=0.99, beta2=0.99999, l2_init_strength=1e-5), #, soft_grad_clip=10), 
+         # optimiser=Adam(7e-6, beta1=0.9, beta2=0.999, l2_init_strength=0.0*1e-5), #, soft_grad_clip=10), 
+         c_reg=1e-4,
+         # c_reg=1.0,
+@@ -1506,8 +1507,8 @@
+     p_sigma.start()
+     return manager, metrics_q, best_run_q, random_run_q, sigma_q, stop_event, p_plots, p_runs, p_sigma
+ 
+-CSV_PREFIX = "x2"
+-REPETITION = 5
++CSV_PREFIX = os.environ.get("CSV_PREFIX", "x2")
++REPETITION = int(os.environ.get("REPETITION", "5"))
+ CSV_OUTPUT = f"outputs/{CSV_PREFIX}({REPETITION}).csv"
+ os.makedirs(os.path.dirname(CSV_OUTPUT), exist_ok=True)
+ 
+@@ -1584,7 +1585,7 @@
+         gamma_disc_reward = 0
+         ep = 0
+         # while compiled_net.genn_model.timestep < 30e6: 
+-        while ep < 20000 or compiled_net.genn_model.timestep < 30e6:
++        while ep < int(os.environ.get("MAX_EPISODES", "20000")) or (os.environ.get("MAX_EPISODES") is None and compiled_net.genn_model.timestep < 30e6):
+             ep += 1
+             # if env.won:
+             #     compiled_net.save_connectivity((BOARD_SIZE,), serialiser)

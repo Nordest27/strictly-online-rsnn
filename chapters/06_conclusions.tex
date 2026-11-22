@@ -1,0 +1,540 @@
+\chapter{Conclusions}
+\label{ch:conclusions}
+
+\section{Summary of Contributions}
+\label{sec:summary_contributions}
+
+This thesis set out to study whether recurrent spiking neural networks can
+learn effectively in fully online reinforcement learning settings using
+learning rules that rely only on local computations and a globally
+broadcast reward signal, and made two main contributions toward answering
+this question.
+
+The first contribution is the implementation of a continuously running reinforcement-learning agent
+based on an excitatory-inhibitory recurrent spiking neural network, trained online with the e-prop
+framework \citep{eprop2020}, without episodic resets, on a GPU-accelerated, event-based simulation
+substrate \citep{Yavuz2016GeNN}. This online, single-agent, no-reset formulation is a strict setting
+for reward-based e-prop, and we did not find an existing implementation run under the same
+conditions to compare against directly. As part of this implementation we also integrated
+TD($\lambda$) into the e-prop update, decoupling the discount factor $\gamma$ from the credit-trace
+decay $\lambda$, a formulation used throughout the experiments in Chapter~\ref{ch:results}.
+
+The second contribution is \emph{distributed e-prop}, a new family of learning rules that eliminates
+the structured feedback weights used by standard e-prop to route loss information back to each
+neuron. Building on the theoretical connection between perturbation-based learning and policy
+gradient methods, every neuron is instead treated as an independent stochastic actor that perturbs
+its own membrane dynamics and correlates this local exploration with a single, identical, globally
+broadcast temporal-difference error. The key novel ingredient that makes this work is the heuristic
+introduction of the pseudo-derivative $\psi^t_j$ as a gating factor on the local signal, although the
+perturbation derivation does not by itself call for it, borrowing $\psi^t_j$ from e-prop concentrates
+each neuron's update on the moments when its membrane is near the firing threshold, where its
+perturbations actually influence spiking, and suppresses it otherwise. This heuristic gating turns
+out to be essential, removing it collapses learning and lets the membrane
+voltage diverge (Chapter~\ref{ch:results}). Several variants of the rule were derived,
+differing in where the perturbation is injected (at the neuron or at the synapse) and in whether the
+local perturbation signal is additionally routed through the recurrent connectivity, and these
+variants were evaluated against standard e-prop with adaptive feedback on
+three reinforcement learning tasks of varying complexity.
+
+\clearpage
+\section{Main Findings}
+\label{sec:main_findings}
+
+The experiments in Chapter~\ref{ch:results} support several
+findings that, taken together, characterize when and how each family of
+learning rules succeeds or fails.
+
+\paragraph{In the continuing, no-reset setting the reward rate is the natural measure of performance,
+and the small discount factor the spiking rules need for a stable critic limits the \emph{policy}
+they can learn with respect to it.} Using PPO only as a reference optimizer to probe the objective, the ceiling
+experiments (Section~\ref{sec:ppo_ceiling}) show on Snake $5\times5$ that with a large
+$\gamma = 0.99$ the episodic and continuing formulations lead to markedly different policies, one
+favouring episode return and the other the reward rate, each poor on the other, whereas a small
+$\gamma = 0.5$ reaches a good policy under neither, settling into a compromise that is suboptimal on
+both metrics. Crucially, this is a limit on the achievable policy, not on the network's ability to
+learn. The spiking rules
+operate in exactly this small-$\gamma$ regime and reach roughly the operating point the reference
+optimizer attains there, so on this task they sit near the ceiling \emph{for that regime}, what holds
+them back is the regime itself, not their credit assignment. Decoupling $\lambda$ from $\gamma$
+(Section~\ref{sec:practical-lambda}) is the natural way to try to lift this, keeping a small $\gamma$
+for critic stability while extending the credit horizon through $\lambda$, but it is self-limiting:
+as the same experiment and the analysis in Section~\ref{sec:ppo_ceiling} show, once the
+critic predicts the relevant rewards well the higher-order terms a larger $\lambda$ would contribute
+vanish, so the longer credit assignment is effectively switched off precisely where the critic is
+accurate, and $\lambda$ can extend the policy's effective horizon only where the critic cannot
+predict those rewards.
+
+\paragraph{Symmetric e-prop fails as causal path length grows, and this
+motivates the alternatives studied in this thesis.} On Snake $5\times5$,
+symmetric e-prop was the strongest individual configuration tested, but
+its performance collapsed entirely once per-head field layers were
+introduced between the recurrent core and the output heads
+(Section~\ref{sec:symmetric-failure}). Because its feedback weights are
+tied directly to the forward output weights, any neuron not directly
+connected to an output head receives no feedback signal whatsoever once
+the causal path length exceeds one. This is not a gradual degradation but
+an outright failure mode, and it directly motivates both random/adaptive
+e-prop, whose feedback is decoupled from the forward weights, and
+distributed e-prop, which removes structured feedback altogether.
+
+\paragraph{Distributed e-prop is competitive with, and sometimes faster than, adaptive e-prop, but with
+a lower asymptotic ceiling in some settings.} Across the Snake and Pac-Man comparisons
+(Sections~\ref{sec:snake_comparison} and~\ref{sec:pacman_comparison}),
+several distributed e-prop variants reached usable policies as quickly or more quickly than adaptive
+e-prop within the fixed training budget used throughout this thesis. Over longer horizons, however,
+the ordering can reverse. On the extended five-layer Snake network (Section~\ref{subsec:snake-depth-comparison}),
+the distributed variants converged within the first few thousand episodes and then plateaued, while
+adaptive e-prop, after an extended period of near-zero reward consistent with the time feedback
+alignment takes to take effect, continued improving past the distributed variants' plateau for the
+remainder of the roughly $100{,}000$-episode run. The Connect Four results
+(Section~\ref{sec:connect_four}) are consistent with the same ordering, adaptive e-prop ends up
+highest and still slowly climbing while the distributed variants stay flat, although on that task the
+runs differ in length, no rule reaches a usable policy, and adaptive's continued gain coincides with
+steadily worsening spiking dynamics. Neither rule
+should therefore be read as uniformly faster or uniformly better; their relative standing depends on
+both the training budget and the task at hand.
+
+\paragraph{Neither learning rule is uniformly more robust to the choice of
+$\lambda$, and the two tasks studied gave opposite answers.} On Snake
+$5\times5$ (Section~\ref{sec:snake_lambda_comparison}), adaptive e-prop
+tolerated nearly the full range of $\lambda$ tested, failing only at the
+most extreme value, while the distributed variant showed a narrower and
+less monotonic band of values for which it learned promptly. On the
+Pac-Man randomized layouts problem
+(Section~\ref{sec:pacman_comparison}), the
+distributed variant tolerated a wide range of $\lambda$, while adaptive
+e-prop showed an inconsistent and often delayed learning onset across the
+same sweep. This reversal is itself one of the more informative results
+in this thesis, since it demonstrates directly that robustness to the
+credit-assignment horizon is not an intrinsic property of either
+algorithm, but depends on the task, and possibly on other interacting
+factors such as architecture depth or reward sparsity that differ between
+the two environments.
+
+\paragraph{Distributed e-prop exhibits at least two distinct failure modes
+under a poorly chosen $\lambda$, not one.} On the Pac-Man sweep, large
+values of $\lambda$ destabilized the network's spiking dynamics, but not
+always in the same direction, some values drove the network toward
+runaway, pathologically high firing, while at least one drove it toward
+the opposite extreme of excessive silence. Both are consistent with the
+underlying credit trace losing useful information at long horizons, but
+the fact that the same learning rule can fail in either direction, under
+broadly similar conditions, suggests that the relationship between
+$\lambda$ and network-level stability in this family of rules is more
+intricate than a simple variance argument would predict.
+
+\paragraph{The perturbation-based structure of distributed e-prop enables a
+form of local reward shaping that standard e-prop could not support in
+the same way.} The voltage-regularization experiment
+(Section~\ref{sec:regularization-exploration}) found that a local,
+perturbation-gated voltage reward could be used to keep membrane
+potentials in a well-regulated range for distributed e-prop, while the
+analogous regularization term applied within standard e-prop caused
+membrane voltages to diverge instead of stabilizing it. The likely explanation
+is that the perturbation trace naturally carries little signal when the
+membrane is far from threshold, gating the regularization update away
+from precisely the regime in which it would otherwise be poorly directed,
+a self-suppression property that the standard e-prop update lacks.
+
+\paragraph{Distributed e-prop is markedly more robust to a violated
+modeling assumption in the neuron model than adaptive e-prop in at least one
+observed setting.} When
+membrane integration was disabled during the refractory period, a change
+that invalidates an assumption in the analytical derivation of standard
+e-prop's eligibility trace, adaptive e-prop failed to learn at all on the
+Pac-Man randomized layouts problem, while the distributed variants
+continued to learn successfully and maintained well-regulated spiking
+dynamics (Section~\ref{subsec:no_refractory_integration}). This is consistent
+with distributed e-prop's credit assignment being based on perturbation
+correlations, which makes it comparatively insensitive to violations of the
+specific assumptions that decomposition relies on.
+
+\paragraph{The heuristic pseudo-derivative gating is essential to distributed e-prop, not an optional
+refinement.} Although the perturbation-based derivation does not itself require it, gating each
+neuron's local update by the pseudo-derivative $\psi^t_j$, so that credit accrues chiefly when the
+membrane is near the firing threshold, proves necessary for the rule to learn at all. The ablation
+that removes this factor (\emph{weight dist no heuristic}, Section~\ref{sec:snake_comparison}) does
+not merely learn more slowly ,its performance collapses well below every other recurrent variant and
+its membrane voltage diverges, growing without bound. This identifies the heuristic gating as a load-
+bearing component of the rule, and suggests
+that concentrating credit on the threshold-crossing regime, where a neuron's perturbations actually
+affect its spiking, is what keeps the perturbation-based update both well-directed and dynamically
+stable.
+
+\paragraph{Distributed e-prop learns representations from which the value head regresses faster and more
+cleanly than adaptive e-prop does, even though it carries no information about how it affects the
+value function, which is one of the most surprising results of this work.} Across the qualitative
+value-trace comparisons (Section~\ref{sec:value-traces}, Figure~\ref{fig:value_function_comparison}),
+the distributed variants develop sharper, more anticipatory value estimates earlier in training than
+adaptive e-prop, indicating that their recurrent representations are more readily linearly decodable
+into an accurate value signal. This is counterintuitive given the two rules' information content:
+adaptive e-prop routes an approximation of the loss gradient back through its feedback weights, so it
+carries an approximate value gradient, an explicit signal of how each neuron should change to reduce
+the value-prediction error, whereas distributed e-prop has no analogue at all, assigning credit only
+from the correlation between local perturbations and a single broadcast scalar. On the value-function
+regression task specifically, the gradient-aligned rule would therefore be expected to hold the
+advantage, and yet the perturbation-based rule produces the more value-friendly representations. The
+result suggests that shaping a representation that supports value estimation does not require an
+explicit value gradient, and that the perturbation-based dynamics confer some advantage on
+representation learning that the structured-feedback rule does not, an effect worth isolating in
+future work.
+
+\paragraph{The learning rules studied here are genuinely different objects, not minor variants of one
+another, and distributed e-prop in particular performs surprisingly well given how much it gives up,
+which makes it a promising target for further study.} Throughout the experiments the rules differed
+not only in final performance but in how they learned, in their spiking dynamics, their sensitivity
+to depth and to $\lambda$, their failure modes, and their robustness to violated modeling
+assumptions, so they are better understood as distinct credit-assignment mechanisms that each
+warrant study in their own right than as interchangeable choices. What stands out most is that
+distributed e-prop remains competitive at all under the strictest constraints considered in this
+thesis, it discards the structured feedback weights of standard e-prop entirely, assigns credit from
+nothing more than the correlation between each neuron's own local perturbation and a single,
+globally broadcast scalar TD error, and does so fully online and in constant memory. That a rule this
+unconstrained can match or, in some settings, outpace adaptive e-prop, tolerate a violated neuron
+model that defeats it, and support local reward shaping it cannot, is the most surprising outcome of
+this work. It strongly suggests that distributed e-prop is worth studying further, both to map where
+its advantages hold and to find the tasks and regimes that expose its limits.
+
+\paragraph{High firing rates are a consistent operating regime, not a
+pathology of any single rule.} Across all experiments, all learning rules, and
+all three tasks, firing rates converge to a band of roughly 130--170~Hz,
+far above both the biological range ($\approx$5--20~Hz) and the target rate
+$F^* = 10$~Hz used in the firing-rate regularization. This holds regardless of
+credit-assignment strategy, network depth, or task. The firing-rate
+regularization term imported from standard e-prop proves insufficient to keep
+rates near the target. Our hypothesis is that the some of the tasks studied here 
+(Snake, Pac-Man) modeled as they are in this work, 
+are highly reactive, requiring the network to maintain near-constant 
+firing to produce value and policy estimates at every
+step, which pushes the dynamics toward dense activity. Additionally, when the
+learning signal is weak or absent, the dynamics tend to drift toward
+saturation, as the mechanisms that would otherwise
+reinforce sparse, informative firing patterns lack the signal to do so.
+Whether stronger rate-control mechanisms or tasks with different temporal
+structure would allow the network to settle into a sparser regime remains an
+open question.
+
+\paragraph{A single, globally broadcast scalar signal is enough to train recurrent spiking networks
+effectively online, though with qualifications.} The question of whether credit assignment from
+nothing more than local computation and one identical, globally broadcast reward-related signal can
+drive effective learning, recurring throughout this thesis, is answered here in the affirmative for
+the tasks studied: the distributed e-prop variants learn non-trivial behavior on Snake and Pac-Man,
+including the anticipatory, partially observable navigation the latter requires, and do so fully
+online, in constant memory, and within training budgets comparable to, and at times shorter than,
+those of the gradient-aligned adaptive rule. The qualifications are equally part of the finding. The
+extended-training comparison shows the distributed variants plateauing below adaptive e-prop's
+eventual ceiling (Section~\ref{subsec:snake-depth-comparison}), the usable range of $\lambda$ is
+task-dependent and can destabilize the dynamics when poorly chosen, and the hardest, maximally
+sparse task, Connect Four, was not solved by any rule (Section~\ref{sec:connect_four}). The
+broadcast signal is therefore sufficient to learn fairly complex policies efficiently, but not
+without limits on asymptotic performance and on the difficulty of task it can currently reach.
+
+\section{Limitations}
+\label{sec:limitations}
+
+Several limitations should be kept in mind when interpreting the results
+of this thesis.
+
+\paragraph{Most comparisons rely on a small number of runs, and several of
+the depth and $\lambda$ sweeps reported in
+Chapter~\ref{ch:results} are single runs per configuration.} Where
+this is the case, it has been noted explicitly alongside the relevant
+results, but it means that some of the more striking individual
+observations, such as the specific failure of $\lambda = 0.4$ for the
+\texttt{combined} variant on Snake, or the specific failure mode taken by
+$\lambda = 0.9$ for \texttt{weight\_dist\_prop} on Pac-Man, cannot be
+distinguished from idiosyncrasies of that particular run without repeated
+seeds. The five-run comparisons presented for the primary Snake and
+Pac-Man evaluations are more robust in this respect, but even there, the
+hyperparameters were not tuned exhaustively for any single learning rule,
+and a configuration that favors one rule may be poorly matched to
+another, as noted repeatedly throughout Chapter~\ref{ch:results}.
+
+\paragraph{No direct comparison was made against Truncated Backpropagation Through
+Time as upper-bound baseline for task
+performance.} The motivation for this thesis is squarely the online,
+constant-memory setting in which this method is not applicable
+in its unmodified form, but this also means that the absolute
+performance ceiling achievable on these tasks is not known for the arquitectures
+tested in this thesis. If the requirements were relaxed, 
+we could test how these architectures would work using TBPTT and test it against 
+the presented rules.
+
+\paragraph{Several proposed extensions of distributed e-prop did not work
+reliably enough to be included in the main comparisons.} The per-synapse
+exploration-variance update (Section~\ref{subsec:exploration_variance}) was
+found to add complexity without a clear benefit over the simpler
+neuron-level update, and was therefore kept fixed in the main
+experiments. The propagation of local regularization rewards through the
+structured-routing machinery (Section~\ref{subsec:regularization}) showed
+promising preliminary results but was not investigated systematically.
+
+\section{Future Work}
+\label{sec:future_work}
+
+The limitations and open questions identified throughout this thesis
+suggest several directions for future work, ranging from immediate
+methodological extensions to more open-ended questions about how local,
+perturbation-based learning rules might be developed further.
+
+\paragraph{Systematic characterization of the discount $\gamma$.}
+Throughout this work the discount was fixed to $\gamma = 0.5$ on the basis of
+initial empirical exploration. This was
+sufficient to obtain stable learning, but it leaves the role of $\gamma$
+largely uncharted in our setting. The decoupling introduced in
+Section~\ref{sec:decoupled-lambda-rule} now makes such a study well-posed, since
+$\gamma$ is confined to the critic and no longer constrains the actor's credit
+horizon, its effect is cleanly isolated to value estimation, and a dedicated
+$\gamma$-sweep can be interpreted without confounding it with the
+action-credit-assignment range. A natural next step is therefore to map, for
+each learning rule, how critic learnability degrades as $\gamma$ grows,
+identifying the point at which the compounding of small per-step value errors
+across bootstrapping destabilizes the target $\delta_t = R_{t+1} + \gamma V_{t+1} -
+V_t$ and the value head ceases to converge. Because the learning rules differ
+in how they route the global feedback signal, their critics may tolerate
+different maximum discounts; characterizing this per-rule threshold would
+clarify whether the aggressive discount required here is a fundamental
+constraint of the continuing, no-reset setting with a noisy spike-based critic,
+or an artifact specific to certain rules. The interaction with an optional
+critic-specific $\lambda_V$ and with the absence of episodic resets would be
+worth examining in the same sweep.
+
+\paragraph{Combining structured feedback and perturbation-based credit
+assignment more deliberately.} Distributed e-prop was originally
+conceived as a way of correcting the bias introduced by the approximate
+feedback weights of standard e-prop, by supplementing the
+structured learning signal with a perturbation-based estimate. In
+practice, the \texttt{combined} variant explored in
+Chapter~\ref{ch:results}, which simply sums the synaptic
+perturbation update with the adaptively routed feedback update, behaved
+similarly to the perturbation-only variants and did not show a clearly
+synergistic improvement over either rule in isolation. This is somewhat
+surprising given the flexibility of the underlying framework, and it
+seems unlikely that no combination of the two signals can outperform
+each individually. More structured ways of combining them remain
+unexplored, the two signals could be weighted dynamically, 
+for instance based on the agreement between the two estimates, 
+in a manner similar to the heuristic agreement 
+term already introduced for the perturbation and
+backrouted traces in Section~\ref{subsec:structured_routing}; the feedback
+signal could be used primarily as a variance-reduction term early in
+training, when the perturbation-based estimate is least reliable, and
+phased out as the feedback weights converge; or the two updates could be
+applied to disjoint subsets of weights. 
+Identifying a combination strategy that reliably outperforms
+both constituent rules would be a natural next step.
+
+\paragraph{Ablating the role of learned output weights.} As discussed in
+Section~\ref{subsec:neuron_as_actor}, the output weights receive an exact
+gradient at every step, unlike the perturbation-based estimates that drive the
+recurrent layer, and the quality of the readout they learn largely determines
+how informative the broadcast error $`\delta_t`$ is for the hidden neurons.
+This suggests that much of the early learning may be driven by the readout
+adapting to the recurrent layer's initial dynamics. A dedicated ablation
+study (freezing the output weights at random initialization, or delaying
+their learning for a fixed number of steps) would help disentangle how much
+of the learning is attributable to the recurrent rule versus to the
+adaptation of the readout that supplies its credit signal.
+
+\paragraph{Alternative gating functions for the pseudo-derivative modulation.}
+The pseudo-derivative $`\psi_j^t`$ that gates the perturbation-based update
+is a specific choice, not a theoretical necessity, as noted in
+Section~\ref{subsec:lif_update_rule}, one could replace
+it with alternative gating mechanisms, such as smoother functions of the
+membrane potential, and still obtain valid variants of the update rule. The
+ablation in Chapter~\ref{ch:results} showed that removing the gating
+altogether collapses learning, but this does not establish that the
+particular form of $`\psi_j^t`$ borrowed from e-prop is optimal. A
+systematic study of alternative gating functions (for instance smooth
+sigmoid-like thresholds with tunable width, or functions that depend on
+the recent spiking history of the neuron) could reveal whether the current gating is merely
+sufficient or close to best among a broader family, and whether the
+threshold-crossing regime it concentrates credit on is the most informative
+regime for perturbation-based updates in general.
+
+\paragraph{Alternative routing weights for the distributed routing pathway.}
+The routed variants of distributed e-prop reuse the recurrent weights
+$`W^{\mathrm{rec}}`$ themselves to propagate each neuron's local signal through
+the network (Section~\ref{sec:feedback_connectivity}), which makes the routing
+symmetric by construction, tied directly to the forward connectivity. This is
+only one of the choices available, and it mirrors symmetric e-prop. The same
+decoupling explored for standard e-prop's feedback matrices could be applied
+here as the distributed routing could instead use a fixed random projection or an
+adaptively learned matrix, separate from $`W^{\mathrm{rec}}`$, yielding random
+and adaptive analogues of the routed distributed variants. Studying these would
+clarify whether the benefits of routing the local signal stem specifically from
+its alignment with the forward recurrent weights, or whether any structured
+projection of the local signals across the population suffices, paralleling the
+question of how much symmetric e-prop's performance depends on weight alignment
+versus merely having a structured feedback path at all.
+
+\paragraph{Exploring a gated per-neuron exploration-variance update.} The
+per-neuron exploration variance $`\sigma_j`$ was held fixed throughout the
+main experiments, and the adaptive update proposed in
+Section~\ref{subsec:exploration_variance} did not yield a clear benefit over
+a fixed value. One possible reason is that the variance update, as
+formulated, accumulates credit from perturbations regardless of whether the
+neuron's membrane was near threshold at the time, even though it is
+precisely in that near-threshold regime that the perturbation actually
+influences spiking. The pseudo-derivative gating $`\psi_j^t`$ was shown to
+be essential for the weight update for exactly this reason, but the
+variance update has no analogous mechanism. A natural direction is to
+apply a similar gating factor to the $`\sigma_j`$ update, so that the
+variance is adapted predominantly from perturbation correlations at
+moments when the neuron's perturbations were behaviorally relevant. This
+could reduce the noise in the variance estimate itself and potentially make
+the adaptive $`\sigma_j`$ update viable where the ungated version was not.
+
+\paragraph{Richer and state-dependent exploration.} The exploration variance
+$\sigma_j$ used throughout this thesis is either a fixed hyperparameter
+or, at best, a per-neuron scalar updated by its own local policy gradient
+(Section~\ref{subsec:exploration_variance}), with no dependence on the
+network's current state. A natural extension is to make $\sigma_j$ a
+function of context, for instance increasing exploration in states where
+the value estimate is uncertain or rapidly changing, and decreasing it
+once a stable policy has been found for a given region of the state
+space. This connects directly to ideas from meta-learning, since a
+state-dependent exploration policy is itself a learned controller that
+shapes how the underlying weights are updated, an instance of the network
+modulating its own learning; we return to
+this connection below. A second, largely orthogonal direction concerns
+the structure of the injected noise itself. The perturbation variants
+studied in this thesis inject either fully independent noise per neuron
+or per synapse, or a single shared sample per postsynaptic neuron scaled
+individually per synapse (Section~\ref{subsec:synaptic_perturbation}).
+An interesting intermediate possibility, not explored here, is to draw
+the perturbation noise from a small shared latent space, with a low-
+dimensional noise vector sampled once per timestep and projected onto
+each neuron or synapse through a fixed or learned projection. This would
+deliberately correlate the exploration noise across the population,
+in a manner reminiscent of how evolution strategies can benefit from
+structured perturbations, and could offer
+a different point in the bias-variance tradeoff than the perturbation
+variants compared in Chapter~\ref{ch:results}.
+
+\paragraph{A broader family of local reward signals.} The voltage- and
+firing-rate-regularization rewards introduced in
+Section~\ref{subsec:regularization} demonstrated that distributed e-prop can
+incorporate purely local evaluative signals, compatible with its
+perturbation-based update, in a way that standard e-prop could not
+support as effectively. Voltage and firing rate are only two examples of
+quantities a neuron could evaluate about itself; other candidates might
+include the temporal sparsity or burstiness of a neuron's own spike
+train, the correlation of a neuron's activity with that of its immediate
+neighbors, or measures of how informative a neuron's recent activity has
+been for the network's eventual output. More broadly, this raises the
+question of what other local objectives admit a similarly natural
+perturbation-based update, and whether a network exposed to several such
+local rewards simultaneously, alongside the global task reward, would
+develop qualitatively different internal representations than one trained
+on task reward alone.
+
+\paragraph{Structural plasticity and online rewiring.} Throughout this thesis the
+network's synaptic topology was fixed at initialization, the toroidal Gaussian
+connectivity, the excitatory-inhibitory partitioning, and the per-head field
+layers were all static for the duration of training. Only the synaptic weights
+were adapted. Yet in biological circuits, learning is not confined to changing
+existing connection strengths; structural plasticity, including synaptic
+formation and elimination, rewires the graph itself on a slow timescale, and
+this process is thought to play a role in stabilizing dynamics and expanding
+the functional representations available to the agent. An analogous mechanism
+could be valuable in the setting studied here, particularly given the finding
+that all learning rules converge to a high-firing regime with poorly
+regulated membrane voltages (Section~\ref{sec:main_findings}).
+
+\paragraph{Learning signals produced by a self-trained mechanism.} Throughout this thesis, the learning
+signal each neuron receives is either a structured but fixed
+approximation to the gradient, routed through feedback weights that are
+random, symmetric, or themselves adaptively learned
+(Section~\ref{subsec:eprop-variants}), or a single scalar TD error, identical
+for every neuron, in the case of distributed e-prop.\
+\citep{OneShotEprop} explore a related but distinct idea: a separate
+network is trained to produce the per-neuron learning signal $L^t_j$
+itself, taking on a role loosely analogous to dopaminergic areas of the
+brain that gate plasticity elsewhere.
+
+One possibility is a population of additional, self-trained neurons that
+act as a kind of student network, learning online, alongside the main
+network, to predict or shape the contribution each neuron should make to
+the eventual outcome. A second, less architecturally
+involved possibility is to give each neuron a supplementary learned
+signal, produced by an additional set of
+weights. A third possibility, echoing
+the shared-latent-space idea discussed above for exploration noise, is to
+project a small, shared, learned latent vector onto each neuron at every
+timestep, so that neurons receive a population-level signal that is
+richer than a single scalar but still far more constrained than a fully
+structured, per-neuron feedback projection.
+
+A point worth stressing for all three options is that, for them to remain
+consistent with the rest of this thesis, whatever additional mechanism
+produces these signals must itself be trained online, using the same
+continuous stream of experience and the same constant-memory,
+forward-in-time updates as the rest of the network. The appeal of distributed
+e-prop is precisely that every component of its update is local and
+online; a supplementary signal-generating mechanism that itself depended
+on offline meta-training, or on machinery incompatible with the
+online setting motivating this thesis, would reintroduce exactly the
+kind of constraint the rest of this work tries to avoid. Whether a
+self-trained signal of this kind, learned under the same online
+constraints as everything else, can meaningfully enrich the credit
+assignment available to each neuron without compromising locality is an
+open question this thesis leaves for future investigation.
+
+\paragraph{A more systematic exploration of architecture size and depth.}
+The depth comparison in Section~\ref{subsec:snake-depth-comparison} varied the
+number of layers for two specific learning rules on a single task, and
+found that the two rules respond differently to depth within a fixed
+training budget. This leaves open how either rule behaves as other
+architectural dimensions are varied, such as the width of each
+excitatory-inhibitory population, the fan-in of the toroidal Gaussian
+connectivity, or the presence and size of the per-head field layers
+independently of depth. A more systematic sweep across these dimensions,
+ideally with the repeated seeds discussed above, would help separate
+effects that are specific to causal path length from effects that are
+more generally about network scale or capacity.
+
+\paragraph{Tasks demanding longer-term memory.} The three environments
+studied in this thesis were chosen to probe sparse-reward credit
+assignment, working memory under partial observability, and behavioral
+adaptation, but none of them require the agent to retain information over
+very long horizons relative to the timescales of the underlying neuron
+and adaptation dynamics. Tasks that demand longer-term memory, for
+instance environments where relevant information must be retained for
+hundreds or thousands of timesteps before it becomes useful, would test
+the limits of the adaptive threshold mechanism's slow timescale 
+and of the action-credit-assignment
+horizon controlled by $\lambda$ considerably more severely than the tasks
+studied here. Such tasks would also raise practical questions about how
+training itself should be adapted, since a longer required memory horizon
+may demand a correspondingly longer $\lambda$, which Chapter~\ref{ch:results}
+showed can itself destabilize the algorithms spiking dynamics;
+resolving this tension may require some of the other directions
+discussed above, such as a state-dependent or self-modulated $\lambda$.
+
+\paragraph{Repeated-seed evaluation of the depth and $\lambda$ sweeps.} The
+single-run nature of several of the comparisons in this thesis, noted in
+Section~\ref{sec:limitations}, means that converting the more striking
+qualitative observations, such as the divergent failure modes of
+distributed e-prop at large $\lambda$ on Pac-Man, into statistically
+grounded claims would require repeating these sweeps across multiple
+seeds.
+
+\paragraph{A systematic study of the relationship between $\lambda$ and
+network-level stability in distributed e-prop.} The observation that
+large $\lambda$ can drive the network toward either runaway firing or
+excessive silence, depending on the specific value and possibly the
+random seed, is currently unexplained. Understanding what determines
+which failure mode a given configuration falls into would clarify
+whether this is a fundamental property of the perturbation-based update
+or an artifact of the specific architecture and task studied here.
+
+\paragraph{Deployment on neuromorphic hardware.} The implementation
+developed in this thesis was deliberately constrained to be expressible
+entirely in terms of local, per-synapse updates and event-driven
+computation (Section~\ref{sec:implementation}), with the explicit
+goal of acting as a faithful prototype for spike-driven accelerators such
+as Loihi \citep{Davies2018Loihi} or SpiNNaker \citep{Painkras2013SpiNNaker}.
+Carrying out this deployment directly would be a natural next step, and would allow
+the energy-efficiency motivations discussed in Chapter~\ref{ch:introduction} to
+be evaluated empirically.

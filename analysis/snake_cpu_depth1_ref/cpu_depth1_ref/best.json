@@ -1,0 +1,49 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "monitor": true,
+ "monitor_every": 5000,
+ "probe": {
+  "moves": 5000
+ },
+ "ei_layers": 1,
+ "network": {
+  "layers": [
+   {}
+  ],
+  "fields": {
+   "conn": {
+    "mean_scale": 0.5
+   },
+   "conn_i": {
+    "mean_scale": 0.033
+   }
+  }
+ },
+ "_meta": {
+  "study": "cpu_depth1_ref",
+  "config": 2,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "random"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    }
+   }
+  },
+  "final_rung_score": 0.033687068098609545,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "eprop"
+ }
+}

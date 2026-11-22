@@ -1,0 +1,2 @@
+route_random_s0 {"late_gap": 0.09578947368421054, "early_gap": 0.18889869514960722, "field_dead": 0.1042, "e_hz": 43.27, "decisions": 11901, "fitness": 0.043689473684210535}
+route_random_s1 {"late_gap": 0.08039911733665939, "early_gap": 0.12225185415383466, "field_dead": 0.375, "e_hz": 56.72, "decisions": 12328, "fitness": -0.10710088266334061}

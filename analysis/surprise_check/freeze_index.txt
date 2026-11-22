@@ -1,0 +1,38 @@
+freeze index 1 - psi(event) / psi(routine), events = the 3 moves before an apple / a death
+run              window population    psi routine   apple   death
+reservoir        first  L1_E               0.1052  -0.036  -0.073
+reservoir        first  L1_I               0.1059  -0.015  -0.080
+reservoir        first  policy_field       0.0365  +0.075  +0.003
+reservoir        first  value_field        0.0344  +0.056  +0.046
+reservoir        last   L1_E               0.1096  -0.044  -0.015
+reservoir        last   L1_I               0.1206  -0.060  -0.080
+reservoir        last   policy_field       0.0362  +0.060  +0.025
+reservoir        last   value_field        0.0326  +0.056  +0.043
+                 events (last window): 542 apple moves, 1446 death moves
+td               first  L1_E               0.0915  -0.025  -0.103
+td               first  L1_I               0.1077  -0.044  -0.131
+td               first  policy_field       0.0429  -0.009  +0.194
+td               first  value_field        0.0398  +0.000  +0.224
+td               last   L1_E               0.0707  -0.026  -0.024
+td               last   L1_I               0.0893  +0.012  -0.038
+td               last   policy_field       0.0320  +0.050  +0.082
+td               last   value_field        0.0308  +0.082  +0.109
+                 events (last window): 388 apple moves, 1291 death moves
+td_surprise      first  L1_E               0.0916  -0.004  -0.063
+td_surprise      first  L1_I               0.1079  -0.013  -0.109
+td_surprise      first  policy_field       0.0442  +0.015  +0.176
+td_surprise      first  value_field        0.0396  -0.029  +0.177
+td_surprise      last   L1_E               0.0516  +0.002  +0.013
+td_surprise      last   L1_I               0.0604  +0.011  +0.003
+td_surprise      last   policy_field       0.0297  -0.004  +0.070
+td_surprise      last   value_field        0.0290  +0.034  +0.148
+                 events (last window): 559 apple moves, 915 death moves
+surprise_only    first  L1_E               0.0860  -0.035  -0.055
+surprise_only    first  L1_I               0.0819  -0.036  -0.064
+surprise_only    first  policy_field       0.0410  -0.017  -0.006
+surprise_only    first  value_field        0.0418  -0.027  +0.017
+surprise_only    last   L1_E               0.0526  -0.023  -0.092
+surprise_only    last   L1_I               0.0562  -0.020  -0.124
+surprise_only    last   policy_field       0.0442  +0.023  +0.090
+surprise_only    last   value_field        0.0408  +0.077  +0.059
+                 events (last window): 648 apple moves, 688 death moves

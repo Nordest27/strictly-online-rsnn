@@ -1,0 +1,30 @@
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0000/c0000InferenceCompiler_CODE'
+[13:09:43] c0000 score 0.805 (250 s) | best c0000 0.805 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0001/c0001InferenceCompiler_CODE'
+/home/user/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+sh: 0: getcwd() failed: No such file or directory
+ptxas fatal   : Output file './c0001InferenceCompiler_CODE/initCUDAOptim.cc.cubin' could not be opened
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  optimizeBlockSize: NVCC failed
+/home/user/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0001/c0001InferenceCompiler_CODE'
+[13:21:56] c0001 score -0.472 (131 s) | best c0000 0.718 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0002/c0002InferenceCompiler_CODE'
+[13:24:00] c0002 score -0.228 (112 s) | best c0000 0.718 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0003/c0003InferenceCompiler_CODE'
+[13:25:48] c0003 score -0.270 (107 s) | best c0000 0.718 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0004/c0004InferenceCompiler_CODE'
+[13:27:40] c0004 score -0.156 (112 s) | best c0000 0.718 | 5 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0005/c0005InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0005/c0005InferenceCompiler_CODE'
+[13:29:26] c0005 score -0.081 (106 s) | best c0000 0.718 | 6 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0006/c0006InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v3_l5/work/c0006/c0006InferenceCompiler_CODE'

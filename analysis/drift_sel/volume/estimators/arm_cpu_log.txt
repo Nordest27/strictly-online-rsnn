@@ -1,0 +1,12 @@
+rule_s0 done
+rule_drive_s0 done
+eprop_sur_s0 done
+rule_s1 done
+rule_drive_s1 done
+eprop_sur_s1 done
+eprop_sur_s0: episodes 501  score first/last quarter +1.210 / +3.562  toward target first/last 0.23 / 0.29  moves with motor spikes first/last 0.72 / 0.95
+eprop_sur_s1: episodes 498  score first/last quarter +0.361 / +3.808  toward target first/last 0.22 / 0.27  moves with motor spikes first/last 0.58 / 0.99
+rule_drive_s0: episodes 489  score first/last quarter +1.075 / +0.817  toward target first/last 0.19 / 0.18  moves with motor spikes first/last 0.83 / 0.93
+rule_drive_s1: episodes 484  score first/last quarter +0.370 / +0.739  toward target first/last 0.16 / 0.18  moves with motor spikes first/last 0.87 / 0.88
+rule_s0: episodes 483  score first/last quarter +0.185 / +0.833  toward target first/last 0.03 / 0.13  moves with motor spikes first/last 0.17 / 0.58
+rule_s1: episodes 484  score first/last quarter +0.493 / +0.363  toward target first/last 0.08 / 0.11  moves with motor spikes first/last 0.43 / 0.62

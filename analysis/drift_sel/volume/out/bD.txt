@@ -1,0 +1,18 @@
+== bD {"side": 16, "side_i": 8, "depth": 16, "z_shift": 1.5, "sigma_cells": 1.0, "p_max": 0.8, "k_global": 6.0, "k_global_mode": "in", "ee_gain": 0.8, "ii_gain": 0.1, "inh_sigma_ratio": 1.0, "input_depth": 1, "output_depth": 3, "field_sigma_cells": 1.0, "field_gain": 1.0, "input_gain": 2.5, "decorr": 0.001, "lr": 1e-06, "seed": 0}
+  slab  0 in  E spk 4.00 act 0.78 dec 0.84 | I spk 5.01 act 0.82 dec 0.76
+  slab  1     E spk 3.04 act 0.66 dec 0.44 | I spk 3.17 act 0.70 dec 0.49
+  slab  2     E spk 4.68 act 0.81 dec 0.41 | I spk 5.42 act 0.81 dec 0.40
+  slab  3     E spk 5.25 act 0.80 dec 0.30 | I spk 5.35 act 0.80 dec 0.25
+  slab  4     E spk 5.73 act 0.82 dec 0.24 | I spk 6.90 act 0.86 dec 0.19
+  slab  5     E spk 6.38 act 0.83 dec 0.19 | I spk 6.29 act 0.86 dec 0.20
+  slab  6     E spk 6.24 act 0.83 dec 0.16 | I spk 6.08 act 0.81 dec 0.14
+  slab  7     E spk 6.64 act 0.85 dec 0.16 | I spk 7.08 act 0.85 dec 0.14
+  slab  8     E spk 6.79 act 0.85 dec 0.12 | I spk 7.30 act 0.85 dec 0.11
+  slab  9     E spk 6.65 act 0.84 dec 0.11 | I spk 6.77 act 0.82 dec 0.11
+  slab 10     E spk 7.04 act 0.85 dec 0.11 | I spk 7.04 act 0.85 dec 0.10
+  slab 11     E spk 6.85 act 0.83 dec 0.11 | I spk 7.23 act 0.85 dec 0.11
+  slab 12     E spk 6.80 act 0.84 dec 0.09 | I spk 7.45 act 0.86 dec 0.09
+  slab 13 out E spk 6.94 act 0.85 dec 0.11 | I spk 7.13 act 0.84 dec 0.09
+  slab 14 out E spk 7.01 act 0.84 dec 0.10 | I spk 7.34 act 0.85 dec 0.09
+  slab 15 out E spk 7.78 act 0.86 dec 0.09 | I spk 7.96 act 0.88 dec 0.09
+  field   spk 2.97 act 0.41 dec 0.08

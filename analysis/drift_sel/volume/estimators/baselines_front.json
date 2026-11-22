@@ -1,0 +1,34 @@
+{
+ "slabs": [
+  0
+ ],
+ "n_syn": 109,
+ "drift SNR (median)": 0.631099468980917,
+ "critic variance reduction (median)": -0.16428443681895333,
+ "input variance reduction (median)": 0.24601689440178642,
+ "none": {
+  "SNR (median)": 0.09484242226419841,
+  "corr with truth": 0.766384755633484,
+  "slope vs truth": 5.562325017273247
+ },
+ "constant": {
+  "SNR (median)": 0.18619104528741923,
+  "corr with truth": 0.7931202219706598,
+  "slope vs truth": 4.205858471918811
+ },
+ "ncritic": {
+  "SNR (median)": 0.29350702838614046,
+  "corr with truth": 0.6836419927629996,
+  "slope vs truth": 4.202707522065772
+ },
+ "input": {
+  "SNR (median)": 0.1845441405700249,
+  "corr with truth": 0.7895753684104488,
+  "slope vs truth": 4.079542240314306
+ },
+ "oracle": {
+  "SNR (median)": 0.23998654320404209,
+  "corr with truth": 0.7655056233592834,
+  "slope vs truth": 4.035175515460726
+ }
+}

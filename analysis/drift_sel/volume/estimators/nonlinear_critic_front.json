@@ -1,0 +1,113 @@
+{
+ "vreg": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.9528376161250656,
+   "bias (SE units)": 0.44890079515397907,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.7044381484878173,
+   "bias (SE units)": 0.642933084908223,
+   "reward explained": 0.4701095018433023
+  },
+  "linear combined": {
+   "variance vs none": 0.6963135679444783,
+   "bias (SE units)": 0.5994805120405677,
+   "reward explained": 0.47168871693924114
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.7143607831754477,
+   "bias (SE units)": 0.6282988023557404,
+   "reward explained": 0.4531167398946794
+  },
+  "nonlinear H1024": {
+   "variance vs none": 0.6774130284710639,
+   "bias (SE units)": 0.6221173432798449,
+   "reward explained": 0.5171115158476747
+  },
+  "oracle": {
+   "variance vs none": 0.5824476819203226,
+   "bias (SE units)": 0.7456835625042153,
+   "reward explained": 0.6437411280193563
+  }
+ },
+ "rate": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 1.0012221941071289,
+   "bias (SE units)": 0.025943697880125637,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.9318187320516911,
+   "bias (SE units)": 0.19508806387191768,
+   "reward explained": 0.15168850270179307
+  },
+  "linear combined": {
+   "variance vs none": 0.9217908496115235,
+   "bias (SE units)": 0.1988770361249332,
+   "reward explained": 0.16664849662826348
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.9229831084961102,
+   "bias (SE units)": 0.18576346626625026,
+   "reward explained": 0.1314597997002665
+  },
+  "nonlinear H1024": {
+   "variance vs none": 0.8981440987171941,
+   "bias (SE units)": 0.22033309841775003,
+   "reward explained": 0.1859989998551339
+  },
+  "oracle": {
+   "variance vs none": 0.7125030420565828,
+   "bias (SE units)": 0.37175223965964216,
+   "reward explained": 0.5463534958888061
+  }
+ },
+ "decorr": {
+  "none": {
+   "variance vs none": 1.0,
+   "bias (SE units)": 0.0,
+   "reward explained": 0.0
+  },
+  "constant": {
+   "variance vs none": 0.603609138750206,
+   "bias (SE units)": 0.4350696329592905,
+   "reward explained": 0.0
+  },
+  "linear afferent": {
+   "variance vs none": 0.5592983210009598,
+   "bias (SE units)": 0.7548662450393739,
+   "reward explained": 0.032998941784976754
+  },
+  "linear combined": {
+   "variance vs none": 0.5644837203155812,
+   "bias (SE units)": 0.7615235274920711,
+   "reward explained": 0.03447049546374753
+  },
+  "nonlinear H256": {
+   "variance vs none": 0.5740715616387364,
+   "bias (SE units)": 0.7466436244231054,
+   "reward explained": 0.03372207949424205
+  },
+  "nonlinear H1024": {
+   "variance vs none": 0.6067093131474348,
+   "bias (SE units)": 0.9262546617797625,
+   "reward explained": 0.03143267502332342
+  },
+  "oracle": {
+   "variance vs none": 0.4306544281341461,
+   "bias (SE units)": 0.7774009770498851,
+   "reward explained": 0.3497941949257436
+  }
+ }
+}

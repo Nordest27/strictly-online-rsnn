@@ -1,0 +1,724 @@
+{
+ "base": {
+  "monitor": false,
+  "monitor_every": 10000,
+  "backend": "single_threaded_cpu",
+  "gamma_env": 0.74,
+  "td_lambda_env": 0.74,
+  "episodic_traces": true,
+  "entropy_bonus": 0.0,
+  "headless": {
+   "seed": 0,
+   "decoder": "joints",
+   "gain": 1.0,
+   "motor_rule": null,
+   "joints_decay": 0.97,
+   "joints_balance": 0.0001,
+   "joints_dist": "beta",
+   "beta_scale": 50
+  },
+  "selection": null,
+  "move_log": {
+   "probe_every": 1000000000000,
+   "probe_moves": 16
+  },
+  "toroidal": "local",
+  "local": {
+   "sigma_cells": 0.75,
+   "p_max": 0.791,
+   "input_sigma_cells": 1.857,
+   "inhibition_scale": 7.963,
+   "feedforward_inhibition": true,
+   "p_global": 0.0,
+   "inhibition_sigma_ratio": 1.891,
+   "input_sigma_ref": "source"
+  },
+  "network": {
+   "fields": {
+    "conn": {
+     "sigma_cells": 1.124,
+     "mean_scale": 2.067815588166857,
+     "sd_scale": 0.4135631176333714
+    },
+    "shape": 4,
+    "conn_i": {
+     "sigma_cells": 1.124,
+     "mean_scale": 0.5,
+     "sd_scale": 0.1
+    }
+   },
+   "input": {
+    "mean_scale": 0.4725751766572225,
+    "sd_scale": 0.23628758832861124
+   },
+   "layers": [
+    {
+     "volume": {
+      "depth": 8,
+      "input_depth": 1,
+      "output_depth": 1,
+      "sigma_cells": 1.024994820942058,
+      "p_max": 0.8,
+      "p_global": 0.01,
+      "z_shift": 1.1007268640904766,
+      "inh_sigma_ratio": 1.0,
+      "field_sigma_cells": 1.0
+     },
+     "internal": {
+      "mean_scale": 0.6
+     },
+     "internal_i": {
+      "mean_scale": 0.09676733745301175
+     }
+    }
+   ]
+  },
+  "ei_layers": 1,
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "arm": {
+   "joint_speed": 0.02,
+   "continuous": true,
+   "episode_per_target": true,
+   "curriculum": {},
+   "target_steps": 300,
+   "reward_mode": "progress",
+   "progress_fade": 0.5,
+   "kinematics": "arm",
+   "view": "hand",
+   "target_time": {}
+  },
+  "lr": 1e-05,
+  "c_reg": 0.01,
+  "f_target": 10.0,
+  "intrinsic_plasticity": {
+   "eta": 1e-05,
+   "psi_target": 0.07
+  },
+  "hidden_rule": {
+   "preset": "eprop",
+   "eprop_center_td": true,
+   "vreg_gradient": 0.01
+  }
+ },
+ "points": [
+  null,
+  {
+   "lr": 3.091e-05,
+   "c_reg": 0.06224,
+   "hidden_rule.vreg_gradient": 0.001225,
+   "f_target": 28.23,
+   "hidden_rule.eprop_value": 0.04901,
+   "intrinsic_plasticity.psi_target": 0.1209,
+   "intrinsic_plasticity.eta": 7e-06,
+   "*": {}
+  },
+  {
+   "lr": 5.482e-06,
+   "c_reg": 0.001164,
+   "hidden_rule.vreg_gradient": 0.01609,
+   "f_target": 47.82,
+   "hidden_rule.eprop_value": 0.8175,
+   "intrinsic_plasticity.psi_target": 0.06487,
+   "intrinsic_plasticity.eta": 6.972e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 2.882e-06,
+   "c_reg": 0.00941,
+   "hidden_rule.vreg_gradient": 0.0002931,
+   "f_target": 11.53,
+   "hidden_rule.eprop_value": 0.2703,
+   "intrinsic_plasticity.psi_target": 0.08885,
+   "intrinsic_plasticity.eta": 1.669e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 1.294e-05,
+   "c_reg": 0.0002184,
+   "hidden_rule.vreg_gradient": 0.02166,
+   "f_target": 40.3,
+   "hidden_rule.eprop_value": 0.1448,
+   "intrinsic_plasticity.psi_target": 0.1674,
+   "intrinsic_plasticity.eta": 1.644e-05,
+   "*": {}
+  },
+  {
+   "lr": 1.82e-05,
+   "c_reg": 0.005215,
+   "hidden_rule.vreg_gradient": 0.006647,
+   "f_target": 45.45,
+   "hidden_rule.eprop_value": 0.09849,
+   "intrinsic_plasticity.psi_target": 0.1354,
+   "intrinsic_plasticity.eta": 1.888e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 3.228e-06,
+   "c_reg": 0.0002793,
+   "hidden_rule.vreg_gradient": 0.002772,
+   "f_target": 18.1,
+   "hidden_rule.eprop_value": 0.1838,
+   "intrinsic_plasticity.psi_target": 0.03437,
+   "intrinsic_plasticity.eta": 1.93e-05,
+   "*": {}
+  },
+  {
+   "lr": 7.695e-06,
+   "c_reg": 0.03096,
+   "hidden_rule.vreg_gradient": 0.04279,
+   "f_target": 56.68,
+   "hidden_rule.eprop_value": 0.5579,
+   "intrinsic_plasticity.psi_target": 0.07224,
+   "intrinsic_plasticity.eta": 4.451e-06,
+   "*": {}
+  },
+  {
+   "lr": 3.457e-05,
+   "c_reg": 0.001337,
+   "hidden_rule.vreg_gradient": 0.0001003,
+   "f_target": 32.65,
+   "hidden_rule.eprop_value": 0.03347,
+   "intrinsic_plasticity.psi_target": 0.1958,
+   "intrinsic_plasticity.eta": 4.602e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 4.208e-05,
+   "c_reg": 0.01324,
+   "hidden_rule.vreg_gradient": 0.06804,
+   "f_target": 22.45,
+   "hidden_rule.eprop_value": 0.7633,
+   "intrinsic_plasticity.psi_target": 0.1611,
+   "intrinsic_plasticity.eta": 2.589e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 9.482e-06,
+   "c_reg": 0.0001042,
+   "hidden_rule.vreg_gradient": 0.000159,
+   "f_target": 41.89,
+   "hidden_rule.eprop_value": 0.07093,
+   "intrinsic_plasticity.psi_target": 0.105,
+   "intrinsic_plasticity.eta": 2.504e-05,
+   "*": {}
+  },
+  {
+   "lr": 3.993e-06,
+   "c_reg": 0.07058,
+   "hidden_rule.vreg_gradient": 0.004223,
+   "f_target": 29.78,
+   "hidden_rule.eprop_value": 0.1389,
+   "intrinsic_plasticity.psi_target": 0.04741,
+   "intrinsic_plasticity.eta": 3.432e-06,
+   "*": {}
+  },
+  {
+   "lr": 2.22e-05,
+   "c_reg": 0.0006895,
+   "hidden_rule.vreg_gradient": 0.001755,
+   "f_target": 58.79,
+   "hidden_rule.eprop_value": 0.4021,
+   "intrinsic_plasticity.psi_target": 0.126,
+   "intrinsic_plasticity.eta": 3.358e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 1.057e-05,
+   "c_reg": 0.02327,
+   "hidden_rule.vreg_gradient": 0.0004401,
+   "f_target": 52.07,
+   "hidden_rule.eprop_value": 0.245,
+   "intrinsic_plasticity.psi_target": 0.1798,
+   "intrinsic_plasticity.eta": 9.247e-06,
+   "*": {}
+  },
+  {
+   "lr": 2.382e-06,
+   "c_reg": 0.00295,
+   "hidden_rule.vreg_gradient": 0.03263,
+   "f_target": 24.77,
+   "hidden_rule.eprop_value": 0.08472,
+   "intrinsic_plasticity.psi_target": 0.07869,
+   "intrinsic_plasticity.eta": 9.389e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 4.521e-06,
+   "c_reg": 0.004862,
+   "hidden_rule.vreg_gradient": 0.0008187,
+   "f_target": 37.72,
+   "hidden_rule.eprop_value": 0.04342,
+   "intrinsic_plasticity.psi_target": 0.02939,
+   "intrinsic_plasticity.eta": 1.24e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 2.514e-05,
+   "c_reg": 0.0004968,
+   "hidden_rule.vreg_gradient": 0.01079,
+   "f_target": 13.34,
+   "hidden_rule.eprop_value": 0.467,
+   "intrinsic_plasticity.psi_target": 0.153,
+   "intrinsic_plasticity.eta": 1.245e-05,
+   "*": {}
+  },
+  {
+   "lr": 2.444e-05,
+   "c_reg": 0.003796,
+   "hidden_rule.vreg_gradient": 0.0002149,
+   "f_target": 54.05,
+   "hidden_rule.eprop_value": 0.1579,
+   "intrinsic_plasticity.psi_target": 0.0847,
+   "intrinsic_plasticity.eta": 6.318e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 5.374e-06,
+   "c_reg": 0.0003892,
+   "hidden_rule.vreg_gradient": 0.09174,
+   "f_target": 34.5,
+   "hidden_rule.eprop_value": 0.3158,
+   "intrinsic_plasticity.psi_target": 0.1861,
+   "intrinsic_plasticity.eta": 5.791e-06,
+   "*": {}
+  },
+  {
+   "lr": 2.094e-06,
+   "c_reg": 0.01815,
+   "hidden_rule.vreg_gradient": 0.001626,
+   "f_target": 46.53,
+   "hidden_rule.eprop_value": 0.9329,
+   "intrinsic_plasticity.psi_target": 0.1454,
+   "intrinsic_plasticity.eta": 1.49e-05,
+   "*": {}
+  },
+  {
+   "lr": 1.136e-05,
+   "c_reg": 0.002309,
+   "hidden_rule.vreg_gradient": 0.003903,
+   "f_target": 17.8,
+   "hidden_rule.eprop_value": 0.05221,
+   "intrinsic_plasticity.psi_target": 0.02151,
+   "intrinsic_plasticity.eta": 1.381e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 1.856e-05,
+   "c_reg": 0.08537,
+   "hidden_rule.vreg_gradient": 0.03689,
+   "f_target": 11.82,
+   "hidden_rule.eprop_value": 0.03553,
+   "intrinsic_plasticity.psi_target": 0.1041,
+   "intrinsic_plasticity.eta": 2.091e-05,
+   "*": {}
+  },
+  {
+   "lr": 4.082e-06,
+   "c_reg": 0.0008369,
+   "hidden_rule.vreg_gradient": 0.0004996,
+   "f_target": 39.23,
+   "hidden_rule.eprop_value": 0.6343,
+   "intrinsic_plasticity.psi_target": 0.1605,
+   "intrinsic_plasticity.eta": 2.323e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 8.765e-06,
+   "c_reg": 0.01603,
+   "hidden_rule.vreg_gradient": 0.007506,
+   "f_target": 26.37,
+   "hidden_rule.eprop_value": 0.2155,
+   "intrinsic_plasticity.psi_target": 0.1281,
+   "intrinsic_plasticity.eta": 4.987e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 4.757e-05,
+   "c_reg": 0.0001266,
+   "hidden_rule.vreg_gradient": 0.0005719,
+   "f_target": 50.46,
+   "hidden_rule.eprop_value": 0.1079,
+   "intrinsic_plasticity.psi_target": 0.0492,
+   "intrinsic_plasticity.eta": 5.478e-06,
+   "*": {}
+  },
+  {
+   "lr": 3.933e-05,
+   "c_reg": 0.03966,
+   "hidden_rule.vreg_gradient": 0.01193,
+   "f_target": 35.67,
+   "hidden_rule.eprop_value": 0.3672,
+   "intrinsic_plasticity.psi_target": 0.03904,
+   "intrinsic_plasticity.eta": 3.081e-05,
+   "*": {}
+  },
+  {
+   "lr": 7.158e-06,
+   "c_reg": 0.001706,
+   "hidden_rule.vreg_gradient": 0.0009063,
+   "f_target": 16.17,
+   "hidden_rule.eprop_value": 0.1185,
+   "intrinsic_plasticity.psi_target": 0.1405,
+   "intrinsic_plasticity.eta": 2.805e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 3.321e-06,
+   "c_reg": 0.006684,
+   "hidden_rule.vreg_gradient": 0.02344,
+   "f_target": 52.56,
+   "hidden_rule.eprop_value": 0.0624,
+   "intrinsic_plasticity.psi_target": 0.1926,
+   "intrinsic_plasticity.eta": 4.132e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 1.531e-05,
+   "c_reg": 0.0003568,
+   "hidden_rule.vreg_gradient": 0.0003163,
+   "f_target": 23.5,
+   "hidden_rule.eprop_value": 0.7192,
+   "intrinsic_plasticity.psi_target": 0.06865,
+   "intrinsic_plasticity.eta": 3.72e-06,
+   "*": {}
+  },
+  {
+   "lr": 1.4e-05,
+   "c_reg": 0.007782,
+   "hidden_rule.vreg_gradient": 0.002442,
+   "f_target": 31.04,
+   "hidden_rule.eprop_value": 0.4381,
+   "intrinsic_plasticity.psi_target": 0.05424,
+   "intrinsic_plasticity.eta": 7.767e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 2.549e-06,
+   "c_reg": 0.00018,
+   "hidden_rule.vreg_gradient": 0.00588,
+   "f_target": 58.3,
+   "hidden_rule.eprop_value": 0.03805,
+   "intrinsic_plasticity.psi_target": 0.1107,
+   "intrinsic_plasticity.eta": 8.38e-06,
+   "*": {}
+  },
+  {
+   "lr": 6.558e-06,
+   "c_reg": 0.05143,
+   "hidden_rule.vreg_gradient": 0.0001436,
+   "f_target": 19.61,
+   "hidden_rule.eprop_value": 0.07251,
+   "intrinsic_plasticity.psi_target": 0.1767,
+   "intrinsic_plasticity.eta": 1.03e-05,
+   "*": {}
+  },
+  {
+   "lr": 3.024e-05,
+   "c_reg": 0.0009586,
+   "hidden_rule.vreg_gradient": 0.06152,
+   "f_target": 43.95,
+   "hidden_rule.eprop_value": 0.2245,
+   "intrinsic_plasticity.psi_target": 0.09774,
+   "intrinsic_plasticity.eta": 1.124e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 2.855e-05,
+   "c_reg": 0.01106,
+   "hidden_rule.vreg_gradient": 0.004409,
+   "f_target": 49.65,
+   "hidden_rule.eprop_value": 0.03039,
+   "intrinsic_plasticity.psi_target": 0.06729,
+   "intrinsic_plasticity.eta": 1.341e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 6.271e-06,
+   "c_reg": 0.0002071,
+   "hidden_rule.vreg_gradient": 0.001882,
+   "f_target": 27.18,
+   "hidden_rule.eprop_value": 0.5355,
+   "intrinsic_plasticity.psi_target": 0.1909,
+   "intrinsic_plasticity.eta": 1.528e-06,
+   "*": {}
+  },
+  {
+   "lr": 2.699e-06,
+   "c_reg": 0.05287,
+   "hidden_rule.vreg_gradient": 0.07913,
+   "f_target": 38.42,
+   "hidden_rule.eprop_value": 0.1814,
+   "intrinsic_plasticity.psi_target": 0.1417,
+   "intrinsic_plasticity.eta": 5.635e-05,
+   "*": {}
+  },
+  {
+   "lr": 1.464e-05,
+   "c_reg": 0.001229,
+   "hidden_rule.vreg_gradient": 0.0001899,
+   "f_target": 12.63,
+   "hidden_rule.eprop_value": 0.09195,
+   "intrinsic_plasticity.psi_target": 0.04066,
+   "intrinsic_plasticity.eta": 6.467e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 1.599e-05,
+   "c_reg": 0.02931,
+   "hidden_rule.vreg_gradient": 0.0007569,
+   "f_target": 17.0,
+   "hidden_rule.eprop_value": 0.1509,
+   "intrinsic_plasticity.psi_target": 0.09374,
+   "intrinsic_plasticity.eta": 5.544e-05,
+   "*": {}
+  },
+  {
+   "lr": 3.511e-06,
+   "c_reg": 0.001572,
+   "hidden_rule.vreg_gradient": 0.01025,
+   "f_target": 47.33,
+   "hidden_rule.eprop_value": 0.2973,
+   "intrinsic_plasticity.psi_target": 0.1723,
+   "intrinsic_plasticity.eta": 4.951e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 6.856e-06,
+   "c_reg": 0.005503,
+   "hidden_rule.vreg_gradient": 0.0003652,
+   "f_target": 33.7,
+   "hidden_rule.eprop_value": 0.8753,
+   "intrinsic_plasticity.psi_target": 0.1146,
+   "intrinsic_plasticity.eta": 2.346e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 3.719e-05,
+   "c_reg": 0.0002379,
+   "hidden_rule.vreg_gradient": 0.02782,
+   "f_target": 54.85,
+   "hidden_rule.eprop_value": 0.04971,
+   "intrinsic_plasticity.psi_target": 0.0585,
+   "intrinsic_plasticity.eta": 2.081e-06,
+   "*": {}
+  },
+  {
+   "lr": 4.556e-05,
+   "c_reg": 0.07451,
+   "hidden_rule.vreg_gradient": 0.0002449,
+   "f_target": 43.19,
+   "hidden_rule.eprop_value": 0.514,
+   "intrinsic_plasticity.psi_target": 0.02305,
+   "intrinsic_plasticity.eta": 3.7e-05,
+   "*": {}
+  },
+  {
+   "lr": 8.291e-06,
+   "c_reg": 0.0005856,
+   "hidden_rule.vreg_gradient": 0.01859,
+   "f_target": 20.37,
+   "hidden_rule.eprop_value": 0.04522,
+   "intrinsic_plasticity.psi_target": 0.1466,
+   "intrinsic_plasticity.eta": 4.17e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 4.262e-06,
+   "c_reg": 0.01256,
+   "hidden_rule.vreg_gradient": 0.00114,
+   "f_target": 57.54,
+   "hidden_rule.eprop_value": 0.08587,
+   "intrinsic_plasticity.psi_target": 0.1847,
+   "intrinsic_plasticity.eta": 2.784e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 1.963e-05,
+   "c_reg": 0.0001225,
+   "hidden_rule.vreg_gradient": 0.01539,
+   "f_target": 31.8,
+   "hidden_rule.eprop_value": 0.2626,
+   "intrinsic_plasticity.psi_target": 0.0836,
+   "intrinsic_plasticity.eta": 3.117e-06,
+   "*": {}
+  },
+  {
+   "lr": 1.203e-05,
+   "c_reg": 0.004142,
+   "hidden_rule.vreg_gradient": 0.0501,
+   "f_target": 22.74,
+   "hidden_rule.eprop_value": 0.3857,
+   "intrinsic_plasticity.psi_target": 0.05372,
+   "intrinsic_plasticity.eta": 1.15e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 2.19e-06,
+   "c_reg": 0.0005243,
+   "hidden_rule.vreg_gradient": 0.0001206,
+   "f_target": 53.32,
+   "hidden_rule.eprop_value": 0.1262,
+   "intrinsic_plasticity.psi_target": 0.1323,
+   "intrinsic_plasticity.eta": 1.002e-06,
+   "*": {}
+  },
+  {
+   "lr": 5.075e-06,
+   "c_reg": 0.02737,
+   "hidden_rule.vreg_gradient": 0.006987,
+   "f_target": 15.42,
+   "hidden_rule.eprop_value": 0.06627,
+   "intrinsic_plasticity.psi_target": 0.1561,
+   "intrinsic_plasticity.eta": 8.594e-05,
+   "*": {}
+  },
+  {
+   "lr": 2.337e-05,
+   "c_reg": 0.002792,
+   "hidden_rule.vreg_gradient": 0.002993,
+   "f_target": 36.43,
+   "hidden_rule.eprop_value": 0.7528,
+   "intrinsic_plasticity.psi_target": 0.1,
+   "intrinsic_plasticity.eta": 7.539e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 2.658e-05,
+   "c_reg": 0.02137,
+   "hidden_rule.vreg_gradient": 0.02514,
+   "f_target": 33.4,
+   "hidden_rule.eprop_value": 0.1035,
+   "intrinsic_plasticity.psi_target": 0.1218,
+   "intrinsic_plasticity.eta": 1.6e-06,
+   "*": {}
+  },
+  {
+   "lr": 4.721e-06,
+   "c_reg": 0.002187,
+   "hidden_rule.vreg_gradient": 0.0003302,
+   "f_target": 55.93,
+   "hidden_rule.eprop_value": 0.1959,
+   "intrinsic_plasticity.psi_target": 0.04288,
+   "intrinsic_plasticity.eta": 1.709e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 2.252e-06,
+   "c_reg": 0.00323,
+   "hidden_rule.vreg_gradient": 0.01426,
+   "f_target": 18.85,
+   "hidden_rule.eprop_value": 0.5927,
+   "intrinsic_plasticity.psi_target": 0.1091,
+   "intrinsic_plasticity.eta": 6.768e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 1.012e-05,
+   "c_reg": 0.0004103,
+   "hidden_rule.vreg_gradient": 0.001054,
+   "f_target": 44.7,
+   "hidden_rule.eprop_value": 0.03504,
+   "intrinsic_plasticity.psi_target": 0.1655,
+   "intrinsic_plasticity.eta": 7.18e-05,
+   "*": {}
+  },
+  {
+   "lr": 2.123e-05,
+   "c_reg": 0.01519,
+   "hidden_rule.vreg_gradient": 0.0001364,
+   "f_target": 41.06,
+   "hidden_rule.eprop_value": 0.05748,
+   "intrinsic_plasticity.psi_target": 0.1518,
+   "intrinsic_plasticity.eta": 4.647e-06,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  },
+  {
+   "lr": 3.77e-06,
+   "c_reg": 0.0001487,
+   "hidden_rule.vreg_gradient": 0.05688,
+   "f_target": 10.77,
+   "hidden_rule.eprop_value": 0.9713,
+   "intrinsic_plasticity.psi_target": 0.02785,
+   "intrinsic_plasticity.eta": 4.43e-05,
+   "*": {}
+  },
+  {
+   "lr": 9.918e-06,
+   "c_reg": 0.0902,
+   "hidden_rule.vreg_gradient": 0.002082,
+   "f_target": 48.58,
+   "hidden_rule.eprop_value": 0.3201,
+   "intrinsic_plasticity.psi_target": 0.07979,
+   "intrinsic_plasticity.eta": 1.953e-06,
+   "*": {}
+  },
+  {
+   "lr": 4.457e-05,
+   "c_reg": 0.0007113,
+   "hidden_rule.vreg_gradient": 0.004881,
+   "f_target": 27.47,
+   "hidden_rule.eprop_value": 0.1692,
+   "intrinsic_plasticity.psi_target": 0.1812,
+   "intrinsic_plasticity.eta": 1.874e-05,
+   "*": {
+    "intrinsic_plasticity": null
+   }
+  }
+ ]
+}

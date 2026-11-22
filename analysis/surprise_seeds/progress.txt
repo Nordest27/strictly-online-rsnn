@@ -1,0 +1,11 @@
+inverse_s1 done 17:19 1 probe
+inverse_s0 done 17:20 1 probe
+inverse_s2 done 17:20 1 probe
+surprise_only_s1 done 17:28 1 probe
+td_surprise_s1 done 17:36 1 probe
+td_surprise_s2 done 17:37 1 probe
+surprise_only_s2 done 17:41 1 probe
+td_s1 done 17:44 1 probe
+reservoir_s1 done 17:48 1 probe
+td_s2 done 17:51 1 probe
+reservoir_s2 done 17:52 1 probe

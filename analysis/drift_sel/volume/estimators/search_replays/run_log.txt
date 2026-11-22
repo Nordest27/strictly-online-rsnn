@@ -1,0 +1,2 @@
+wrote /mnt/c/Users/72459430/Downloads/arm_search_replays_2026-11-18/ours_r1_c37_s0.gif (3 episodes: [0, 3300, 6600])
+wrote /mnt/c/Users/72459430/Downloads/arm_search_replays_2026-11-18/eprop_r1_c09_s0.gif (3 episodes: [0, 3300, 6600])

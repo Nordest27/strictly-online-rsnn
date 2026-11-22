@@ -1,0 +1,6 @@
+g_s0
+gbn_s0
+gba_s0
+g_s1
+gbn_s1
+gba_s1

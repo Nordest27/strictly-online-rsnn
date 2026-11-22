@@ -1,0 +1,7 @@
+40 target synapses; 84 neurons can be perturbed
+ fraction of other neurons perturbed | SNR drift estimate |  SNR REINFORCE | sd(V_T)
+                                0.00 |              0.005 |          0.012 | 0.1434
+                                0.25 |              0.019 |          0.011 | 0.1504
+                                0.50 |              0.006 |          0.015 | 0.1467
+                                1.00 |              0.015 |          0.016 | 0.1575
+(SNR resolution ~ 0.016: values near it are indistinguishable from zero)

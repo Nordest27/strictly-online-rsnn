@@ -1,0 +1,83 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.75,
+  "p_max": 1.0,
+  "input_sigma_cells": 1.813,
+  "inhibition_scale": 3.972,
+  "feedforward_inhibition": false,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.0
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.3,
+    "mean_scale": 0.6205776944756594,
+    "sd_scale": 0.12411553889513188
+   },
+   "shape": 20
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.45,
+     "centre_shift": 3,
+     "mean_scale": 0.8962792218320149,
+     "sd_scale": 0.0896279221832015
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.45,
+     "centre_shift": 3,
+     "mean_scale": 0.6946442290485155,
+     "sd_scale": 0.06946442290485155
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.45,
+     "centre_shift": 3,
+     "mean_scale": 0.8631457274064128,
+     "sd_scale": 0.08631457274064129
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.45,
+     "centre_shift": 3,
+     "mean_scale": 0.8468311991016344,
+     "sd_scale": 0.08468311991016345
+    }
+   },
+   {}
+  ],
+  "input": {
+   "mean_scale": 0.16789556605999592,
+   "sd_scale": 0.08394778302999796
+  }
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 5,
+ "_meta": {
+  "architecture_search": {
+   "idx": 3,
+   "score": 0.8562152781943682,
+   "genome": {
+    "ff_inhibition": false,
+    "ff_targets": "both",
+    "inh_sigma_ratio": 1.0,
+    "sigma_cells": 1.75,
+    "p_max": 1.0,
+    "input_sigma_cells": 1.812808396214222,
+    "inhibition_scale": 3.972180656756321,
+    "ff_sigma": 0.45,
+    "field_sigma": 0.3,
+    "field_shape": "excitatory",
+    "target_hz": 30.0,
+    "ff_centre_shift": 3
+   }
+  }
+ }
+}

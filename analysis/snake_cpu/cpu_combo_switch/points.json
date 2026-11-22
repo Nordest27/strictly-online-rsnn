@@ -1,0 +1,101 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "switch": {
+   "criterion": -0.08,
+   "window": 5000,
+   "mangles": [
+    "channels",
+    "actions"
+   ]
+  },
+  "monitor": true,
+  "monitor_every": 5000
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "adaptive"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "adaptive+homeo1"
+    },
+    "hidden_rule": {
+     "preset": "eprop_plus_homeostat",
+     "homeostat": 1.0
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "adaptive+all0.1"
+    },
+    "hidden_rule": {
+     "preset": "eprop_plus_proposed_homeostat",
+     "drift": 0.1,
+     "gradient": 0.1,
+     "homeostat": 0.1,
+     "center_drift": true
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "adaptive+dg0.1+homeo1"
+    },
+    "hidden_rule": {
+     "preset": "eprop_plus_proposed_homeostat",
+     "drift": 0.1,
+     "gradient": 0.1,
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random+dg0.1+homeo1"
+    },
+    "hidden_rule": {
+     "preset": "eprop_plus_proposed_homeostat",
+     "drift": 0.1,
+     "gradient": 0.1,
+     "homeostat": 1.0,
+     "center_drift": true
+    }
+   }
+  }
+ ]
+}

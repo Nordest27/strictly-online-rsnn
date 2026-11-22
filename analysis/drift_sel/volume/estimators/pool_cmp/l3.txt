@@ -1,0 +1,2 @@
+local_inject_s0 {"late_gap": 0.20802566541491874, "early_gap": 0.19036764873775558, "field_dead": 0.1458, "e_hz": 35.31, "decisions": 11656, "fitness": 0.1439546737535003}
+local_inject_s1 {"late_gap": -0.059471606904181074, "early_gap": 0.03465553345871575, "field_dead": 0.4167, "e_hz": 67.4, "decisions": 12785, "fitness": -0.2678216069041811}

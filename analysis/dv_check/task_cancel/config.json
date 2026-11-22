@@ -1,0 +1,63 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 0.836,
+  "p_max": 0.914,
+  "input_sigma_cells": 1.857,
+  "inhibition_scale": 7.963,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.673,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 1.08,
+    "mean_scale": 1.1906708634458347,
+    "sd_scale": 0.23813417268916695
+   },
+   "shape": 4,
+   "conn_i": {
+    "sigma_cells": 1.08,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "input": {
+   "mean_scale": 0.12821785992406629,
+   "sd_scale": 0.06410892996203314
+  },
+  "layers": [
+   {}
+  ]
+ },
+ "ei_layers": 1,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "monitor": true,
+ "monitor_every": 20000,
+ "probe": {
+  "moves": 5000,
+  "adapt": true
+ },
+ "backend": "single_threaded_cpu",
+ "hidden_rule": {
+  "preset": "proposed",
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "cancel": 1.0
+  }
+ },
+ "c_reg": 0.0001,
+ "seed": 0,
+ "max_timesteps": 1500000.0,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "csv_prefix": "dvcheck_task_cancel"
+}

@@ -1,0 +1,10 @@
+0 frozen 0.06 1 0
+0 reg_hard 0.12 1 0
+0 reg_hard 0.06 1 1
+0 reg_hard 0.12 1 1
+0 reg_hard 0.06 1 2
+1 frozen 0.06 1 0
+1 reg_hard 0.12 1 0
+1 reg_hard 0.06 1 1
+1 reg_hard 0.12 1 1
+1 reg_hard 0.06 1 2

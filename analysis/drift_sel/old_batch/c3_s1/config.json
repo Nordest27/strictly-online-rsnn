@@ -1,0 +1,46 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "monitor": true,
+ "monitor_every": 20000,
+ "hidden_rule": {
+  "preset": "drift_only",
+  "diagnose_parts": true,
+  "center_drift": true,
+  "td_stats_decay": 0.999
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "seed": 1,
+ "max_timesteps": 2000000,
+ "min_episodes": 0,
+ "csv_prefix": "c3_s1",
+ "repetition": 0,
+ "trace_log": false,
+ "episodic_traces": true,
+ "selection": {
+  "n_candidates": 8,
+  "seed": 1,
+  "switch_moves": 25000,
+  "required_after": [
+   [
+    2,
+    3
+   ]
+  ]
+ },
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 1,
+  "motor_log_syn_sigma": 1.5
+ },
+ "move_log": {
+  "probe_every": 250000,
+  "probe_moves": 300
+ }
+}

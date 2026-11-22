@@ -1,0 +1,6 @@
+arch [('relu', 64), ('gsm', 32), ('relu', 64), ('gsm', 16), ('out', None)] kappa 3.0 eta 0.002; mean reward per 2000-trial block (chance 0.25), mean of seeds
+DIVERGED: m_fa_ld seed 0: diverged at 9454
+DIVERGED: m_tr_ld seed 0: diverged at 29873
+m_avgJ         b1  0.296  b3  0.356  b6  0.356  b11 0.375  b20 0.352   mean 0.355 (seed sd 0.043)  37s
+               feedback cos vs exact (layers 1..4): first block +0.49 +0.36 +0.72 +0.47 | last quarter +0.18 +0.05 +0.62 +0.18
+backprop       b1  0.553  b3  0.642  b6  0.635  b11 0.646  b20 0.587   mean 0.608 (seed sd 0.124)  25s

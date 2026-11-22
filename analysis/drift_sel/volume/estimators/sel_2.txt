@@ -1,0 +1,2 @@
+frozen_h        reward/250: 0.25 0.24 0.26 0.25 0.25 0.25 0.24 0.25 0.24 0.25 0.26 0.25   Hz H 32 motor 16  | neighbour pref cos -0.01 vs far -0.01
+route_sym       reward/250: 0.25 0.25 0.26 0.24 0.24 0.26 0.26 0.25 0.25 0.25 0.24 0.25   Hz H 38 motor 18  | neighbour pref cos -0.01 vs far -0.01

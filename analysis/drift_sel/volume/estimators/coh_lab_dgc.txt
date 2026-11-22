@@ -1,0 +1,4 @@
+dgc_s0 {"late_gap": 0.23612649808474506, "early_gap": 0.13070112999229955, "field_dead": 0.0625, "e_hz": 42.7, "decisions": 12174, "fitness": 0.2575891821309678}
+dgc_s1 {"late_gap": -0.05604153607684631, "early_gap": 0.043903834524115615, "field_dead": 0.4167, "e_hz": 51.09, "decisions": 13524, "fitness": -0.2643915360768463}
+dgc_s2 {"late_gap": -0.200942398782239, "early_gap": -0.13039978710880917, "field_dead": 0.4375, "e_hz": 38.1, "decisions": 14374, "fitness": -0.41969239878223896}
+dgc_s3 {"late_gap": 0.028198333603908887, "early_gap": 0.13816387565681199, "field_dead": 0.4583, "e_hz": 32.26, "decisions": 12112, "fitness": -0.2009516663960911}

@@ -1,0 +1,121 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "toroidal": "local",
+  "local": {
+   "sigma_cells": 1.0,
+   "input_sigma_ref": "source"
+  },
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 20000
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "plastic_inh_1e-6"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "plastic_inhibition": {
+     "eta": 1e-06,
+     "rate": 20.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "plastic_inh_1e-5"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "rate": 20.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "inhibition_x2"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source",
+     "inhibition_scale": 6.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "psi_spread_0.7"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true,
+     "psi_target_spread": 0.7
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "plastic_inh_1e-5+psi_spread"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true,
+     "psi_target_spread": 0.7
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "rate": 20.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    }
+   }
+  }
+ ]
+}

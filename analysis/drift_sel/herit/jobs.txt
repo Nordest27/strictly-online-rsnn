@@ -1,0 +1,8 @@
+posA_s0
+posB_s0
+posA_s1
+posB_s1
+negA_s0
+negB_s0
+negA_s1
+negB_s1

@@ -1,0 +1,52 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu"
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed+backprop"
+    },
+    "hidden_rule": {
+     "preset": "proposed_backprop"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c+backprop"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat_backprop"
+    }
+   }
+  }
+ ]
+}

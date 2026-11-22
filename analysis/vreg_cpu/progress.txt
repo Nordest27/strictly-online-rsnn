@@ -1,0 +1,8 @@
+vreg001_s0 done 10:44 1 probe
+vreg01_s0 done 10:45 1 probe
+vreg01_s1 done 10:48 1 probe
+vreg001_s1 done 10:49 1 probe
+prop_vreg001_s1 done 11:16 1 probe
+prop_vreg01_s1 done 11:16 1 probe
+prop_vreg01_s0 done 11:19 1 probe
+prop_vreg001_s0 done 11:20 1 probe

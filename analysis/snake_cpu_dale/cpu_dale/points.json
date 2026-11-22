@@ -1,0 +1,86 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "toroidal": "legacy",
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 10000
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed_dale_local"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "dale": {
+     "every_episodes": 1,
+     "local": true
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed_dale_uniform"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "dale": {
+     "every_episodes": 1,
+     "local": false
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed_pi"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "rate": 10.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed_pi_dale_local"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "rate": 10.0
+    },
+    "dale": {
+     "every_episodes": 1,
+     "local": true
+    }
+   }
+  }
+ ]
+}

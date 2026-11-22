@@ -1,0 +1,3 @@
+indep          reward/best per 2000: 0.48 0.52 0.55 0.56 0.57 0.57 0.58 0.58 0.57 0.58  | column index 0.33 (chance 0.17)  coupled partner same location nan
+fixed          reward/best per 2000: 0.47 0.53 0.55 0.58 0.57 0.57 0.59 0.58 0.59 0.59  | column index 0.34 (chance 0.17)  coupled partner same location 0.38
+waves          reward/best per 2000: 0.47 0.53 0.55 0.57 0.57 0.58 0.57 0.56 0.57 0.58  | column index 0.33 (chance 0.17)  coupled partner same location 0.29

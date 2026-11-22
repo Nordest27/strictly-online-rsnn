@@ -1,0 +1,34 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "_meta": {
+  "study": "cpu_hybrid",
+  "config": 1,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "symmetric_hybrid"
+    },
+    "hidden_rule": {
+     "preset": "symmetric_hybrid"
+    },
+    "feedback_type": "symmetric",
+    "explicit_feedback": false
+   }
+  },
+  "final_rung_score": -0.07807500862138377,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "symmetric_hybrid"
+ },
+ "feedback_type": "symmetric",
+ "explicit_feedback": false
+}

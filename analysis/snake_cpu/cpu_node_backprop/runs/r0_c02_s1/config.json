@@ -1,0 +1,19 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "_meta": {
+  "variant": "node+backprop0.3"
+ },
+ "hidden_rule": {
+  "preset": "node_proposed",
+  "backprop": 0.3
+ },
+ "seed": 1,
+ "max_timesteps": 2000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c02_s1",
+ "repetition": 0,
+ "trace_log": false
+}

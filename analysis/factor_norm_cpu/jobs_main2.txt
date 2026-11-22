@@ -1,0 +1,4 @@
+sgdnp_s0
+sgdfnro_s0
+sgdnp_s1
+sgdfnro_s1

@@ -1,0 +1,116 @@
+{
+ "monitor": false,
+ "monitor_every": 10000,
+ "backend": "single_threaded_cpu",
+ "hidden_rule": {
+  "preset": "proposed",
+  "gradient": 0.0,
+  "diagnose_parts": true,
+  "center_drift": true,
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 1.0
+  }
+ },
+ "c_reg": 0.0001,
+ "seed": 0,
+ "max_timesteps": 46800,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "csv_prefix": "c004",
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.5,
+ "episodic_traces": true,
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 0,
+  "decoder": "lse",
+  "beta": 1.0
+ },
+ "selection": {
+  "n_candidates": 8,
+  "seed": 0
+ },
+ "move_log": {
+  "probe_every": 1000000000000,
+  "probe_moves": 800,
+  "aggregate": true,
+  "activity": 800
+ },
+ "lr": 0.0,
+ "readout_optimiser": {
+  "type": "adabelief",
+  "lr": 1e-05
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.332,
+  "p_max": 0.685,
+  "input_sigma_cells": 2.682,
+  "inhibition_scale": 3.887,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.008,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": null,
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.445,
+     "mean_scale": 0.8755495893315653,
+     "sd_scale": 0.08755495893315654
+    },
+    "to_next_i": {
+     "sigma_cells": 0.445,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.445,
+     "mean_scale": 0.6457823167074679,
+     "sd_scale": 0.06457823167074679
+    },
+    "to_next_i": {
+     "sigma_cells": 0.445,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.445
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.445,
+     "mean_scale": 0.5149288941532051,
+     "sd_scale": 0.051492889415320514
+    },
+    "to_next_i": {
+     "sigma_cells": 0.445,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ],
+  "input": {
+   "mean_scale": 0.07292970211147444,
+   "sd_scale": 0.03646485105573722
+  }
+ },
+ "feedforward_targets": "e",
+ "ei_layers": 5,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50
+}

@@ -1,0 +1,9 @@
+first batch: 1.8s -> estimated total 6.1 min
+
+== slow reward: sigma=0.0067, firing prob/step=0.100, N=5,000,000, 319s
+   truth halves agree: cos=0.995
+   dist_eprop   cos= 0.829 (halves 0.814/0.842)  scale=   2.51  rel.noise/sample=  110.4
+   trace_nopsi  cos= 0.655 (halves 0.633/0.676)  scale=   7.82  rel.noise/sample=  142.2
+   step_pretr   cos= 0.662 (halves 0.681/0.643)  scale=   5.13  rel.noise/sample=  117.3
+   step_psi     cos= 0.844 (halves 0.850/0.836)  scale=   1.78  rel.noise/sample=  106.9
+   exact        cos= 0.996 (halves 0.998/0.994)  scale=   0.90  rel.noise/sample=  119.7

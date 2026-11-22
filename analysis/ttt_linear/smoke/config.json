@@ -1,0 +1,11 @@
+{
+ "backend": "single_threaded_cpu",
+ "ei_layers": 0,
+ "network": {
+  "fields": null
+ },
+ "hidden_rule": {
+  "preset": "proposed"
+ },
+ "csv_output": "outputs_ttt/lin_smoke(0).csv"
+}

@@ -1,0 +1,107 @@
+CHEKPOINT_NAME None
+Process Process-3:
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/user/repos/ml_genn/examples/eprop/performance_visualizer.py", line 223, in _sequence_loop
+    cv2.namedWindow("Best", cv2.WINDOW_NORMAL)
+cv2.error: OpenCV(5.0.0) /io/opencv/modules/highgui/src/window.cpp:1200: error: (-2:Unspecified error) The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or Cocoa support. If you are on Ubuntu or Debian, install libgtk2.0-dev and pkg-config, then re-run cmake or configure script in function 'namedWindowImpl'
+
+/home/user/repos/ml_genn/examples/eprop/performance_visualizer.py:193: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.pause(0.001)
+make: Entering directory '/home/user/repos/personal/analysis/ttt_linear/smoke/tic_tac_toe_trainEPropCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/ttt_linear/smoke/tic_tac_toe_trainEPropCompiler_CODE'
+/home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages/pygenn/_deprecated.py:14: FutureWarning: Call to deprecated function push_var_to_device. (Please call push_to_device directly on variable) -- Deprecated since version 4.9.0
+  warn(f"Call to deprecated function {func.__name__}."
+/home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Ep      1 | reward   -1.00 | best   -1.00 | avg   -1.00 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep     11 | reward   -1.00 | best   -1.00 | avg   -0.95 | outcome opponent | moves 4 | first opponent | voltage 0.0000 | freq 0.0000
+Ep     21 | reward   +0.00 | best   -1.00 | avg   -0.92 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep     31 | reward   -1.00 | best   -1.00 | avg   -0.91 | outcome opponent | moves 4 | first opponent | voltage 0.0000 | freq 0.0000
+Ep     41 | reward   -1.00 | best   -1.00 | avg   -0.86 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep     51 | reward   -1.00 | best   -1.00 | avg   -0.92 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep     61 | reward   -1.00 | best   -1.00 | avg   -0.84 | outcome opponent | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep     71 | reward   -1.00 | best   -1.00 | avg   -0.90 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep     81 | reward   -1.00 | best   -1.00 | avg   -0.82 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep     91 | reward   -1.00 | best   -1.00 | avg   -0.85 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    101 | reward   -1.00 | best   -1.00 | avg   -0.83 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    111 | reward   -1.00 | best   -1.00 | avg   -0.86 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    121 | reward   +0.00 | best   -1.00 | avg   -0.72 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    131 | reward   +0.00 | best   -1.00 | avg   -0.74 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    141 | reward   -1.00 | best   -1.00 | avg   -0.80 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    151 | reward   -1.00 | best   -1.00 | avg   -0.80 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    161 | reward   -1.00 | best   -1.00 | avg   -0.85 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    171 | reward   -1.00 | best   -1.00 | avg   -0.88 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    181 | reward   +0.00 | best   -1.00 | avg   -0.84 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    191 | reward   -1.00 | best   -1.00 | avg   -0.87 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    201 | reward   -1.00 | best   -1.00 | avg   -0.84 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    211 | reward   -1.00 | best   -1.00 | avg   -0.83 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    221 | reward   -1.00 | best   -1.00 | avg   -0.83 | outcome opponent | moves 4 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    231 | reward   -1.00 | best   -1.00 | avg   -0.82 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    241 | reward   -1.00 | best   -1.00 | avg   -0.82 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    251 | reward   +0.00 | best   -1.00 | avg   -0.81 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    261 | reward   -1.00 | best   -1.00 | avg   -0.75 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    271 | reward   -1.00 | best   -1.00 | avg   -0.81 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    281 | reward   -1.00 | best   -1.00 | avg   -0.85 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    291 | reward   -1.00 | best   -1.00 | avg   -0.81 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    301 | reward   +0.00 | best   -1.00 | avg   -0.79 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    311 | reward   -1.00 | best   +0.00 | avg   -0.76 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    321 | reward   +0.00 | best   +0.00 | avg   -0.69 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    331 | reward   -1.00 | best   +0.00 | avg   -0.71 | outcome opponent | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    341 | reward   +0.00 | best   +0.00 | avg   -0.66 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    351 | reward   +0.00 | best   +0.00 | avg   -0.67 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    361 | reward   +0.00 | best   +0.00 | avg   -0.67 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    371 | reward   -1.00 | best   +0.00 | avg   -0.64 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    381 | reward   -1.00 | best   +0.00 | avg   -0.75 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    391 | reward   -1.00 | best   +0.00 | avg   -0.81 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    401 | reward   -1.00 | best   +0.00 | avg   -0.78 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    411 | reward   +0.00 | best   -1.00 | avg   -0.82 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    421 | reward   -1.00 | best   -1.00 | avg   -0.86 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    431 | reward   -1.00 | best   -1.00 | avg   -0.79 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    441 | reward   -1.00 | best   -1.00 | avg   -0.79 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    451 | reward   -1.00 | best   -1.00 | avg   -0.76 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    461 | reward   +0.00 | best   -1.00 | avg   -0.64 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    471 | reward   +0.00 | best   -1.00 | avg   -0.62 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    481 | reward   -1.00 | best   -1.00 | avg   -0.74 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    491 | reward   -1.00 | best   -1.00 | avg   -0.81 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    501 | reward   -1.00 | best   -1.00 | avg   -0.72 | outcome opponent | moves 4 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    511 | reward   -1.00 | best   +0.00 | avg   -0.66 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    521 | reward   +0.00 | best   +0.00 | avg   -0.63 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    531 | reward   +0.00 | best   +0.00 | avg   -0.66 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    541 | reward   -1.00 | best   +0.00 | avg   -0.76 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    551 | reward   -1.00 | best   +0.00 | avg   -0.77 | outcome opponent | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    561 | reward   -1.00 | best   +0.00 | avg   -0.78 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    571 | reward   -1.00 | best   +0.00 | avg   -0.80 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    581 | reward   -1.00 | best   +0.00 | avg   -0.81 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    591 | reward   -1.00 | best   +0.00 | avg   -0.69 | outcome opponent | moves 4 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    601 | reward   +0.00 | best   +0.00 | avg   -0.72 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    611 | reward   +0.00 | best   -1.00 | avg   -0.70 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    621 | reward   -1.00 | best   -1.00 | avg   -0.75 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    631 | reward   -1.00 | best   -1.00 | avg   -0.76 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    641 | reward   -1.00 | best   -1.00 | avg   -0.78 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    651 | reward   -1.00 | best   -1.00 | avg   -0.83 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    661 | reward   -1.00 | best   -1.00 | avg   -0.82 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    671 | reward   +0.00 | best   -1.00 | avg   -0.77 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    681 | reward   +0.00 | best   -1.00 | avg   -0.77 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    691 | reward   -1.00 | best   -1.00 | avg   -0.79 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    701 | reward   -1.00 | best   -1.00 | avg   -0.79 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    711 | reward   -1.00 | best   -1.00 | avg   -0.75 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    721 | reward   +0.00 | best   -1.00 | avg   -0.67 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    731 | reward   -1.00 | best   -1.00 | avg   -0.69 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    741 | reward   -1.00 | best   -1.00 | avg   -0.70 | outcome opponent | moves 4 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    751 | reward   -1.00 | best   -1.00 | avg   -0.67 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    761 | reward   +0.00 | best   -1.00 | avg   -0.72 | outcome draw | moves 5 | first agent | voltage 0.0000 | freq 0.0000
+Ep    771 | reward   -1.00 | best   -1.00 | avg   -0.71 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    781 | reward   -1.00 | best   -1.00 | avg   -0.76 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    791 | reward   -1.00 | best   -1.00 | avg   -0.81 | outcome opponent | moves 3 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    801 | reward   -1.00 | best   -1.00 | avg   -0.80 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    811 | reward   -1.00 | best   +0.00 | avg   -0.76 | outcome opponent | moves 3 | first agent | voltage 0.0000 | freq 0.0000
+Ep    821 | reward   -1.00 | best   +0.00 | avg   -0.63 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    831 | reward   -1.00 | best   +0.00 | avg   -0.71 | outcome opponent | moves 4 | first agent | voltage 0.0000 | freq 0.0000
+Ep    841 | reward   +0.00 | best   +0.00 | avg   -0.71 | outcome draw | moves 5 | first opponent | voltage 0.0000 | freq 0.0000
+Ep    851 | reward   -1.00 | best   +0.00 | avg   -0.69 | outcome opponent | moves 4 | first opponent | voltage 0.0000 | freq 0.0000

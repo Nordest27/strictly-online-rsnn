@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/user/repos/ml_genn/examples/eprop/run_headless.py", line 8, in <module>
+    import snake
+  File "/home/user/repos/ml_genn/examples/eprop/snake.py", line 182, in <module>
+    HP = snake_hparams.load({**SNAKE_EXTRA_DEFAULTS, **snake_hparams.DEFAULTS})
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/repos/ml_genn/examples/eprop/snake_hparams.py", line 112, in load
+    with open(path) as f:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/work/ff0.6/config.json'

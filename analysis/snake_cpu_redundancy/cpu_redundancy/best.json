@@ -1,0 +1,40 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 20000,
+ "_meta": {
+  "study": "cpu_redundancy",
+  "config": 6,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    }
+   }
+  },
+  "final_rung_score": 0.03978471613575415,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "eprop"
+ }
+}

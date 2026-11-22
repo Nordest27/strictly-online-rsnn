@@ -1,0 +1,32 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "_meta": {
+  "study": "cpu_node_backprop",
+  "config": 2,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "node+backprop0.3"
+    },
+    "hidden_rule": {
+     "preset": "node_proposed",
+     "backprop": 0.3
+    }
+   }
+  },
+  "final_rung_score": -0.027529097576765645,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "node_proposed",
+  "backprop": 0.3
+ }
+}

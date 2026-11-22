@@ -1,0 +1,12 @@
+prop_none_s0
+prop_reward_s0
+prop_td_s0
+eprop_none_s0
+eprop_reward_s0
+eprop_td_s0
+prop_none_s1
+prop_reward_s1
+prop_td_s1
+eprop_none_s1
+eprop_reward_s1
+eprop_td_s1

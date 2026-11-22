@@ -1,0 +1,18 @@
+
+===== first: 195 apples eaten, 1012 deaths, 5000 moves
+L1_E          | eat: median enrichment by lag -4..1 [1.02 1.04 1.01 0.85 1.17 1.10] null95 1.14; x2-enriched 0.09 (null 0.01) | death: median enrichment by lag -4..1 [1.04 0.95 0.92 0.94 1.38 0.09] null95 1.00; x2-enriched 0.00 (null 0.00)
+L2_E          | eat: median enrichment by lag -4..1 [1.02 1.04 0.99 0.83 1.18 1.11] null95 1.10; x2-enriched 0.10 (null 0.02) | death: median enrichment by lag -4..1 [1.04 0.96 0.91 0.96 1.35 0.10] null95 1.00; x2-enriched 0.00 (null 0.00)
+L3_E          | eat: median enrichment by lag -4..1 [1.01 1.05 0.96 0.85 1.19 1.05] null95 1.10; x2-enriched 0.10 (null 0.02) | death: median enrichment by lag -4..1 [1.04 0.94 0.94 0.97 1.32 0.11] null95 1.01; x2-enriched 0.01 (null 0.00)
+L4_E          | eat: median enrichment by lag -4..1 [1.00 1.02 0.96 0.86 1.22 1.04] null95 1.10; x2-enriched 0.11 (null 0.02) | death: median enrichment by lag -4..1 [1.04 0.95 0.94 0.96 1.30 0.13] null95 1.01; x2-enriched 0.00 (null 0.00)
+L5_E          | eat: median enrichment by lag -4..1 [0.99 1.02 0.96 0.86 1.19 1.01] null95 1.10; x2-enriched 0.10 (null 0.02) | death: median enrichment by lag -4..1 [1.04 0.94 0.95 0.96 1.29 0.15] null95 1.01; x2-enriched 0.00 (null 0.00)
+policy_field  | eat: median enrichment by lag -4..1 [1.00 1.03 0.96 0.85 1.19 1.02] null95 1.10; x2-enriched 0.09 (null 0.02) | death: median enrichment by lag -4..1 [1.04 0.95 0.94 0.97 1.30 0.14] null95 1.01; x2-enriched 0.00 (null 0.00)
+value_field   | eat: median enrichment by lag -4..1 [1.00 1.02 0.96 0.85 1.19 1.01] null95 1.09; x2-enriched 0.09 (null 0.02) | death: median enrichment by lag -4..1 [1.04 0.95 0.94 0.97 1.30 0.14] null95 1.01; x2-enriched 0.00 (null 0.00)
+
+===== last: 711 apples eaten, 96 deaths, 5000 moves
+L1_E          | eat: median enrichment by lag -4..1 [1.04 1.06 0.97 0.78 0.56 1.14] null95 1.05; x2-enriched 0.03 (null 0.01) | death: median enrichment by lag -4..1 [1.11 0.98 0.94 1.08 1.44 0.00] null95 1.07; x2-enriched 0.28 (null 0.06)
+L2_E          | eat: median enrichment by lag -4..1 [1.03 1.05 0.97 0.84 0.54 1.17] null95 1.06; x2-enriched 0.02 (null 0.01) | death: median enrichment by lag -4..1 [1.06 1.02 0.96 1.09 1.46 0.00] null95 1.09; x2-enriched 0.30 (null 0.05)
+L3_E          | eat: median enrichment by lag -4..1 [1.00 1.05 0.97 0.82 0.58 1.15] null95 1.07; x2-enriched 0.03 (null 0.01) | death: median enrichment by lag -4..1 [1.06 1.01 1.01 1.01 1.42 0.00] null95 1.12; x2-enriched 0.31 (null 0.05)
+L4_E          | eat: median enrichment by lag -4..1 [1.00 1.04 0.97 0.82 0.58 1.11] null95 1.05; x2-enriched 0.02 (null 0.01) | death: median enrichment by lag -4..1 [1.11 0.99 1.01 1.10 1.48 0.00] null95 1.06; x2-enriched 0.30 (null 0.05)
+L5_E          | eat: median enrichment by lag -4..1 [1.00 1.05 0.97 0.83 0.56 1.07] null95 1.05; x2-enriched 0.02 (null 0.01) | death: median enrichment by lag -4..1 [1.11 1.05 1.00 1.11 1.42 0.00] null95 1.08; x2-enriched 0.29 (null 0.04)
+policy_field  | eat: median enrichment by lag -4..1 [1.00 1.05 0.97 0.82 0.57 1.03] null95 1.06; x2-enriched 0.02 (null 0.01) | death: median enrichment by lag -4..1 [1.12 1.04 0.96 1.11 1.46 0.00] null95 1.06; x2-enriched 0.30 (null 0.04)
+value_field   | eat: median enrichment by lag -4..1 [1.00 1.04 0.97 0.82 0.57 1.04] null95 1.06; x2-enriched 0.02 (null 0.00) | death: median enrichment by lag -4..1 [1.13 1.05 0.96 1.09 1.46 0.00] null95 1.07; x2-enriched 0.29 (null 0.05)

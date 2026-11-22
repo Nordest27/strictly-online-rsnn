@@ -1,0 +1,2 @@
+== big_snake {"side": 16, "side_i": 8, "depth": 16, "z_shift": 1.5, "sigma_cells": 1.0, "p_max": 0.8, "k_global": 3.0, "k_global_mode": "in", "ee_gain": 0.6, "ii_gain": 0.1, "inh_sigma_ratio": 1.0, "input_depth": 1, "output_depth": 3, "field_sigma_cells": 1.0, "field_gain": 1.0, "input_gain": 1.0, "decorr": 0.001, "lr": 1e-06, "seed": 0}
+   106408 L1_E_dead 0.09 L1_E_hz 4.22 L1_I_dead 0.08 L1_I_hz 5.25 policy_field_dead 0.96 policy_field_hz 2.44 value_field_dead 0.90 value_field_hz 2.16

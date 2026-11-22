@@ -1,0 +1,187 @@
+--- a/ml_genn/ml_genn/compilers/eprop_compiler.py	2026-10-05 10:27:35.632883448 +0200
++++ b/ml_genn/ml_genn/compilers/eprop_compiler.py	2026-10-07 16:16:12.570677178 +0200
+@@ -341,6 +341,7 @@
+              ("RLEpsTrace", "scalar"),
+              ("NoiseTrace", "scalar"),
+              ("RLNoiseTrace", "scalar"),
++             ("ScoreMean", "scalar"),
+              ("LogSynSig", "scalar"),
+              ("SynSig", "scalar"),
+              ("SynSigTrace", "scalar"),
+@@ -352,7 +353,10 @@
+         ("FAvgTrace", "scalar"),
+         ("Z", "scalar"),
+         ("PrevV", "scalar"),
+-        ("NeuronNoiseTrace", "scalar")],
++        ("NeuronNoiseTrace", "scalar"),
++        ("PsiBar", "scalar"),
++        ("AbsTd", "scalar"),
++        ("DVc", "scalar")],
+     "pre_neuron_var_refs": [
+         ("Noise1_pre", "scalar"),
+     ],
+@@ -390,6 +394,7 @@
+     Z = 1.0;
+     """,
+     "post_dynamics_code": """
++    DVc = fabs(V_post - (PrevV - Vthresh_post * Z));   // change from the previous post-reset voltage
+     Z = 0.0;
+     FAvg *= AlphaFAv;
+ 
+@@ -404,6 +409,7 @@
+     }
+ 
+     PrevV = V_post;
++    __POST_EXTRA__
+     """,
+ 
+     "pre_spike_syn_code": """
+@@ -462,7 +468,8 @@
+     # """,
+ 
+     "synapse_dynamics_code": """
+-    scalar deltaV = fabs(PrevV - V_post);
++    __DELTAV__
++    __LOCAL_TRACE__
+ 
+     // if (g > 0) DeltaG += 1e-4;
+     // else DeltaG -= 1e-4;
+@@ -470,10 +477,10 @@
+     // UpdateCount *= AlphaFAv;
+     // if (DeltaG == 0.0) UpdateCount += (1.0 - AlphaFAv);
+     
+-    scalar reward = TdE_post + PRew_post;
++    __REWARD__
+     
+-    DeltaG += reward * (RLTrace + RLEpsTrace + RLNoiseTrace)
+-       - 0.01 * deltaV * (RLEpsTrace + RLNoiseTrace)
++    DeltaG += reward * (RLTrace + RLNoiseTrace)
++       - 0.01 * deltaV * locTrace
+        + 0.0 * CReg * (PR_post + VR_post) * eFiltered;
+     
+     // --- Standard ALIF e-prop eligibility update ---
+@@ -490,7 +497,7 @@
+         fmax(0.0, -V_post - (Vthresh_post + (Beta_post * A_post)))
+         )
+     );
+-    DeltaG += -CReg * VReg * (RLEpsTrace + RLNoiseTrace) + 0.0 * CReg * VReg * (ZFilter - Beta_post * epsA);
++    DeltaG += -CReg * VReg * locTrace + 0.0 * CReg * VReg * (ZFilter - Beta_post * epsA);
+ 
+     eFiltered = (eFiltered * Alpha) + e;
+ 
+@@ -498,16 +505,17 @@
+     const scalar fireReg = (FAvg - FTarget);
+     scalar fireRegReward = FAvgTrace - fabs(fireReg);
+ 
+-    DeltaG += CReg * fireReg * eFiltered + CReg * fireRegReward * (RLEpsTrace + RLNoiseTrace);
++    DeltaG += CReg * fireReg * eFiltered + CReg * fireRegReward * locTrace;
+ 
+     SynSig = exp(LogSynSig - 5);
+     // const scalar NormPertEpsTrace = (1.0 - Alpha * Alpha) * PertEpsTrace_post / (Sigma_post * Sigma_post + 1e-6);
+-    // const scalar NormNoiseTrace = (1.0 - Alpha * Alpha) * NoiseTrace / (SynSig * SynSig + 1e-6);
+-    const scalar NormNoiseTrace = NoiseTrace / (SynSig * SynSig + 1e-6);
++    const scalar NormNoiseTrace = (1.0 - Alpha * Alpha) * NoiseTrace / (SynSig * SynSig + 1e-6);
++    // const scalar NormNoiseTrace = NoiseTrace / (SynSig * SynSig + 1e-6);
+ 
+     // RLTrace = Lambda * RLTrace + eFiltered * ( 1.0 * PG_post - 0.1 * VE_post + 0.0 * PGEps_post );
+     // RLEpsTrace = Lambda * RLEpsTrace + e * NormPertEpsTrace;
+-    RLNoiseTrace = Lambda * RLNoiseTrace + e * NormNoiseTrace; 
++    __RLNOISE_UPDATE__
++    __QTRACE_UPDATE__
+ 
+     // SynSigTrace = SynSigTrace * 0.9 + Psi * ((1.0 - Alpha * Alpha) * NoiseTrace * NoiseTrace / (SynSig * SynSig + 1e-6) - 1.0);
+     
+@@ -631,6 +639,62 @@
+     addToPre(g * F_post);
+ """
+ 
++# --- experiment switches (network_exp) ---
++import os as _os
++_EXP_VARIANT = _os.environ.get("RULE_VARIANT", "full")
++_EXP_BETA = float(_os.environ.get("SCORE_BETA", "0.99"))
++_EXP_FREEZE_READOUT = _os.environ.get("FREEZE_READOUT", "0") == "1"
++_EXP_PSIBAR = float(_os.environ.get("PSIBAR_DECAY", "0.99"))
++_EXP_MOD = _os.environ.get("HIDDEN_DELTA", "real")          # real | const | randsign
++_EXP_LOG_SYN_SIG = float(_os.environ.get("LOG_SYN_SIG", "0.0"))   # SynSig = exp(LogSynSig - 5)
++# neuron-local rewards (|dV|, VReg, firing-rate reward) x: whole trace (as before) | instantaneous gradient
++# part only (gate -PsiBar, REINFORCE sign, no lambda-trace) | off
++_EXP_LOCAL = _os.environ.get("LOCAL_REWARDS", "trace")
++# |dV| term: "reset" (as before: PrevV is the pre-reset voltage, so |PrevV - V| is the reset jump, a spike
++# penalty) or "correct" (|V - previous post-reset voltage|, computed in post_dynamics as DVc)
++_EXP_DV = _os.environ.get("DV_MODE", "reset")
++# gate variants: RLNoiseTrace input = gate * (ZFilter - Beta * epsA) * NormNoiseTrace
++_EXP_GATE = {"new": "Psi - 2.0 * PsiBar", "drift_only": "Psi - PsiBar", "grad_only": "-PsiBar"}
++_EXP_CODE = {**{k: f"const scalar eGate = ({g}) * (ZFilter - Beta_post * epsA); "
++                   f"RLNoiseTrace = Lambda * RLNoiseTrace + eGate * NormNoiseTrace;"
++                for k, g in _EXP_GATE.items()},
++    # live rule: lambda-trace of the raw (uncentred) score
++    "full":  "RLNoiseTrace = Lambda * RLNoiseTrace + e * NormNoiseTrace;",
++    # only the slowly varying mean of the score (the drift)
++    "drift": f"const scalar scExp = e * NormNoiseTrace; ScoreMean = {_EXP_BETA} * ScoreMean + {1-_EXP_BETA} * scExp; RLNoiseTrace = Lambda * RLNoiseTrace + ScoreMean;",
++    # only the fluctuation around that mean
++    "fluct": f"const scalar scExp = e * NormNoiseTrace; ScoreMean = {_EXP_BETA} * ScoreMean + {1-_EXP_BETA} * scExp; RLNoiseTrace = Lambda * RLNoiseTrace + (scExp - ScoreMean);",
++}[_EXP_VARIANT]
++eprop_alif_td_model["post_dynamics_code"] = eprop_alif_td_model["post_dynamics_code"].replace(
++    "__POST_EXTRA__",
++    f"PsiBar = {_EXP_PSIBAR} * PsiBar + {1 - _EXP_PSIBAR} * Psi; AbsTd = 0.999 * AbsTd + 0.001 * fabs(TdE_post);")
++eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__DELTAV__", {
++    "reset": "scalar deltaV = fabs(PrevV - V_post);",
++    "correct": "scalar deltaV = DVc;",
++}[_EXP_DV])
++eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__LOCAL_TRACE__", {
++    "trace": "const scalar locTrace = RLEpsTrace + RLNoiseTrace;",
++    "gradient": "const scalar locTrace = -PsiBar * (ZFilter - Beta_post * epsilonA) * "
++                "(1.0 - Alpha * Alpha) * NoiseTrace / (SynSig * SynSig + 1e-6);",
++    "off": "const scalar locTrace = 0.0;",
++    "q_trace": "const scalar locTrace = -RLEpsTrace;",       # lambda-trace of the gradient part (below)
++}[_EXP_LOCAL])
++if _EXP_LOCAL == "q_trace":
++    # Q trace: lambda-trace of the gradient part (gate PsiBar); locTrace = -RLEpsTrace gives the REINFORCE sign
++    eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace(
++        "__QTRACE_UPDATE__",
++        "RLEpsTrace = Lambda * RLEpsTrace + PsiBar * (ZFilter - Beta_post * epsA) * NormNoiseTrace;")
++else:
++    eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__QTRACE_UPDATE__", "")
++eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__REWARD__", {
++    "real": "scalar reward = TdE_post + PRew_post;",
++    "const": "scalar reward = AbsTd;",                                  # no reward information
++    "randsign": "scalar reward = (TdE_post + PRew_post) * (Noise2 < 0.5 ? -1.0 : 1.0);",   # random sign per neuron/step
++}[_EXP_MOD])
++eprop_alif_td_model["synapse_dynamics_code"] = eprop_alif_td_model["synapse_dynamics_code"].replace("__RLNOISE_UPDATE__", _EXP_CODE)
++print(f"[experiment] RULE_VARIANT={_EXP_VARIANT} SCORE_BETA={_EXP_BETA} FREEZE_READOUT={_EXP_FREEZE_READOUT} "
++      f"PSIBAR_DECAY={_EXP_PSIBAR} HIDDEN_DELTA={_EXP_MOD} LOG_SYN_SIG={_EXP_LOG_SYN_SIG} LOCAL_REWARDS={_EXP_LOCAL} DV_MODE={_EXP_DV}")
++
+ output_random_feedback_model = {
+     "vars": [("g", "scalar", VarAccess.READ_ONLY)],
+     "post_neuron_var_refs": [("E_post", "scalar")],
+@@ -1265,7 +1329,8 @@
+                               "RLEpsTrace": 0.0,
+                               "NoiseTrace": 0.0,
+                               "RLNoiseTrace": 0.0,
+-                              "LogSynSig": 0.0,
++                              "ScoreMean": 0.0,
++                              "LogSynSig": _EXP_LOG_SYN_SIG,
+                               "SynSig": 0.0,
+                               "SynSigTrace": 0.0,
+                               "UpdateCount": 0.0
+@@ -1274,7 +1339,8 @@
+                     post_var_vals={
+                         "Psi": 0.0, "FAvg": 0.0, 
+                         "FAvgTrace": 0.0, "Z": 0.0,
+-                        "PrevV": 0.0, "NeuronNoiseTrace": 0.0},
++                        "PrevV": 0.0, "NeuronNoiseTrace": 0.0,
++                        "PsiBar": 0.0, "AbsTd": 0.0, "DVc": 0.0},
+                     pre_neuron_var_refs={
+                         "Noise1_pre": "Noise1"
+                     },
+@@ -1364,7 +1430,9 @@
+ 
+         # Add weights to list of checkpoint vars
+         compile_state.checkpoint_connection_vars.append((conn, "g"))
+-        if not conn.is_feedback:
++        _is_head = ((self.policy_heads is not None and target_pop in self.policy_heads)
++                    or (getattr(self, "value_head", None) is not None and target_pop == self.value_head))
++        if not conn.is_feedback and not (_EXP_FREEZE_READOUT and _is_head):
+             # Add connection to list of connections to optimise
+             compile_state.weight_optimiser_connections.append(conn)
+ 

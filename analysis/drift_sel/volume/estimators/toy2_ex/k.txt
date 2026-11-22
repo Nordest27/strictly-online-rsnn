@@ -1,0 +1,5 @@
+arch [('relu', 64), ('gsm', 32), ('relu', 64), ('gsm', 16), ('out', None)] kappa 3.0 eta 0.001; mean reward per 2000-trial block (chance 0.25), mean of seeds
+ldfa_ys        b1  0.506  b3  0.729  b6  0.740  b11 0.831  b20 0.832   mean 0.778 (seed sd 0.103)  72s
+               feedback cos vs exact (layers 1..4): first block +0.11 +0.24 +0.24 +0.47 | last quarter +0.06 +0.18 +0.14 +0.38
+ldfa_d         b1  0.594  b3  0.740  b6  0.763  b11 0.740  b20 0.696   mean 0.714 (seed sd 0.169)  64s
+               feedback cos vs exact (layers 1..4): first block +0.16 +0.33 +0.28 +0.63 | last quarter +0.06 +0.15 +0.11 +0.65

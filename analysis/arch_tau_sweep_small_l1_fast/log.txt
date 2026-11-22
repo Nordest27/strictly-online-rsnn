@@ -1,0 +1,16 @@
+seeding with 3 genomes from 
+make: Entering directory '/home/user/repos/personal/analysis/arch_tau_sweep_small_l1_fast/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_tau_sweep_small_l1_fast/work/c0000/c0000InferenceCompiler_CODE'
+[15:05:02] c0000 score -0.111 (30 s) | best c0000 -0.111 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_tau_sweep_small_l1_fast/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_tau_sweep_small_l1_fast/work/c0001/c0001InferenceCompiler_CODE'
+[15:04:46] c0001 score -0.103 (7 s) | best c0001 -0.103 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_tau_sweep_small_l1_fast/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_tau_sweep_small_l1_fast/work/c0002/c0002InferenceCompiler_CODE'
+[15:04:52] c0002 score -0.115 (6 s) | best c0001 -0.103 | 3 done
+3 candidates; best 10:
+    idx  score    L1 field  weak   mem   mix  resp  pen  wire  kept per stage (L2.., fields)  genome
+      1 -0.103  0.78  0.93  0.93  0.45  0.28  0.67  0.0  0.84  LR 0.00 | 0.93                 tau_mem=5.00, tau_adapt=300.00, beta=0.02, ff_inhibition=False, inh_sigma_ratio=1.00, sigma_cells=1.14, p_max=0.47, input_sigma_cells=1.00, inhibition_scale=4.74, field_sigma=0.46, field_shape=excitatory, target_hz=20.00
+      0 -0.111  0.78  0.91  0.91  0.43  0.31  0.72  0.0  0.84  LR 0.00 | 0.91                 tau_mem=3.00, tau_adapt=300.00, beta=0.02, ff_inhibition=False, inh_sigma_ratio=1.00, sigma_cells=1.14, p_max=0.47, input_sigma_cells=1.00, inhibition_scale=4.74, field_sigma=0.46, field_shape=excitatory, target_hz=20.00
+      2 -0.115  0.79  0.92  0.92  0.40  0.30  0.62  0.0  0.84  LR 0.00 | 0.92                 tau_mem=7.00, tau_adapt=300.00, beta=0.02, ff_inhibition=False, inh_sigma_ratio=1.00, sigma_cells=1.14, p_max=0.47, input_sigma_cells=1.00, inhibition_scale=4.74, field_sigma=0.46, field_shape=excitatory, target_hz=20.00
+exported the best 3 as Snake configs (network keys only; add a hidden_rule) to /home/user/repos/personal/analysis/arch_tau_sweep_small_l1_fast/best_configs

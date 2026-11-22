@@ -1,0 +1,132 @@
+
+/home/user/repos/personal/analysis/probe_tests_full/d5_narrow_v2/outputs/untrained_d5_narrow(0)_probe.npz  [first window, 1327 aligned samples]
+  1. task decoding: balanced accuracy above chance, linear (lin) and non-linear (nl) decoder
+     features              danger_l      danger_u      danger_r      danger_d       apple_y       apple_x   mean lin/nl
+     input frame      +0.495/+0.493 +0.455/+0.468 +0.487/+0.455 +0.467/+0.450 +0.494/+0.476 +0.543/+0.505 +0.490/+0.475
+     L1_E             +0.391/+0.391 +0.460/+0.459 +0.459/+0.458 +0.333/+0.367 +0.120/+0.144 +0.221/+0.227 +0.331/+0.341
+     L1_I             +0.406/+0.422 +0.455/+0.451 +0.468/+0.468 +0.350/+0.367 +0.077/+0.090 +0.230/+0.291 +0.331/+0.348
+     L2_E             +0.405/+0.419 +0.455/+0.449 +0.466/+0.461 +0.367/+0.382 +0.052/+0.069 +0.179/+0.157 +0.321/+0.323
+     L2_I             +0.421/+0.422 +0.455/+0.455 +0.466/+0.474 +0.383/+0.400 +0.090/+0.067 +0.168/+0.139 +0.330/+0.326
+     L3_E             +0.402/+0.419 +0.443/+0.440 +0.455/+0.468 +0.367/+0.400 +0.078/+0.072 +0.167/+0.149 +0.318/+0.325
+     L3_I             +0.402/+0.415 +0.449/+0.437 +0.468/+0.461 +0.350/+0.367 +0.074/+0.064 +0.167/+0.122 +0.318/+0.311
+     L4_E             +0.433/+0.421 +0.443/+0.442 +0.461/+0.455 +0.367/+0.417 +0.087/+0.097 +0.181/+0.118 +0.329/+0.325
+     L4_I             +0.435/+0.421 +0.443/+0.447 +0.459/+0.458 +0.367/+0.367 +0.086/+0.059 +0.186/+0.097 +0.329/+0.308
+     L5_E             +0.404/+0.404 +0.443/+0.449 +0.446/+0.455 +0.400/+0.417 +0.106/+0.101 +0.184/+0.152 +0.331/+0.329
+     L5_I             +0.401/+0.401 +0.455/+0.446 +0.453/+0.455 +0.400/+0.383 +0.094/+0.094 +0.178/+0.190 +0.330/+0.328
+     policy_field     +0.402/+0.402 +0.455/+0.453 +0.461/+0.461 +0.350/+0.367 +0.088/+0.082 +0.219/+0.165 +0.329/+0.322
+     value_field      +0.402/+0.404 +0.455/+0.453 +0.468/+0.468 +0.367/+0.383 +0.099/+0.079 +0.199/+0.146 +0.331/+0.322
+  2. transformation: R2 of each population's potentials from the previous layer's E (1 = a copy)
+             L1_E -> L2_E           R2  0.332
+             L2_E -> L3_E           R2  0.338
+             L3_E -> L4_E           R2  0.362
+             L4_E -> L5_E           R2  0.424
+             L5_E -> policy_field   R2  0.630
+             L5_E -> value_field    R2  0.628
+  4. memory: past input recovered beyond the current frame (lags 1, 2, 3 frames; state = V + adaptation A), and previous heading
+     input frame      prev heading +0.313
+     L1_E             prev heading +0.308 | memory lag 1/2/3: 0.123 0.173 0.098
+     L2_E             prev heading +0.316 | memory lag 1/2/3: 0.111 0.157 0.081
+     L3_E             prev heading +0.279 | memory lag 1/2/3: 0.104 0.148 0.072
+     L4_E             prev heading +0.288 | memory lag 1/2/3: 0.109 0.156 0.076
+     L5_E             prev heading +0.298 | memory lag 1/2/3: 0.123 0.152 0.061
+     policy_field     prev heading +0.327 | memory lag 1/2/3: 0.101 0.133 0.045
+     value_field      prev heading +0.331 | memory lag 1/2/3: 0.107 0.132 0.044
+  5. representation: trap vs safe among non-lethal moves (balanced acc. above chance), and R2 of global values; traps among non-lethal moves: 0.000
+     features           trap_left     trap_up  trap_right   trap_down   area_left     area_up  area_right   area_down path_to_app      length     tail_dy     tail_dx
+     input frame             +nan        +nan        +nan        +nan      +0.920      +0.906      +0.969      +0.937      +0.723      +0.905      +0.805      +0.894
+     L1_E                    +nan        +nan        +nan        +nan      +0.679      +0.816      +0.846      +0.660      +0.044      +0.194      +0.162      +0.123
+     L2_E                    +nan        +nan        +nan        +nan      +0.698      +0.850      +0.851      +0.696      -0.012      +0.089      +0.090      +0.071
+     L3_E                    +nan        +nan        +nan        +nan      +0.673      +0.827      +0.828      +0.669      -0.061      +0.013      +0.049      +0.029
+     L4_E                    +nan        +nan        +nan        +nan      +0.673      +0.826      +0.800      +0.684      +0.031      +0.002      +0.034      +0.025
+     L5_E                    +nan        +nan        +nan        +nan      +0.691      +0.826      +0.775      +0.712      +0.033      -0.017      +0.035      +0.014
+     policy_field            +nan        +nan        +nan        +nan      +0.707      +0.842      +0.842      +0.712      +0.025      -0.014      +0.045      +0.016
+     value_field             +nan        +nan        +nan        +nan      +0.711      +0.844      +0.838      +0.733      +0.022      -0.017      +0.042      +0.045
+     top principal components of value_field: best-matching variables (|correlation|)
+       PC1: area_up 0.65, danger_up 0.65, area_right 0.35
+       PC2: apple_dx 0.44, area_left 0.27, danger_left 0.26
+       PC3: danger_right 0.53, area_right 0.53, area_up 0.23
+       PC4: danger_up 0.52, area_up 0.51, apple_dy 0.47
+       PC5: danger_left 0.68, area_left 0.68, danger_right 0.58
+  6. input -> population: R2 of its top principal components from the input (current frame linear / input history linear / input history non-linear)
+     population       current lin history lin  history nl non-linear part unexplained
+     L1_E                   0.828       0.809       0.686          -0.123       0.191
+     L2_E                   0.833       0.818       0.526          -0.292       0.182
+     L3_E                   0.793       0.782       0.457          -0.325       0.218
+     L4_E                   0.759       0.740       0.395          -0.345       0.260
+     L5_E                   0.754       0.724       0.381          -0.344       0.276
+     policy_field           0.862       0.841       0.641          -0.199       0.159
+     value_field            0.866       0.844       0.628          -0.216       0.156
+  7. anticipation: R2 of the next frame beyond the frames seen so far (state: V + A)
+     L1_E             0.000
+     L2_E             0.000
+     L3_E             0.000
+     L4_E             0.000
+     L5_E             0.000
+     policy_field     0.000
+     value_field      0.000
+
+/home/user/repos/personal/analysis/probe_tests_full/d5_narrow_v2/outputs/untrained_d5_narrow(0)_probe.npz  [last window, 1327 aligned samples]
+  1. task decoding: balanced accuracy above chance, linear (lin) and non-linear (nl) decoder
+     features              danger_l      danger_u      danger_r      danger_d       apple_y       apple_x   mean lin/nl
+     input frame      +0.495/+0.493 +0.455/+0.468 +0.487/+0.455 +0.467/+0.450 +0.494/+0.476 +0.543/+0.505 +0.490/+0.475
+     L1_E             +0.391/+0.391 +0.460/+0.459 +0.459/+0.458 +0.333/+0.367 +0.120/+0.144 +0.221/+0.227 +0.331/+0.341
+     L1_I             +0.406/+0.422 +0.455/+0.451 +0.468/+0.468 +0.350/+0.367 +0.077/+0.090 +0.230/+0.291 +0.331/+0.348
+     L2_E             +0.405/+0.419 +0.455/+0.449 +0.466/+0.461 +0.367/+0.382 +0.052/+0.069 +0.179/+0.157 +0.321/+0.323
+     L2_I             +0.421/+0.422 +0.455/+0.455 +0.466/+0.474 +0.383/+0.400 +0.090/+0.067 +0.168/+0.139 +0.330/+0.326
+     L3_E             +0.402/+0.419 +0.443/+0.440 +0.455/+0.468 +0.367/+0.400 +0.078/+0.072 +0.167/+0.149 +0.318/+0.325
+     L3_I             +0.402/+0.415 +0.449/+0.437 +0.468/+0.461 +0.350/+0.367 +0.074/+0.064 +0.167/+0.122 +0.318/+0.311
+     L4_E             +0.433/+0.421 +0.443/+0.442 +0.461/+0.455 +0.367/+0.417 +0.087/+0.097 +0.181/+0.118 +0.329/+0.325
+     L4_I             +0.435/+0.421 +0.443/+0.447 +0.459/+0.458 +0.367/+0.367 +0.086/+0.059 +0.186/+0.097 +0.329/+0.308
+     L5_E             +0.404/+0.404 +0.443/+0.449 +0.446/+0.455 +0.400/+0.417 +0.106/+0.101 +0.184/+0.152 +0.331/+0.329
+     L5_I             +0.401/+0.401 +0.455/+0.446 +0.453/+0.455 +0.400/+0.383 +0.094/+0.094 +0.178/+0.190 +0.330/+0.328
+     policy_field     +0.402/+0.402 +0.455/+0.453 +0.461/+0.461 +0.350/+0.367 +0.088/+0.082 +0.219/+0.165 +0.329/+0.322
+     value_field      +0.402/+0.404 +0.455/+0.453 +0.468/+0.468 +0.367/+0.383 +0.099/+0.079 +0.199/+0.146 +0.331/+0.322
+  2. transformation: R2 of each population's potentials from the previous layer's E (1 = a copy)
+             L1_E -> L2_E           R2  0.332
+             L2_E -> L3_E           R2  0.338
+             L3_E -> L4_E           R2  0.362
+             L4_E -> L5_E           R2  0.424
+             L5_E -> policy_field   R2  0.630
+             L5_E -> value_field    R2  0.628
+  4. memory: past input recovered beyond the current frame (lags 1, 2, 3 frames; state = V + adaptation A), and previous heading
+     input frame      prev heading +0.313
+     L1_E             prev heading +0.308 | memory lag 1/2/3: 0.123 0.173 0.098
+     L2_E             prev heading +0.316 | memory lag 1/2/3: 0.111 0.157 0.081
+     L3_E             prev heading +0.279 | memory lag 1/2/3: 0.104 0.148 0.072
+     L4_E             prev heading +0.288 | memory lag 1/2/3: 0.109 0.156 0.076
+     L5_E             prev heading +0.298 | memory lag 1/2/3: 0.123 0.152 0.061
+     policy_field     prev heading +0.327 | memory lag 1/2/3: 0.101 0.133 0.045
+     value_field      prev heading +0.331 | memory lag 1/2/3: 0.107 0.132 0.044
+  5. representation: trap vs safe among non-lethal moves (balanced acc. above chance), and R2 of global values; traps among non-lethal moves: 0.000
+     features           trap_left     trap_up  trap_right   trap_down   area_left     area_up  area_right   area_down path_to_app      length     tail_dy     tail_dx
+     input frame             +nan        +nan        +nan        +nan      +0.920      +0.906      +0.969      +0.937      +0.723      +0.905      +0.805      +0.894
+     L1_E                    +nan        +nan        +nan        +nan      +0.679      +0.816      +0.846      +0.660      +0.044      +0.194      +0.162      +0.123
+     L2_E                    +nan        +nan        +nan        +nan      +0.698      +0.850      +0.851      +0.696      -0.012      +0.089      +0.090      +0.071
+     L3_E                    +nan        +nan        +nan        +nan      +0.673      +0.827      +0.828      +0.669      -0.061      +0.013      +0.049      +0.029
+     L4_E                    +nan        +nan        +nan        +nan      +0.673      +0.826      +0.800      +0.684      +0.031      +0.002      +0.034      +0.025
+     L5_E                    +nan        +nan        +nan        +nan      +0.691      +0.826      +0.775      +0.712      +0.033      -0.017      +0.035      +0.014
+     policy_field            +nan        +nan        +nan        +nan      +0.707      +0.842      +0.842      +0.712      +0.025      -0.014      +0.045      +0.016
+     value_field             +nan        +nan        +nan        +nan      +0.711      +0.844      +0.838      +0.733      +0.022      -0.017      +0.042      +0.045
+     top principal components of value_field: best-matching variables (|correlation|)
+       PC1: area_up 0.65, danger_up 0.65, area_right 0.35
+       PC2: apple_dx 0.44, area_left 0.27, danger_left 0.26
+       PC3: danger_right 0.53, area_right 0.53, area_up 0.23
+       PC4: danger_up 0.52, area_up 0.51, apple_dy 0.47
+       PC5: danger_left 0.68, area_left 0.68, danger_right 0.58
+  6. input -> population: R2 of its top principal components from the input (current frame linear / input history linear / input history non-linear)
+     population       current lin history lin  history nl non-linear part unexplained
+     L1_E                   0.828       0.809       0.686          -0.123       0.191
+     L2_E                   0.833       0.818       0.526          -0.292       0.182
+     L3_E                   0.793       0.782       0.457          -0.325       0.218
+     L4_E                   0.759       0.740       0.395          -0.345       0.260
+     L5_E                   0.754       0.724       0.381          -0.344       0.276
+     policy_field           0.862       0.841       0.641          -0.199       0.159
+     value_field            0.866       0.844       0.628          -0.216       0.156
+  7. anticipation: R2 of the next frame beyond the frames seen so far (state: V + A)
+     L1_E             0.000
+     L2_E             0.000
+     L3_E             0.000
+     L4_E             0.000
+     L5_E             0.000
+     policy_field     0.000
+     value_field      0.000

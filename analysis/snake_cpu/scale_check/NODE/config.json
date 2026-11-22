@@ -1,0 +1,1 @@
+{"hidden_rule": {"preset": "symmetric_hybrid", "noise": "NODE", "diagnose_gradients": true}, "feedback_type": "symmetric", "explicit_feedback": false, "hid_e": 6, "hid_i": 4, "fan_in": 50, "backend": "single_threaded_cpu", "min_episodes": 0, "max_timesteps": 1410000, "seed": 0, "trace_log": false}

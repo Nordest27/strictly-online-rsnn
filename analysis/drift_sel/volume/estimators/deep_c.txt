@@ -1,0 +1,2 @@
+route_sym+own   reward/250: 0.33 0.46 0.57 0.65 0.72 0.78 0.82 0.85 0.87 0.90 0.91 0.93   Hz H 47 motor 18
+route_link+own  reward/250: 0.36 0.47 0.56 0.64 0.71 0.78 0.80 0.85 0.86 0.88 0.88 0.91   Hz H 48 motor 18  link corr with W_hm +0.99

@@ -1,0 +1,121 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.427,
+  "p_max": 1.0,
+  "input_sigma_cells": 1.0,
+  "inhibition_scale": 5.754,
+  "feedforward_inhibition": false,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.818,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.777,
+    "mean_scale": 0.40438378423583415,
+    "sd_scale": 0.08087675684716683
+   },
+   "shape": 6,
+   "neuron": {
+    "tau_adapt": 246.1,
+    "beta": 0.0174,
+    "tau_mem": 10.0
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.7269272371324907,
+     "sd_scale": 0.07269272371324907
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.8863986113737143,
+     "sd_scale": 0.08863986113737143
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.9257319884020628,
+     "sd_scale": 0.09257319884020629
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.7597207903981142,
+     "sd_scale": 0.07597207903981143
+    },
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   },
+   {
+    "neuron": {
+     "tau_adapt": 246.1,
+     "beta": 0.0174,
+     "tau_mem": 10.0
+    }
+   }
+  ],
+  "input": {
+   "mean_scale": 0.2504765178678921,
+   "sd_scale": 0.12523825893394605
+  }
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 5,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "_meta": {
+  "architecture_search": {
+   "idx": 0,
+   "score": 0.5695056575843237,
+   "genome": {
+    "tau_adapt": 246.08792038679408,
+    "beta": 0.0174,
+    "ff_inhibition": false,
+    "ff_targets": "both",
+    "inh_sigma_ratio": 0.8184355026048374,
+    "sigma_cells": 2.426968452072953,
+    "p_max": 1.0,
+    "input_sigma_cells": 1.0,
+    "inhibition_scale": 5.754474092542364,
+    "ff_sigma": 0.6,
+    "field_sigma": 0.7774185897157924,
+    "field_shape": "excitatory",
+    "target_hz": 30.0,
+    "tau_mem_L1": 10.0,
+    "tau_mem_L2": 10.0,
+    "tau_mem_L3": 10.0,
+    "tau_mem_L4": 10.0,
+    "tau_mem_L5": 10.0,
+    "tau_mem_fields": 10.0
+   }
+  }
+ }
+}

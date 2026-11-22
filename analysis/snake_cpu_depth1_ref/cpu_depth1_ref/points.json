@@ -1,0 +1,73 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "monitor": true,
+  "monitor_every": 5000,
+  "probe": {
+   "moves": 5000
+  },
+  "ei_layers": 1,
+  "network": {
+   "layers": [
+    {}
+   ],
+   "fields": {
+    "conn": {
+     "mean_scale": 0.5
+    },
+    "conn_i": {
+     "mean_scale": 0.033
+    }
+   }
+  }
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "adaptive"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true
+   }
+  }
+ ]
+}

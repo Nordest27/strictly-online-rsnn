@@ -1,0 +1,2 @@
+route_fa        reward/250: 0.34 0.45 0.54 0.62 0.70 0.77 0.80 0.85 0.86 0.89 0.89 0.91   Hz H 46 motor 18
+route_link      reward/250: 0.36 0.47 0.56 0.64 0.71 0.79 0.82 0.86 0.87 0.87 0.89 0.91   Hz H 51 motor 20  link corr with W_hm +0.99

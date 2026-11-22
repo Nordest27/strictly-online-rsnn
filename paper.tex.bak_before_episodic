@@ -1,0 +1,2185 @@
+% ============================================================================
+%  Strictly Online Reinforcement Learning in Recurrent Spiking Neural Networks
+%  Without Structured Gradient Feedback  (method: "perturbation-based e-prop")
+%
+%  INITIAL PAPER DRAFT (two-column). Built from the master's thesis
+%  "Distributed E-prop and TD(lambda)".
+%
+%  NOTES FOR THE AUTHOR
+%  --------------------
+%  * Class: generic twocolumn article + natbib (author-year), chosen because it
+%    preserves your \citep/\citet, \eqref, [H] floats and booktabs tables.
+%    To target a venue, swap the first line for e.g. \documentclass{IEEEtran}
+%    (numbered cites, use \cite), the NeurIPS style file, or a journal class.
+%  * Wide multi-panel figures use figure* to span both columns; portrait/2-panel
+%    ones use a single column. Adjust per your final figure aspect ratios.
+%  * All \includegraphics paths point at the real thesis figure filenames under
+%    images/. \graphicspath includes images/ and figures/.
+%  * Bibliography: project references.bib via \bibliography{references}.
+%  * Anywhere a specific number/figure is cited it comes from Chapter 4 of the
+%    thesis; double-check against your final figures before submission.
+% ============================================================================
+
+% -- TEXT SIZE: article supports 10/11/12pt only. For 9pt/9.5pt, swap
+%    "article" for "extarticle" below and set [9pt,twocolumn] (identical
+%    otherwise). Keep it here so the whole document rescales from one place.
+\documentclass[10pt,twocolumn]{article}
+
+% -- MARGINS / DENSITY: tighter than article's defaults so the two columns
+%    carry more text. Loosen margin= to 1in, or widen columnsep, to taste.
+\usepackage[letterpaper,margin=0.5in,bottom=0.9in,footskip=0.4in,columnsep=0.2in]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}   % keeps your current serif body font
+\setsansfont{Fira Sans}[UprightFont=*-Light, BoldFont=*-Regular]
+\setsansfont{Fira Sans}[LetterSpace=2.0]
+\setsansfont{IBM Plex Sans}
+\usepackage{amsmath,amssymb,amsfonts}
+\IfFileExists{bbm.sty}{\usepackage{bbm}}{\providecommand{\mathbbm}[1]{\mathbf{##1}}} % \mathbbm{1} (bbm if available, else bold fallback)
+\usepackage{graphicx}
+\usepackage{float}               % [H]
+\usepackage{booktabs}            % \toprule etc.
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage[round]{natbib}       % author-year; -> \citep, \citet
+\usepackage{authblk}
+\usepackage{caption}
+\usepackage{sectsty}          % sans-serif headings (numbered), serif body
+\sectionfont{\sffamily}
+\subsectionfont{\sffamily\normalsize}
+\captionsetup{font=small,labelfont={sf,bf}}
+
+\graphicspath{{images/}{figures/}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\sffamily\footnotesize Strictly Online RL in RSNNs with Perturbation-based E-prop}
+\fancyfoot[R]{\sffamily\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+\fancyfoot[L]{\sffamily\footnotesize Strictly Online RL in RSNNs with Perturbation-based E-prop}
+\fancyfoot[R]{\sffamily\small\thepage}
+  \fancyfoot[R]{\sffamily\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\AtBeginDocument{\thispagestyle{empty}}  % suppress header+footer on page 1
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{xcolor}
+\newcommand{\pending}[1]{\textcolor{red}{\bfseries[PENDING RERUN#1]}}
+% references suggested during editing that still have to be checked and added to references.bib
+\newcommand{\unverified}[1]{\textcolor{orange}{\bfseries[CITE, UNVERIFIED: #1]}}
+\newcommand{\todo}[1]{\textcolor{red}{\bfseries[TODO: #1]}}
+\newcommand{\method}{perturbation-based e-prop}   % method name (lower case)
+\newcommand{\Method}{Perturbation-based e-prop}   % method name (sentence start)
+\newcommand{\tbd}{\textcolor{red}{\bfseries ?}} % table cell still to be filled
+
+\newcommand{\variant}[1]{\textsf{#1}} % variant tags, as named in figure legends
+
+% -- FLOAT PLACEMENT: let full-width (figure*) floats take more of a page so
+%    they do not queue up and drift past the text that references them.
+\setcounter{dbltopnumber}{3}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.8}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+
+% ---------------------------------------------------------------------------
+\title{\sffamily\bfseries Strictly Online Reinforcement Learning in Recurrent Spiking
+Neural Networks Without Structured Gradient Feedback\thanks{Code and experiments: \url{https://github.com/Nordest27/ml_genn}.}}
+
+\author[1]{Edgar Sarria Tenes}
+\affil[1]{Affiliation \\ \texttt{edgar.sarria@estudiantat.upc.edu}}
+\date{}
+
+% ---------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Learning continuously from a single stream of experience, in real time and from
+local signals, is how brains learn and what neuromorphic hardware requires, yet
+very few learning rules for recurrent networks remain applicable under these
+constraints. We study reinforcement learning in recurrent spiking neural networks
+(SRNNs) in a \emph{strictly online}, \emph{continuing} setting: updates at every
+timestep from quantities local in space and time, with no replay, no stored
+trajectories and no resets at episode boundaries. We first show that e-prop, which
+routes a per-neuron learning signal through feedback weights, learns effectively in
+this setting, including in deeper networks\pending{: depth series}, provided its
+feedback reaches every neuron; symmetric feedback fails as soon as hidden neurons
+are not connected to the readout. We then introduce \emph{\method{}}, which needs no
+feedback pathway at all: every neuron perturbs its own input, and a single broadcast
+temporal-difference error is correlated with a local trace of that perturbation. The
+expected update splits into a REINFORCE-like perturbation gradient and a
+\emph{perturbation-induced drift}, a reward-modulated, Hebbian-like term that
+controls where the network remains plastic. With a neuron-local decorrelation reward,
+credited through the same noise trace, the hidden layers become a reward-guided
+feature-building mechanism for an online-trained readout. E-prop, with its richer feedback, learns
+faster, as expected; \method{} learns with one broadcast scalar, far closer to e-prop
+than the unfavourable scaling of perturbation learning with network size would
+suggest, and keeps its neurons in the plastic regime.\pending{: numbers after the
+rerun with the corrected e-prop baselines.}
+\end{abstract}
+
+% ===========================================================================
+\section{Introduction}
+\label{sec:intro}
+
+Continuous control, real-time sensing, and embodied agents are among the
+settings where recurrent networks would be most useful, and they all share a
+structure that standard recurrent training does not fit. In each of them,
+data arrives as an uninterrupted stream, decisions must be made immediately
+as that stream unfolds, and there is no natural point at which the system can
+pause and compute gradients before continuing. The dominant recipe for
+training recurrent networks assumes the opposite of all three: it assumes a
+sequence with a beginning and an end, the freedom to wait until that end is
+reached, and enough memory to hold the whole sequence in the meantime. Backpropagation through time (BPTT)~\citep{Werbos1990BackpropagationTT}
+makes this assumption explicit: it stores the full history of network activity
+as the sequence plays out, and only once the sequence ends does it replay that
+history backward to compute a gradient. As interaction continues indefinitely,
+so does the history BPTT must store, so its memory grows without bound and its
+updates are delayed until the sequence stops, an event that a continuous
+stream never provides. Truncating the window over which gradients are
+computed (TBPTT)~\citep{WilliamsZipser1995} fixes the memory problem by
+capping how much history is kept, but that same cap now limits how far back
+in time credit can be assigned, so long-range dependencies that fall outside
+the window are simply invisible to learning. The alternative is to compute the
+gradient forward in time instead of backward: real-time recurrent learning
+(RTRL)~\citep{RTRL} does exactly this, propagating an exact influence matrix
+forward as the network runs, so that a gradient is always available without
+ever needing to stop and look back. RTRL is local in time but not in space:
+its influence matrix holds the sensitivity of every unit's state to every
+parameter, so updating any single weight requires information from the whole
+network. That exactness also has a steep price: for $n$ fully connected units
+the influence matrix has $O(n^3)$ entries and costs $O(n^4)$ operations to
+update every step, which puts RTRL out of reach for anything beyond small
+networks. BPTT and RTRL therefore sit at opposite ends of the same tradeoff,
+unbounded memory against prohibitive, spatially non-local compute, and it is this gap
+between them that forward-in-time, local approximations of the recurrent
+gradient are built to close.
+
+Reinforcement learning compounds the difficulty: the only learning signal is a
+scalar reward that may arrive long after the activity that produced it, so
+temporal credit must be assigned across long delays. Standard RL typically
+meets this by storing experience in a replay buffer, treating past
+trajectories as a dataset that can be sampled and reused long after they were
+collected. Even methods that skip replay still need the trajectory to be
+collected in full before learning can happen, since backpropagating through
+time requires the whole sequence to already exist before a gradient can be
+computed by running backward through it. A strictly online setting rules out
+both: there is no buffer to sample from and no completed trajectory to
+backpropagate through, so credit must be assigned as the stream unfolds, in
+real time.
+
+We call this setting \emph{strictly online}: the agent learns from a single,
+uninterrupted stream of experience, using only quantities that are local in
+both space and time, with no replay buffer. The only memory it can draw on for
+learning is the network's own activity together with its eligibility traces,
+so credit flows forward in real time, never through a backward pass. This
+online gradient can in principle be applied on any schedule, every step, every
+action window, or every episode, since accumulating it is not itself a form of
+stored history. We do not rule out the coarser schedules on principle; some
+form of online accumulation may well be compatible with a strictly online
+agent. What we lack is a general, task-agnostic rule for choosing the window:
+accumulating over an action window or an episode requires knowing, in advance
+and per task, where the boundaries of ``enough evidence'' fall, and supplying
+that boundary from outside is itself a form of timing handed to the learning
+rule, not discovered by it. Absent such a rule, we adopt the one
+schedule that needs no external tuning at all and update every single
+timestep throughout, the most conservative default and the one most faithful
+to a continuously learning, clock-free agent. This is a stronger requirement
+than the ``online'' label usually carries, where methods still lean on stored
+roll-outs. We do not aim for full biological plausibility; we keep the
+constraints that are most consequential for online learning, the same
+constraints that govern learning on neuromorphic hardware.
+
+We have not yet removed every piece of task-specific timing. The policy head
+samples a discrete action from a softmax at fixed action windows of $K=30$
+integration steps, so the policy-gradient term of the learning signal is
+delivered only at those sampling steps; in \method{} this term
+reaches only the output weights, since the hidden weights see only the
+broadcast TD error. The action window is therefore an externally supplied
+clock, the same kind of outside timing we argued above should not be handed
+to the update schedule. Letting the learning rule, rather than the task
+configuration, handle action timing is an open problem, and making the agent
+as task-agnostic as possible is the main direction for future work
+(Section~\ref{sec:discussion}).
+
+We pair this with a \emph{continuing}, non-episodic task formulation: the
+network's internal state (membrane potentials, adaptation, and eligibility
+traces) is never reset at game boundaries. This is a deliberate modelling
+choice. Real embodied learning has no episode boundaries; forcing a reset
+supplies an explicit boundary and wipes the network's state, handing the agent
+a clean slate it would never have in a continuous stream. Keeping the state
+continuous puts the burden of segmenting the stream and carrying credit across
+it where it belongs: on the learning rule. Every result in this paper is
+obtained under both constraints.
+
+Together, these constraints leave very few learning rules standing. BPTT and
+its truncated form need stored history and a backward pass; replay-based and
+roll-out-based reinforcement learning need stored experience; RTRL is exact
+but non-local in space, and its cost rules it out beyond small networks; and many of its cheaper
+approximations rely on non-local operations or have not been shown to learn
+reinforcement tasks from a single continuing stream. Of the forward-in-time,
+local rules, e-prop is the most developed and has already been demonstrated
+for reward-based learning in spiking networks, so we take it as the reference
+for what current learning rules can achieve in this setting. Rules of this kind
+have a further advantage over BPTT and RTRL, which the rule we introduce shares
+rather than adds: they never multiply derivatives along a path through time or
+the network, so the magnitude of their updates cannot vanish or explode with
+path length or delay (Section~\ref{sec:distributed}).
+
+Spiking recurrent networks (SRNNs) are an attractive substrate for this
+regime: they integrate information through their own dynamics, communicate
+through sparse discrete events, and map naturally onto low-power neuromorphic
+hardware \citep{Davies2018Loihi,Painkras2013SpiNNaker}. E-prop
+\citep{eprop2020}, a forward-in-time approximation of RTRL, makes online
+training of SRNNs tractable by factorising the loss gradient into a
+neuron-local \emph{eligibility trace}, computed purely forward in time, and a
+neuron-specific \emph{learning signal} $L^t_j$ that approximates
+$\mathrm{d}E/\mathrm{d}z^t_j$. In the reinforcement-learning form, an
+actor--critic head produces $L^t_j$ and routes it back to each hidden neuron
+through structured feedback weights.
+
+That feedback projection is where e-prop pays for its locality: every hidden neuron
+needs its own learning signal, delivered through a dedicated pathway of feedback
+weights. With \emph{symmetric} weights, tied to the readout, a neuron that is not
+directly connected to an output head receives no signal at all, so learning fails
+once the causal path from a neuron to the output is longer than one connection
+(Appendix~\ref{sec:results-symmetric}). \emph{Random} and \emph{adaptive} feedback
+reach every neuron and, with the reward-based learning signal implemented as in
+\citet{eprop2020} (Appendix~\ref{app:impl}), learn effectively in the strict setting
+studied here. This raises two questions. The first is how far feedback-based e-prop
+carries under strictly online, continuing constraints as networks become deeper.
+The second is whether the feedback pathway is needed at all: \emph{can a recurrent
+spiking network learn when every neuron receives only a single broadcast scalar?}
+
+We answer the second question with \textbf{\method{}}. Drawing on the connection
+between perturbation learning and policy gradients
+\citep{fiete2006gradient,salimans2017evolutionstrategiesscalablealternative}, every
+neuron explores by perturbing its own input, keeps a local trace of how that
+perturbation moved its membrane, and correlates the trace with the broadcast
+temporal-difference error $\delta_t$ through the e-prop eligibility. No feedback
+weights exist and no policy gradient is routed to the hidden layers; only the readout
+uses the actor--critic learning signal. Concretely, each synapse $ji$ keeps the trace
+$\xi^t_{ji}$ of the noise it has delivered and is updated by
+\begin{equation}
+\Delta W_{ji}\;\propto\;-\sum_t \delta_t\;\mathcal{F}_{\lambda}\!\left(
+\kappa\,\big(\psi^t_j-2\bar\psi^t_j\big)\,\pi^t_{ji}\,\frac{\xi^t_{ji}}{\sigma^2}\right),
+\label{eq:intro-update}
+\end{equation}
+where $\psi^t_j$ is e-prop's pseudo-derivative, $\bar\psi^t_j$ its running average,
+$\pi^t_{ji}$ the presynaptic factor of the eligibility trace and $\mathcal{F}_\lambda$
+a credit filter (Section~\ref{sec:distributed}). Only $\delta_t$ is non-local.
+
+The update does more than estimate a gradient. Its expectation splits into a
+REINFORCE-like \emph{perturbation gradient} and a \emph{perturbation-induced drift}: a
+reward-modulated, Hebbian-like term that moves each neuron's sensitivity, and with it
+its plasticity, away from moments followed by better-than-expected outcomes and
+towards moments followed by worse ones (Section~\ref{sec:distributed}). The injected
+noise therefore gives a direct, local handle on \emph{where} the network remains
+plastic. The same trace credits neuron-local rewards exactly like the broadcast one;
+with a local reward that penalises a neuron for firing in step with the inhibition it
+receives, i.e.\ for redundancy with its neighbours, the hidden layers become a
+reward-guided mechanism for building features, which the readout learns to use online.
+
+We do not expect this to match e-prop. E-prop delivers a structured, low-variance
+signal to every neuron, whereas a perturbation estimate must recover each neuron's
+contribution from one scalar, and its variance grows with the number of perturbed
+units \citep{Werfel2005LearningCurves,fiete2006gradient}: with thousands of neurons, a
+pure gradient-estimation view predicts learning orders of magnitude slower. What we
+find instead is a moderate gap\pending{: quantify after the rerun}, which the drift,
+not being a gradient estimator, helps to explain.
+
+This paper makes three contributions. \textbf{(i)}~We evaluate reward-based learning
+in SRNNs under a strictly online, continuing protocol, in which few learning rules
+apply, and show that e-prop with random or adaptive feedback learns effectively,
+including in deeper networks\pending{: depth series}, whereas symmetric feedback fails
+as soon as hidden neurons are not connected to the readout
+(Section~\ref{sec:results}). \textbf{(ii)}~We introduce \method{}
+(Section~\ref{sec:distributed}), a fully local rule that needs no feedback pathway: we
+decompose its update into a perturbation gradient and a perturbation-induced drift,
+derive the gate that gives the gradient its correct sign, and add a neuron-local
+decorrelation reward credited through the same noise trace; a decoupled TD($\lambda$) formulation
+(Section~\ref{sec:tdlambda}) supports all rules in the continuing setting.
+\textbf{(iii)}~We analyse what the rule learns: whether it creates task-relevant
+features beyond a fixed reservoir\pending{: probe results}, how it keeps its neurons
+plastic where feedback-based e-prop loses many\pending{}, and how its gap to e-prop
+compares with the scaling of perturbation learning\pending{}; single-neuron and
+network-level analyses explain the mechanism (Appendices~\ref{app:decomp}--\ref{app:hebb}).
+
+% ===========================================================================
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Online learning in recurrent networks.}
+The exact recurrent gradient is given by BPTT~\citep{Werbos1990BackpropagationTT},
+whose memory grows with sequence length; truncation (TBPTT) bounds this at the
+cost of the credit horizon~\citep{WilliamsZipser1995}, and vanishing gradients
+further limit how far credit can travel~\citep{learningLongTermHard}. RTRL
+computes the gradient forward in time~\citep{RTRL}, but it is non-local in
+space, tracking the sensitivity of every unit to every parameter at $O(n^3)$
+storage and $O(n^4)$ compute per step,
+motivating cheaper forward approximations: UORO gives an unbiased low-rank
+estimator~\citep{UORO}, OSTL separates spatial and temporal credit for deep
+spiking networks~\citep{OSTL}, and synthetic gradients decouple modules through
+predicted feedback~\citep{Jaderberg2016}. E-prop~\citep{eprop2020} is the member
+of this family we build on, factorising the gradient into a forward,
+synapse-local eligibility trace and a per-neuron learning signal; the rate-based
+RFLO rule is a close analogue~\citep{murray2019local}, and it has recently been
+used for fully online recurrent actor-critic learning from a single continuing
+stream in rate networks~\citep{Lemmel2025RTRRL}. Among these methods,
+e-prop is, to our knowledge, the most developed for reward-based learning in
+spiking networks under forward, local constraints, which is why we use it as
+the reference for the strict setting studied here. \Method{} stays
+within this forward, local regime but removes the structured learning signal.
+
+\paragraph{Credit assignment without symmetric feedback.}
+Backpropagation requires symmetric feedback weights, which feedback alignment
+showed to be unnecessary: fixed random feedback can still carry a usable error
+signal~\citep{Lillicrap2016}, a principle extended to recurrent networks in
+RFLO~\citep{murray2019local} and available in e-prop as its random and adaptive
+feedback variants~\citep{eprop2020}. A more radical step drops backpropagated
+feedback in favour of locally computed TD errors: \citet{guan2024artificialdopamine}
+recently showed that per-layer TD errors, each computed locally and
+distributed synchronously within its layer, closer to how dopamine is actually
+delivered, may be sufficient to learn complex RL tasks in non-spiking deep
+Q-networks. \Method{} goes further for spiking recurrent networks: it
+uses no feedback matrix of any kind and a single broadcast scalar, the global
+TD error, together with each neuron's local perturbation and eligibility
+traces.
+
+\paragraph{Perturbation-based and reward-modulated learning.}
+Correlating stochastic perturbations with a global reward has a long history,
+from stochastic error-descent~\citep{Cauwenberghs1992} and
+REINFORCE~\citep{Williams1992REINFORCE} to conductance perturbation in spiking
+neurons~\citep{fiete2006gradient} and modern evolution
+strategies~\citep{salimans2017evolutionstrategiesscalablealternative}. In
+neuroscience the same ingredients recur as three-factor, reward-modulated STDP,
+where a global neuromodulator gates a local Hebbian trace
+\citep{Fremaux2016NeuromodulatedSTDP,Izhikevich2007DistalReward,Florian2007RewardSTDP,Legenstein2008RewardSTDP},
+and as continuous-time actor-critic learning in spiking
+networks~\citep{Frmaux2013ReinforcementLU}. Node perturbation has recently
+been revisited as a scalable learning rule: its variance, stability, and
+scaling with network size have been analysed~\citep{Hiratani2022NodePerturbation},
+and decorrelation and activity-based variants make it effective in multi-layer
+networks~\citep{Dalm2026NodePerturbation}. Closest to our work,
+\citet{GarciaFernandez2024RNNPerturbation} train recurrent rate networks online
+with random perturbations, and \citet{GarciaFernandez2026NoiseReward} combine
+node noise, eligibility traces, and a reward-prediction error for reinforcement
+learning with a view to neuromorphic hardware. These rules use rate neurons,
+compare each noisy run with a noise-free reference pass, and pair the noise
+with presynaptic activity only; ours works in recurrent spiking networks from a
+single noisy pass, credits a broadcast TD error at every timestep, and pairs a
+membrane-filtered perturbation trace with e-prop's pseudo-derivative-gated
+eligibility trace. That gate has theoretical support:
+\citet{Gygax2025SurrogateTheory} show that surrogate derivatives correspond to
+smoothed derivatives of stochastic spiking neurons, which suits a rule whose
+neurons are made stochastic by exploration noise. Our rule thus sits at the
+intersection of these lines: a perturbation-based policy gradient whose
+credit is shaped by the e-prop eligibility trace and its surrogate
+derivative~\citep{Neftci2019Surrogate}, run online and in continuous time. It
+is complementary to value-based spiking RL such as spiking
+Q-learning~\citep{Chen2022SpikingQLearning}.
+
+\paragraph{Derivatives from Gaussian noise.}
+Stein's identity~\unverified{Stein 1981} underlies Gaussian-smoothing
+(zeroth-order) gradient estimators~\unverified{Nesterov and Spokoiny 2017;
+Spall 1992}, and applied twice it gives Hessian estimates from function values
+alone~\unverified{Erdogdu 2015, Newton--Stein}; random probes likewise estimate
+traces of Jacobians~\unverified{Hutchinson 1989; Grathwohl et al.\ 2019, FFJORD}.
+Forward-gradient methods estimate gradients along random
+directions~\unverified{Baydin et al.\ 2022} and become practical when combined
+with local losses~\unverified{Ren et al.\ 2023}. These methods differentiate an
+objective chosen in advance. In our rule the identity acts, implicitly, on the
+synapse's own eligibility trace: because the gate depends on the noise, the
+perturbation that estimates the reward gradient also yields the weight derivative
+of the eligibility, a local second-order term that drives most of the feature
+learning (Section~\ref{sec:results-features}). To our knowledge this use of the
+identity, as a plasticity term in its own right, has not been described before.
+For perturbation learning itself, the comparison between weight and node
+perturbation in temporally extended tasks~\unverified{Z\"uge, Klos and
+Memmesheimer, weight vs.\ node perturbation in temporally extended tasks} is
+relevant to our choice of noise on the transmitted weight.
+
+% ===========================================================================
+\section{Background}
+\label{sec:background}
+
+\paragraph{E-prop.}
+We use adaptive leaky integrate-and-fire (ALIF) neurons. For a recurrent weight
+$W_{ji}$, e-prop factorises the gradient as
+\begin{equation}
+\frac{\mathrm{d}E}{\mathrm{d}W_{ji}} = \sum_t L^t_j\,\bar{e}^{\,t}_{ji},
+\qquad L^t_j \approx \frac{\mathrm{d}E}{\mathrm{d}z^t_j},
+\label{eq:eprop-factorisation}
+\end{equation}
+where $\bar e^{\,t}_{ji}$ is a filtered eligibility trace built from local,
+forward-in-time quantities and $L^t_j$ is the only signal that must reach
+neuron $j$. The eligibility trace $e^t_{ji}=\psi^t_j(\bar z^t_i-\beta\,
+\epsilon^{t-1}_{ji})$ combines the low-pass-filtered presynaptic spike train
+$\bar z^t_i$ with the \emph{pseudo-derivative} $\psi^t_j$, a surrogate for the
+non-differentiable spike threshold that is largest when the membrane is near
+threshold.
+
+\paragraph{Reward-based e-prop.}
+For reinforcement learning, an actor--critic head~\citep{Konda2000ActorCritic} supplies $L^t_j$. Actions are
+drawn from a softmax policy over the readout $y^t_k$; the critic yields the
+TD error
+\begin{equation}
+\delta_t = R_{t+1} + \gamma\, V_{t+1} - V_t,
+\label{eq:tderror}
+\end{equation}
+and the learning signal combines value and policy feedback,
+\begin{equation}
+L^t_j = -c_V B^V_j + \sum_k B^\pi_{kj}\!\left(\pi^t_k - \mathbbm{1}_{a_t=k}\right),
+\label{eq:learning-signal}
+\end{equation}
+with feedback weights $B^V_j$, $B^\pi_{kj}$. The online update is
+$\Delta W_{ji} = -\eta\sum_t \delta_t\,\mathcal{F}_{\gamma}(L^t_j\,\bar
+e^{\,t}_{ji})$, where $\mathcal{F}_{\gamma}$ is a leaky filter. The feedback
+matrices $B$ can be \emph{symmetric} (tied to the readout), \emph{random}, or
+\emph{adaptive} (learned); all three provide each neuron a per-neuron
+approximation of the gradient, and it is this projection that \method{} removes.
+
+\paragraph{Perturbation learning and three-factor rules.}
+A different tradition abandons structural credit accounting altogether:
+perturb candidate parameters, observe the global outcome, and reinforce
+perturbations that coincided with improvement
+\citep{salimans2017evolutionstrategiesscalablealternative}. For spiking
+neurons, node/conductance perturbation yields a REINFORCE-like estimator
+directly from injected noise \citep{fiete2006gradient}. Such rules are
+biologically evocative: they reduce to a global evaluative signal gating a
+local activity trace, the structure of neuromodulated three-factor plasticity
+\citep{Fremaux2016NeuromodulatedSTDP,Izhikevich2007DistalReward,
+Florian2007RewardSTDP}. Their well-known weakness is variance that grows with
+the number of perturbed parameters. \Method{} inherits this lineage
+and adds the e-prop eligibility gate, which we find essential for making it
+work online, as described next.
+
+% ===========================================================================
+\section{Method}
+\label{sec:method}
+
+\subsection{A Decoupled TD($\lambda$) Update}
+\label{sec:tdlambda}
+
+One piece of supporting machinery is needed before the rules themselves. In the
+standard TD($\lambda$) update the credit trace decays at $\gamma\lambda$, so a
+single $\gamma$ both discounts the bootstrap target (Eq.~\eqref{eq:tderror}) and
+bounds how far back a reward-prediction error is assigned. In the continuing,
+non-episodic setting these roles conflict: with no terminal state and a noisy
+spike-based critic, $\gamma$ must be small for the value estimate to stay
+learnable, but a small $\gamma$ then caps the actor's credit horizon at
+$\gamma\lambda\le\gamma$, sometimes below a single action. We therefore decouple
+the two, dropping $\gamma$ from the actor and hidden-weight traces so that
+$\lambda$ alone sets the horizon,
+\begin{equation}
+p^{\,t}_{ji} = \lambda\, p^{\,t-1}_{ji} + L^t_j\,\bar e^{\,t}_{ji},
+\qquad \Delta W_{ji} = -\eta\sum_t \delta_t\, p^{\,t}_{ji},
+\label{eq:actor-modified}
+\end{equation}
+while the critic keeps $\gamma$ (equivalently, runs at $\lambda_V=1$),
+\begin{equation}
+\nu^{\,t}_{ji} = \gamma\,\nu^{\,t-1}_{ji} + \bar e^{\,V,t}_{ji},
+\qquad \Delta W^V_{ji} = \eta_V\sum_t \delta_t\,\nu^{\,t}_{ji}.
+\label{eq:critic-modified}
+\end{equation}
+Reinstating $\gamma$ in Eq.~\eqref{eq:actor-modified} recovers standard
+TD($\lambda$)~\citep{SuttonBarto2018}; dropping it is a deliberate, biased choice that preserves the
+long-range credit a short $\gamma$ trace would suppress. Because each action
+spans $K$ integration steps, per-step decays are
+$\gamma_{\mathrm{step}}=\gamma^{1/K}$ and
+$\lambda_{\mathrm{step}}=\lambda^{1/K}$; we use $\gamma=0.5$, $\lambda=0.8$
+at the action level throughout.
+
+The decoupling has a standard reading. A textbook actor trace decays by
+$\gamma\lambda_{\mathrm{GAE}}$, so Eq.~\eqref{eq:actor-modified} is generalised
+advantage estimation~\citep{schulman2016gae} with $\lambda=\gamma\lambda_{\mathrm{GAE}}$:
+$\lambda=\gamma$ gives the Monte-Carlo advantage $G_t-V_t$, and with an accurate
+critic every $\lambda$ gives an unbiased advantage estimate, trading critic bias
+against return variance. Our setting ($\lambda>\gamma$) lies beyond the
+Monte-Carlo limit and adds variance; we keep it because it worked best in our
+experiments (Appendix~\ref{sec:results-lambda}). For the perturbation-induced drift of
+Section~\ref{sec:distributed} the trace plays a different role: with an accurate
+critic it is redundant in expectation, and during learning it integrates the
+critic's systematic errors, which speeds up the drift
+(Appendix~\ref{app:decomp-lambda}).
+
+\subsection{Perturbation-based E-prop}
+\label{sec:distributed}
+
+\paragraph{Noise and its trace.}
+Every neuron $j$ draws one Gaussian sample $n^t_j\sim\mathcal{N}(0,1)$ per step,
+and each synapse that transmits a spike at that step delivers $W_{ji}+\sigma
+n^t_j$ instead of $W_{ji}$. The noise is shared by all afferents of a neuron and
+explores through the spikes it shifts; it is the only source of exploration in
+the hidden layers. Each synapse keeps the noise it has delivered, filtered by the
+membrane decay,
+\begin{equation}
+\xi^t_{ji}=\alpha\,\xi^{t-1}_{ji}+\sigma\,n^t_j\,z^{t-1}_i ,
+\label{eq:perturbation-trace}
+\end{equation}
+a local record of how the noise has moved the membrane through this synapse.
+
+\paragraph{The update and its two components.}
+The update correlates the noise trace with the TD error through the
+e-prop eligibility. With $\pi^t_{ji}=\bar z^t_i-\beta\,\epsilon^{t-1}_{ji}$ the
+presynaptic factor of e-prop's ALIF eligibility trace and $g^t_j$ a postsynaptic
+gate, the \emph{score} of a synapse is
+$s^t_{ji}=\kappa\,g^t_j\,\pi^t_{ji}\,\xi^t_{ji}/\sigma^2$, with
+$\kappa=1-\alpha^2$ a normalising constant; it enters a credit trace
+$p^t_{ji}=\lambda p^{t-1}_{ji}+s^t_{ji}$, and the optimiser descends on
+$\sum_t\delta_t\,p^t_{ji}$. For the gate $g=\psi$, $g\pi=e$ is e-prop's
+eligibility trace. For fixed weights,
+$\sum_t\delta_tp^t_{ji}=\sum_t s^t_{ji}A^t$ with
+$A^t=\sum_{k\ge0}\lambda^k\delta_{t+k}$, so each score is weighted by an advantage
+estimate of what followed it (Section~\ref{sec:tdlambda}).
+
+Because the noise is Gaussian, Stein's identity~\unverified{Stein 1981},
+$\mathbb{E}[n\,f(n)]=\mathbb{E}[f'(n)]$, turns the mean of the score into a
+derivative: $\mathbb{E}[s^t_{ji}]=\mathbb{E}[D_{ji}e^t_{ji}]$, where $D_{ji}$ is
+the weight derivative seen through the kernel of the noise trace, taken through the
+true dynamics of the network, including resets, adaptation and recurrence
+(Appendix~\ref{app:decomp}). We call
+$P^t_{ji}=\mathbb{E}[D_{ji}e^t_{ji}]$ the \emph{perturbation-induced drift} and
+$Q^t_{ji}=s^t_{ji}-P^t_{ji}$, which has zero mean, the \emph{noise part}. In a
+trained network the drift is the weight derivative of the eligibility trace,
+$P\approx\bar c\,\partial\mathbb{E}[e]/\partial W$ ($R^2=0.83$, with $\bar c$ the
+average number of afferents sharing a neuron's noise;
+Appendix~\ref{app:decomp-verify}). Applying the lemma to the product with the
+advantage separates the expected update into two terms,
+\begin{equation}
+\mathbb{E}\big[A^t s^t_{ji}\big]=
+\underbrace{\mathbb{E}\big[e^t_{ji}\,D_{ji}A^t\big]}_{\text{perturbation gradient}}
++\underbrace{\mathbb{E}\big[A^t\,D_{ji}e^t_{ji}\big]}_{\text{perturbation-induced drift}} .
+\label{eq:two-terms}
+\end{equation}
+In estimator terms, one Gaussian sample thus yields two estimates: a
+score-function (REINFORCE) estimate of the reward gradient, and a zeroth-order
+estimate of a second-order quantity, the weight derivative of the eligibility
+(Section~\ref{sec:related}). We found no other way to compute this quantity at a
+comparable cost. Through the spiking dynamics the derivative is defined only after
+smoothing by the noise, which leaves sampling as the only general method. On a
+surrogate-differentiable model it requires the diagonal of the network's influence
+matrix, which costs as much as RTRL, and the deterministic local
+approximation we tested captures only part of it
+(Appendix~\ref{app:drift-cost}).
+The \emph{perturbation gradient}, carried by $Q$, is the REINFORCE
+principle~\citep{Williams1992REINFORCE}: it weights the sensitivity of the
+subsequent TD errors to the weight by the eligibility, and is the term that
+improves the policy. The \emph{perturbation-induced drift}, carried by $P$, weights
+the sensitivity of the eligibility to the weight by the outcome. Since the
+optimiser descends, each synapse descends its \emph{own} outcome-weighted eligibility,
+$\sum_t\mathrm{sg}(A^t)\,e^t_{ji}$, with respect to its own weight (with
+$\mathrm{sg}$ marking a fixed modulator). The synapses thus play a game, each with
+its own cost, rather than descending a shared objective, and the joint update is not
+the gradient of any scalar function: its Jacobian is significantly asymmetric, and
+no positive per-synapse rescaling of the learning rates makes it a gradient
+(Appendix~\ref{app:drift-nongradient}; simultaneous gradient play in differentiable
+games behaves the same way~\unverified{Balduzzi et al.\ 2018, The mechanics of
+$n$-player differentiable games}). We therefore describe the drift by what it does:
+it moves eligibility, the sensitivity and plasticity of a synapse's neuron, away from
+moments followed by better-than-expected outcomes, freezing those responses, and
+towards moments followed by worse ones, keeping them plastic. It is a three-factor Hebbian
+term: a presynaptic trace times a postsynaptic factor that is positive while the
+neuron is depolarised below threshold and negative at and just after a spike,
+modulated by the TD error (Appendix~\ref{app:hebb}; the sign pattern resembles
+voltage-based plasticity~\citep{Clopath2010Voltage}). The drift builds the
+features that both readouts need, and the perturbation gradient improves the
+policy on top of them (Section~\ref{sec:results-snake}).
+
+\paragraph{The rule.}
+Descending on $\sum_tA^ts^t$ descends on both terms of
+Eq.~\eqref{eq:two-terms}. That is the right direction for the drift but the wrong
+one for the gradient, which must be ascended. We therefore change only the gate.
+To first order the noise part is the score evaluated with a gate that does not
+depend on the current noise, $Q\approx\kappa\,\psi_0\,\pi\,\xi/\sigma^2$, so
+replacing $\psi$ by $\psi-2\psi_0$ turns $P+Q$ into $P-Q$. We estimate the
+noise-free gate by its running average,
+$\bar\psi^t_j=\beta_\psi\bar\psi^{t-1}_j+(1-\beta_\psi)\psi^t_j$ with
+$\beta_\psi=0.99$ per step, which gives the fully local, online update
+\begin{equation}
+\Delta W_{ji}\;\propto\;-\sum_t \delta_t\;\mathcal{F}_{\lambda}\!\left(
+\kappa\,\big(\psi^t_j-2\bar\psi^t_j\big)\,\pi^t_{ji}\,
+\frac{\xi^t_{ji}}{\sigma^2}\right),
+\label{eq:distributed-update}
+\end{equation}
+with $\mathcal{F}_\lambda$ the credit filter of Section~\ref{sec:tdlambda} and the
+minus sign that of the optimiser. Antithetic measurements confirm that the noise
+part of this rule has the REINFORCE sign (Appendix~\ref{app:gridtoy-decomp}). An
+earlier variant with the gate $\psi$, which we found empirically and which
+reverses the perturbation gradient, learns through the drift alone; it is
+analysed in Appendix~\ref{app:original}.
+
+\paragraph{Neuron-local rewards: decorrelation.}
+Because the score correlates a neuron's own noise with whatever reward it is
+multiplied by, a reward computed inside the neuron can be credited exactly like the
+broadcast TD error: each synapse correlates its noise trace with the neuron's local
+reward minus a running baseline, and adds the result to its update. We use one such
+reward. The network has excitatory (E) and inhibitory (I) populations, and all
+connections from the I population arrive on a separate input channel, so that every
+neuron sees the input it receives from that population, $I^{\mathrm{inh}}_j$. The
+populations are defined by their initial weights (Appendix~\ref{app:arch}): the rule
+does not, for now, keep each weight's sign, so a synapse from an I neuron can become
+excitatory during training. $I^{\mathrm{inh}}_j$ is therefore the input from the
+neurons \emph{labelled} inhibitory, and it means inhibition only as long as most of
+these synapses keep their initial sign. This is not guaranteed: in a five-layer run
+the fraction of I$\to$E synapses with an excitatory weight rose from below $1\%$ to
+$23$--$35\%$ per layer over $350{,}000$ moves, and was still rising slowly, while the
+feedforward relay between layers kept its signs.\pending{: whether the I channel stays
+net inhibitory (weight-weighted), and more seeds.} The local reward
+\begin{equation}
+r^{\mathrm{dec}}_{j,t}=-c_D\,\frac{(z^t_j-\bar z^t_j)\,(I^{\mathrm{inh},t}_j-\bar I^{\mathrm{inh},t}_j)}{\bar I^{\mathrm{inh},t}_j}
+\label{eq:decorr}
+\end{equation}
+penalises spiking in step with that inhibition, with running means $\bar z_j$ and
+$\bar I^{\mathrm{inh}}_j$ over about $1$\,s. Since the inhibitory neurons pool the
+activity of the excitatory neurons that drive them, firing together with the received
+inhibition means firing together with one's neighbours, and the reward pushes each neuron
+towards responses that its neighbourhood does not already provide. It uses only the
+neuron's own spikes and input, so the rule stays local. This reading rests on the
+I population staying inhibitory: the normalisation by $\bar I^{\mathrm{inh}}_j$ assumes
+a net inhibitory channel, and if enough of its synapses change sign the denominator
+approaches zero or changes sign and the reward loses its meaning. Enforcing the signs
+(Dale's law), for instance by pruning and rewiring synapses that change sign, would keep
+the meaning fixed; we leave it optional here, since in a first test enforcing it on all
+connections of a deep network made learning fail\pending{: Dale restricted to
+I$\to$E connections}. We use $c_D=1$, the uncentred
+drift and no homeostat: the uncentred drift's bias wakes initially quiet neurons, and
+the homeostat, which pulls every neuron towards a fixed sensitivity, works against the
+decorrelation reward (below).\pending{: decorrelation results, 1 and 5 layers; firing
+rates.}
+
+\paragraph{An alternative: centring and the homeostat.}
+Without the decorrelation reward, two other additions keep the drift useful in long
+runs. First, the drift is modulated by the
+TD error minus its running mean, $\delta_t-\bar\delta_t$. While the critic is biased,
+$\mathbb{E}[\delta]\neq0$, and the uncentred drift contains a term
+$\mathbb{E}[\delta]\,\mathbb{E}[P]$ that pushes the sensitivity of every neuron in the
+same direction, whatever the outcome; centring removes it and leaves the covariance
+that allocates plasticity. The gradient part is not centred: its score has zero mean,
+so the running mean acts only as a baseline there. Neither is any critic update, which
+needs the bias to correct itself. Second, a homeostat adds
+$c_H\,\overline{|\delta|}\,(\bar\psi_j-\psi^*)$ times the drift trace, which pulls each
+neuron's average sensitivity $\bar\psi_j$ towards a target $\psi^*$: the drift trace
+supplies the direction in which the weights change $\bar\psi_j$, and the scale
+$\overline{|\delta|}$ keeps the term's strength relative to the reward-driven ones. The
+bias term of the uncentred drift is not only a nuisance: early in training it is what
+wakes up initially quiet neurons, so centring is used together with the homeostat,
+which replaces it in a controlled form (Section~\ref{sec:results-features}). Both
+additions are local, since $\bar\delta$ and $\overline{|\delta|}$ are running
+statistics of the broadcast scalar. We use $c_H=1$ and $\psi^*=0.1$. The homeostat and
+the decorrelation reward compete: the first holds every neuron at a fixed average
+sensitivity, while the second rewards a neuron for not firing with its neighbours,
+whatever that does to its sensitivity; combined, they fight over the same neurons, and in our
+runs the decorrelation reward alone was the more useful of the two.\pending{: the
+comparison runs.}
+
+\paragraph{The role of the gate.}
+The pseudo-derivative is borrowed from e-prop, but here it is structural rather
+than a surrogate: the drift is the sensitivity of the gate to the neuron's noise,
+so without a gate that depends on the postsynaptic state ($g=1$) the drift
+vanishes and only the perturbation gradient remains. Its width sets where the
+drift acts. A gate narrower than the default concentrates the drift at threshold
+and destabilises the activity, while widths at or above $v_{\mathrm{th}}$ work
+equally well in exploratory runs (Appendix~\ref{app:gridtoy-exploratory}).
+
+\paragraph{Why noise.}
+In the deterministic network the derivative of the eligibility is degenerate: it
+vanishes almost everywhere and is impulsive where a weight change moves a spike,
+and these spike and reset events carry most of the drift. The noise smooths them:
+the drift is the derivative of the Gaussian-smoothed dynamics, as in zeroth-order
+optimisation~\unverified{Nesterov and Spokoiny 2017; Spall 1992 (SPSA)}, taken
+through the whole network using only each synapse's own noise trace. The drift is nevertheless a property
+of the eligibility, not of the noise: a local deterministic surrogate built from
+e-prop's quantities, the slope of the gate and a kernel for how a spike closes and
+resets it, already captures much of it ($R^2\approx0.56$;
+Appendix~\ref{app:decomp-verify}). Computing the drift without noise, a second-order
+counterpart of e-prop, is an open problem, but there is little practical reason to
+prefer it: the same noise trace provides both terms, and estimating the drift from
+it needs only a neuron's own noise. Its signal-to-noise ratio changes little when the
+noise on all other neurons is switched on ($0.88$ times), whereas that of the
+perturbation gradient for the same neurons falls to $0.38$ times, because its
+estimate depends on the response of the whole network
+(Appendix~\ref{app:decomp-locality}).
+
+\paragraph{No gradient chains.}
+The update never multiplies derivatives along a path. BPTT and RTRL chain
+sensitivities through time and through the network, and a product of many factors
+tends to vanish or explode. Both components here are instead estimated by a single
+correlation between a synapse's own noise trace and a local quantity, the
+eligibility for the drift and the broadcast outcome for the gradient, however long
+or deep the path from that synapse to the reward. Their magnitude is set by the
+neuron's own noise and the shared outcome rather than by a product of
+sensitivities, so path length and delay affect their precision, through added
+noise, but not their magnitude. The only signals propagated in time are per-neuron
+or per-synapse traces with decay factors below one ($\alpha$, $\rho$, $\beta_\psi$
+and $\lambda$), so long-range credit fades through a deliberate, tunable horizon
+rather than through products of Jacobians. E-prop shares this property; the two
+differ in how the magnitude is set per neuron. In e-prop it scales with that
+neuron's feedback weights; in \method{} it is set by the neuron's own noise and the
+shared outcome, and so is comparable across neurons.
+
+\paragraph{Where to inject the noise (variants).}
+The shared noise of Eq.~\eqref{eq:perturbation-trace} (\variant{weight dist}) is
+our default. Two alternatives change the drift. Independent noise per synapse
+(\variant{weight dist ind noise}, generated as a hash of the neuron's noise, the
+synapse indices and time) removes the multiplicity $c_j$ of afferents sharing a
+neuron's noise, which scales the drift ($P\approx\bar c\,\partial e/\partial W$),
+and learns less well. Perturbing the membrane directly (\variant{node dist}) uses
+one neuron-level trace $\xi^t_j=\alpha\xi^{t-1}_j+\sigma n^t_j$, whose kernel weights
+all presynaptic activity equally rather than through the synapse's own spikes. Neuron-local objectives, such as voltage stability or a firing-rate
+reward, can be credited through the same trace exactly like the broadcast TD error;
+apart from the decorrelation reward, the main experiments do not use them
+(Appendix~\ref{app:gridtoy-exploratory}).
+
+\paragraph{Backward propagation (optional).}
+Each neuron's gated noise score is also a local estimate of its contribution to the
+outcome, and it can be sent backward through the forward weights: every
+hidden-to-hidden synapse adds its weight times its postsynaptic neuron's score to its
+presynaptic neuron, which uses the sum as an e-prop-style learning signal. No feedback
+pathway is added, since each signal travels back through the synapse that carries the
+forward one. With membrane noise, whose score is neuron-level, this improved learning
+on a small network\pending{: CPU, 2 seeds, reward rate $-0.028$ vs.\ $-0.069$;
+full-size runs}; with the per-synapse noise of \variant{weight dist}, each synapse sends
+only its share of the noise and the signal is biased. It is not used in the main
+experiments (Appendix~\ref{app:routing}).\todo{Update Appendix~\ref{app:routing} with
+the backward-propagation results.}
+
+\subsection{Optimisation and Regularisation}
+\label{sec:optimiser}
+
+Section~\ref{sec:intro} argues that updating every timestep is the setting
+most faithful to a continuously learning agent; this section addresses the
+cost of doing so.
+Because updates are applied every timestep from a single local sample, that sample
+is often noisy. All rules use AdaBelief~\citep{zhuang2020adabelief} with
+$\beta_1=0.99$, $\beta_2=0.99999$, whose second-moment estimate tracks the variance of
+the gradient around its own momentum rather than its raw magnitude, which gave smoother
+updates under strict per-timestep updating.\pending{: confirm for all e-prop baselines
+after the rerun.} All rules are updated at every simulation timestep, the strict
+schedule of Section~\ref{sec:intro}, with no exceptions.
+
+To counter the loss of plasticity that continual, per-timestep updating can
+otherwise induce, every rule additionally regularises its weights toward
+their values at initialisation, an approach known as \emph{L2
+Init}~\citep{kumar2023maintaining}: an $\ell_2$ penalty
+$c_{\mathrm{init}}\lVert\theta^t-\theta^0\rVert_2^2$ on the deviation of the
+current parameters $\theta^t$ from their initial values $\theta^0$ is added
+to the loss at every update, with $c_{\mathrm{init}}=10^{-5}$ throughout,
+discouraging unbounded weight growth without constraining where the network
+is allowed to move relative to its starting point.
+% ===========================================================================
+\section{Experiments}
+\label{sec:results}
+
+We evaluate on two environments. \emph{Snake} $5\times5$ is a reactive navigation task
+with a moderately sparse reward (food and death). \emph{Pac-Man} on procedurally
+randomised layouts adds partial observability, a persistent mismatch between the fixed
+action set and the legal moves, and rewards spanning several magnitudes. In every task
+the agent sees only a small egocentric grid, Poisson rate-coded into input spikes
+(Appendix~\ref{app:impl}).
+
+\pending{: \textbf{Versioning note.} The e-prop baselines are being rerun with the
+reward-based learning signal implemented as described in Appendix~\ref{app:impl}; every
+comparison involving them, and every figure below, is a placeholder until then.}
+
+The learner is an excitatory--inhibitory recurrent SRNN of ALIF neurons with
+sparse, spatially structured connectivity, trained \emph{strictly online} and in
+a \emph{continuing} fashion as defined in Section~\ref{sec:intro}. Each output
+head is optionally preceded by a non-recurrent \emph{field} layer that lengthens
+the causal path from input to output, which we use to stress-test how each rule
+scales with that path. The network runs on the event-driven GeNN
+simulator~\citep{Yavuz2016GeNN}; architecture, connectivity, initialisation, and
+all hyperparameters are given in Appendices~\ref{app:arch}--\ref{app:hyper}.
+
+We compare \method{}, the rule of Eq.~\eqref{eq:distributed-update} with the
+decorrelation reward of Eq.~\eqref{eq:decorr} (and, where stated, with the centred
+drift and the homeostat instead), with reward-based e-prop using \emph{random}, \emph{adaptive}
+and \emph{symmetric} feedback, and with a \emph{reservoir}, inspired by liquid state
+machines~\citep{Maass2002LSM}, whose input and recurrent weights stay at their initial
+values so that only the readout learns. The reservoir measures how much of the
+performance requires learning in the hidden layers at all. All rules share the readout
+rule, the optimiser and the per-timestep schedule. Hyperparameters were explored within
+a limited budget, so a rule that fails to learn here is one for which we found no
+working configuration, not one that cannot learn. Primary comparisons average
+\pending{3--5} seeds.
+
+\subsection{Learning under strictly online constraints}
+\label{sec:results-snake}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{images/notitle/comparison_misc_5_runs.png}
+\caption{\textbf{Learning on Snake under strictly online, continuing constraints.}
+Episode reward, reward rate, voltage-regularisation loss (solid) with mean membrane
+voltage (dashed), and firing frequency; mean $\pm$ spread over the seeds.
+\pending{: figure from the earlier pipeline; to be regenerated with \method{},
+random, adaptive and symmetric e-prop and the reservoir.}}
+\label{fig:snake-comparison}
+\end{figure*}
+
+Symmetric e-prop learns well when the hidden neurons connect directly to the heads, but
+collapses once the field layers lengthen the causal path, since neurons not connected
+to a head receive no feedback (Appendix~\ref{sec:results-symmetric}); all results below
+use the field layers. Random and adaptive e-prop, whose feedback reaches every neuron,
+learn effectively\pending{: reward rates}. \method{} learns without any feedback
+pathway\pending{: reward rate}; as expected from the information each rule delivers,
+e-prop's structured signal learns faster\pending{: quantify}. The reservoir does not
+learn, so task-driven learning in the hidden layers is needed in these experiments.
+Without the gate (\variant{weight dist no $\psi$}) the perturbation rule barely learns
+in any configuration we tried, consistent with the gate carrying the drift
+(Section~\ref{sec:distributed}).\pending{: ungated result from the earlier pipeline.}
+We rank rules by reward rate, the objective of the continuing task; episode reward also
+credits survival and can order the rules differently
+(Section~\ref{sec:results-ceiling}).
+
+\subsection{Depth}
+\label{sec:results-depth}
+
+\begin{figure*}[t]
+\centering
+\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Depth series: reward rate against the
+number of recurrent EI layers (1--3) for \method{}, random, adaptive and symmetric
+e-prop and the reservoir.\pending{}}}
+\caption{\textbf{Learning as the network deepens.}\pending{: figure.}}
+\label{fig:depth}
+\end{figure*}
+
+Every additional recurrent layer between the input and the fields lengthens the path
+along which a feedback signal, or the effect of a perturbation, must travel. We stack one
+to three EI layers and train every rule under the same strict protocol
+(Fig.~\ref{fig:depth}).\pending{: results of the depth series (small-network screen
+running; full-size runs).}
+
+\subsection{What the perturbation rule learns}
+\label{sec:results-features}
+
+\paragraph{Features.} If the drift and the perturbation gradient build useful features,
+the hidden representation should come to encode task variables that the reservoir's
+fixed representation does not. We record the hidden state (membrane potentials and
+refractory state) at the start and at the end of training and fit linear decoders for
+the position of the food relative to the head, the danger in each direction, and the
+heading.\pending{: decoding accuracies for \method{}, e-prop and the reservoir.}
+
+\paragraph{Keeping neurons plastic.} A neuron whose membrane stays far from threshold
+has $\psi=0$ and can no longer learn under any of the rules in this paper.\pending{:
+dead-neuron counts with the decorrelation reward.} With the
+homeostat, \method{} keeps essentially all of its neurons in the plastic regime, whereas
+feedback-based e-prop drives a large part of its membranes outside it (voltage loss
+$\approx2.4$ against $\approx0.13$)\pending{: per-population dead-neuron counts}. The
+centred drift alone is not enough: on a small network, about half of the readout-field
+neurons stayed silent from the start of training, since centring also removes the early,
+bias-driven push that wakes them up; with the homeostat no neuron died
+(Section~\ref{sec:distributed}).\pending{: small-network result, 2 seeds.}
+
+\paragraph{Mechanism.} Removing the drift (\variant{gradient only}) or the perturbation
+gradient (\variant{drift only}) isolates the two parts of
+Eq.~\eqref{eq:two-terms}.\pending{: Snake dissection.} In a network-level toy task the
+drift builds the features both readouts use, and without it neurons lose their
+plasticity (Appendix~\ref{app:gridtoy}).
+
+\paragraph{Scaling.} The variance of perturbation-based gradient estimates grows with
+the number of perturbed units \citep{Werfel2005LearningCurves}, so if \method{} were a
+gradient estimator alone, its gap to e-prop should widen with network size.\pending{:
+gap against the number of hidden neurons.}
+
+\subsection{Pac-Man}
+\label{sec:results-pacman}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{images/notitle/pacman_standard.png}
+\caption{\textbf{Learning on Pac-Man.} Episode reward, reward rate,
+voltage-regularisation loss (solid) with mean membrane voltage (dashed), and firing
+frequency on procedurally randomised layouts; mean $\pm$ spread over the seeds.
+\pending{: figure from the earlier pipeline; to be regenerated.}}
+\label{fig:pacman}
+\end{figure*}
+
+On Pac-Man with procedurally randomised layouts~\citep{denero2010pacman}
+(Fig.~\ref{fig:pacman}), \method{} again learns without any feedback pathway, reaching
+a positive reward rate\pending{: rerun with the corrected e-prop baselines}. In the
+earlier runs it kept its voltage loss flat while its firing rate rose gradually, and the
+reservoir did not learn.
+
+% ===========================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+Under strictly online, continuing constraints, e-prop with feedback that reaches every
+neuron learns effectively\pending{: and in deeper networks}. Its per-neuron, structured
+learning signal makes it the faster learner, as the amount of information it delivers
+would suggest. \method{} shows that the feedback pathway itself is not required: one
+broadcast scalar and each neuron's own noise are enough to train the hidden layers of a
+recurrent spiking network in this setting.
+
+That this works at all is the less expected part. Perturbation-based gradient
+estimates become noisier as more units are perturbed
+\citep{Werfel2005LearningCurves,fiete2006gradient}, and with thousands of neurons a
+pure estimator would learn very slowly. The perturbation-induced drift is not such an
+estimator. It is a local, reward-modulated rule over the eligibility, estimated from a
+neuron's own noise with a signal-to-noise ratio that changes little when every other
+neuron is perturbed as well (Appendix~\ref{app:decomp-locality}). It decides where the
+network remains plastic, freezing responses that precede better-than-expected outcomes
+and sensitising those that precede worse ones, and in doing so builds features that the
+readout can use. It is not the gradient of any objective
+(Appendix~\ref{app:drift-nongradient}), so this functional description, together with
+the measured features (Section~\ref{sec:results-snake}), is the account we can give of
+it. The rule thus sits between reservoir computing, with fixed features and
+a trained readout, and end-to-end gradient learning: the features are shaped by reward,
+without a gradient being transported to them.
+
+The way the drift is computed also makes the rule less tied to the neuron model. Its
+derivative is taken by the dynamics themselves: the noise enters the input current, and
+Stein's lemma turns its correlation with the eligibility into the weight derivative of
+that eligibility through whatever the neuron does, including resets, adaptation and
+refractoriness (Appendix~\ref{app:decomp-def}). The same holds for the perturbation
+gradient. Applying the rule to a variation of the neuron model, or to a different model,
+therefore requires only injecting the noise and keeping its trace. E-prop instead
+derives its eligibility traces from the state equations of each model, and must replace
+every non-differentiable step with a pseudo-derivative. Each new model needs a new
+derivation, and the approximation keeps only the terms that derivation retains. Two parts
+of our rule remain model-specific: the gate and the presynaptic factor of the score,
+which we borrow from e-prop's ALIF eligibility, and the membrane kernel of the noise
+trace. Since the drift differentiates whatever eligibility the rule computes, these are
+design choices rather than derived quantities. We have only tested the ALIF model, so
+this is a property of the method, not yet a result. The natural targets are neurons whose
+dynamics are hard to differentiate or not known at all. Analog neuromorphic hardware has
+device mismatch, and gradient training there relies on a software model of the
+chip~\unverified{Schmitt et al.\ 2017; Cramer et al.\ 2022}, whereas the drift
+differentiates through whatever the device does. The rule does need the injected noise
+itself, since Stein's lemma holds for the exact sample: a device would draw it from a
+local random number generator, and its intrinsic noise would add variance but no bias.
+Replacing the injected noise with the deviation of activity from its running average, as
+reward-modulated Hebbian rules do~\unverified{Legenstein et al.\ 2010; Miconi 2017},
+would remove this requirement at the cost of an approximation. Dendritic neurons with plateau
+potentials and dendritic spikes, and synapses with short-term plasticity, would each need
+new eligibility derivations for e-prop, but only the injected noise here. The cost is
+signal-to-noise for slow state variables, whose effect a noise trace must integrate over
+long windows.
+
+E-prop with a feedback pathway learned faster and built better features in every network we
+tried, including the deeper ones. We therefore do not present the perturbation rule as a
+better learner for these networks. Its value lies in what it requires and what it computes. It
+needs only a broadcast scalar and each neuron's own noise, and its main term, the weight
+derivative of the eligibility, is taken through the neuron's true dynamics, which no other
+method we know of computes at a comparable cost. This suggests that it should apply in more
+settings than e-prop: neuron models without a convenient derivation, dendritic or synaptic
+dynamics, and hardware whose dynamics are not known. In all of these, e-prop needs a
+model-specific derivation or a model of the device. Within the settings studied here, it is
+best understood as a reward-modulated reservoir-shaping rule. We have not found a way to turn
+these properties into an advantage over e-prop, and doing so is the main open question this
+work leaves.
+
+The same handle on plasticity makes the rule robust in a way that feedback-based rules
+are not. Neurons whose membranes leave the range of the pseudo-derivative stop learning
+under any of the rules studied here. Because the noise trace credits any neuron-local
+reward, the rule has a direct handle on this: a homeostat keeps neurons in range, and
+the decorrelation reward, which worked better in our runs, also keeps neurons from
+duplicating their neighbours. Loss of plasticity is a central problem of continual
+learning \citep{kumar2023maintaining}, and local rewards credited through the
+neuron's own noise are a natural tool for it.\pending{: support with the dead-neuron counts and, if they hold, task-switch results.}
+
+Read biologically, \method{} is a three-factor rule with a neuromodulator-like broadcast
+signal, whose drift has the sign structure of voltage-based plasticity
+\citep{Clopath2010Voltage}. It predicts, as a hypothesis, that neurons become more
+sensitive, and so more plastic, before outcomes that turn out worse than expected.
+
+The two families need not compete. E-prop supplies a directed gradient where its
+feedback reaches, and the perturbation parts can regulate plasticity on top of it;
+how to combine them most effectively is an open question\pending{: e-prop with the
+decorrelation reward and the drift}.
+
+\paragraph{Limitations.}
+Seeds and hyperparameter search were limited and shared across rules, so comparisons are
+read as existence and relational claims. All rules settle at firing rates far above the
+regulariser's target, plausibly because the reactive tasks demand near-constant
+firing.\pending{: firing-rate range after the rerun.}
+
+During development we found the perturbation rule to be considerably more sensitive than
+e-prop to the network architecture and activity regime. Without the searched
+connectivity\pending{: reference to the architecture-search section once written} and the
+neuron-local objectives it either ran away to high firing rates or learned slowly, whereas
+e-prop learned on every architecture we tried, once its critic term was restricted to the
+value population. We attribute this to the rule's nature: it shapes the representation the
+architecture provides but receives no task gradient that could compensate for a poor one.
+Architecture search was therefore part of making the rule work, not an independent
+optimisation.
+
+The softmax policy head still
+samples a discrete action at fixed action-window boundaries
+(Appendix~\ref{app:impl}), requiring the network to consult an implicit
+external clock, and the policy-gradient term of the learning signal is
+delivered only at those sampling steps (in \method{}, only to the
+output weights). A genuinely clock-free agent would instead need a
+continuously-defined action head, e.g.\ independent per-action Gaussian units
+updated every timestep. We attempted many continuous action head
+configurations, but found it substantially harder to stabilise than the
+discrete softmax head. We suspect two properties of the softmax head, absent from independent
+continuous units, may contribute to this gap. First, softmax's shared
+normalisation couples the $A$ action logits' gradients into a single
+mutually-exclusive distribution, so increasing one action's probability
+mechanically decreases the others; independent action units carry no such
+coupling and must learn any comparative structure among actions purely from
+separate, per-unit signals. Second, the softmax head only requires a learning
+signal at the specific timesteps an action is actually sampled, whereas a
+continuously-defined head must be assigned credit at every timestep,
+substantially increasing the surface over which credit must be correctly
+apportioned. We leave a working continuous-action formulation to future work.
+More broadly, the action window, and the per-action discount and trace decays
+defined on it, are task-specific configuration that the learning rule could in
+principle take over; moving as much of it as possible into the rule, towards a
+fully task-agnostic agent, is the natural next step.
+% ===========================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+Very few learning rules can train recurrent spiking networks under strictly online,
+continuing constraints. E-prop is one of them, and with feedback that reaches every
+neuron it learns effectively in this setting\pending{: including deeper networks}. We
+introduced \method{}, which needs no feedback pathway: a broadcast TD error and each
+neuron's own perturbation trace train the hidden layers, through a perturbation gradient
+and a perturbation-induced drift that controls where the network remains plastic. It
+learns more slowly than e-prop, as its far poorer signal would predict, yet much closer
+to it than the scaling of perturbation learning suggests, and it keeps its neurons
+plastic. Removing the remaining task-specific timing, above all the fixed action window,
+and combining feedback-based gradients with perturbation-based control of plasticity are
+the natural next steps.
+
+% ===========================================================================
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\clearpage
+% ===========================================================================
+%  APPENDIX  (supplementary material; follows the references)
+% ===========================================================================
+\onecolumn
+\appendix
+
+\section{Network Architecture and Connectivity}
+\label{app:arch}
+The hidden core is a recurrent spiking network split into separate excitatory
+(E) and inhibitory (I) populations respecting Dale's
+principle~\citep{dale1935pharmacology,vanVreeswijk1996Chaos} at initialisation:
+a $20\times20\times3$ E grid ($1200$ neurons) and a $15\times15\times3$ I grid
+($675$ neurons), all adaptive leaky integrate-and-fire (ALIF) neurons.
+Connections are sparse and spatially organised: each postsynaptic neuron samples
+its afferents from a toroidal Gaussian profile over the normalised
+sheet~\citep{Spreizer2019Toroidal}, with a wider reach for input projections
+($\sigma_{\mathrm{in}}=0.1$) than for recurrent ones ($\sigma_{\mathrm{h}}=0.05$)
+and a requested fan-in of $K=300$ per projection. The sampler realises fewer
+afferents than requested: per postsynaptic neuron, a mean of $\approx148$ from the
+input, $\approx67$ from the E population and $\approx45$ from the I population
+(standard deviations $6$--$9$), the same for core and field neurons, so every
+hidden or field neuron receives $\approx112$ recurrent afferents. Weights are drawn
+with mean $\pm c/\sqrt{K}$ and standard deviation $0.05/\sqrt{K}$, scaled by the
+requested rather than the realised fan-in;
+excitatory connections take a small positive mean ($c_E=0.1$) and inhibitory a
+larger magnitude ($c_I=0.3$, three times $c_E$) so that E and I drive are balanced
+despite the smaller I population. The Dale sign is imposed only at initialisation and
+released during training (a ``weakened'' Dale's law); enforcing it throughout,
+or dropping the EI initialisation entirely, both impaired learning in our
+experiments. The first is consistent with reports that naively enforcing
+Dale's principle impairs learning~\citep{Cornford2021DaleANN}; see
+\citet{Song2016DaleEI} for training recurrent networks with separate E and I
+populations.
+
+Each output head (policy and value) is optionally preceded by a dedicated,
+non-recurrent \emph{field} population of the same shape as the I population,
+which reads from the recurrent core and projects to a linear leaky-integrator
+readout. By the \emph{causal path length} between a neuron and an output we mean
+the shortest directed path in the connectivity graph; field layers increase it,
+and we use them to test how gracefully each rule assigns credit as that path
+grows.
+
+\section{Implementation and Training}
+\label{app:impl}
+The network is implemented on the GPU-accelerated, event-driven, JIT-compiled
+GeNN simulator~\citep{Yavuz2016GeNN} through its \texttt{ml\_genn} interface. All
+per-synapse state (the filtered eligibility trace, the perturbation trace, and,
+in the perturbation-based variants, the per-synapse $\log\sigma_{ji}$) is stored on
+device and updated in a single fused kernel, so each update is a local
+read--modify--write with no backward sweep; this scales to $\sim$1{,}900 neurons
+and millions of synapses. Training is \emph{strictly online} and
+\emph{continuing} (Section~\ref{sec:intro}): the environment's ending signal
+resets the environment but never the network, so membrane potentials,
+adaptation, and all traces persist across game boundaries. Each environment step
+spans $K=30$ integration steps ($\Delta t = 1$\,ms); observations are converted
+to spikes by independent Bernoulli sampling with per-pixel probability
+proportional to intensity up to $p_{\max}$. Weights are updated with batch size
+$1$ every simulation timestep, throughout, for every rule and on every task.
+Section~\ref{sec:intro} explains why: choosing a coarser schedule means
+deciding in advance, per task, where enough evidence has accumulated to
+justify an update, and we have no general, task-agnostic rule for making that
+choice. Updating every timestep sidesteps that decision
+entirely.\pending{: the results in Appendix~\ref{app:extra-results} predate
+the current configuration: they used plain Adam, no L2 Init, and, on Pac-Man,
+per-episode updates.}
+
+\paragraph{Reward-based e-prop.}
+The e-prop baselines use the actor--critic learning signal of \citet{eprop2020},
+$L^t_j=\sum_k B^\pi_{kj}\big(\pi^t_k-\mathbb{1}_{a_t=k}\big)-c_V B^V_j$ with $c_V=0.1$.
+The critic part is the value-feedback weight alone: the update multiplies the filtered
+eligibility by the TD error once, and carrying the TD error inside $L^t_j$ as well would
+weight the critic part by its square. Random e-prop keeps the feedback weights fixed;
+adaptive e-prop trains them with the same update as the corresponding readout weights.
+Both use the optimiser and schedule of Section~\ref{sec:optimiser}.
+
+\section{Single-Neuron Analysis of the Perturbation Estimators}
+\label{app:trace}
+
+This appendix characterises the bias and noise of the perturbation-based
+updates of Section~\ref{sec:distributed} in a setting where the true gradient
+can be computed. All scripts are available in the repository
+(\texttt{derivations/estimator\_toy}).\todo{Replace the repository path by the
+public code link before submission.}
+
+\subsection{Setup}
+\label{app:trace-setup}
+
+We simulate a single ALIF neuron with the dynamics and parameters of
+Appendices~\ref{app:arch} and~\ref{app:hyper} ($\alpha=e^{-1/10}$, relative
+reset, a refractory period of three steps, threshold adaptation, and e-prop's
+pseudo-derivative $\psi$). Ten presynaptic inputs fire with probability $0.7$
+per step during active periods separated by silent gaps. Perturbations use the
+magnitudes of the experiments: $\sigma_j=e^{-4.61}$ for membrane (node) noise
+and $\sigma_{ji}=e^{-5}$ for synaptic noise. The reward mimics the tasks: every
+$K=30$ steps is an action window, and at a sparse random subset of windows a
+reward event $R=\pm\tanh((y-\theta)/0.5)$ occurs, where $y$ is a leaky readout of
+the neuron's spikes and the threshold $\theta$ and sign vary per event; the
+reward is delivered as a decaying trace $r_t$. Every estimator uses causal
+credit through the actor's trace, $p^t=\lambda\,p^{t-1}+c^t$ with
+$\lambda=0.8^{1/K}$, and is read out as $\sum_t (r_t-b_t)\,p^t$ with a baseline
+$b_t$. The truth is the exact estimator below with cumulative causal credit,
+which is unbiased; we cross-checked it against central finite differences with
+common random numbers (agreement to cosine $\ge 0.999$ whenever the difference
+step is small compared with the noise's effect on the membrane). We report the
+cosine between each estimator's mean and the truth, and its relative noise
+$\sqrt{\mathrm{tr}\,\mathrm{Cov}}/\lVert\text{mean}\rVert$ per sample, which is
+independent of the learning rate; the number of samples needed for a given
+precision scales with its square.
+
+For the weight-dist placement used by the main rule, the per-step contribution
+$c^t_{ji}$ of each estimator is
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}ll@{}}
+\toprule
+estimator & $c^t_{ji}$ \\
+\midrule
+\method{} & $(1-\alpha^2)\,\xi^t_{ji}/\sigma_{ji}^2\cdot e^t_{ji}$ \\
+trace, no $\psi$ & $(1-\alpha^2)\,\xi^t_{ji}/\sigma_{ji}^2\cdot \bar z^t_i$ \\
+per-step, with $\psi$ & $\eta^t_{ji}/\sigma_{ji}^2\cdot e^t_{ji}$ \\
+per-step, presynaptic trace & $\eta^t_{ji}/\sigma_{ji}^2\cdot \bar z^t_i$ \\
+exact & $\varepsilon^t_j\, z^{t-1}_i \big/ \textstyle\sum_k \sigma_{jk} z^{t-1}_k$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent where $\eta^t_{ji}=\sigma_{ji}\varepsilon^t_j z^{t-1}_i$ is the
+perturbation synapse $ji$ applies (only on a presynaptic spike, with one
+$\varepsilon^t_j\sim\mathcal N(0,1)$ shared by the neuron's synapses),
+$\xi^t_{ji}=\alpha\,\xi^{t-1}_{ji}+\eta^t_{ji}$ is its per-synapse trace, and
+$e^t_{ji}$ is e-prop's eligibility trace, as in the implementation.
+
+\subsection{The exact estimator}
+\label{app:trace-exact}
+
+For membrane noise, $v^t=\alpha v^{t-1}+\sum_i W_{ji}z^{t-1}_i-v_{\mathrm{th}}z^{t-1}+\varepsilon^t$,
+the probability of the sampled trajectory factorises into one-step Gaussians
+around $\mu^t=\alpha v^{t-1}+\sum_iW_{ji}z^{t-1}_i-v_{\mathrm{th}}z^{t-1}$, in
+which the previous, sampled membrane is fixed. The score is therefore
+$\sum_t\varepsilon^t z^{t-1}_i/\sigma^2$: each perturbation is scored once,
+at the step it was injected, and its lasting effect on the membrane, spikes,
+and rewards is credited through the return. Because each neuron's noise is
+independent and spikes are deterministic given the membranes, summing these
+scores gives the exact likelihood-ratio gradient of the whole recurrent
+network.
+
+The same estimator can be written around the noise-free trajectory,
+$v=\bar v(W)+\xi$. The perturbations then form a first-order autoregressive
+process with covariance $\Sigma$, and the score is
+$(\partial\bar v/\partial W_{ji})^{\!\top}\Sigma^{-1}\xi=\bar z_i^{\top}\Sigma^{-1}\xi$.
+The synaptic drive and the perturbations pass through the \emph{same} membrane
+filter, so the transform $L$ that decorrelates the perturbations
+($L\xi=\varepsilon$, with $\Sigma^{-1}=L^{\top}L/\sigma^2$) is the inverse of
+that filter. Splitting it between the two factors,
+$\bar z_i^{\top}\Sigma^{-1}\xi=(L\bar z_i)^{\top}(L\xi)/\sigma^2$, also
+un-integrates the eligibility ($L\bar z_i=z_i$) and recovers the step-wise form.
+The trace rule instead pairs $\xi$ with $\bar z$ directly, i.e.\ it replaces
+$\Sigma^{-1}$ by its diagonal, treating successive values of $\xi$ as
+independent.
+
+For the noise placements of Section~\ref{sec:distributed} the exact score is,
+analogously, the perturbation that reaches the membrane divided by its
+variance at that step, times the presynaptic spike. For shared synaptic noise
+(weight dist) the membrane perturbation is
+$\varepsilon^t_j\sum_i\sigma_{ji}z^{t-1}_i$, whose variance changes with which
+inputs fired, which gives the entry in the table above; for independent
+synaptic noise it is the classical weight-perturbation score
+$\eta^t_{ji}/\sigma_{ji}^2$.
+
+\subsection{Bias of the trace rule}
+\label{app:trace-bias}
+
+Write $g_s=\mathbb E[\partial F/\partial v^s]$ for the sensitivity of the
+reward to the membrane at step $s$; the true gradient is
+$\sum_s g_s\bar z^s_i$. For Gaussian perturbations, Stein's lemma,
+$\mathbb E[F\xi]=\Sigma\,\mathbb E[\nabla_vF]$, gives the expectation of the
+(ungated) trace rule as
+\begin{equation}
+\mathbb E\Big[F\sum_t\tfrac{(1-\alpha^2)}{\sigma^2}\,\xi^t\bar z^t_i\Big]
+=\sum_s g_s\,\tilde z^s_i,\qquad
+\tilde z^s_i=\sum_t\alpha^{|t-s|}\,\bar z^t_i ,
+\label{eq:trace-bias}
+\end{equation}
+in the stationary regime. The trace rule is thus the exact gradient with the
+presynaptic trace blurred by the correlation kernel of the perturbations,
+whose width is the membrane time constant. For a reward at a single final step
+this reduces to weighting input $x^{r-1}$ by an extra factor $T-r+1$: a
+perturbation is credited through its correlation with the return and again
+through its lingering contribution to every later $\xi^t$. For a constant input
+the two expectations differ only by a factor $1/(1-\alpha)$, absorbed by the
+learning rate. In general the blur costs little when the reward's sensitivity
+to the membrane varies slowly compared with $\tau_{\mathrm{mem}}$ and more when
+it varies faster: in a leaky neuron with random input spikes, the cosine between
+Eq.~\eqref{eq:trace-bias} and the true gradient averaged $0.999$, $0.98$,
+$0.94$, and $0.89$ for sensitivities that vary on scales of $100$, $30$, $10$,
+and $1$ steps. We verified Eq.~\eqref{eq:trace-bias} by Monte Carlo, both in a
+leaky neuron and with the full ALIF dynamics.
+
+\subsection{Noise}
+\label{app:trace-noise}
+
+Each estimator's score is linear in the innovations,
+$S_i=a_i^{\top}\varepsilon$, with a \emph{score profile} $a_i$ fixed by the
+rule. For small noise the reward fluctuation is approximately linear too,
+$F-\mathbb E[F]\approx g_\varepsilon^{\top}\varepsilon$, where
+$g_{\varepsilon,s}=\sum_{t\ge s}\alpha^{t-s}g_t$ is the reward's sensitivity to
+the perturbation injected at step $s$. Gaussian moments (Isserlis' theorem)
+then give the mean $\sigma^2 g_\varepsilon^{\top}a_i$ and the relative noise
+\begin{equation}
+\text{relative noise}^2
+=1+\frac{\lVert g_\varepsilon\rVert^2\sum_i\lVert a_i\rVert^2}{\sum_i\big(g_\varepsilon^{\top}a_i\big)^2}.
+\label{eq:noise-formula}
+\end{equation}
+The relative noise depends neither on $\sigma$ nor on the reward's scale, only
+on how well each synapse's score profile aligns with the reward's sensitivity
+to the noise. Both are forward-filtered by the membrane: the trace $\xi$ gives
+the score profile the same filter, $a_s\propto\sum_{t\ge s}\alpha^{t-s}\bar z^t$,
+whereas the exact estimator's profile is the raw input. The gate $\psi$,
+evaluated on the noise-free trajectory, enters as a deterministic reweighting
+of the profile; this is accurate because its width ($v_{\mathrm{th}}$) is about
+forty times the perturbations' effect on the membrane. With the full ALIF
+dynamics and a per-step reward, Eq.~\eqref{eq:noise-formula} predicted every
+estimator's direction to within $0.001$ in cosine, and bracketed its measured
+relative noise between the value computed from the reward's linear part
+(below) and the value obtained by replacing $\sigma^2\lVert g_\varepsilon\rVert^2$
+by the total reward variance (above, within $7\%$); only $57\%$ of the reward's
+variance was linear in the noise, the rest coming from discrete spike flips.
+
+\subsection{Results}
+\label{app:trace-results}
+
+Table~\ref{tab:toy-regimes} reports the five estimators for the weight-dist
+placement across operating regimes, set by the input weights: near threshold
+(the baseline), silenced by inhibitory inputs, and saturated. We omit a
+strongly saturated regime, in which the reward barely depends on the neuron
+and the truth itself could not be estimated reliably.
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+regime & firing & $\psi$ open & dist.\ e-prop & trace, no $\psi$ & per-step, $\psi$ & per-step, pre.\ trace & exact \\
+\midrule
+near threshold          & 15.5\% & 68\% & 0.993\,/\,8.2 & 0.990\,/\,6.8 & 0.991\,/\,7.2 & 0.989\,/\,5.7 & 0.999\,/\,6.9 \\
+inhibited (34\% far below) & 4.0\% & 60\% & 0.980\,/\,2.7 & 0.992\,/\,3.7 & 0.972\,/\,2.6 & 0.991\,/\,3.1 & 1.000\,/\,3.9 \\
+inhibited (64\% far below) & 3.4\% & 31\% & 0.977\,/\,2.7 & 0.986\,/\,5.7 & 0.986\,/\,2.8 & 0.980\,/\,4.6 & 1.000\,/\,5.7 \\
+saturated (39\% far above) & 27.6\% & 29\% & 0.974\,/\,3.1 & 0.986\,/\,4.9 & 0.945\,/\,3.0 & 0.975\,/\,4.3 & 0.999\,/\,4.1 \\
+\bottomrule
+\end{tabular}
+\caption{Single-neuron estimators, weight-dist placement (shared synaptic noise,
+per-synapse traces), sparse decaying reward, $\lambda$ credit, $400$k samples
+per regime. Each cell gives the cosine to the true gradient and the relative
+noise per sample. ``Far below/above'' means more than $v_{\mathrm{th}}$ from the
+adaptive threshold. The uncertainty of the truth is at most $1.7\%$.}
+\label{tab:toy-regimes}
+\end{table}
+
+Three observations follow. First, every update is only slightly biased:
+all point within cosine $0.97$--$0.99$ of the true gradient in every regime.
+Second, $\psi$ reduces the noise when the neuron spends time where its
+perturbations cannot change a spike, by a factor $1.4$--$2.1$ when silenced or
+saturated, and there the gated rules are less noisy than the exact estimator;
+near threshold, where $\psi$ is open most of the time, it slightly increases the
+noise, and it does not improve the direction in this setting. Third, with
+per-synapse traces the trace does \emph{not} reduce the noise relative to
+per-step perturbations (compare \method{} with ``per-step, $\psi$''),
+although in the network the per-step variant learns more slowly
+(Section~\ref{sec:results-snake}).\pending{: Snake ablation.} The advantages
+of the trace and the gate observed in networks therefore go beyond what a
+single neuron shows. With neuron-level (membrane) noise, in contrast, the trace
+rule was less noisy than the exact estimator and far more robust than the
+per-step rule to a narrower gate.
+
+Table~\ref{tab:toy-placement} compares the noise placements, each with its own
+trace rule and exact estimator. Which placement is less noisy depends on the
+regime. Near threshold with dense input, membrane noise is about three times
+less noisy than shared synaptic noise; when the neuron is often silenced, the
+order reverses and shared synaptic noise is about seven times less noisy.
+Membrane noise is injected at every step, including the many steps at which a
+silenced neuron's perturbation cannot matter, and so adds reward variance that
+no synapse's score can account for; synaptic noise enters only through
+synapses that just carried a spike.
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{near threshold} & \multicolumn{2}{c}{inhibited (64\% far below)} \\
+placement & trace rule & exact & trace rule & exact \\
+\midrule
+node (membrane noise)      & 0.993\,/\,2.8 & 0.999\,/\,3.8 & 0.855\,/\,19.6 & 0.958\,/\,25.7 \\
+weight dist (shared)       & 0.993\,/\,8.2 & 0.999\,/\,6.9 & 0.977\,/\,2.7 & 1.000\,/\,5.7 \\
+ind.\ noise (independent)  & 0.948\,/\,8.8 & 0.998\,/\,8.2 & 0.970\,/\,9.7 & 0.999\,/\,17.2 \\
+\bottomrule
+\end{tabular}
+\caption{Noise placement, same setting as Table~\ref{tab:toy-regimes}; cells
+give cosine to the true gradient and relative noise. The truth's uncertainty is
+at most $1.7\%$, except for the inhibited node row ($5.5\%$, cosine about
+$\pm0.05$).}
+\label{tab:toy-placement}
+\end{table}
+
+\subsection{Limitations}
+\label{app:trace-limits}
+
+The analysis concerns a single neuron with a synthetic reward and no critic;
+the reward is credited through the actor's trace but not through a learned TD
+error. It measures how well each update estimates the gradient, not how well a
+network learns with it, and it does not reproduce the network-level effects of
+Section~\ref{sec:results-snake}, where removing $\psi$ breaks learning.
+
+
+\section{Decomposition of the Perturbation Update}
+\label{app:decomp}
+
+This appendix defines the two components of the perturbation update precisely,
+derives them from the update as implemented, and verifies the definition
+numerically. All analyses of Appendices~\ref{app:decomp}--\ref{app:hebb} are
+reproduced by documented scripts with tests in
+\texttt{analysis/perturbation\_drift}.\todo{Replace the repository path by the public
+code link before submission.}
+
+\subsection{Setup}
+\label{app:decomp-setup}
+For the weight variants, every neuron $j$ draws one Gaussian sample
+$n^t_j\sim\mathcal{N}(0,1)$ per step, and each synapse $ji$ that transmits a
+spike at that step delivers $W_{ji}+\sigma n^t_j$ instead of $W_{ji}$. The noise
+is therefore shared by all afferents of a neuron and reaches the membrane as an
+extra input current $\sigma n^t_j c^t_j$, where
+$c^t_j=\sum_i z^{t-1}_i$ is the number of afferents that spiked. Each synapse
+keeps the noise it has delivered, filtered by the membrane decay,
+\begin{equation}
+\xi^t_{ji}=\alpha\,\xi^{t-1}_{ji}+\sigma\,n^t_j\,z^{t-1}_i
+=\sigma\sum_{k\ge0}\alpha^k z^{t-k-1}_i\,n^{t-k}_j ,
+\label{eq:app-xi}
+\end{equation}
+and the update correlates the \emph{score}
+$s^t_{ji}=\kappa\,g^t_j\,\pi^t_{ji}\,\xi^t_{ji}/\sigma^2$ with the TD error through the
+credit trace of Section~\ref{sec:tdlambda}. Here
+$\pi^t_{ji}=\bar z^t_i-\beta\,\epsilon^{t-1}_{ji}$ is the presynaptic factor of
+e-prop's ALIF eligibility trace and $g^t_j$ is a postsynaptic gate; with
+$g^t_j=\psi^t_j$, $g^t_j\pi^t_{ji}=e^t_{ji}$ is e-prop's eligibility trace.
+The constant $\kappa=1-\alpha^2$ only normalises the score's scale, so that one
+learning rate serves all terms of the update; it is carried along unchanged below
+and omitted where it does not matter. The optimiser descends on $\sum_t\delta_t\,p^t_{ji}$ with
+$p^t_{ji}=\lambda\,p^{t-1}_{ji}+s^t_{ji}$. For fixed weights,
+\begin{equation}
+\sum_t\delta_t\,p^t_{ji}=\sum_t s^t_{ji}\,A^t,\qquad
+A^t=\sum_{k\ge0}\lambda^k\delta_{t+k},
+\label{eq:app-forward}
+\end{equation}
+so every score is weighted by the $\lambda$-weighted sum of the TD errors that
+follow it.
+
+\subsection{The drift and the noise part}
+\label{app:decomp-def}
+Stein's lemma, $\mathbb{E}[n\,f(n)]=\mathbb{E}[\partial f/\partial n]$ for
+$n\sim\mathcal{N}(0,1)$, applies to each $n^{t-k}_j$ in
+Eq.~\eqref{eq:app-xi}. Because $z^{t-k-1}_i$ precedes $n^{t-k}_j$ it does not
+depend on it, and because the noise enters the dynamics only through the input
+current, $\partial/\partial n^{\tau}_j=\sigma c^\tau_j\,\partial/\partial
+I^\tau_j$. With $e=g\pi$ the eligibility actually computed,
+\begin{equation}
+\mathbb{E}\big[s^t_{ji}\big]=\mathbb{E}\big[D_{ji}\,e^t_{ji}\big],\qquad
+D_{ji}=\sum_{k\ge0}\alpha^k c^{t-k}_j z^{t-k-1}_i\,
+\frac{\partial}{\partial I^{t-k}_j},
+\label{eq:app-stein}
+\end{equation}
+exactly, where the expectation is over the noise given everything else and the
+derivative is taken through the true dynamics, including reset, threshold
+adaptation, refractoriness and the recurrent network. $D_{ji}$ is the weight
+derivative $\partial/\partial W_{ji}=\sum_k z^{t-k-1}_i\,\partial/\partial
+I^{t-k}_j$ seen through the kernel of the noise trace: the same presynaptic
+factor, with the membrane window $\alpha^k$ and the multiplicity $c_j$ of the
+shared noise. We define the \emph{drift} and the \emph{noise part} of the score
+as
+\begin{equation}
+P^t_{ji}=\mathbb{E}\big[D_{ji}\,e^t_{ji}\big],\qquad
+Q^t_{ji}=s^t_{ji}-P^t_{ji},\quad \mathbb{E}[Q^t_{ji}]=0 .
+\label{eq:app-PQ}
+\end{equation}
+The drift does not require $e$ to be a correct derivative of anything: it is the
+noise-smoothed sensitivity of whatever eligibility the rule computes, evaluated
+through the true dynamics. Applying the lemma to the product $A^t s^t_{ji}$
+gives the product rule
+\begin{equation}
+\mathbb{E}\big[A^t s^t_{ji}\big]=
+\underbrace{\mathbb{E}\big[e^t_{ji}\,D_{ji}A^t\big]}_{\text{gradient term}}
++\underbrace{\mathbb{E}\big[A^t\,D_{ji}e^t_{ji}\big]}_{\text{drift term}} .
+\label{eq:app-product}
+\end{equation}
+The gradient term weights the sensitivity of the subsequent TD errors to the
+weight by the eligibility; it is carried by $Q$ (up to a covariance term that
+vanishes when the fluctuations of $D_{ji}e$ are uncorrelated with $A$). The drift
+term weights the sensitivity of the eligibility to the weight by the outcome; it
+is carried by $P$. An update that descends on $\sum_t A^t s^t$, as the optimiser
+does, descends on both terms, i.e.\ it performs gradient descent (along $D$) on
+$\mathbb{E}[\sum_t A^t e^t]$; its gradient term then points against the return.
+The proposed rule keeps the drift and reverses the gradient term by changing the
+gate to $g=\psi-2G$, where $G$ is an estimate of the gate that does not depend on
+the current noise. To first order the noise part is $Q\approx
+e_0\,\xi/\sigma^2$, with $e_0$ the eligibility at the noise-free gate, so
+$(\psi-2G)\,\pi\,\xi/\sigma^2\approx P-Q$. We use an exponential moving average,
+$G=\bar\psi^t_j=\beta_\psi\bar\psi^{t-1}_j+(1-\beta_\psi)\psi^t_j$ with
+$\beta_\psi=0.99$ per step.
+
+\subsection{Numerical verification}
+\label{app:decomp-verify}
+We took a network trained with the proposed rule in the toy task of
+Appendix~\ref{app:gridtoy} ($10$k environment steps), fixed a state and an input
+spike train, and ran $3000$ independent noise rollouts of
+$30$ steps for $40$ randomly chosen active synapses, with common random numbers
+across all comparisons. Table~\ref{tab:verify} compares the mean score with the
+two sides of Eq.~\eqref{eq:app-stein} and with the plain weight derivative of
+the eligibility. The identity holds within the Monte-Carlo error, and the drift
+is, to a good approximation, the weight derivative of the eligibility trace
+scaled by the average multiplicity of the shared noise ($\approx2$ active
+afferents per step), while the eligibility itself does not predict it:
+\begin{equation}
+P^t_{ji}\approx\bar c\;\frac{\partial\,\mathbb{E}[e^t_{ji}]}{\partial W_{ji}} .
+\label{eq:app-P-approx}
+\end{equation}
+
+\begin{table}[h]
+\centering\small
+\caption{Verification of the drift (40 synapses, 3000 rollouts each, a
+30-step window). Correlation and slope of the mean score against each quantity,
+over synapses and time steps.}
+\label{tab:verify}
+\begin{tabular}{lccc}
+\toprule
+Mean score $\mathbb{E}[s]$ against & corr. & slope & note\\
+\midrule
+noise-direction derivative (Eq.~\ref{eq:app-stein}) & $0.93$ & $0.99$ & median difference $0.6$ s.e.\\
+weight derivative $\partial\mathbb{E}[e]/\partial W$ & $0.91$ & $2.21$ & $R^2=0.83$\\
+eligibility $\mathbb{E}[e]$ itself & $-0.07$ & -- & $R^2=0.005$\\
+deterministic surrogate (Sec.~\ref{sec:distributed}) & $0.75$ & -- & $R^2=0.56$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The deterministic surrogate in the last row uses no noise: it combines the slope of
+the gate, $\pi\,\psi'(V-A)\,\pi$, with a kernel for how a spike at an earlier step
+changes the gate (two refractory steps close it, and the reset lowers the voltage
+by $v_{\mathrm{th}}\alpha^{t-s}$), weighted by e-prop's surrogate $\psi_s\pi_s$ for how
+the weight changes the spike.
+
+\subsection{Computing the drift without noise}
+\label{app:drift-cost}
+The drift is $\mathbb{E}[D_{ji}e^t_{ji}]$, a noise-smoothed weight derivative of a
+quantity that already contains a derivative (the gate), taken through the true
+dynamics. We found no way to compute it other than the one the rule uses. With $N$
+neurons, $S\approx Nk$ synapses of fan-in $k$, and $T$ steps:
+\begin{itemize}
+\item \emph{Through the spiking dynamics.} Threshold, reset and refractoriness make
+$e$ a discontinuous function of $W$, so its weight derivative is not defined
+pointwise; only the smoothed expectation of Eq.~\eqref{eq:app-stein} is. Computing
+that expectation exactly means integrating over all noise paths, which is
+exponential in $NT$. The general method left is Monte Carlo over rollouts from the
+same state, as in the verification above ($3000$ rollouts per state).
+\item \emph{On a surrogate-differentiable model} (the pseudo-derivative $\psi$ in
+place of the spike derivative). Here $\partial e_{ji}/\partial W_{ji}$ needs
+$\partial V_j/\partial W_{ji}$ and $\partial z_i/\partial W_{ji}$ through the
+recurrence, i.e.\ the diagonal of the full influence matrix. A Jacobian diagonal has
+no cheaper exact form than the full forward pass: RTRL~\citep{RTRL} needs $O(NS)$
+memory and $O(NSk)$ time per step ($O(N^4)$ for dense connectivity), and per-weight
+tangents or backward passes need $O(S^2)$ or $O(TS^2)$ per step. The result is
+moreover the derivative of the surrogate, not of the true dynamics.
+\item \emph{Truncated to the neuron's own paths.} Keeping only the effect of
+$W_{ji}$ on neuron $j$ itself gives a deterministic $O(S)$ rule: the deterministic
+surrogate of Table~\ref{tab:verify}, which explains $56\%$ of the variance of the
+drift. Adding paths through $n$-step neighbours, as in sparse approximations of
+RTRL~\unverified{Menick et al.\ 2021, SnAp}, costs about $O(Sk^n)$ until the
+influence matrix becomes dense.
+\item \emph{A fitted local form.} The factorisation $P_{ji}\approx h_ju_{ji}$ of
+Appendix~\ref{app:hebb} reproduces $84\%$ of the accumulated drift by cosine
+similarity, but it is fitted, not derived.
+\end{itemize}
+The injected noise instead acts as a random probe of the Jacobian diagonal, in the
+manner of stochastic trace estimators~\unverified{Hutchinson 1989}, applied
+through the true dynamics by Stein's lemma: it costs $O(S)$ per step, the cost of
+the forward pass, and is unbiased for the smoothed quantity, including resets,
+adaptation and recurrence. Because the noise is shared per postsynaptic neuron,
+each probe mixes the afferents that are active at the same time, which is the
+origin of the factor $\bar c$ in Eq.~\eqref{eq:app-P-approx}.
+
+\subsection{Locality of the drift estimate}
+\label{app:decomp-locality}
+Estimating the drift involves only a neuron's own noise and eligibility, whereas the
+perturbation gradient depends on how the whole network's response moves the
+outcome. We tested this by keeping noise on three target neurons and switching it
+on for all other neurons, from a fixed state of three trained networks (the three
+neurons whose noise most detectably moves the value output; $8000$ and $20000$
+rollouts). With all neurons perturbed, the signal-to-noise ratio of the drift
+estimate for the targets' afferent synapses is $0.88$ times its value with only the
+targets perturbed (per network $1.15$, $0.76$, $0.72$), while that of the
+perturbation gradient for the same neurons falls to $0.38$ times ($0.62$, $0.34$,
+$0.18$).
+
+\subsection{The drift is not a gradient}
+\label{app:drift-nongradient}
+In expectation the drift of synapse $a$ is $F_a=\bar c\,\partial_a\mathbb{E}[e_a]$:
+the derivative of its own eligibility along its own weight. A smooth field is the
+gradient of a scalar function exactly when its Jacobian $J_{ab}=\partial_bF_a$ is
+symmetric (equality of mixed partial derivatives), and here
+$J_{ab}-J_{ba}=\bar c\,\partial_a\partial_b\,\mathbb{E}[e_a-e_b]$, which nothing in the
+rule forces to vanish. If instead $F=D\nabla f$ for positive per-synapse learning
+rates $D=\mathrm{diag}(d_a)$, then $J_{ab}/d_a=J_{ba}/d_b$ near a point where
+$\nabla f$ is small, and the product
+$(J_{ab}/J_{ba})(J_{bc}/J_{cb})(J_{ca}/J_{ac})$ equals one around every triangle of
+synapses, whatever $D$ is.
+
+We estimate both quantities in a recurrent network of three ALIF neurons with the
+Snake neuron parameters and four Poisson inputs at $40$\,Hz ($18$ weights; firing
+rates $22$, $35$ and $6$\,Hz), with static Gaussian weight noise per sample
+(the Gaussian-smoothing view) and $\bar c$ a positive constant. The second-order
+Stein identity, $\mathbb{E}[\xi_a\xi_b f(w+\xi)]=\sigma^4\,\partial_a\partial_b\mathbb{E}[f]$
+for $a\neq b$, estimates $J_{ab}$ directly from simulated eligibilities ($400{,}000$
+antithetic samples of $500$\,ms, with the noise-free run on the same input as a
+control variate; error bars from $40$ independent chunks). As a null, the same
+estimator with noise unrelated to the simulation has expectation exactly zero.
+
+The null gives $1$ of $153$ synapse pairs with an asymmetry $|z|>3$, as expected by
+chance; the drift gives $77$ of $153$, with or without $\bar\psi$ tracking the
+weights. Asymmetric pairs are most common when a recurrent synapse is involved ($54$ of
+$87$), and for pairs on different neurons the asymmetry is as large as the symmetric
+part: one weight changes the other's drift, but not the reverse. Of the $37$
+triangles whose six entries are all well determined ($|z|>4$), $8$ violate the
+triangle condition at $99\%$ (bootstrap over chunks), against $0.4$ expected by
+chance, so no per-synapse rescaling turns the drift into a gradient either. The
+antisymmetric part is nevertheless small next to the diagonal (Frobenius norms $213$
+and $3100$), and all eigenvalues of $J$ are real at this point, so the asymmetry does
+not create local rotation; $16$ of the $18$ diagonal entries are negative, so for
+$\bar c>0$ most synapses limit their own drift. Script:
+\texttt{examples/eprop/drift\_curl\_test.py}.\todo{Replace the repository path by the
+public one.}
+
+\subsection{Estimating the two parts in a network}
+\label{app:decomp-twin}
+To measure $P$ and $Q$ along a learning trajectory we use antithetic twins.
+A twin copy of the network is synchronised with the real one and then receives the
+same weights and input spikes but the mirrored noise $-n$. With $s$ and $s'$ the
+two scores, the even part $(s+s')/2$ estimates $P$ without bias and the odd part
+$(s-s')/2$ estimates $Q$. Because the noise trace remembers past noise with decay
+$\alpha=0.905$, a twin must mirror all noise still present in the trace: we run
+three twins re-synchronised every $30$ steps with staggered offsets and decompose
+each score with the twin that has run for $20$--$29$ steps, so that less than
+$13\%$ of any unmirrored noise remains. Synchronising more often lets old noise
+leak into the even part, which then contains part of the noise-reward
+correlation (in our first implementation the two parts were spuriously aligned,
+cosine $+0.5$). With the staggered twins the two parts are nearly orthogonal, and in
+the update of the original rule the noise part is $3.6$ times larger than the drift
+(Appendix~\ref{app:gridtoy-decomp}). The twins are a measurement device only:
+behaviour and TD errors come from the real network.
+
+\subsection{TD(\texorpdfstring{$\lambda$}{lambda}) for the two terms}
+\label{app:decomp-lambda}
+For the gradient term, Eq.~\eqref{eq:app-forward} is generalised advantage
+estimation~\citep{schulman2016gae} with the actor trace decaying by $\lambda$
+alone, i.e.\ $\lambda=\gamma\lambda_{\mathrm{GAE}}$: with an accurate critic,
+$\mathbb{E}[\delta_{t+k}\mid s_{t+k}]=0$ for $k\ge1$, so $A^t$ is an unbiased
+advantage estimate for any $\lambda$, and $\lambda$ trades critic bias against
+return variance. $\lambda=\gamma$ gives the Monte-Carlo advantage $G_t-V_t$. Our
+default ($0.8$ against $\gamma=0.5$ per environment step) lies beyond the
+Monte-Carlo limit; it remains unbiased with an accurate critic but adds variance
+and, with an imperfect one, a penalty $-(\lambda-\gamma)\sum_{m\ge1}\lambda^{m-1}V_{t+m}$
+on future value estimates.
+
+For the drift, the same argument shows that the trace is redundant in
+expectation: $P^t$ depends only on the past, so with an accurate critic
+$\mathbb{E}[A^tP^t]=\mathbb{E}[\delta_tP^t]$. During learning the critic is not
+accurate, and the trace then integrates its systematic errors. In exploratory runs
+of the toy task (Appendix~\ref{app:gridtoy-exploratory}), giving the drift its own
+trace with decay $\lambda_P$ was consistent with both points: with $\lambda_P=0$ the
+rule learned, but more slowly early in training than with $\lambda_P=\lambda$ or a
+longer trace, and the difference shrank as the critic improved. For the drift, $\lambda$ is
+therefore a timescale over which recent outcome trends weight the plasticity,
+not a credit-assignment parameter. A further limitation applies to both terms:
+the critic reads the perturbed network, so the baseline $V_t$ inside $A^t$ depends
+on the noise it is meant to be independent of; for $\lambda=\gamma$ the gradient
+term contains $-e\,D V_t$, a pressure towards lower value estimates wherever the
+eligibility is high. We have not measured its size.
+
+\subsection{Threshold adaptation}
+\label{app:decomp-adapt}
+For ALIF neurons the presynaptic factor
+$\pi=\bar z-\beta\epsilon$ becomes negative when adaptation dominates, which
+flips the sign of both terms for that synapse. In an exploratory measurement in the toy task this happens for
+$20\%$ of the active synapse-steps ($24\%$ of input synapses), but these carry
+only $1.1\%$ of the drift and $0.6\%$ of the noise part, because $\pi$ is small
+when it is negative. At higher firing rates adaptation builds up further, and a
+non-negative weighting of the gradient term (e.g.\ $\psi\bar z$) would avoid the
+flip.
+
+\section{A Network-Level Toy Task}
+\label{app:gridtoy}
+
+Single-neuron analyses (Appendix~\ref{app:trace}) cannot show how the
+perturbation update interacts with learned readouts, recurrence and a critic. We
+therefore built a small Snake-like task that keeps the properties of the
+experiments that matter for the rule, small enough to run many variants on a CPU.
+
+\subsection{Setup}
+\label{app:gridtoy-setup}
+The agent moves on a $5\times5$ board (four actions, softmax policy), food gives
+$+1$ and leaving the board gives $-1$ and a respawn; it sees an egocentric
+$5\times5$ view with a food and a wall channel ($50$ Poisson inputs, rate $0.5$
+per step when active). The network follows the Snake architecture at a smaller
+scale: a recurrent ALIF core of $36$ excitatory and $16$ inhibitory neurons, a
+policy and a value field of $16$ neurons each, and linear leaky-integrator
+readouts; every projection has a toroidal Gaussian fan-in of $12$
+($\sigma=0.2$), and weights are initialised as in Appendix~\ref{app:arch}, mean
+$\pm0.1/\sqrt{12}$ (inhibitory $\times3$) and standard deviation
+$0.05/\sqrt{12}$, with the Dale sign imposed only at initialisation. Neuron
+parameters, the noise ($\sigma=e^{-5}$), the regularisers and AdaBelief
+($\beta_1=0.99$, $\beta_2=0.99999$, learning rate $10^{-4}$) are those of the
+experiments; an action is taken every $K=10$ steps with $\gamma=0.5^{1/K}$ and
+$\lambda=0.8^{1/K}$. Readouts always learn with their exact TD($\lambda$)
+updates. All variants of a comparison run in the same process (five seeds,
+$20$k environment steps), and we report the reward per environment step (a random
+policy scores $\approx-0.13$). The same rule varies by up to
+$\approx0.03$ between runs, so we compare only within a run.
+
+\paragraph{Why random features fail.}
+As in Snake, the initial weights are tiny relative to the threshold, so at the
+start the field neurons are silent and a learned readout has nothing to read. A
+reservoir (hidden weights fixed, readouts learning) stays at chance with silent
+fields ($-0.126\pm0.005$, Table~\ref{tab:toy-decomp}), reproducing the Snake result that
+the readouts alone cannot learn the task.
+
+\subsection{Decomposition along learning}
+\label{app:gridtoy-decomp}
+Table~\ref{tab:toy-decomp} trains the hidden layer with each part of the score
+separately, using the twins of Appendix~\ref{app:decomp-twin}, in one run with all
+variants and five seeds (\texttt{exp2\_decomposition.py}). The drift alone learns as
+well as the original rule, whose noise part therefore contributes nothing net. The
+noise part alone learns little with either sign. Adding the correctly signed noise
+part to the drift improves on the drift alone, and the local proposed rule is best
+and the most consistent across seeds. Along the training of the proposed rule, the
+noise part of its update is anti-aligned with the noise part of the original
+score's update (cosine $-0.58$, magnitude ratio $0.80$), i.e.\ it has the REINFORCE
+sign, while its drift part is only loosely aligned with the original drift (cosine
+$+0.26$), because $\bar\psi$ retains some recent noise. In the original update, the
+noise part is $3.6$ times larger than the drift.
+
+\begin{table}[h]
+\centering\small
+\caption{Training the hidden layer with each part of the score (one run; reward
+per environment step after $20$k steps, mean $\pm$ s.d.\ over five seeds; a random
+policy scores $\approx-0.13$).}
+\label{tab:toy-decomp}
+\begin{tabular}{lcc}
+\toprule
+Hidden layer learns from & sign of the noise part & reward rate\\
+\midrule
+proposed rule, gate $\psi-2\bar\psi$ & REINFORCE & $-0.020\pm0.006$\\
+drift + noise part, $P-Q$ (twins) & REINFORCE & $-0.031\pm0.028$\\
+original rule, gate $\psi$ ($P+Q$) & code & $-0.043\pm0.021$\\
+drift $P$ only (twins) & -- & $-0.045\pm0.020$\\
+noise part $Q$ only (twins) & REINFORCE & $-0.078\pm0.030$\\
+noise part $Q$ only (twins) & code & $-0.089\pm0.034$\\
+reservoir (hidden weights fixed) & -- & $-0.126\pm0.005$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Exploratory analyses}
+\label{app:gridtoy-exploratory}
+During the exploratory phase we ran further checks in variants of this task with
+scripts that are not part of the analysis package. We summarise their qualitative
+outcomes, which motivated design choices but are not used as evidence; the
+corresponding claims in the main text rest on the experiments of
+Section~\ref{sec:results}.
+\begin{itemize}
+\item \emph{Estimates of the noise-free gate.} Running averages of $\psi$ worked and
+were insensitive to their decay between $0.99$ and $0.999$ (a decay of $0.9$ let
+recent noise into the average and learned more slowly). The gate at the noise-free
+membrane $\psi(V-\eta_j)$, with $\eta_j=\sum_i\xi_{ji}$ the noise the neuron has
+received, failed, because a noise-triggered spike leaves it with a reset the
+noise-free neuron would not have had. A regression-corrected gate,
+$\psi-\hat b(\eta_j-\bar\eta_j)$ with $\hat b$ the online regression slope of $\psi$ on
+$\eta_j$, learned most consistently, but it needs the per-neuron noise sum, which the
+implementation does not provide.
+\item \emph{Gate width.} A gate narrower than the default (half-width $0.2$ instead
+of $v_{\mathrm{th}}$) concentrated the drift at threshold, raised the activity and
+slowed learning; wider gates performed like the default.
+\item \emph{Ablations of the proposed rule.} Keeping only the drift ($g=\psi-\bar\psi$)
+raised the activity and became unstable; keeping only the perturbation gradient
+($g=-\bar\psi$) learned slowly; independent per-synapse noise, which weakens the
+drift, learned less well; at three times the noise the original rule and the drift
+alone failed with runaway activity while the proposed rule did not; replacing the
+TD error of the hidden update by a constant of either sign or by a TD error with
+random sign removed learning, whereas a TD error drawn from a recent random step,
+which keeps its slow trends, did not.
+\item \emph{Credit trace of the drift.} Giving the drift a trace of its own showed
+that, with $\lambda_P=0$, the rule still learns but more slowly early in training
+(Appendix~\ref{app:decomp-lambda}).
+\end{itemize}
+
+\section{Hebbian Structure of the Drift}
+\label{app:hebb}
+
+\paragraph{The objective of the drift.}
+With Eqs.~\eqref{eq:app-forward} and~\eqref{eq:app-P-approx}, the drift term of
+the update is
+$\bar c\sum_tA^t\,\partial e^t/\partial W=\bar c\,\partial_W\sum_t
+\mathrm{sg}(A^t)\,e^t$, where $\mathrm{sg}$ marks the outcome as a fixed
+modulator (the derivative through it is the gradient term). Since the optimiser
+descends, the drift minimises
+\begin{equation}
+L_H(W)=\sum_t A^t\,e^t ,
+\label{eq:app-LH}
+\end{equation}
+the eligibility weighted by how much better than expected the outcome turned
+out. With an accurate critic $A$ has zero mean, so $L_H$ is a covariance: the
+drift moves eligibility, i.e.\ the sensitivity and plasticity of a synapse's
+neuron, away from moments followed by positive surprises and towards moments
+followed by negative ones. It allocates plasticity rather than optimising reward;
+the gradient term optimises reward within that allocation.
+
+\paragraph{Factorisation.}
+Because the noise is shared per postsynaptic neuron,
+Eq.~\eqref{eq:app-stein} suggests $P_{ji}\approx h_j\,u_{ji}$ with $u_{ji}$ a
+presynaptic trace and $h_j$ set by the postsynaptic neuron. We tested this on
+$3000$ steps sampled late in the training of a network with the proposed rule
+(twin-estimated $P$ of the score with gate $\psi$, $2251$ synapses). With a free
+postsynaptic factor per neuron and step, the factorisation captures $95\%$ of the
+time-accumulated drift (cosine $0.953$; $62\%$ of single steps, which are dominated
+by their own noise). Table~\ref{tab:hebb} shows the postsynaptic factor
+by state: positive while the neuron is depolarised below threshold, negative at
+the spike and during reset and refractoriness. A nine-entry table of this factor
+times a presynaptic trace reproduces the accumulated drift (cosine $0.84$; $0.79$
+when the table is fitted on one half of the data and tested on the other),
+whereas the presynaptic trace alone ($0.54$), e-prop's eligibility ($0.42$) and a
+spike-based Hebbian product, postsynaptic spike times presynaptic trace
+($-0.01$), do not.
+
+\begin{table}[h]
+\centering\small
+\caption{Postsynaptic factor $h$ of the drift by postsynaptic state, weighted by
+presynaptic activity.}
+\label{tab:hebb}
+\begin{tabular}{lcc}
+\toprule
+Postsynaptic state & share of drift & $h$\\
+\midrule
+spiking now & $0.08$ & $-0.09$\\
+1 / 2 / 3 steps after a spike & $0.08$ / $0.08$ / $0.04$ & $-0.19$ / $-0.04$ / $+0.07$\\
+$V-A<-1.2$ & $0.11$ & $+0.00$\\
+$-1.2\le V-A<-0.6$ & $0.25$ & $+0.06$\\
+$-0.6\le V-A<-0.3$ & $0.19$ & $+0.23$\\
+$-0.3\le V-A<0$ & $0.16$ & $+0.09$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Relation to voltage-based plasticity.}
+Since the optimiser descends, the weight change of the drift is
+$\Delta W\propto-\delta\,h\,u$. When $\delta>0$, presynaptic activity during
+subthreshold depolarisation depresses and activity around a postsynaptic spike
+potentiates, the sign pattern of the voltage-based rule of
+\citet{Clopath2010Voltage}, here gated by the TD error and reversed when
+$\delta<0$. The resemblance is one of structure, not of behaviour. In exploratory
+runs (Appendix~\ref{app:gridtoy-exploratory}), the Clopath rule mapped to our neurons
+silenced the network when used unsupervised and saturated it when modulated by the
+TD error, and a noise-free rule built from the average postsynaptic factor of
+Table~\ref{tab:hebb} also drove the activity up. The drift limits itself because it
+is carried by the gate: when a neuron is silent or mostly refractory, $\psi$ is closed
+and the drift vanishes, and it uses moment-to-moment information that an average
+postsynaptic curve does not keep.
+
+\section{The Empirically Found Rule}
+\label{app:original}
+
+The rule we first used, and with which the results of
+Appendix~\ref{app:original-results}\todo{move the original Snake and Pac-Man
+results here once the new-rule runs replace them in the main text} were
+obtained, was found empirically: we explored variants of the update and kept
+the one that learned best. It uses the gate $g=\psi$ and the uncentred score, and
+the optimiser descends on $\sum_t\delta_t\,p^t$. By
+Eq.~\eqref{eq:app-product} this descends on both terms: the drift with the sign
+that makes it useful, and the gradient term against the return. It learned
+because the drift carries the learning (Table~\ref{tab:toy-decomp}): in the toy task,
+the drift alone learns as well as the full score, while the noise part contributes
+nothing net and learns little on its own. The decomposition also explains the
+behaviour of this rule in Snake. Reversing its sign fails, because the drift then
+pushes the gated weights down and the network falls silent. Centring the score
+on its running average removes only the slow part of the drift, which is mostly
+fast, so the centred score still learns with the original sign. Without the gate,
+$e=\bar z$ does not depend on the postsynaptic noise, so the decomposition
+predicts that the drift vanishes and only the wrongly signed gradient term
+remains, consistent with the failure of the rule without $\psi$. Table~\ref{tab:orig-snake} splits the original score into its running
+mean and the remainder on Snake.
+
+\begin{table}[h]
+\centering\small
+\caption{The original rule on Snake ($5\times5$, original architecture), with
+the score split into its running mean (decay $0.99$) and the remainder (reward
+rate per step over episodes $2000$--$2250$, three seeds). Readouts learn in all
+rows except the last.}
+\label{tab:orig-snake}
+\begin{tabular}{lc}
+\toprule
+Hidden input & reward rate\\
+\midrule
+full score & $+0.090\pm0.056$\\
+score minus its running mean & $+0.122\pm0.002$\\
+running mean of the score only & $+0.065\pm0.038$\\
+full score, readouts frozen & $\approx-0.18$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Original results}
+\label{app:original-results}
+\todo{Move here: the original-rule Snake comparison (variants, value precision,
+snapshots) and the Pac-Man results, with a note that they use the rule of this
+appendix.}
+
+
+\section{Additional Results: Objective Horizon and Symmetric Feedback}
+\label{app:extra-results}
+\pending{: the e-prop results in this appendix predate the implementation of the
+reward-based learning signal described in Appendix~\ref{app:impl} and will be rerun.}
+
+\subsection{The Objective Horizon is Set by \texorpdfstring{$\gamma$}{gamma}, not \texorpdfstring{$\lambda$}{lambda}}
+\label{sec:results-ceiling}
+
+On Snake $5\times5$, the PPO reference makes the two performance metrics
+concrete. With a long horizon ($\gamma=0.99$) the episodic and continuing
+objectives diverge sharply (episode reward $\approx 22$ vs.\ reward rate
+$\approx 0.24$, each poor on the other's metric), confirming that reward rate
+and episodic return are genuinely different targets. At the short horizon the
+spiking rules require ($\gamma=0.5$), both objectives collapse onto the same
+compromise (episode reward $\approx 13$, reward rate $\approx 0.2$;
+Fig.~\ref{fig:ppo}), because the
+$\approx$2-step value horizon cannot represent either extreme. Crucially, the
+continuing PPO run lands essentially where symmetric e-prop
+does\pending{: symmetric e-prop number pre-rerun; PPO itself unaffected}: a
+strong gradient optimiser given the identical short-horizon objective reaches
+the same operating point as the local spiking rule. The spiking results are
+therefore limited by the objective horizon, not by their credit-assignment
+machinery, and decoupling $\lambda$ (Section~\ref{sec:tdlambda}) can extend the
+effective policy horizon only where the critic cannot already predict the
+relevant rewards.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{images/PPOComparison.png}
+\caption{PPO on Snake $5\times5$ under the episodic (terminal mask on) and
+continuing (terminal mask off) objectives, both at the decoupled setting
+$\gamma=0.5$, $\lambda=0.8$ used by the spiking rules. \emph{Left:} episode
+reward; \emph{right:} reward rate. At this short value horizon the two
+objectives nearly coincide on both metrics, and the continuing run lands where
+symmetric e-prop does. (At $\gamma=0.99$, not shown, the two objectives instead
+diverge to $\approx 22$ vs.\ $\approx 0.24$ on their respective metrics.)}
+\label{fig:ppo}
+\end{figure}
+
+\subsection{Symmetric E-prop Excels but Fails as the Causal Path Grows}
+\label{sec:results-symmetric}
+
+Symmetric e-prop is the single strongest configuration on Snake, reaching the
+highest reward and reward rate with the healthiest voltage and frequency
+statistics (Fig.~\ref{fig:symmetric}). But introducing the per-head field layers collapses it to near-zero
+reward: because its feedback weights are tied to the forward readout, neurons
+that are no longer directly connected to a head receive \emph{no} feedback once
+the causal path length exceeds one. Qualitatively, both the value trace and the
+policy lose all structure. This is not a gradual degradation but an outright
+failure mode, and it is precisely what motivates the two escape routes we
+study: decoupling feedback from the forward weights (adaptive e-prop) and
+removing structured feedback altogether (\method{}).\pending{}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{images/notitle/SnakeSymmetric.png}
+\caption{Symmetric e-prop on Snake $5\times5$, with and without the per-head
+field layers (one run each). Six metrics over 10k episodes: episode reward,
+reward rate, mean absolute TD error, voltage, voltage-regularisation loss, and
+firing frequency. The plain variant attains the highest reward with the most
+favourable dynamics; adding the field layers lengthens the causal path and
+drives reward to near zero, because symmetric feedback is tied to the output
+weights.
+\pending{: to be regenerated.}}
+\label{fig:symmetric}
+\end{figure}
+
+\subsection{\texorpdfstring{$\lambda$}{lambda}-Robustness Reverses Across Tasks}
+\label{sec:results-lambda}
+
+Several figures in this appendix include the \variant{combined} rule, which
+sums the \variant{weight dist} update and the adaptive e-prop update for the
+hidden weights. In practice it behaves much like \variant{weight dist}. A
+plausible reason is an imbalance in the current setup rather than an
+incompatibility between the two rules: the perturbation update receives a
+dense TD signal at every timestep, whereas the policy part of adaptive
+e-prop's learning signal only arrives at the action-sampling steps, every $K$
+integration steps, so the sum is dominated by the dense term. Adding the
+perturbation update from the start may also prevent the forward weights from
+aligning with adaptive e-prop's feedback weights. A fair test of whether the
+two families can work together would first let adaptive e-prop align its
+feedback, then introduce the perturbation update, ideally with a
+continuously-defined action head that removes the imbalance; we leave this to
+future work.\pending{}
+
+Neither rule is uniformly more robust to $\lambda$. On Snake, adaptive e-prop
+tolerates almost the full range, failing only at $\lambda=0.99$, while the
+perturbation-based variant shows a narrower, less monotonic band
+(Fig.~\ref{fig:lambda-snake}). On Pac-Man the
+ordering \emph{reverses}: the perturbation-based variant learns promptly across
+$\lambda\in\{0.4,0.5,0.6\}$ while adaptive e-prop shows an inconsistent, often
+delayed onset (Fig.~\ref{fig:lambda-pacman}). This reversal is itself informative: robustness to the
+credit-assignment horizon is not an intrinsic property of either algorithm but
+depends on the task. \Method{} also exhibits (at least) \emph{two}
+distinct large-$\lambda$ failure modes (runaway high-frequency firing and,
+separately, drift toward silence), so its robustness should not be
+overstated.\pending{}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{images/notitle/SnakeLambdaComparison.png}
+\caption{$\lambda$ sweep on Snake $5\times5$ (10k episodes) for adaptive e-prop
+(red) and \variant{combined} (purple); lighter/thinner lines are smaller $\lambda$.
+Adaptive e-prop is robust across the range, failing only at $\lambda=0.99$; the
+perturbation-based variant is less uniform.
+\pending{: to be regenerated.}}
+\label{fig:lambda-snake}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{images/notitle/PacManComparisonLambdaGroups.png}
+\caption{$\lambda$ sweep on the Pac-Man randomised-layouts problem for adaptive
+e-prop (red) and \variant{weight dist prop} (blue). The ordering reverses relative
+to Snake: the perturbation-based variant learns promptly across a wide $\lambda$ range
+while adaptive e-prop shows an inconsistent, often delayed onset. Large
+$\lambda$ destabilises the perturbation-based rule in two distinct directions
+(runaway firing vs.\ silence).
+\pending{: to be regenerated.}}
+\label{fig:lambda-pacman}
+\end{figure}
+
+\subsection{Pac-Man: Standard Neuron Model}
+\label{sec:results-pacman-unmodified}
+
+On the Pac-Man randomised-layouts problem~\citep{denero2010pacman} (five
+seeds), perturbation-based variants reach higher episode rewards than adaptive
+e-prop, converging to comparable reward rates, with more stable TD error,
+voltage, and frequency (Fig.~\ref{fig:pacman-old}).\pending{}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{images/notitle/PacManComparison.png}
+\caption{\Method{} variants vs.\ adaptive e-prop on Pac-Man
+randomised layouts (five seeds, shaded s.d.). Perturbation-based variants reach higher
+episode reward at comparable reward rate, with more stable TD error, voltage,
+and frequency; \variant{combined} again tracks the perturbation-based family.
+\pending{: to be regenerated.}}
+\label{fig:pacman-old}
+\end{figure}
+
+\subsection{Pac-Man: No Integration During the Refractory Period}
+\label{sec:results-pacman-nidrp}
+
+Under a neuron model that does not integrate inputs during the refractory
+period, which violates an assumption of e-prop's analytical eligibility
+derivation, adaptive e-prop barely learns and its dynamics diverge in every
+configuration we tried (see the caveat on failures in Section~\ref{sec:results}),
+while the
+perturbation-based variants, whose credit assignment rests on perturbation
+correlations rather than on that derivation, learn with well-regulated spiking
+(Fig.~\ref{fig:pacman-nidrp}). These runs predate the protocol of the main
+text and are reported as a relational observation only.\pending{}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{images/notitle/pacman_non_integrating.png}
+\caption{Pac-Man on randomised layouts under the
+no-integration-during-refractory-period neuron model, \variant{weight dist}
+vs.\ adaptive e-prop (five runs, 10k episodes, mean $\pm$ spread). Adaptive
+e-prop does not learn (reward rate $\approx -0.15$, as at the start) and its
+voltage loss and mean voltage climb to $\approx 10$; \variant{weight dist}
+reaches a reward rate of $\approx 0.05$ with a flat voltage loss
+($\approx 0.9$). These runs used an earlier experimental protocol
+\pending{: state what differs, e.g.\ update schedule, optimiser, L2 Init}.}
+\label{fig:pacman-nidrp}
+\end{figure}
+
+\subsection{Structured Routing of the Perturbation Signal}
+\label{app:routing}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{images/distributed_eprop_diagram.pdf}
+\caption{Local gradient flow in \method{}. Neuron $j$ holds a
+stochastic membrane $v^t_j\sim\mathcal{N}(\mu^t_j,\sigma^t_j)$; its perturbation
+trace $\xi^t_j=\alpha\xi^{t-1}_j+\varepsilon^t_j$ accumulates exploration along
+each incoming synapse. Spikes propagate forward; a single global TD error
+$\delta_t$ is broadcast from the critic. In routed variants the local signal is
+sent back through the recurrent weights themselves.}
+\label{fig:schematic}
+\end{figure}
+
+Section~\ref{sec:distributed} notes that each neuron's local policy-gradient
+estimator, $g^t_j=(1-\alpha^2)\xi^t_j\psi^t_j/\sigma_j^2$, can be propagated
+through the recurrent weights themselves, $L^t_j=\sum_k W_{kj}\,g^t_k$,
+reusing symmetric-e-prop machinery with the recurrent connectivity. We tried
+two ways of folding this routed signal into the hidden-weight update. The
+first adds it to the local term as a separate contribution,
+\begin{equation}
+p^{\,t}_{ji} = \lambda\, p^{\,t-1}_{ji} + e^t_{ji}\left(g^t_j + L^t_j\right),
+\qquad \Delta W_{ji} = -\eta\sum_t \delta_t\, p^{\,t}_{ji},
+\label{eq:routed-update}
+\end{equation}
+which sits between the broadcast-only rule of
+Eq.~\eqref{eq:distributed-update} ($L^t_j=0$) and a fully routed rule. The
+second multiplies the local term by $(1+L^t_j)$: $e^t_{ji}\,g^t_j(1+L^t_j)$
+expands to $e^t_{ji}\,g^t_j + e^t_{ji}\,g^t_j\,L^t_j$, so the $1$ recovers
+Eq.~\eqref{eq:distributed-update} unchanged and the routed signal adds a
+multiplicative interaction term on top of it, on the reasoning that a
+neuron's own perturbation should count for more when the recurrent network
+also implicates it. Neither addition
+improved on the broadcast-only rule in our experiments
+(Section~\ref{sec:results}), and the multiplicative term made the rule
+harder to reason about without a compensating benefit, so we do not use
+either in the main text.\pending{: ablation figures for both routed variants
+to be added.}
+
+\section{Hyperparameters}
+\label{app:hyper}
+Table~\ref{tab:hyper} lists the settings shared by every experiment and
+Table~\ref{tab:hyper-task} those that vary by task or rule. Discount and trace
+decays are given per environment step; per-timestep values follow by raising to
+the $1/K$ power.
+\todo{Fill the red cells in Table~\ref{tab:hyper-task} from the final run
+configs (ideally generated by a script from the config files). Check the
+per-task $\lambda$ against Section~\ref{sec:tdlambda}, which currently says
+$\lambda=0.8$ throughout. Move any row that turns out identical across tasks to
+Table~\ref{tab:hyper}.}
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Group} & \textbf{Symbol / name} & \textbf{Value} \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Neuron (ALIF, all hidden populations)}} \\
+& threshold $v_{\mathrm{th}}$ & $0.61$ \\
+& membrane $\tau_{\mathrm{mem}}$ & $10$\,ms \\
+& refractory $\tau_{\mathrm{refrac}}$ & $3$\,ms \\
+& adaptation $\tau_{\mathrm{adapt}}$ & $300$\,ms \\
+& adaptation strength $\beta$ & $0.0174$ \\
+& surrogate sharpness $\gamma_{\mathrm{pd}}$ & $0.3$ \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Architecture}} \\
+& hidden E & $20\times20\times3$ ($1200$) \\
+& hidden I / field & $15\times15\times3$ ($675$) \\
+& value head & $1$ \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Connectivity}} \\
+& profile & toroidal Gaussian \\
+& $\sigma_{\mathrm{in}}$ / $\sigma_{\mathrm{h}}$ & $0.1$ / $0.05$ \\
+& requested fan-in $K$ (weight scale) & $300$ \\
+& realised fan-in, input / E / I & $\approx148$ / $67$ / $45$ \\
+& weight mean, E / I & $0.1/\sqrt{K}$ / $-0.3/\sqrt{K}$ \\
+& weight s.d. & $0.05/\sqrt{K}$ \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Learning}} \\
+& optimiser (perturbation-based) & AdaBelief ($\beta_1=0.99$, $\beta_2=0.99999$) \\
+& optimiser (adaptive, symmetric) & Adam ($\beta_1=0.9$, $\beta_2=0.999$) \\
+& batch size / update schedule & $1$ / every simulation timestep \\
+& action window $K$ & $30$ steps \\
+& discount $\gamma$ (per env.\ step) & $0.5$ \\
+& firing-rate reg.\ $c_{\mathrm{reg}}$ & $10^{-4}$ \\
+& target rate $F^{*}$ & $10$\,Hz \\
+& target rate $F^{*}$ (baseline) & $120$\,Hz \\
+& L2 Init strength $c_{\mathrm{init}}$ & $10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\caption{Hyperparameters shared by every experiment.
+\pending{: appendix results (Appendix~\ref{app:extra-results}) were produced
+with plain Adam and without L2 Init.}}
+\label{tab:hyper}
+\end{table}
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Group} & \textbf{Symbol / name} & \textbf{Snake} & \textbf{Pac-Man} & \textbf{Tic-Tac-Toe} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Task and architecture}} \\
+& policy head (actions) & $4$ & \tbd & \tbd \\
+& input grid & \tbd & \tbd & \tbd \\
+& field layers & yes & \tbd & \tbd \\
+& training length & 20k episodes & \tbd & \tbd \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Learning}} \\
+& trace decay $\lambda$ (per env.\ step) & $0.8$ & \tbd & \tbd \\
+& reward-trace decay rate (perturbation-based / adaptive) & \tbd & $0.1$ / $0.01$ & \tbd \\
+& learning rate $\eta$ (perturbation-based) & \tbd & \tbd & \tbd \\
+& learning rate $\eta$ (adaptive) & \tbd & \tbd & \tbd \\
+& critic learning rate $\eta_V$ & \tbd & \tbd & \tbd \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Perturbation noise}} \\
+& $\log\sigma_j$ (neuron variant) & $-4.61$ & \tbd & \tbd \\
+& $\log\sigma_{ji}$ (weight variants) & $-5$ & \tbd & \tbd \\
+\bottomrule
+\end{tabular}
+\caption{Hyperparameters that vary by task or rule. \textcolor{red}{\textbf{?}}
+marks values still to be filled in.}
+\label{tab:hyper-task}
+\end{table}
+
+
+\end{document}

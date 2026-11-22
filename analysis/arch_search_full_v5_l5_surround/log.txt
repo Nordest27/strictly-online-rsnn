@@ -1,0 +1,76 @@
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0000/c0000InferenceCompiler_CODE'
+[16:40:46] c0000 score -0.047 (91 s) | best c0000 -0.047 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0001/c0001InferenceCompiler_CODE'
+[16:42:15] c0001 score -0.191 (87 s) | best c0000 -0.047 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0002/c0002InferenceCompiler_CODE'
+[16:43:45] c0002 score -0.013 (89 s) | best c0002 -0.013 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0003/c0003InferenceCompiler_CODE'
+[16:45:49] c0003 score -0.657 (123 s) | best c0002 -0.013 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0004/c0004InferenceCompiler_CODE'
+[16:48:11] c0004 score -0.770 (141 s) | best c0002 -0.013 | 5 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0005/c0005InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0005/c0005InferenceCompiler_CODE'
+[16:50:15] c0005 score 0.193 (123 s) | best c0005 0.193 | 6 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0006/c0006InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0006/c0006InferenceCompiler_CODE'
+[16:52:22] c0006 score -0.559 (126 s) | best c0005 0.193 | 7 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0007/c0007InferenceCompiler_CODE'
+make: Warning: File 'Makefile' has modification time 0.022 s in the future
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0007/c0007InferenceCompiler_CODE'
+[16:54:39] c0007 score 0.414 (136 s) | best c0007 0.414 | 8 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0008/c0008InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0008/c0008InferenceCompiler_CODE'
+[16:56:36] c0008 score -0.092 (115 s) | best c0007 0.414 | 9 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0009/c0009InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0009/c0009InferenceCompiler_CODE'
+[16:59:02] c0009 score -0.409 (144 s) | best c0007 0.414 | 10 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0010/c0010InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0010/c0010InferenceCompiler_CODE'
+[17:00:59] c0010 score -0.159 (115 s) | best c0007 0.414 | 11 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0011/c0011InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0011/c0011InferenceCompiler_CODE'
+[17:03:27] c0011 score -0.192 (147 s) | best c0007 0.414 | 12 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0012/c0012InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0012/c0012InferenceCompiler_CODE'
+[17:05:39] c0012 score -0.748 (130 s) | best c0007 0.414 | 13 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0013/c0013InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0013/c0013InferenceCompiler_CODE'
+[17:07:32] c0013 score -0.072 (112 s) | best c0007 0.414 | 14 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0014/c0014InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0014/c0014InferenceCompiler_CODE'
+[17:09:58] c0014 score -0.892 (144 s) | best c0007 0.414 | 15 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0015/c0015InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0015/c0015InferenceCompiler_CODE'
+[17:12:24] c0015 score -0.101 (145 s) | best c0007 0.414 | 16 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0016/c0016InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0016/c0016InferenceCompiler_CODE'
+[17:14:45] c0016 score -0.727 (139 s) | best c0007 0.414 | 17 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0017/c0017InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0017/c0017InferenceCompiler_CODE'
+[17:17:37] c0017 score -0.844 (170 s) | best c0007 0.414 | 18 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0018/c0018InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0018/c0018InferenceCompiler_CODE'
+[17:19:19] c0018 score -0.150 (102 s) | best c0007 0.414 | 19 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0019/c0019InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0019/c0019InferenceCompiler_CODE'
+[17:21:42] c0019 score -0.780 (142 s) | best c0007 0.414 | 20 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0020/c0020InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0020/c0020InferenceCompiler_CODE'
+[17:23:51] c0020 score -0.004 (127 s) | best c0007 0.414 | 21 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0021/c0021InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0021/c0021InferenceCompiler_CODE'
+[17:26:04] c0021 score -0.030 (131 s) | best c0007 0.414 | 22 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0022/c0022InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0022/c0022InferenceCompiler_CODE'
+[17:28:45] c0022 score -0.071 (160 s) | best c0007 0.414 | 23 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0023/c0023InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0023/c0023InferenceCompiler_CODE'
+[17:31:08] c0023 score -0.503 (141 s) | best c0007 0.414 | 24 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0024/c0024InferenceCompiler_CODE'
+make: Warning: File 'Makefile' has modification time 0.042 s in the future
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_v5_l5_surround/work/c0024/c0024InferenceCompiler_CODE'

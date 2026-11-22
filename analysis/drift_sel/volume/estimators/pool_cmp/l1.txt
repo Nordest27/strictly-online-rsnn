@@ -1,0 +1,2 @@
+pool_rand_s0 {"late_gap": 0.2935835386891808, "early_gap": 0.21777410677264047, "field_dead": 0.04167, "e_hz": 46.56, "decisions": 12978, "fitness": 0.31065325464745097}
+pool_cont_s0 {"late_gap": 0.014846686600588521, "early_gap": 0.055689192055671355, "field_dead": 0.1042, "e_hz": 47.35, "decisions": 13021, "fitness": -0.03725331339941148}

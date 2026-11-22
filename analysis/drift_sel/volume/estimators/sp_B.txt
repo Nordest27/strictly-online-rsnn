@@ -1,0 +1,3 @@
+own             reward/250: 0.29 0.36 0.38 0.39 0.40 0.42 0.42 0.43 0.43 0.44 0.42 0.44   Hz H 38 motor 14  | neighbour pref cos +0.17 vs far -0.03
+pool_space      reward/250: 0.30 0.37 0.39 0.41 0.41 0.43 0.43 0.43 0.44 0.45 0.43 0.44   Hz H 42 motor 15  | neighbour pref cos +0.40 vs far -0.09
+route_link+own  reward/250: 0.30 0.37 0.40 0.43 0.42 0.45 0.45 0.45 0.46 0.48 0.47 0.49   Hz H 42 motor 17  link corr with W_hm +0.95  | neighbour pref cos +0.14 vs far -0.03

@@ -1,0 +1,4 @@
+rule_sur_motor_s01_s0 done
+eprop_ctd_s01_drive_s0 done
+eprop_ctd_s01_drive_s0: episodes 1963  score first/last quarter +2.543 / +2.829  toward target first/last 0.28 / 0.31  moves with motor spikes first/last 0.55 / 0.80
+rule_sur_motor_s01_s0: episodes 1980  score first/last quarter +1.812 / +2.760  toward target first/last 0.27 / 0.29  moves with motor spikes first/last 0.50 / 0.44

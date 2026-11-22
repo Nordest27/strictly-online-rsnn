@@ -1,0 +1,2 @@
+frozen          reward/best per 2000: 0.46 0.47 0.49 0.50 0.51 0.53 0.54 0.54 0.55 0.56  | column index 0.29 (chance 0.17)  region partner same location nan  hidden Hz 25  link corr +0.99
+route_sym       reward/best per 2000: 0.46 0.49 0.53 0.57 0.59 0.62 0.64 0.66 0.68 0.68  | column index 0.31 (chance 0.17)  region partner same location nan  hidden Hz 79  link corr +1.00

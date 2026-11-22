@@ -1,0 +1,9 @@
+par3_reservoir_s0 done 15:05
+par3_eprop_s0 done 15:13
+par3_ours_s0 done 15:15
+pre3_eprop_s0 done 15:29
+pre3_ours_s0 done 15:38
+pre3_reservoir_s0 done 15:38
+pre3_eprop_s1 done 15:41
+pre3_ours_s1 done 15:44
+pre3_reservoir_s1 done 15:49

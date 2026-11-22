@@ -1,0 +1,1 @@
+reg_hard   reward/best per 2000: 0.47 0.48 0.50 0.51 0.52 0.53 0.54 0.56 0.57 0.58 0.58 0.59 0.60 0.60 0.60 0.60 0.61 0.61 0.62 0.63  | group mates same location 0.73  hidden Hz 119

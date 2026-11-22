@@ -1,0 +1,169 @@
+{
+ "ei_layers": 5,
+ "hid_e": 20,
+ "hid_i": 15,
+ "fan_in": 300,
+ "toroidal": "local",
+ "feedforward_targets": "both",
+ "local": {
+  "sigma_cells": 1.75,
+  "p_max": 1.0,
+  "input_sigma_cells": 1.813,
+  "inhibition_scale": 3.972,
+  "feedforward_inhibition": false,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.0
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.3,
+    "mean_scale": 0.6205776944756594,
+    "sd_scale": 0.12411553889513188
+   },
+   "shape": [
+    10,
+    10,
+    3
+   ],
+   "rule": {
+    "preset": "eprop",
+    "vreg_gradient": 0.1
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.45,
+     "centre_shift": 3,
+     "mean_scale": 0.8962792218320149,
+     "sd_scale": 0.0896279221832015
+    },
+    "e_shape": [
+     20,
+     20,
+     3
+    ],
+    "i_shape": [
+     15,
+     15,
+     3
+    ]
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.45,
+     "centre_shift": 3,
+     "mean_scale": 0.6946442290485155,
+     "sd_scale": 0.06946442290485155
+    },
+    "e_shape": [
+     20,
+     20,
+     4
+    ],
+    "i_shape": [
+     15,
+     15,
+     4
+    ]
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.6428571428571429,
+     "centre_shift": 3,
+     "mean_scale": 0.8631457274064128,
+     "sd_scale": 0.08631457274064128
+    },
+    "e_shape": [
+     20,
+     20,
+     6
+    ],
+    "i_shape": [
+     15,
+     15,
+     6
+    ]
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.63,
+     "centre_shift": 3,
+     "mean_scale": 0.8468311991016344,
+     "sd_scale": 0.08468311991016345
+    },
+    "e_shape": [
+     14,
+     14,
+     4
+    ],
+    "i_shape": [
+     10,
+     10,
+     4
+    ],
+    "rule": {
+     "preset": "eprop",
+     "eprop_value": 0.0,
+     "vreg_gradient": 0.1
+    }
+   },
+   {
+    "e_shape": [
+     10,
+     10,
+     3
+    ],
+    "i_shape": [
+     8,
+     8,
+     3
+    ],
+    "rule": {
+     "preset": "eprop",
+     "eprop_value": 0.0,
+     "vreg_gradient": 0.1
+    }
+   }
+  ],
+  "input": {
+   "mean_scale": 0.16789556605999592,
+   "sd_scale": 0.08394778302999796
+  }
+ },
+ "hidden_rule": {
+  "preset": "proposed",
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 1.0,
+   "vreg": 1.0,
+   "rate": 1.0,
+   "decorr": 1.0
+  }
+ },
+ "feedback_type": "adaptive",
+ "optimise_feedback": true,
+ "explicit_feedback": true,
+ "dale": {
+  "every_episodes": 1,
+  "local": true,
+  "connections": "inhibitory"
+ },
+ "lr": 5e-06,
+ "f_target": 10.0,
+ "backend": "single_threaded_cpu",
+ "seed": 0,
+ "max_timesteps": 20000.0,
+ "min_episodes": 0,
+ "csv_prefix": "smoke",
+ "trace_log": false,
+ "monitor": true,
+ "monitor_every": 300,
+ "probe": null,
+ "board_size": 5,
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.8,
+ "reward_decay_env": 0.1,
+ "reward_decay_normalise": true
+}

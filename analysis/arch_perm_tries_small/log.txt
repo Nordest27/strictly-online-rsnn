@@ -1,0 +1,24 @@
+seeding with 1 genomes from 
+make: Entering directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0000/c0000InferenceCompiler_CODE'
+[15:59:57] c0000 score 0.520 (24 s) | best c0000 0.520 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0001/c0001InferenceCompiler_CODE'
+[15:59:59] c0001 score 0.262 (2 s) | best c0000 0.520 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0002/c0002InferenceCompiler_CODE'
+[16:00:21] c0002 score -0.446 (22 s) | best c0000 0.520 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0003/c0003InferenceCompiler_CODE'
+[16:00:45] c0003 score 0.340 (23 s) | best c0000 0.520 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_perm_tries_small/work/c0004/c0004InferenceCompiler_CODE'
+[16:01:06] c0004 score 0.070 (21 s) | best c0000 0.520 | 5 done
+5 candidates; best 10:
+    idx  score    L1 field  weak   mem   mix  resp  pen  wire  kept per stage (L2.., fields)  genome
+      0  0.520  0.60  0.64  0.64  0.48  0.30  0.29  0.0  0.00  LR 0.00 | 0.91 0.86 0.79 0.65 0.64 tau_mem=10.00, tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00
+      3  0.340  0.57  0.29  0.29  0.38  0.50  0.19  0.0  0.00  LR 0.00 | 0.91 0.78 0.45 0.39 0.29 sigma_cells=2.67, p_max=0.37, input_sigma_cells=3.20, inhibition_scale=6.26, ff_sigma=0.32, field_sigma=1.13, field_shape=excitatory, target_hz=20.00, ff_inhibition=False, ff_targets=e, inh_sigma_ratio=0.70, tau_mem=74.78, tau_adapt=1536.01, beta=0.02
+      1  0.262  0.56  0.44  0.39  0.31  0.82  0.18  0.1  0.00  LR 0.00 | 0.90 0.67 0.58 0.39 0.44 sigma_cells=2.42, p_max=0.83, input_sigma_cells=1.79, inhibition_scale=3.55, ff_sigma=0.49, field_sigma=0.71, field_shape=excitatory, target_hz=20.00, ff_inhibition=True, ff_targets=both, inh_sigma_ratio=0.64, tau_mem=52.71, tau_adapt=2872.77, beta=0.02
+      4  0.070  0.43  0.33  0.33  0.23  0.32  0.20  0.2  0.00  LR 0.00 | 0.88 0.81 0.66 0.57 0.33 sigma_cells=1.17, p_max=0.66, input_sigma_cells=3.64, inhibition_scale=2.65, ff_sigma=0.31, field_sigma=1.34, field_shape=excitatory, target_hz=30.00, ff_inhibition=False, ff_targets=e, inh_sigma_ratio=0.59, tau_mem=16.54, tau_adapt=186.89, beta=0.06
+      2 -0.446  0.69  0.31  0.31  0.13  0.47  0.27  0.8  0.00  LR 0.00 | 0.72 0.85 0.65 0.65 0.31 sigma_cells=1.73, p_max=0.40, input_sigma_cells=1.15, inhibition_scale=2.44, ff_sigma=0.57, field_sigma=0.60, field_shape=inhibitory, target_hz=20.00, ff_inhibition=True, ff_targets=e, inh_sigma_ratio=1.58, tau_mem=25.11, tau_adapt=588.98, beta=0.01
+exported the best 3 as Snake configs (network keys only; add a hidden_rule) to /home/user/repos/personal/analysis/arch_perm_tries_small/best_configs

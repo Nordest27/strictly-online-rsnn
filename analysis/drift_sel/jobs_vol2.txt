@@ -1,0 +1,2 @@
+volume_train/vol8_noglob_s0
+volume_train/vol8_noglob_s1

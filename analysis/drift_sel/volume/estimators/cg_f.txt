@@ -1,0 +1,1 @@
+drift_cov_c reward/best per 2000: 0.46 0.47 0.47 0.47 0.47 0.47 0.47 0.47 0.47 0.47  | noise |corr| 0.213  top partner same location 0.35  hidden Hz 141

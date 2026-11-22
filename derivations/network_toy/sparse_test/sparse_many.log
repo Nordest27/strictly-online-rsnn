@@ -1,0 +1,2 @@
+[  2000 env steps,   275s] prop: -0.004±0.018 ( 27/ 15Hz)  reservoir: -0.005±0.017 ( 27/ 15Hz)  
+[  4000 env steps,   525s] prop: +0.012±0.016 ( 27/ 15Hz)  reservoir: +0.005±0.013 ( 27/ 15Hz)  

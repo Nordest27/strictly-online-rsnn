@@ -1,0 +1,8 @@
+herit/knA_s0
+herit/knB_s0
+herit/knA_s1
+herit/knB_s1
+snake_leg/dk_cov
+snake_leg/dk_rn
+snake_leg/k_cov
+snake_leg/k_rn

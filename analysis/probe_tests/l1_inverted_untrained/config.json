@@ -1,0 +1,74 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 0.836,
+  "p_max": 0.914,
+  "input_sigma_cells": 1.857,
+  "inhibition_scale": 7.963,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.673,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 1.08,
+    "mean_scale": 1.1906708634458347,
+    "sd_scale": 0.23813417268916695
+   },
+   "shape": 4,
+   "conn_i": {
+    "sigma_cells": 1.08,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "input": {
+   "mean_scale": 0.12821785992406629,
+   "sd_scale": 0.06410892996203314
+  },
+  "layers": [
+   {}
+  ]
+ },
+ "ei_layers": 1,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "monitor": true,
+ "monitor_every": 10000,
+ "probe": {
+  "moves": 2000,
+  "adapt": true
+ },
+ "backend": "single_threaded_cpu",
+ "hidden_rule": {
+  "preset": "reservoir"
+ },
+ "c_reg": 0.0001,
+ "seed": 0,
+ "max_timesteps": 70000.0,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "csv_prefix": "untrained_l1_inverted",
+ "_meta": {
+  "variant": "v4s_inverted_decorr",
+  "architecture_search": {
+   "folder": "arch_search_small_v4_l1",
+   "idx": 119,
+   "genome": {
+    "ff_inhibition": true,
+    "inh_sigma_ratio": 0.672778494260036,
+    "sigma_cells": 0.8364905212418094,
+    "p_max": 0.9143986712439002,
+    "input_sigma_cells": 1.8566854529249057,
+    "inhibition_scale": 7.963055655896014,
+    "field_sigma": 1.0796300409133106,
+    "field_shape": "inhibitory",
+    "target_hz": 30.0
+   }
+  }
+ }
+}

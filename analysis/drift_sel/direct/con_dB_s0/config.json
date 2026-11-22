@@ -1,0 +1,92 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 0.75,
+  "p_max": 0.791,
+  "input_sigma_cells": 1.857,
+  "inhibition_scale": 7.963,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.891,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": null,
+  "input": {
+   "mean_scale": 0.1933572513307549,
+   "sd_scale": 0.09667862566537745
+  },
+  "layers": [
+   {}
+  ]
+ },
+ "ei_layers": 1,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "monitor": true,
+ "monitor_every": 10000,
+ "backend": "single_threaded_cpu",
+ "hidden_rule": {
+  "preset": "proposed",
+  "gradient": 0.0,
+  "diagnose_parts": false,
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 1.0
+  },
+  "center_drift": true,
+  "homeostat": 0.0,
+  "drift": 0.0,
+  "hebb": 1.0,
+  "hebb_gate": "psi"
+ },
+ "c_reg": 0.0001,
+ "seed": 0,
+ "max_timesteps": 600000,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "csv_prefix": "con_dB_s0",
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.5,
+ "episodic_traces": true,
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 0,
+  "decoder": "lse",
+  "beta": 1.0
+ },
+ "selection": {
+  "n_candidates": 8,
+  "seed": 0,
+  "commit_types": [
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "skip_types": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "table_reward": 1.0
+ },
+ "move_log": {
+  "probe_every": 1000000000,
+  "probe_moves": 16
+ }
+}

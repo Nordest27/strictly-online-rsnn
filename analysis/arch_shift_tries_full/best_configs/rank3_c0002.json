@@ -1,0 +1,103 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.728,
+  "p_max": 0.403,
+  "input_sigma_cells": 1.147,
+  "inhibition_scale": 2.442,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.575
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.604,
+    "mean_scale": 0.5390840657911493,
+    "sd_scale": 0.10781681315822987
+   },
+   "shape": 15,
+   "conn_i": {
+    "sigma_cells": 0.604,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.8722871550903444,
+     "sd_scale": 0.08722871550903444
+    },
+    "to_next_i": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.5828265036405897,
+     "sd_scale": 0.058282650364058976
+    },
+    "to_next_i": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.5810473780330522,
+     "sd_scale": 0.05810473780330522
+    },
+    "to_next_i": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.5416958604087794,
+     "sd_scale": 0.05416958604087794
+    },
+    "to_next_i": {
+     "sigma_cells": 0.567,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ],
+  "input": {
+   "mean_scale": 0.18210915576912573,
+   "sd_scale": 0.09105457788456287
+  }
+ },
+ "feedforward_targets": "e",
+ "ei_layers": 5,
+ "_meta": {
+  "architecture_search": {
+   "idx": 2,
+   "score": -0.029512628694218827,
+   "genome": {
+    "sigma_cells": 1.7275969198772354,
+    "p_max": 0.4028729805134482,
+    "input_sigma_cells": 1.1467307500032244,
+    "inhibition_scale": 2.4424546017723507,
+    "ff_sigma": 0.567030915852525,
+    "field_sigma": 0.6041893227031553,
+    "field_shape": "inhibitory",
+    "target_hz": 20.0,
+    "ff_inhibition": true,
+    "ff_targets": "e",
+    "inh_sigma_ratio": 1.5751295352019061
+   }
+  }
+ }
+}

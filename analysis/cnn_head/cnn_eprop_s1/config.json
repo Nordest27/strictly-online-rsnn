@@ -1,0 +1,32 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "monitor": true,
+ "monitor_every": 20000,
+ "hidden_rule": {
+  "preset": "eprop"
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "seed": 1,
+ "max_timesteps": 2000000,
+ "min_episodes": 0,
+ "csv_prefix": "cnn_eprop_s1",
+ "repetition": 0,
+ "trace_log": false,
+ "episodic_traces": true,
+ "cnn_head": {
+  "lr": 0.0001,
+  "channels": [
+   16,
+   16
+  ],
+  "entropy": 0.01,
+  "seed": 1
+ }
+}

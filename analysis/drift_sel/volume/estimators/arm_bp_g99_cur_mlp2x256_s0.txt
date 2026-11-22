@@ -1,0 +1,293 @@
+steps    2048  episodes     1  score +1.754  reached 1.00  moves 217.0  sd [0.3   0.301]  level 0.00
+steps    4096  episodes     9  score +0.339  reached 0.12  moves 279.4  sd [0.3   0.302]  level 0.00
+steps    6144  episodes    18  score +0.559  reached 0.11  moves 278.6  sd [0.299 0.301]  level 0.00
+steps    8192  episodes    27  score +0.188  reached 0.22  moves 268.7  sd [0.299 0.301]  level 0.00
+steps   10240  episodes    34  score +0.557  reached 0.14  moves 294.4  sd [0.3   0.301]  level 0.00
+steps   12288  episodes    42  score +1.214  reached 0.38  moves 230.8  sd [0.3   0.301]  level 0.00
+steps   14336  episodes    48  score +1.394  reached 0.50  moves 229.8  sd [0.3 0.3]  level 0.00
+steps   16384  episodes    57  score +0.447  reached 0.11  moves 279.9  sd [0.3 0.3]  level 0.00
+steps   18432  episodes    66  score -0.054  reached 0.22  moves 250.6  sd [0.299 0.3  ]  level 0.00
+steps   20480  episodes    75  score +1.263  reached 0.44  moves 233.2  sd [0.3   0.298]  level 0.00
+steps   22528  episodes    80  score +0.023  reached 0.00  moves 300.0  sd [0.3   0.298]  level 0.00
+steps   24576  episodes    89  score -0.049  reached 0.22  moves 253.8  sd [0.299 0.297]  level 0.00
+steps   26624  episodes    97  score +0.821  reached 0.12  moves 279.2  sd [0.299 0.297]  level 0.00
+steps   28672  episodes   106  score +1.667  reached 0.44  moves 252.8  sd [0.299 0.295]  level 0.00
+steps   30720  episodes   115  score +0.621  reached 0.33  moves 245.2  sd [0.299 0.295]  level 0.00
+steps   32768  episodes   124  score +1.495  reached 0.67  moves 215.4  sd [0.298 0.294]  level 0.00
+steps   34816  episodes   132  score +1.166  reached 0.38  moves 220.4  sd [0.298 0.294]  level 0.00
+steps   36864  episodes   142  score +1.017  reached 0.40  moves 230.2  sd [0.298 0.293]  level 0.00
+steps   38912  episodes   149  score +0.369  reached 0.14  moves 291.6  sd [0.298 0.291]  level 0.00
+steps   40960  episodes   157  score +0.987  reached 0.50  moves 224.4  sd [0.297 0.291]  level 0.00
+steps   43008  episodes   164  score -0.249  reached 0.14  moves 287.6  sd [0.297 0.291]  level 0.00
+steps   45056  episodes   170  score +0.750  reached 0.17  moves 290.0  sd [0.297 0.29 ]  level 0.00
+steps   47104  episodes   179  score +1.194  reached 0.33  moves 249.6  sd [0.297 0.29 ]  level 0.00
+steps   49152  episodes   187  score +0.994  reached 0.50  moves 239.5  sd [0.295 0.289]  level 0.00
+steps   51200  episodes   197  score +1.785  reached 0.60  moves 224.3  sd [0.295 0.288]  level 0.00
+steps   53248  episodes   205  score +0.150  reached 0.12  moves 268.0  sd [0.295 0.287]  level 0.00
+steps   55296  episodes   214  score +0.794  reached 0.33  moves 255.8  sd [0.294 0.286]  level 0.00
+steps   57344  episodes   223  score +0.948  reached 0.56  moves 226.1  sd [0.293 0.286]  level 0.00
+steps   59392  episodes   231  score +1.848  reached 0.75  moves 209.8  sd [0.293 0.286]  level 0.00
+steps   61440  episodes   238  score +0.285  reached 0.14  moves 269.4  sd [0.292 0.286]  level 0.00
+steps   63488  episodes   248  score +1.224  reached 0.40  moves 240.8  sd [0.292 0.286]  level 0.00
+steps   65536  episodes   256  score +1.037  reached 0.25  moves 259.1  sd [0.291 0.287]  level 0.00
+steps   67584  episodes   266  score +1.094  reached 0.60  moves 231.1  sd [0.292 0.288]  level 0.00
+steps   69632  episodes   274  score +1.212  reached 0.50  moves 203.2  sd [0.292 0.289]  level 0.00
+steps   71680  episodes   282  score +1.074  reached 0.25  moves 275.5  sd [0.291 0.29 ]  level 0.00
+steps   73728  episodes   290  score +1.805  reached 0.62  moves 210.5  sd [0.291 0.29 ]  level 0.00
+steps   75776  episodes   299  score +0.704  reached 0.33  moves 264.8  sd [0.291 0.29 ]  level 0.00
+steps   77824  episodes   308  score +1.122  reached 0.44  moves 231.0  sd [0.291 0.29 ]  level 0.00
+steps   79872  episodes   317  score +1.727  reached 0.56  moves 221.1  sd [0.292 0.289]  level 0.00
+steps   81920  episodes   327  score +1.069  reached 0.60  moves 177.4  sd [0.293 0.287]  level 0.00
+steps   83968  episodes   337  score +1.125  reached 0.40  moves 240.5  sd [0.293 0.287]  level 0.00
+steps   86016  episodes   345  score +1.133  reached 0.38  moves 256.8  sd [0.292 0.287]  level 0.00
+steps   88064  episodes   356  score +1.403  reached 0.45  moves 192.7  sd [0.291 0.287]  level 0.00
+steps   90112  episodes   366  score +1.394  reached 0.40  moves 226.0  sd [0.291 0.286]  level 0.00
+steps   92160  episodes   376  score +1.712  reached 0.80  moves 149.1  sd [0.29  0.286]  level 0.00
+steps   94208  episodes   384  score +0.593  reached 0.12  moves 273.1  sd [0.289 0.286]  level 0.00
+steps   96256  episodes   392  score +1.582  reached 0.38  moves 255.5  sd [0.289 0.286]  level 0.00
+steps   98304  episodes   402  score +1.810  reached 0.60  moves 190.5  sd [0.288 0.287]  level 0.00
+steps  100352  episodes   411  score +1.727  reached 0.67  moves 219.8  sd [0.287 0.287]  level 0.00
+steps  102400  episodes   421  score +0.725  reached 0.30  moves 243.2  sd [0.288 0.288]  level 0.00
+steps  104448  episodes   427  score +0.242  reached 0.33  moves 269.2  sd [0.288 0.287]  level 0.00
+steps  106496  episodes   437  score +1.770  reached 0.60  moves 221.7  sd [0.286 0.286]  level 0.00
+steps  108544  episodes   449  score +1.650  reached 0.50  moves 208.8  sd [0.286 0.287]  level 0.00
+steps  110592  episodes   460  score +1.826  reached 0.64  moves 173.4  sd [0.285 0.286]  level 0.00
+steps  112640  episodes   468  score +2.005  reached 0.62  moves 186.4  sd [0.285 0.284]  level 0.00
+steps  114688  episodes   476  score +0.755  reached 0.25  moves 276.2  sd [0.284 0.286]  level 0.00
+steps  116736  episodes   483  score +0.560  reached 0.14  moves 281.1  sd [0.283 0.285]  level 0.00
+steps  118784  episodes   495  score +1.130  reached 0.42  moves 202.7  sd [0.284 0.283]  level 0.00
+steps  120832  episodes   505  score +2.322  reached 0.60  moves 213.8  sd [0.284 0.283]  level 0.00
+steps  122880  episodes   514  score +1.514  reached 0.44  moves 222.6  sd [0.284 0.283]  level 0.00
+steps  124928  episodes   521  score +1.484  reached 0.57  moves 212.6  sd [0.283 0.283]  level 0.00
+steps  126976  episodes   533  score +1.458  reached 0.58  moves 189.1  sd [0.281 0.283]  level 0.00
+steps  129024  episodes   543  score +1.583  reached 0.60  moves 211.4  sd [0.281 0.282]  level 0.00
+steps  131072  episodes   553  score +0.945  reached 0.30  moves 228.6  sd [0.281 0.282]  level 0.00
+steps  133120  episodes   562  score +0.701  reached 0.33  moves 215.7  sd [0.28  0.281]  level 0.00
+steps  135168  episodes   572  score +1.451  reached 0.30  moves 249.8  sd [0.279 0.28 ]  level 0.00
+steps  137216  episodes   575  score +1.551  reached 0.33  moves 281.0  sd [0.279 0.279]  level 0.00
+steps  139264  episodes   582  score -0.793  reached 0.00  moves 300.0  sd [0.279 0.278]  level 0.00
+steps  141312  episodes   593  score +0.510  reached 0.45  moves 229.1  sd [0.278 0.276]  level 0.00
+steps  143360  episodes   599  score +0.895  reached 0.33  moves 276.3  sd [0.278 0.276]  level 0.00
+steps  145408  episodes   609  score +0.815  reached 0.20  moves 251.9  sd [0.277 0.275]  level 0.00
+steps  147456  episodes   620  score +2.125  reached 0.55  moves 206.1  sd [0.277 0.275]  level 0.00
+steps  149504  episodes   631  score +1.342  reached 0.55  moves 203.1  sd [0.277 0.276]  level 0.00
+steps  151552  episodes   640  score +1.534  reached 0.56  moves 195.3  sd [0.277 0.276]  level 0.00
+steps  153600  episodes   650  score +1.598  reached 0.50  moves 221.4  sd [0.277 0.274]  level 0.00
+steps  155648  episodes   657  score +1.189  reached 0.43  moves 231.9  sd [0.275 0.275]  level 0.00
+steps  157696  episodes   668  score +1.420  reached 0.36  moves 227.5  sd [0.275 0.274]  level 0.00
+steps  159744  episodes   677  score +1.817  reached 0.67  moves 197.0  sd [0.274 0.274]  level 0.00
+steps  161792  episodes   688  score +1.648  reached 0.64  moves 191.9  sd [0.274 0.274]  level 0.00
+steps  163840  episodes   699  score +2.288  reached 0.82  moves 195.1  sd [0.274 0.274]  level 0.00
+steps  165888  episodes   707  score +0.798  reached 0.12  moves 270.2  sd [0.273 0.275]  level 0.00
+steps  167936  episodes   719  score +1.540  reached 0.75  moves 164.6  sd [0.273 0.275]  level 0.00
+steps  169984  episodes   729  score +1.903  reached 0.60  moves 202.1  sd [0.273 0.274]  level 0.00
+steps  172032  episodes   741  score +1.947  reached 0.67  moves 174.1  sd [0.273 0.274]  level 0.00
+steps  174080  episodes   749  score +1.241  reached 0.25  moves 243.1  sd [0.273 0.273]  level 0.01
+steps  176128  episodes   757  score +1.537  reached 0.62  moves 207.6  sd [0.274 0.273]  level 0.01
+steps  178176  episodes   769  score +1.421  reached 0.50  moves 207.4  sd [0.274 0.274]  level 0.01
+steps  180224  episodes   781  score +1.879  reached 0.58  moves 173.7  sd [0.274 0.274]  level 0.03
+steps  182272  episodes   789  score +1.885  reached 0.62  moves 237.6  sd [0.274 0.274]  level 0.03
+steps  184320  episodes   799  score +1.322  reached 0.50  moves 203.7  sd [0.276 0.274]  level 0.03
+steps  186368  episodes   807  score +1.241  reached 0.38  moves 250.5  sd [0.276 0.274]  level 0.03
+steps  188416  episodes   817  score +1.496  reached 0.50  moves 214.7  sd [0.275 0.274]  level 0.03
+steps  190464  episodes   830  score +1.902  reached 0.77  moves 149.4  sd [0.274 0.273]  level 0.03
+steps  192512  episodes   841  score +1.349  reached 0.45  moves 205.0  sd [0.273 0.271]  level 0.03
+steps  194560  episodes   854  score +1.835  reached 0.69  moves 192.8  sd [0.274 0.271]  level 0.03
+steps  196608  episodes   862  score +1.524  reached 0.38  moves 254.6  sd [0.274 0.272]  level 0.04
+steps  198656  episodes   872  score +2.442  reached 0.80  moves 135.8  sd [0.274 0.271]  level 0.04
+steps  200704  episodes   885  score +1.755  reached 0.62  moves 189.6  sd [0.274 0.271]  level 0.04
+steps  202752  episodes   892  score +1.358  reached 0.43  moves 232.9  sd [0.274 0.271]  level 0.04
+steps  204800  episodes   902  score +1.660  reached 0.60  moves 193.2  sd [0.274 0.27 ]  level 0.04
+steps  206848  episodes   915  score +1.924  reached 0.54  moves 197.5  sd [0.272 0.268]  level 0.04
+steps  208896  episodes   922  score +2.284  reached 0.43  moves 227.1  sd [0.273 0.267]  level 0.04
+steps  210944  episodes   930  score +1.561  reached 0.25  moves 264.0  sd [0.273 0.268]  level 0.04
+steps  212992  episodes   939  score +3.179  reached 0.78  moves 229.7  sd [0.272 0.269]  level 0.04
+steps  215040  episodes   948  score +1.374  reached 0.44  moves 246.3  sd [0.272 0.269]  level 0.04
+steps  217088  episodes   956  score +2.705  reached 0.50  moves 227.9  sd [0.271 0.269]  level 0.04
+steps  219136  episodes   969  score +1.730  reached 0.62  moves 181.3  sd [0.271 0.268]  level 0.04
+steps  221184  episodes   983  score +1.777  reached 0.57  moves 171.5  sd [0.27  0.269]  level 0.04
+steps  223232  episodes   993  score +2.618  reached 0.90  moves 142.3  sd [0.269 0.268]  level 0.05
+steps  225280  episodes  1004  score +1.733  reached 0.45  moves 231.2  sd [0.269 0.267]  level 0.06
+steps  227328  episodes  1014  score +2.513  reached 0.70  moves 138.0  sd [0.268 0.267]  level 0.06
+steps  229376  episodes  1030  score +2.315  reached 0.62  moves 169.5  sd [0.268 0.267]  level 0.08
+steps  231424  episodes  1037  score +2.178  reached 0.57  moves 229.4  sd [0.268 0.266]  level 0.08
+steps  233472  episodes  1049  score +2.170  reached 0.67  moves 180.8  sd [0.268 0.266]  level 0.08
+steps  235520  episodes  1057  score +1.656  reached 0.38  moves 241.1  sd [0.268 0.266]  level 0.08
+steps  237568  episodes  1066  score +1.973  reached 0.44  moves 228.2  sd [0.267 0.266]  level 0.08
+steps  239616  episodes  1077  score +2.431  reached 0.64  moves 198.5  sd [0.265 0.266]  level 0.08
+steps  241664  episodes  1089  score +1.605  reached 0.50  moves 175.5  sd [0.264 0.266]  level 0.08
+steps  243712  episodes  1097  score +3.142  reached 0.62  moves 241.5  sd [0.264 0.267]  level 0.08
+steps  245760  episodes  1111  score +2.549  reached 0.64  moves 166.4  sd [0.265 0.267]  level 0.08
+steps  247808  episodes  1121  score +1.907  reached 0.40  moves 228.9  sd [0.265 0.266]  level 0.08
+steps  249856  episodes  1127  score +2.367  reached 0.67  moves 203.2  sd [0.265 0.265]  level 0.08
+steps  251904  episodes  1137  score +1.803  reached 0.40  moves 236.8  sd [0.264 0.264]  level 0.08
+steps  253952  episodes  1150  score +2.651  reached 0.69  moves 183.1  sd [0.264 0.264]  level 0.08
+steps  256000  episodes  1166  score +2.554  reached 0.81  moves 125.3  sd [0.263 0.263]  level 0.09
+steps  258048  episodes  1175  score +2.366  reached 0.44  moves 213.4  sd [0.263 0.262]  level 0.09
+steps  260096  episodes  1182  score +2.169  reached 0.29  moves 266.4  sd [0.261 0.262]  level 0.09
+steps  262144  episodes  1196  score +2.406  reached 0.57  moves 178.4  sd [0.261 0.262]  level 0.10
+steps  264192  episodes  1203  score +3.055  reached 0.57  moves 230.7  sd [0.261 0.261]  level 0.10
+steps  266240  episodes  1211  score +2.383  reached 0.50  moves 223.0  sd [0.261 0.261]  level 0.10
+steps  268288  episodes  1224  score +2.817  reached 0.69  moves 194.2  sd [0.262 0.261]  level 0.10
+steps  270336  episodes  1233  score +1.502  reached 0.33  moves 232.2  sd [0.263 0.262]  level 0.10
+steps  272384  episodes  1243  score +1.857  reached 0.50  moves 196.2  sd [0.262 0.262]  level 0.10
+steps  274432  episodes  1256  score +3.170  reached 0.69  moves 168.7  sd [0.261 0.264]  level 0.10
+steps  276480  episodes  1265  score +2.405  reached 0.67  moves 159.3  sd [0.261 0.265]  level 0.10
+steps  278528  episodes  1279  score +2.413  reached 0.57  moves 175.9  sd [0.262 0.265]  level 0.10
+steps  280576  episodes  1291  score +2.539  reached 0.58  moves 184.1  sd [0.261 0.265]  level 0.10
+steps  282624  episodes  1302  score +2.240  reached 0.36  moves 221.3  sd [0.261 0.266]  level 0.10
+steps  284672  episodes  1306  score +3.789  reached 1.00  moves 192.2  sd [0.261 0.267]  level 0.10
+steps  286720  episodes  1318  score +2.203  reached 0.42  moves 204.9  sd [0.26  0.266]  level 0.10
+steps  288768  episodes  1331  score +2.613  reached 0.69  moves 173.5  sd [0.26  0.266]  level 0.10
+steps  290816  episodes  1342  score +2.697  reached 0.64  moves 197.7  sd [0.26  0.265]  level 0.10
+steps  292864  episodes  1351  score +2.308  reached 0.44  moves 215.8  sd [0.259 0.264]  level 0.10
+steps  294912  episodes  1360  score +1.700  reached 0.56  moves 184.0  sd [0.259 0.262]  level 0.10
+steps  296960  episodes  1368  score +1.872  reached 0.25  moves 252.2  sd [0.258 0.261]  level 0.10
+steps  299008  episodes  1378  score +2.105  reached 0.40  moves 218.6  sd [0.258 0.261]  level 0.10
+steps  301056  episodes  1387  score +1.635  reached 0.22  moves 259.6  sd [0.258 0.26 ]  level 0.10
+steps  303104  episodes  1397  score +1.490  reached 0.40  moves 231.4  sd [0.258 0.26 ]  level 0.10
+steps  305152  episodes  1405  score +2.253  reached 0.50  moves 204.0  sd [0.257 0.261]  level 0.10
+steps  307200  episodes  1414  score +2.430  reached 0.56  moves 208.7  sd [0.257 0.26 ]  level 0.10
+steps  309248  episodes  1426  score +2.136  reached 0.50  moves 210.2  sd [0.257 0.261]  level 0.10
+steps  311296  episodes  1437  score +2.303  reached 0.64  moves 169.7  sd [0.257 0.261]  level 0.10
+steps  313344  episodes  1447  score +3.166  reached 0.60  moves 189.5  sd [0.257 0.262]  level 0.10
+steps  315392  episodes  1456  score +2.024  reached 0.56  moves 209.6  sd [0.259 0.262]  level 0.10
+steps  317440  episodes  1464  score +1.876  reached 0.38  moves 235.9  sd [0.258 0.262]  level 0.10
+steps  319488  episodes  1474  score +2.191  reached 0.30  moves 241.4  sd [0.257 0.261]  level 0.10
+steps  321536  episodes  1486  score +2.744  reached 0.58  moves 213.9  sd [0.256 0.261]  level 0.10
+steps  323584  episodes  1495  score +2.417  reached 0.56  moves 176.9  sd [0.255 0.26 ]  level 0.10
+steps  325632  episodes  1505  score +2.477  reached 0.60  moves 175.4  sd [0.256 0.259]  level 0.10
+steps  327680  episodes  1519  score +2.656  reached 0.71  moves 169.5  sd [0.257 0.259]  level 0.10
+steps  329728  episodes  1530  score +1.536  reached 0.64  moves 188.3  sd [0.257 0.259]  level 0.10
+steps  331776  episodes  1541  score +2.190  reached 0.55  moves 198.5  sd [0.258 0.259]  level 0.10
+steps  333824  episodes  1553  score +2.543  reached 0.67  moves 177.8  sd [0.257 0.259]  level 0.10
+steps  335872  episodes  1561  score +1.508  reached 0.12  moves 293.2  sd [0.257 0.258]  level 0.11
+steps  337920  episodes  1572  score +2.204  reached 0.73  moves 162.7  sd [0.257 0.257]  level 0.11
+steps  339968  episodes  1583  score +2.839  reached 0.82  moves 140.8  sd [0.257 0.256]  level 0.12
+steps  342016  episodes  1596  score +2.630  reached 0.54  moves 178.8  sd [0.258 0.256]  level 0.12
+steps  344064  episodes  1607  score +3.082  reached 0.73  moves 173.1  sd [0.259 0.255]  level 0.12
+steps  346112  episodes  1616  score +2.539  reached 0.33  moves 254.4  sd [0.259 0.254]  level 0.12
+steps  348160  episodes  1626  score +2.913  reached 0.60  moves 205.3  sd [0.26  0.254]  level 0.12
+steps  350208  episodes  1636  score +2.592  reached 0.50  moves 206.4  sd [0.261 0.254]  level 0.12
+steps  352256  episodes  1647  score +2.620  reached 0.55  moves 200.4  sd [0.262 0.253]  level 0.12
+steps  354304  episodes  1653  score +0.162  reached 0.00  moves 300.0  sd [0.262 0.253]  level 0.12
+steps  356352  episodes  1662  score +2.788  reached 0.56  moves 183.2  sd [0.26  0.254]  level 0.12
+steps  358400  episodes  1673  score +2.113  reached 0.36  moves 223.8  sd [0.259 0.254]  level 0.12
+steps  360448  episodes  1681  score +2.183  reached 0.38  moves 239.2  sd [0.259 0.254]  level 0.14
+steps  362496  episodes  1690  score +3.085  reached 0.67  moves 224.3  sd [0.258 0.254]  level 0.14
+steps  364544  episodes  1706  score +2.779  reached 0.69  moves 165.7  sd [0.259 0.253]  level 0.14
+steps  366592  episodes  1715  score +2.175  reached 0.67  moves 185.1  sd [0.26  0.252]  level 0.14
+steps  368640  episodes  1724  score +3.715  reached 0.89  moves 155.4  sd [0.259 0.253]  level 0.14
+steps  370688  episodes  1736  score +3.288  reached 0.75  moves 203.6  sd [0.259 0.255]  level 0.14
+steps  372736  episodes  1747  score +1.918  reached 0.45  moves 219.6  sd [0.259 0.254]  level 0.14
+steps  374784  episodes  1755  score +3.452  reached 0.50  moves 215.0  sd [0.26  0.254]  level 0.14
+steps  376832  episodes  1773  score +3.131  reached 0.83  moves 129.2  sd [0.259 0.254]  level 0.14
+steps  378880  episodes  1782  score +1.834  reached 0.44  moves 241.1  sd [0.259 0.252]  level 0.14
+steps  380928  episodes  1788  score +2.589  reached 0.50  moves 250.5  sd [0.259 0.251]  level 0.14
+steps  382976  episodes  1795  score +1.656  reached 0.14  moves 272.4  sd [0.26  0.251]  level 0.15
+steps  385024  episodes  1804  score +2.180  reached 0.33  moves 236.1  sd [0.259 0.252]  level 0.15
+steps  387072  episodes  1814  score +2.053  reached 0.30  moves 237.2  sd [0.258 0.252]  level 0.15
+steps  389120  episodes  1827  score +3.192  reached 0.77  moves 166.2  sd [0.258 0.252]  level 0.15
+steps  391168  episodes  1838  score +2.001  reached 0.45  moves 183.6  sd [0.259 0.253]  level 0.15
+steps  393216  episodes  1848  score +3.805  reached 0.70  moves 196.1  sd [0.259 0.253]  level 0.16
+steps  395264  episodes  1858  score +2.868  reached 0.60  moves 194.4  sd [0.258 0.251]  level 0.16
+steps  397312  episodes  1868  score +2.271  reached 0.50  moves 200.3  sd [0.258 0.252]  level 0.16
+steps  399360  episodes  1881  score +2.815  reached 0.69  moves 172.8  sd [0.258 0.251]  level 0.18
+steps  401408  episodes  1891  score +2.888  reached 0.50  moves 218.4  sd [0.256 0.251]  level 0.18
+steps  403456  episodes  1905  score +3.220  reached 0.79  moves 142.6  sd [0.256 0.251]  level 0.18
+steps  405504  episodes  1917  score +2.989  reached 0.75  moves 152.4  sd [0.255 0.252]  level 0.19
+steps  407552  episodes  1929  score +3.563  reached 0.58  moves 190.2  sd [0.254 0.251]  level 0.19
+steps  409600  episodes  1938  score +3.780  reached 0.78  moves 177.4  sd [0.255 0.251]  level 0.19
+steps  411648  episodes  1952  score +2.920  reached 0.64  moves 172.5  sd [0.255 0.251]  level 0.20
+steps  413696  episodes  1964  score +3.032  reached 0.58  moves 176.3  sd [0.255 0.25 ]  level 0.20
+steps  415744  episodes  1971  score +2.467  reached 0.43  moves 208.9  sd [0.256 0.25 ]  level 0.20
+steps  417792  episodes  1982  score +3.234  reached 0.45  moves 217.4  sd [0.257 0.251]  level 0.20
+steps  419840  episodes  1992  score +3.338  reached 0.50  moves 214.1  sd [0.257 0.252]  level 0.20
+steps  421888  episodes  2000  score +3.530  reached 0.62  moves 215.2  sd [0.257 0.252]  level 0.20
+steps  423936  episodes  2011  score +3.581  reached 0.55  moves 213.8  sd [0.257 0.252]  level 0.20
+steps  425984  episodes  2020  score +2.210  reached 0.56  moves 214.4  sd [0.256 0.253]  level 0.20
+steps  428032  episodes  2033  score +3.875  reached 0.77  moves 165.8  sd [0.257 0.252]  level 0.20
+steps  430080  episodes  2040  score +2.858  reached 0.43  moves 215.3  sd [0.256 0.25 ]  level 0.20
+steps  432128  episodes  2050  score +2.852  reached 0.40  moves 243.2  sd [0.257 0.251]  level 0.20
+steps  434176  episodes  2062  score +3.364  reached 0.75  moves 185.4  sd [0.257 0.251]  level 0.20
+steps  436224  episodes  2077  score +3.323  reached 0.67  moves 149.7  sd [0.256 0.251]  level 0.20
+steps  438272  episodes  2087  score +3.818  reached 0.80  moves 172.8  sd [0.256 0.25 ]  level 0.20
+steps  440320  episodes  2099  score +3.082  reached 0.58  moves 203.9  sd [0.254 0.251]  level 0.20
+steps  442368  episodes  2107  score +3.603  reached 0.62  moves 197.5  sd [0.254 0.252]  level 0.20
+steps  444416  episodes  2120  score +2.860  reached 0.62  moves 191.8  sd [0.255 0.253]  level 0.20
+steps  446464  episodes  2127  score +3.711  reached 0.86  moves 208.9  sd [0.255 0.252]  level 0.20
+steps  448512  episodes  2135  score +1.949  reached 0.38  moves 245.4  sd [0.256 0.251]  level 0.20
+steps  450560  episodes  2143  score +4.054  reached 0.62  moves 236.8  sd [0.255 0.25 ]  level 0.20
+steps  452608  episodes  2154  score +3.068  reached 0.45  moves 225.5  sd [0.254 0.249]  level 0.20
+steps  454656  episodes  2164  score +2.145  reached 0.50  moves 194.3  sd [0.254 0.25 ]  level 0.20
+steps  456704  episodes  2177  score +2.968  reached 0.54  moves 195.5  sd [0.254 0.25 ]  level 0.20
+steps  458752  episodes  2185  score +2.613  reached 0.62  moves 219.0  sd [0.254 0.249]  level 0.20
+steps  460800  episodes  2196  score +3.489  reached 0.73  moves 216.9  sd [0.253 0.249]  level 0.20
+steps  462848  episodes  2206  score +2.239  reached 0.60  moves 175.9  sd [0.253 0.25 ]  level 0.20
+steps  464896  episodes  2217  score +3.214  reached 0.64  moves 175.9  sd [0.254 0.25 ]  level 0.20
+steps  466944  episodes  2229  score +3.711  reached 0.58  moves 182.9  sd [0.254 0.251]  level 0.20
+steps  468992  episodes  2238  score +3.083  reached 0.56  moves 223.8  sd [0.252 0.252]  level 0.20
+steps  471040  episodes  2251  score +2.235  reached 0.62  moves 170.4  sd [0.252 0.252]  level 0.20
+steps  473088  episodes  2259  score +2.701  reached 0.75  moves 186.4  sd [0.251 0.251]  level 0.20
+steps  475136  episodes  2274  score +3.503  reached 0.67  moves 158.3  sd [0.252 0.25 ]  level 0.20
+steps  477184  episodes  2284  score +3.317  reached 0.60  moves 201.8  sd [0.253 0.251]  level 0.20
+steps  479232  episodes  2295  score +2.814  reached 0.45  moves 202.1  sd [0.253 0.251]  level 0.20
+steps  481280  episodes  2304  score +2.306  reached 0.44  moves 235.2  sd [0.253 0.25 ]  level 0.20
+steps  483328  episodes  2315  score +2.637  reached 0.64  moves 171.4  sd [0.254 0.25 ]  level 0.20
+steps  485376  episodes  2326  score +3.292  reached 0.64  moves 185.5  sd [0.254 0.251]  level 0.20
+steps  487424  episodes  2338  score +4.195  reached 0.83  moves 188.6  sd [0.255 0.251]  level 0.20
+steps  489472  episodes  2346  score +3.268  reached 0.50  moves 222.8  sd [0.255 0.251]  level 0.20
+steps  491520  episodes  2356  score +3.542  reached 0.30  moves 245.6  sd [0.254 0.25 ]  level 0.20
+steps  493568  episodes  2366  score +3.570  reached 0.80  moves 155.3  sd [0.253 0.248]  level 0.20
+steps  495616  episodes  2378  score +2.807  reached 0.50  moves 196.3  sd [0.254 0.248]  level 0.20
+steps  497664  episodes  2387  score +2.958  reached 0.56  moves 187.3  sd [0.255 0.248]  level 0.21
+steps  499712  episodes  2397  score +3.120  reached 0.70  moves 214.2  sd [0.256 0.248]  level 0.21
+steps  501760  episodes  2408  score +3.332  reached 0.45  moves 217.7  sd [0.256 0.247]  level 0.23
+steps  503808  episodes  2421  score +3.844  reached 0.92  moves 147.5  sd [0.257 0.248]  level 0.23
+steps  505856  episodes  2430  score +2.444  reached 0.44  moves 216.7  sd [0.257 0.247]  level 0.23
+steps  507904  episodes  2439  score +3.672  reached 0.78  moves 231.2  sd [0.258 0.248]  level 0.23
+steps  509952  episodes  2450  score +3.632  reached 0.73  moves 172.0  sd [0.257 0.248]  level 0.23
+steps  512000  episodes  2463  score +4.198  reached 0.69  moves 166.8  sd [0.256 0.247]  level 0.23
+steps  514048  episodes  2474  score +3.207  reached 0.64  moves 213.2  sd [0.257 0.246]  level 0.23
+steps  516096  episodes  2480  score +3.841  reached 0.67  moves 212.7  sd [0.256 0.247]  level 0.23
+steps  518144  episodes  2492  score +3.334  reached 0.50  moves 203.3  sd [0.257 0.246]  level 0.23
+steps  520192  episodes  2501  score +3.728  reached 0.44  moves 241.9  sd [0.257 0.246]  level 0.23
+steps  522240  episodes  2511  score +3.580  reached 0.70  moves 215.0  sd [0.256 0.246]  level 0.23
+steps  524288  episodes  2520  score +3.093  reached 0.33  moves 233.0  sd [0.255 0.246]  level 0.23
+steps  526336  episodes  2529  score +3.130  reached 0.56  moves 192.3  sd [0.255 0.245]  level 0.24
+steps  528384  episodes  2540  score +2.419  reached 0.55  moves 210.6  sd [0.255 0.244]  level 0.24
+steps  530432  episodes  2553  score +2.799  reached 0.54  moves 181.4  sd [0.254 0.243]  level 0.24
+steps  532480  episodes  2561  score +3.494  reached 0.50  moves 204.5  sd [0.253 0.242]  level 0.24
+steps  534528  episodes  2571  score +2.548  reached 0.50  moves 210.7  sd [0.253 0.242]  level 0.24
+steps  536576  episodes  2583  score +4.353  reached 0.83  moves 183.1  sd [0.252 0.242]  level 0.25
+steps  538624  episodes  2592  score +2.596  reached 0.44  moves 202.8  sd [0.253 0.241]  level 0.26
+steps  540672  episodes  2604  score +3.018  reached 0.58  moves 178.9  sd [0.253 0.241]  level 0.26
+steps  542720  episodes  2617  score +3.664  reached 0.69  moves 169.8  sd [0.252 0.239]  level 0.26
+steps  544768  episodes  2627  score +3.339  reached 0.50  moves 199.7  sd [0.251 0.24 ]  level 0.26
+steps  546816  episodes  2640  score +2.895  reached 0.62  moves 172.5  sd [0.251 0.24 ]  level 0.28
+steps  548864  episodes  2647  score +3.622  reached 0.57  moves 190.7  sd [0.251 0.24 ]  level 0.28
+steps  550912  episodes  2657  score +3.643  reached 0.50  moves 204.8  sd [0.251 0.24 ]  level 0.28
+steps  552960  episodes  2670  score +4.472  reached 0.54  moves 191.5  sd [0.251 0.24 ]  level 0.28
+steps  555008  episodes  2680  score +4.209  reached 0.60  moves 225.1  sd [0.251 0.24 ]  level 0.28
+steps  557056  episodes  2694  score +2.826  reached 0.71  moves 147.1  sd [0.251 0.24 ]  level 0.28
+steps  559104  episodes  2701  score +3.651  reached 0.71  moves 181.6  sd [0.251 0.239]  level 0.28
+steps  561152  episodes  2712  score +3.048  reached 0.55  moves 223.2  sd [0.25  0.239]  level 0.28
+steps  563200  episodes  2722  score +3.523  reached 0.70  moves 178.3  sd [0.251 0.24 ]  level 0.28
+steps  565248  episodes  2731  score +2.522  reached 0.22  moves 251.9  sd [0.25  0.241]  level 0.28
+steps  567296  episodes  2743  score +4.252  reached 0.67  moves 172.8  sd [0.251 0.24 ]  level 0.30
+steps  569344  episodes  2752  score +1.903  reached 0.33  moves 278.2  sd [0.251 0.241]  level 0.30
+steps  571392  episodes  2761  score +4.306  reached 0.78  moves 168.3  sd [0.251 0.241]  level 0.30
+steps  573440  episodes  2771  score +2.800  reached 0.40  moves 227.8  sd [0.251 0.241]  level 0.30
+steps  575488  episodes  2782  score +2.945  reached 0.73  moves 174.6  sd [0.251 0.241]  level 0.30
+steps  577536  episodes  2791  score +2.691  reached 0.44  moves 240.8  sd [0.251 0.241]  level 0.30
+steps  579584  episodes  2799  score +4.336  reached 0.50  moves 229.8  sd [0.25 0.24]  level 0.30
+steps  581632  episodes  2809  score +3.025  reached 0.40  moves 212.5  sd [0.249 0.24 ]  level 0.30
+steps  583680  episodes  2819  score +2.882  reached 0.40  moves 226.4  sd [0.249 0.239]  level 0.30
+steps  585728  episodes  2826  score +3.092  reached 0.29  moves 233.0  sd [0.248 0.239]  level 0.30
+steps  587776  episodes  2835  score +4.942  reached 0.44  moves 217.9  sd [0.248 0.238]  level 0.30
+steps  589824  episodes  2843  score +2.680  reached 0.38  moves 252.5  sd [0.247 0.238]  level 0.30
+steps  591872  episodes  2853  score +4.587  reached 0.50  moves 228.6  sd [0.248 0.239]  level 0.30
+steps  593920  episodes  2862  score +2.245  reached 0.33  moves 251.8  sd [0.248 0.24 ]  level 0.30
+steps  595968  episodes  2872  score +4.471  reached 0.70  moves 199.1  sd [0.248 0.24 ]  level 0.30
+steps  598016  episodes  2880  score +1.665  reached 0.12  moves 271.1  sd [0.249 0.239]  level 0.30
+steps  600064  episodes  2892  score +3.635  reached 0.75  moves 182.4  sd [0.248 0.239]  level 0.30

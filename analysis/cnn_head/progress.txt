@@ -1,0 +1,6 @@
+cnn4_reservoir_s0 done 13:43
+cnn4_reservoir_s1 done 13:46
+cnn4_ours_s1 done 13:55
+cnn4_ours_s0 done 13:58
+cnn4_eprop_s0 done 14:46
+cnn4_eprop_s1 done 15:03

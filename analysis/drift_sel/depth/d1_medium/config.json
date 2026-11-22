@@ -1,0 +1,80 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.418,
+  "p_max": 0.831,
+  "input_sigma_cells": 1.791,
+  "inhibition_scale": 3.554,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.642
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.708,
+    "mean_scale": 0.8411949717627377,
+    "sd_scale": 0.16823899435254755
+   },
+   "shape": 10,
+   "conn_i": {
+    "sigma_cells": 0.708,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "layers": [
+   {}
+  ]
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 1,
+ "monitor": true,
+ "monitor_every": 10000,
+ "c_reg": 0.0001,
+ "hidden_rule": {
+  "preset": "proposed",
+  "gradient": 0.0,
+  "diagnose_parts": true,
+  "center_drift": true,
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 1.0
+  }
+ },
+ "seed": 0,
+ "csv_prefix": "d1_medium",
+ "backend": "single_threaded_cpu",
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.5,
+ "episodic_traces": true,
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 0
+ },
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "selection": {
+  "n_candidates": 8,
+  "seed": 0
+ },
+ "move_log": {
+  "probe_every": 1000000000000,
+  "probe_moves": 3200,
+  "aggregate": true,
+  "activity": 3200
+ },
+ "lr": 0.0,
+ "readout_optimiser": {
+  "type": "adabelief",
+  "lr": 1e-05
+ },
+ "hid_e": 10,
+ "hid_i": 8,
+ "fan_in": 150,
+ "max_timesteps": 160000
+}

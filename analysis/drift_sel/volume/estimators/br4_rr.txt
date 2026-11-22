@@ -1,0 +1,2 @@
+HID=rate MOT=rate route_sym  per 2000: 0.29 0.34 0.36 0.38 0.39 0.41 0.46 0.47 0.49 0.51  action entropy 0.85
+HID=rate MOT=rate frozen     per 2000: 0.28 0.33 0.35 0.37 0.38 0.40 0.41 0.42 0.43 0.45  action entropy 0.77

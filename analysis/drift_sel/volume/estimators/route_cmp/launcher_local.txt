@@ -1,0 +1,1 @@
+route_local_s0 {"late_gap": 0.1543443976397244, "early_gap": 0.2112119644764069, "field_dead": 0.08333, "e_hz": 56.84, "decisions": 11367, "fitness": 0.1126793976397244}

@@ -1,0 +1,2 @@
+frozen     reward/best per 2000: 0.45 0.45 0.47 0.47 0.47 0.48 0.49 0.49 0.49 0.50  | group mates same location nan  hidden Hz 50
+reg_hard   reward/best per 2000: 0.46 0.46 0.47 0.48 0.49 0.50 0.52 0.53 0.54 0.56  | group mates same location 0.67  hidden Hz 84

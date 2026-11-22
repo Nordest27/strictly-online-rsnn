@@ -1,0 +1,27 @@
+
+===== first: 3987 paired moves, 1013 episodes, turn rate 0.55, danger rate 0.37
+L1_E          live 1.00 | median rate/move 0.103 | selective(>0.01b) 0.96 | MI med 0.0370 | bits/event by rate tier low/mid/high 0.644 / 0.326 / 0.236 (rank corr rate~bits/event -0.48) | enrich turn 0.98 danger 1.06 | top var heading
+L2_E          live 1.00 | median rate/move 0.094 | selective(>0.01b) 0.92 | MI med 0.0442 | bits/event by rate tier low/mid/high 0.611 / 0.389 / 0.334 (rank corr rate~bits/event -0.33) | enrich turn 0.98 danger 1.04 | top var heading
+L3_E          live 1.00 | median rate/move 0.083 | selective(>0.01b) 0.90 | MI med 0.0373 | bits/event by rate tier low/mid/high 0.587 / 0.431 / 0.348 (rank corr rate~bits/event -0.28) | enrich turn 0.98 danger 0.98 | top var heading
+L4_E          live 1.00 | median rate/move 0.083 | selective(>0.01b) 0.90 | MI med 0.0409 | bits/event by rate tier low/mid/high 0.503 / 0.456 / 0.352 (rank corr rate~bits/event -0.22) | enrich turn 0.98 danger 1.01 | top var heading
+L5_E          live 1.00 | median rate/move 0.094 | selective(>0.01b) 0.91 | MI med 0.0449 | bits/event by rate tier low/mid/high 0.515 / 0.412 / 0.358 (rank corr rate~bits/event -0.23) | enrich turn 0.97 danger 0.99 | top var heading
+policy_field  live 1.00 | median rate/move 0.099 | selective(>0.01b) 0.93 | MI med 0.0521 | bits/event by rate tier low/mid/high 0.494 / 0.437 / 0.394 (rank corr rate~bits/event -0.18) | enrich turn 0.97 danger 0.98 | top var heading
+value_field   live 1.00 | median rate/move 0.100 | selective(>0.01b) 0.92 | MI med 0.0524 | bits/event by rate tier low/mid/high 0.508 / 0.455 / 0.390 (rank corr rate~bits/event -0.18) | enrich turn 0.97 danger 0.97 | top var heading
+
+===== last: 4903 paired moves, 97 episodes, turn rate 0.44, danger rate 0.94
+L1_E          live 0.92 | median rate/move 0.039 | selective(>0.01b) 0.56 | MI med 0.0124 | bits/event by rate tier low/mid/high 0.403 / 0.359 / 0.381 (rank corr rate~bits/event -0.00) | enrich turn 1.01 danger 1.06 | top var heading
+L2_E          live 0.90 | median rate/move 0.045 | selective(>0.01b) 0.60 | MI med 0.0145 | bits/event by rate tier low/mid/high 0.341 / 0.400 / 0.376 (rank corr rate~bits/event -0.00) | enrich turn 1.00 danger 1.06 | top var heading
+L3_E          live 0.89 | median rate/move 0.039 | selective(>0.01b) 0.59 | MI med 0.0150 | bits/event by rate tier low/mid/high 0.370 / 0.438 / 0.401 (rank corr rate~bits/event +0.02) | enrich turn 1.01 danger 1.06 | top var heading
+L4_E          live 0.92 | median rate/move 0.041 | selective(>0.01b) 0.61 | MI med 0.0163 | bits/event by rate tier low/mid/high 0.361 / 0.413 / 0.399 (rank corr rate~bits/event +0.05) | enrich turn 1.01 danger 1.06 | top var heading
+L5_E          live 0.94 | median rate/move 0.046 | selective(>0.01b) 0.63 | MI med 0.0175 | bits/event by rate tier low/mid/high 0.336 / 0.430 / 0.380 (rank corr rate~bits/event +0.03) | enrich turn 1.01 danger 1.06 | top var heading
+policy_field  live 0.95 | median rate/move 0.050 | selective(>0.01b) 0.64 | MI med 0.0188 | bits/event by rate tier low/mid/high 0.350 / 0.425 / 0.410 (rank corr rate~bits/event +0.09) | enrich turn 1.04 danger 1.06 | top var heading
+value_field   live 0.95 | median rate/move 0.048 | selective(>0.01b) 0.64 | MI med 0.0192 | bits/event by rate tier low/mid/high 0.363 / 0.470 / 0.399 (rank corr rate~bits/event +0.06) | enrich turn 1.03 danger 1.06 | top var heading
+
+Change first -> last (median selective MI, fraction selective):
+L1_E          MI 0.0370 -> 0.0124 | selective 0.96 -> 0.56 | rate 0.103 -> 0.039
+L2_E          MI 0.0442 -> 0.0145 | selective 0.92 -> 0.60 | rate 0.094 -> 0.045
+L3_E          MI 0.0373 -> 0.0150 | selective 0.90 -> 0.59 | rate 0.083 -> 0.039
+L4_E          MI 0.0409 -> 0.0163 | selective 0.90 -> 0.61 | rate 0.083 -> 0.041
+L5_E          MI 0.0449 -> 0.0175 | selective 0.91 -> 0.63 | rate 0.094 -> 0.046
+policy_field  MI 0.0521 -> 0.0188 | selective 0.93 -> 0.64 | rate 0.099 -> 0.050
+value_field   MI 0.0524 -> 0.0192 | selective 0.92 -> 0.64 | rate 0.100 -> 0.048

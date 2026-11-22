@@ -1,0 +1,56 @@
+15:47:45 {'gpu': 53.0, 'cpu_perf': 117.0, 'cpu_util': 26.0} | 1 running, 0 paused
+15:48:14 {'gpu': 57.0, 'cpu_perf': 116.0, 'cpu_util': 18.0} | 1 running, 0 paused
+15:48:56 {'gpu': 58.0, 'cpu_perf': 169.0, 'cpu_util': 14.0} | 1 running, 0 paused
+15:49:11 {'gpu': 58.0, 'cpu_perf': 201.0, 'cpu_util': 15.0} | 1 running, 0 paused
+15:49:39 {'gpu': 59.0, 'cpu_perf': 131.0, 'cpu_util': 20.0} | 1 running, 0 paused
+15:50:08 {'gpu': 59.0, 'cpu_perf': 121.0, 'cpu_util': 19.0} | 1 running, 0 paused
+15:50:36 {'gpu': 59.0, 'cpu_perf': 199.0, 'cpu_util': 14.0} | 1 running, 0 paused
+15:51:05 {'gpu': 59.0, 'cpu_perf': 166.0, 'cpu_util': 16.0} | 1 running, 0 paused
+15:51:34 {'gpu': 59.0, 'cpu_perf': 176.0, 'cpu_util': 19.0} | 1 running, 0 paused
+15:52:02 {'gpu': 59.0, 'cpu_perf': 167.0, 'cpu_util': 22.0} | 1 running, 0 paused
+15:52:31 {'gpu': 59.0, 'cpu_perf': 195.0, 'cpu_util': 12.0} | 1 running, 0 paused
+15:52:59 {'gpu': 59.0, 'cpu_perf': 192.0, 'cpu_util': 13.0} | 1 running, 0 paused
+15:53:28 {'gpu': 59.0, 'cpu_perf': 130.0, 'cpu_util': 18.0} | 1 running, 0 paused
+15:53:56 {'gpu': 59.0, 'cpu_perf': 198.0, 'cpu_util': 20.0} | 1 running, 0 paused
+15:54:24 {'gpu': 59.0, 'cpu_perf': 151.0, 'cpu_util': 14.0} | 1 running, 0 paused
+15:54:53 {'gpu': 59.0, 'cpu_perf': 197.0, 'cpu_util': 19.0} | 1 running, 0 paused
+15:55:21 {'gpu': 59.0, 'cpu_perf': 187.0, 'cpu_util': 16.0} | 1 running, 0 paused
+15:55:50 {'gpu': 59.0, 'cpu_perf': 188.0, 'cpu_util': 14.0} | 1 running, 0 paused
+15:56:19 {'gpu': 59.0, 'cpu_perf': 191.0, 'cpu_util': 13.0} | 1 running, 0 paused
+15:56:47 {'gpu': 59.0, 'cpu_perf': 106.0, 'cpu_util': 28.0} | 1 running, 0 paused
+15:57:15 {'gpu': 59.0, 'cpu_perf': 157.0, 'cpu_util': 18.0} | 1 running, 0 paused
+15:57:44 {'gpu': 59.0, 'cpu_perf': 187.0, 'cpu_util': 14.0} | 1 running, 0 paused
+15:58:13 {'gpu': 59.0, 'cpu_perf': 180.0, 'cpu_util': 21.0} | 1 running, 0 paused
+15:58:42 {'gpu': 59.0, 'cpu_perf': 197.0, 'cpu_util': 17.0} | 1 running, 0 paused
+15:59:11 {'gpu': 59.0, 'cpu_perf': 131.0, 'cpu_util': 24.0} | 1 running, 0 paused
+15:59:40 {'gpu': 59.0, 'cpu_perf': 195.0, 'cpu_util': 21.0} | 1 running, 0 paused
+16:00:08 {'gpu': 59.0, 'cpu_perf': 132.0, 'cpu_util': 26.0} | 1 running, 0 paused
+16:00:36 {'gpu': 59.0, 'cpu_perf': 193.0, 'cpu_util': 15.0} | 1 running, 0 paused
+16:01:05 {'gpu': 59.0, 'cpu_perf': 201.0, 'cpu_util': 18.0} | 1 running, 0 paused
+16:01:33 {'gpu': 59.0, 'cpu_perf': 169.0, 'cpu_util': 20.0} | 1 running, 0 paused
+16:02:16 {'gpu': 59.0, 'cpu_perf': 204.0, 'cpu_util': 17.0} | 1 running, 0 paused
+16:02:30 {'gpu': 59.0, 'cpu_perf': 197.0, 'cpu_util': 13.0} | 1 running, 0 paused
+16:02:59 {'gpu': 59.0, 'cpu_perf': 166.0, 'cpu_util': 16.0} | 1 running, 0 paused
+16:03:27 {'gpu': 59.0, 'cpu_perf': 209.0, 'cpu_util': 20.0} | 1 running, 0 paused
+16:03:56 {'gpu': 60.0, 'cpu_perf': 207.0, 'cpu_util': 15.0} | 1 running, 0 paused
+16:04:24 {'gpu': 60.0, 'cpu_perf': 176.0, 'cpu_util': 20.0} | 1 running, 0 paused
+16:04:53 {'gpu': 60.0, 'cpu_perf': 198.0, 'cpu_util': 13.0} | 1 running, 0 paused
+16:05:21 {'gpu': 60.0, 'cpu_perf': 142.0, 'cpu_util': 26.0} | 1 running, 0 paused
+16:05:50 {'gpu': 60.0, 'cpu_perf': 112.0, 'cpu_util': 27.0} | 1 running, 0 paused
+16:06:18 {'gpu': 59.0, 'cpu_perf': 182.0, 'cpu_util': 17.0} | 1 running, 0 paused
+16:06:47 {'gpu': 59.0, 'cpu_perf': 148.0, 'cpu_util': 19.0} | 1 running, 0 paused
+16:07:15 {'gpu': 59.0, 'cpu_perf': 199.0, 'cpu_util': 17.0} | 1 running, 0 paused
+16:07:52 {'gpu': 59.0, 'cpu_perf': 133.0, 'cpu_util': 20.0} | 1 running, 0 paused
+16:08:21 {'gpu': 59.0, 'cpu_perf': 188.0, 'cpu_util': 12.0} | 1 running, 0 paused
+16:08:50 {'gpu': 59.0, 'cpu_perf': 165.0, 'cpu_util': 41.0} | 1 running, 0 paused
+16:09:18 {'gpu': 59.0, 'cpu_perf': 134.0, 'cpu_util': 20.0} | 1 running, 0 paused
+20:11:36 {'gpu': 35.0, 'cpu_perf': 86.0, 'cpu_util': 74.0} hot: paused 492519 (0 running, 1 paused)
+20:11:48 {'gpu': 42.0, 'cpu_perf': 108.0, 'cpu_util': 54.0} cool: resumed 492519 (1 running, 0 paused)
+20:12:18 {'gpu': 46.0, 'cpu_perf': 100.0, 'cpu_util': 47.0} | 1 running, 0 paused
+20:12:47 {'gpu': 49.0, 'cpu_perf': 102.0, 'cpu_util': 17.0} | 1 running, 0 paused
+20:13:33 {'gpu': 49.0, 'cpu_perf': 100.0, 'cpu_util': 19.0} | 1 running, 0 paused
+20:13:48 {'gpu': 51.0, 'cpu_perf': 80.0, 'cpu_util': 54.0} hot: paused 530479 (0 running, 1 paused)
+20:14:19 {'gpu': 52.0, 'cpu_perf': 82.0, 'cpu_util': 38.0} cool: resumed 530479 (1 running, 0 paused)
+20:14:49 {'gpu': 53.0, 'cpu_perf': 81.0, 'cpu_util': 46.0} | 1 running, 0 paused
+20:15:19 {'gpu': 57.0, 'cpu_perf': 85.0, 'cpu_util': 62.0} hot: paused 530479 (0 running, 1 paused)
+resumed 1 paused processes; exiting

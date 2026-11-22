@@ -1,0 +1,1 @@
+{"hidden_rule": "proposed", "hid_e": 6, "hid_i": 4, "fan_in": 50, "backend": "single_threaded_cpu", "min_episodes": 0, "max_timesteps": 1500000, "seed": 1, "trace_log": false, "entropy_bonus": 3.0, "entropy_scale": "abs_td"}

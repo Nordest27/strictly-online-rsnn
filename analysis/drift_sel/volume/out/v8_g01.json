@@ -1,0 +1,110 @@
+{
+ "name": "v8_g01",
+ "volume": {
+  "depth": 8,
+  "input_depth": 2,
+  "output_depth": 2,
+  "sigma_cells": 1.0,
+  "p_max": 0.8,
+  "p_global": 0.01
+ },
+ "layer": {},
+ "slabs": {
+  "L1_E": [
+   {
+    "count": 1.6431944444444444,
+    "active": 0.6313888888888889,
+    "decode": 0.9566666666666667
+   },
+   {
+    "count": 1.8480555555555556,
+    "active": 0.6839351851851851,
+    "decode": 0.9533333333333334
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   }
+  ],
+  "L1_I": [
+   {
+    "count": 1.8251041666666667,
+    "active": 0.6544791666666666,
+    "decode": 0.87
+   },
+   {
+    "count": 1.9315625,
+    "active": 0.6394791666666667,
+    "decode": 0.8983333333333333
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   },
+   {
+    "count": 0.0,
+    "active": 0.0,
+    "decode": 0.06
+   }
+  ]
+ },
+ "pops": {
+  "policy_field": {
+   "count": 0.0,
+   "active": 0.0,
+   "decode": 0.06
+  },
+  "value_field": {
+   "count": 0.0,
+   "active": 0.0,
+   "decode": 0.06
+  }
+ }
+}

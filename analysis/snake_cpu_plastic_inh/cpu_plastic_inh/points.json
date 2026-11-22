@@ -1,0 +1,109 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "toroidal": "local",
+  "local": {
+   "sigma_cells": 1.0,
+   "input_sigma_ref": "source"
+  },
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 20000
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c_pi10"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "rate": 10.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c_pi10_eta1e-6"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "plastic_inhibition": {
+     "eta": 1e-06,
+     "rate": 10.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c_pi_cov"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "mode": "covariance"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "reservoir_pi10"
+    },
+    "hidden_rule": {
+     "preset": "reservoir"
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "rate": 10.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop_pi10"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "plastic_inhibition": {
+     "eta": 1e-05,
+     "rate": 10.0
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c_creg1e-2"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "c_reg": 0.01
+   }
+  }
+ ]
+}

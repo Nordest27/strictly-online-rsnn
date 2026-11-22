@@ -1,0 +1,99 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.418,
+  "p_max": 1.0,
+  "input_sigma_cells": 1.791,
+  "inhibition_scale": 3.554,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.929
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.416,
+    "mean_scale": 0.7514608293972019,
+    "sd_scale": 0.1502921658794404
+   },
+   "shape": 20,
+   "conn_i": {
+    "sigma_cells": 0.416,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.386,
+     "mean_scale": 1.1947545944002906,
+     "sd_scale": 0.11947545944002907
+    },
+    "to_next_i": {
+     "sigma_cells": 0.386,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.386,
+     "mean_scale": 1.1024955681564133,
+     "sd_scale": 0.11024955681564133
+    },
+    "to_next_i": {
+     "sigma_cells": 0.386,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.386,
+     "mean_scale": 0.7889823382152463,
+     "sd_scale": 0.07889823382152464
+    },
+    "to_next_i": {
+     "sigma_cells": 0.386,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.386,
+     "mean_scale": 0.8083915920026138,
+     "sd_scale": 0.08083915920026138
+    },
+    "to_next_i": {
+     "sigma_cells": 0.386,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ]
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 5,
+ "_meta": {
+  "architecture_search": {
+   "idx": 61,
+   "score": 0.8234716204525371,
+   "genome": {
+    "ff_inhibition": true,
+    "ff_targets": "both",
+    "inh_sigma_ratio": 0.9293159205774041,
+    "sigma_cells": 2.4179865233900215,
+    "p_max": 1.0,
+    "input_sigma_cells": 1.7914691026066978,
+    "inhibition_scale": 3.55350050175778,
+    "ff_sigma": 0.38563401313896467,
+    "field_sigma": 0.4162593898045732,
+    "field_shape": "excitatory",
+    "target_hz": 20.0
+   }
+  }
+ }
+}

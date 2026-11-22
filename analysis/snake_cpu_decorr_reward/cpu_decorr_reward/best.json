@@ -1,0 +1,54 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "legacy",
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 10000,
+ "dale": {
+  "every_episodes": 1,
+  "local": true
+ },
+ "_meta": {
+  "study": "cpu_decorr_reward",
+  "config": 1,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "decorr1"
+    },
+    "hidden_rule": {
+     "preset": "proposed",
+     "local": {
+      "route": "GRADIENT_INSTANT",
+      "dv": 0.0,
+      "vreg": 0.0,
+      "rate": 0.0,
+      "decorr": 1.0
+     }
+    }
+   }
+  },
+  "final_rung_score": -0.02079610699185001,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "proposed",
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 1.0
+  }
+ }
+}

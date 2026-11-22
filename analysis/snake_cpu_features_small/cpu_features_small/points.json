@@ -1,0 +1,143 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 20000
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "reservoir|local"
+    },
+    "hidden_rule": {
+     "preset": "reservoir"
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed|local"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c|local"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop|local"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "reservoir|global"
+    },
+    "hidden_rule": {
+     "preset": "reservoir"
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source",
+     "p_global": 0.1
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed|global"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source",
+     "p_global": 0.1
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c|global"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source",
+     "p_global": 0.1
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop|global"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "toroidal": "local",
+    "local": {
+     "sigma_cells": 1.0,
+     "input_sigma_ref": "source",
+     "p_global": 0.1
+    }
+   }
+  }
+ ]
+}

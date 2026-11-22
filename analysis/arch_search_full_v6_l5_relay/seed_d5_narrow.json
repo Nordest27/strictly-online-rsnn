@@ -1,0 +1,3 @@
+[{"sigma_cells": 1.75, "p_max": 1.0, "input_sigma_cells": 2.5, "inhibition_scale": 3.0, "ff_sigma": 0.45,
+  "field_sigma": 0.45, "field_shape": "inhibitory", "target_hz": 20.0, "ff_inhibition": false, "ff_targets": "both",
+  "inh_sigma_ratio": 1.0}]

@@ -1,0 +1,37 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "memory": {
+  "visible_moves": 2
+ },
+ "_meta": {
+  "study": "cpu_memory",
+  "config": 1,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "adaptive_eprop"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true
+   }
+  },
+  "final_rung_score": 0.02389114430457032,
+  "rungs": [
+   3000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "eprop"
+ },
+ "feedback_type": "adaptive",
+ "optimise_feedback": true
+}

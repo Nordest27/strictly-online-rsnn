@@ -1,0 +1,12 @@
+herit/kA_s0
+herit/kB_s0
+herit/kA_s1
+herit/kB_s1
+herit/dkA_s0
+herit/dkB_s0
+herit/dkA_s1
+herit/dkB_s1
+herit/k0A_s0
+herit/k0B_s0
+herit/k0A_s1
+herit/k0B_s1

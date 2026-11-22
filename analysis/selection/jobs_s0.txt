@@ -1,0 +1,6 @@
+hl_ours_s0
+hl_ours_noise1p5_s0
+hl_eprop_sur_s0
+hl_reservoir_s0
+soft_ours_s0
+soft_eprop_s0

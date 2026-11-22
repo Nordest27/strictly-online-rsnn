@@ -1,0 +1,12 @@
+prop_td_s0 done 10:51 1 probe
+prop_reward_s0 done 10:52 1 probe
+prop_none_s0 done 10:53 1 probe
+eprop_reward_s0 done 11:20 1 probe
+eprop_td_s0 done 11:29 1 probe
+eprop_none_s0 done 11:34 1 probe
+prop_none_s1 done 11:49 1 probe
+prop_reward_s1 done 12:12 1 probe
+eprop_reward_s1 done 12:19 1 probe
+prop_td_s1 done 12:19 1 probe
+eprop_td_s1 done 12:40 1 probe
+eprop_none_s1 done 13:18 1 probe

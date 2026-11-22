@@ -1,0 +1,50 @@
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0000/c0000InferenceCompiler_CODE'
+[10:31:53] c0000 score 1.794 (57 s) | best c0000 1.794 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0001/c0001InferenceCompiler_CODE'
+[10:33:12] c0001 score 1.850 (79 s) | best c0001 1.850 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0002/c0002InferenceCompiler_CODE'
+[10:34:08] c0002 score 1.434 (55 s) | best c0001 1.850 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0003/c0003InferenceCompiler_CODE'
+[10:34:57] c0003 score 1.680 (48 s) | best c0001 1.850 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_l1_laptop/work/c0004/c0004InferenceCompiler_CODE'
+Process SpawnPoolWorker-5:
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/home/user/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

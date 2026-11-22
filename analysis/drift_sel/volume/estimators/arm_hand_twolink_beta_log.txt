@@ -1,0 +1,4 @@
+rule_readout_s0 done
+eprop_readout_s0 done
+eprop_readout_s0: episodes 4453  score first/last quarter +0.217 / +0.919  toward target first/last 0.29 / 0.38  moves with motor spikes first/last 0.75 / 0.97
+rule_readout_s0: episodes 3640  score first/last quarter +0.193 / +0.296  toward target first/last 0.28 / 0.29  moves with motor spikes first/last 0.63 / 0.78

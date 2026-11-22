@@ -1,0 +1,93 @@
+{
+ "base": {
+  "hid_e": 12,
+  "hid_i": 9,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 20000
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c|legacy"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "toroidal": "legacy"
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop|legacy"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "toroidal": "legacy"
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c|local"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "toroidal": "local"
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop|local"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "toroidal": "local"
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "prop_homeo_c|global"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    },
+    "toroidal": "local",
+    "local": {
+     "p_global": 0.03
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop|global"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "toroidal": "local",
+    "local": {
+     "p_global": 0.03
+    }
+   }
+  }
+ ]
+}

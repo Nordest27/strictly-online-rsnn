@@ -1,0 +1,1501 @@
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0000/c0000InferenceCompiler_CODE'
+[10:59:16] c0000 score 0.148 (6 s) | best c0000 0.148 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0001/c0001InferenceCompiler_CODE'
+[10:59:22] c0001 score -0.211 (6 s) | best c0000 0.148 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0002/c0002InferenceCompiler_CODE'
+[10:59:28] c0002 score 0.503 (6 s) | best c0002 0.503 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0003/c0003InferenceCompiler_CODE'
+[10:59:36] c0003 score -0.121 (7 s) | best c0002 0.503 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0004/c0004InferenceCompiler_CODE'
+[10:59:43] c0004 score 0.442 (7 s) | best c0002 0.503 | 5 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0005/c0005InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0005/c0005InferenceCompiler_CODE'
+[10:59:49] c0005 score 0.377 (6 s) | best c0002 0.503 | 6 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0006/c0006InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0006/c0006InferenceCompiler_CODE'
+[10:59:56] c0006 score 0.467 (7 s) | best c0002 0.503 | 7 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0007/c0007InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0007/c0007InferenceCompiler_CODE'
+[11:00:03] c0007 score 0.337 (6 s) | best c0002 0.503 | 8 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0008/c0008InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0008/c0008InferenceCompiler_CODE'
+[11:00:09] c0008 score -0.069 (6 s) | best c0002 0.503 | 9 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0009/c0009InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0009/c0009InferenceCompiler_CODE'
+[11:00:14] c0009 score -0.264 (6 s) | best c0002 0.503 | 10 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0010/c0010InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0010/c0010InferenceCompiler_CODE'
+[11:00:20] c0010 score 0.553 (6 s) | best c0010 0.553 | 11 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0011/c0011InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0011/c0011InferenceCompiler_CODE'
+[11:00:27] c0011 score -0.050 (6 s) | best c0010 0.553 | 12 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0012/c0012InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0012/c0012InferenceCompiler_CODE'
+[11:00:33] c0012 score -0.417 (7 s) | best c0010 0.553 | 13 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0013/c0013InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0013/c0013InferenceCompiler_CODE'
+[11:00:39] c0013 score -0.045 (6 s) | best c0010 0.553 | 14 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0014/c0014InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0014/c0014InferenceCompiler_CODE'
+[11:00:45] c0014 score -0.204 (6 s) | best c0010 0.553 | 15 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0015/c0015InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0015/c0015InferenceCompiler_CODE'
+[11:00:51] c0015 score -0.139 (6 s) | best c0010 0.553 | 16 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0016/c0016InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0016/c0016InferenceCompiler_CODE'
+[11:00:57] c0016 score 0.424 (5 s) | best c0010 0.553 | 17 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0017/c0017InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0017/c0017InferenceCompiler_CODE'
+[11:01:02] c0017 score -0.166 (6 s) | best c0010 0.553 | 18 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0018/c0018InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0018/c0018InferenceCompiler_CODE'
+[11:01:08] c0018 score 0.559 (6 s) | best c0018 0.559 | 19 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0019/c0019InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0019/c0019InferenceCompiler_CODE'
+[11:01:15] c0019 score 0.171 (6 s) | best c0018 0.559 | 20 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0020/c0020InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0020/c0020InferenceCompiler_CODE'
+[11:01:21] c0020 score 0.536 (6 s) | best c0018 0.559 | 21 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0021/c0021InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0021/c0021InferenceCompiler_CODE'
+[11:01:26] c0021 score 0.262 (6 s) | best c0018 0.559 | 22 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0022/c0022InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0022/c0022InferenceCompiler_CODE'
+[11:01:33] c0022 score 0.393 (7 s) | best c0018 0.559 | 23 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0023/c0023InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0023/c0023InferenceCompiler_CODE'
+[11:01:41] c0023 score 0.443 (7 s) | best c0018 0.559 | 24 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0024/c0024InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0024/c0024InferenceCompiler_CODE'
+[11:01:46] c0024 score 0.075 (6 s) | best c0018 0.559 | 25 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0025/c0025InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0025/c0025InferenceCompiler_CODE'
+[11:01:53] c0025 score 0.452 (7 s) | best c0018 0.559 | 26 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0026/c0026InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0026/c0026InferenceCompiler_CODE'
+[11:01:59] c0026 score 0.467 (6 s) | best c0018 0.559 | 27 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0027/c0027InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0027/c0027InferenceCompiler_CODE'
+[11:02:06] c0027 score 0.176 (6 s) | best c0018 0.559 | 28 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0028/c0028InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0028/c0028InferenceCompiler_CODE'
+[11:02:12] c0028 score 0.506 (7 s) | best c0018 0.559 | 29 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0029/c0029InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0029/c0029InferenceCompiler_CODE'
+[11:02:19] c0029 score 0.485 (7 s) | best c0018 0.559 | 30 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0030/c0030InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0030/c0030InferenceCompiler_CODE'
+[11:02:27] c0030 score -0.432 (7 s) | best c0018 0.559 | 31 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0031/c0031InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0031/c0031InferenceCompiler_CODE'
+[11:02:32] c0031 score 0.412 (6 s) | best c0018 0.559 | 32 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0032/c0032InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0032/c0032InferenceCompiler_CODE'
+[11:02:40] c0032 score 0.241 (7 s) | best c0018 0.559 | 33 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0033/c0033InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0033/c0033InferenceCompiler_CODE'
+[11:02:47] c0033 score 0.217 (8 s) | best c0018 0.559 | 34 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0034/c0034InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0034/c0034InferenceCompiler_CODE'
+[11:02:54] c0034 score -0.068 (6 s) | best c0018 0.559 | 35 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0035/c0035InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0035/c0035InferenceCompiler_CODE'
+[11:03:00] c0035 score -0.037 (6 s) | best c0018 0.559 | 36 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0036/c0036InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0036/c0036InferenceCompiler_CODE'
+[11:03:06] c0036 score 0.519 (6 s) | best c0018 0.559 | 37 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0037/c0037InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0037/c0037InferenceCompiler_CODE'
+[11:03:12] c0037 score 0.566 (6 s) | best c0037 0.566 | 38 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0038/c0038InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0038/c0038InferenceCompiler_CODE'
+[11:03:18] c0038 score 0.477 (6 s) | best c0037 0.566 | 39 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0039/c0039InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0039/c0039InferenceCompiler_CODE'
+[11:03:24] c0039 score 0.593 (6 s) | best c0039 0.593 | 40 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0040/c0040InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0040/c0040InferenceCompiler_CODE'
+[11:03:31] c0040 score -0.196 (7 s) | best c0039 0.593 | 41 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0041/c0041InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0041/c0041InferenceCompiler_CODE'
+[11:03:37] c0041 score 0.547 (6 s) | best c0039 0.593 | 42 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0042/c0042InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0042/c0042InferenceCompiler_CODE'
+[11:03:43] c0042 score 0.407 (6 s) | best c0039 0.593 | 43 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0043/c0043InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0043/c0043InferenceCompiler_CODE'
+[11:03:50] c0043 score -0.043 (7 s) | best c0039 0.593 | 44 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0044/c0044InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0044/c0044InferenceCompiler_CODE'
+[11:03:57] c0044 score 0.357 (6 s) | best c0039 0.593 | 45 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0045/c0045InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0045/c0045InferenceCompiler_CODE'
+[11:04:02] c0045 score 0.566 (6 s) | best c0039 0.593 | 46 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0046/c0046InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0046/c0046InferenceCompiler_CODE'
+[11:04:08] c0046 score 0.586 (6 s) | best c0039 0.593 | 47 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0047/c0047InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0047/c0047InferenceCompiler_CODE'
+[11:04:15] c0047 score 0.056 (7 s) | best c0039 0.593 | 48 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0048/c0048InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0048/c0048InferenceCompiler_CODE'
+[11:04:21] c0048 score 0.565 (6 s) | best c0039 0.593 | 49 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0049/c0049InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0049/c0049InferenceCompiler_CODE'
+[11:04:27] c0049 score 0.329 (6 s) | best c0039 0.593 | 50 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0050/c0050InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0050/c0050InferenceCompiler_CODE'
+[11:04:32] c0050 score 0.564 (5 s) | best c0039 0.593 | 51 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0051/c0051InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0051/c0051InferenceCompiler_CODE'
+[11:04:38] c0051 score 0.599 (5 s) | best c0051 0.599 | 52 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0052/c0052InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0052/c0052InferenceCompiler_CODE'
+[11:04:43] c0052 score 0.577 (6 s) | best c0051 0.599 | 53 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0053/c0053InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0053/c0053InferenceCompiler_CODE'
+[11:04:49] c0053 score 0.600 (6 s) | best c0053 0.600 | 54 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0054/c0054InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0054/c0054InferenceCompiler_CODE'
+[11:04:55] c0054 score 0.593 (6 s) | best c0053 0.600 | 55 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0055/c0055InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0055/c0055InferenceCompiler_CODE'
+[11:05:02] c0055 score 0.454 (6 s) | best c0053 0.600 | 56 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0056/c0056InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0056/c0056InferenceCompiler_CODE'
+[11:05:07] c0056 score 0.538 (6 s) | best c0053 0.600 | 57 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0057/c0057InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0057/c0057InferenceCompiler_CODE'
+[11:05:14] c0057 score -0.074 (6 s) | best c0053 0.600 | 58 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0058/c0058InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0058/c0058InferenceCompiler_CODE'
+[11:05:20] c0058 score 0.530 (6 s) | best c0053 0.600 | 59 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0059/c0059InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0059/c0059InferenceCompiler_CODE'
+[11:05:26] c0059 score 0.643 (6 s) | best c0059 0.643 | 60 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0060/c0060InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0060/c0060InferenceCompiler_CODE'
+[11:05:32] c0060 score 0.185 (6 s) | best c0059 0.643 | 61 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0061/c0061InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0061/c0061InferenceCompiler_CODE'
+[11:05:38] c0061 score 0.353 (5 s) | best c0059 0.643 | 62 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0062/c0062InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0062/c0062InferenceCompiler_CODE'
+[11:05:44] c0062 score -0.065 (7 s) | best c0059 0.643 | 63 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0063/c0063InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0063/c0063InferenceCompiler_CODE'
+[11:05:50] c0063 score 0.636 (6 s) | best c0059 0.643 | 64 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0064/c0064InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0064/c0064InferenceCompiler_CODE'
+[11:05:57] c0064 score 0.611 (6 s) | best c0059 0.643 | 65 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0065/c0065InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0065/c0065InferenceCompiler_CODE'
+[11:06:02] c0065 score 0.594 (5 s) | best c0059 0.643 | 66 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0066/c0066InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0066/c0066InferenceCompiler_CODE'
+[11:06:09] c0066 score 0.451 (7 s) | best c0059 0.643 | 67 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0067/c0067InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0067/c0067InferenceCompiler_CODE'
+[11:06:15] c0067 score 0.642 (6 s) | best c0059 0.643 | 68 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0068/c0068InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0068/c0068InferenceCompiler_CODE'
+[11:06:21] c0068 score 0.392 (6 s) | best c0059 0.643 | 69 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0069/c0069InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0069/c0069InferenceCompiler_CODE'
+[11:06:27] c0069 score 0.654 (7 s) | best c0069 0.654 | 70 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0070/c0070InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0070/c0070InferenceCompiler_CODE'
+[11:06:33] c0070 score 0.647 (6 s) | best c0069 0.654 | 71 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0071/c0071InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0071/c0071InferenceCompiler_CODE'
+[11:06:41] c0071 score 0.637 (7 s) | best c0069 0.654 | 72 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0072/c0072InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0072/c0072InferenceCompiler_CODE'
+[11:06:47] c0072 score 0.635 (7 s) | best c0069 0.654 | 73 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0073/c0073InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0073/c0073InferenceCompiler_CODE'
+[11:06:54] c0073 score 0.647 (7 s) | best c0069 0.654 | 74 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0074/c0074InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0074/c0074InferenceCompiler_CODE'
+[11:07:01] c0074 score 0.640 (7 s) | best c0069 0.654 | 75 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0075/c0075InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0075/c0075InferenceCompiler_CODE'
+[11:07:08] c0075 score 0.657 (7 s) | best c0075 0.657 | 76 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0076/c0076InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0076/c0076InferenceCompiler_CODE'
+[11:07:16] c0076 score 0.606 (8 s) | best c0075 0.657 | 77 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0077/c0077InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0077/c0077InferenceCompiler_CODE'
+[11:07:23] c0077 score 0.640 (7 s) | best c0075 0.657 | 78 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0078/c0078InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0078/c0078InferenceCompiler_CODE'
+[11:07:30] c0078 score 0.120 (7 s) | best c0075 0.657 | 79 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0079/c0079InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0079/c0079InferenceCompiler_CODE'
+[11:07:37] c0079 score -0.027 (7 s) | best c0075 0.657 | 80 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0080/c0080InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0080/c0080InferenceCompiler_CODE'
+[11:07:43] c0080 score 0.625 (5 s) | best c0075 0.657 | 81 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0081/c0081InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0081/c0081InferenceCompiler_CODE'
+[11:07:49] c0081 score 0.537 (6 s) | best c0075 0.657 | 82 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0082/c0082InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0082/c0082InferenceCompiler_CODE'
+[11:07:56] c0082 score 0.651 (7 s) | best c0075 0.657 | 83 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0083/c0083InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0083/c0083InferenceCompiler_CODE'
+[11:08:02] c0083 score 0.647 (6 s) | best c0075 0.657 | 84 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0084/c0084InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0084/c0084InferenceCompiler_CODE'
+[11:08:09] c0084 score -0.152 (7 s) | best c0075 0.657 | 85 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0085/c0085InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0085/c0085InferenceCompiler_CODE'
+[11:08:16] c0085 score 0.474 (7 s) | best c0075 0.657 | 86 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0086/c0086InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0086/c0086InferenceCompiler_CODE'
+[11:08:22] c0086 score 0.442 (6 s) | best c0075 0.657 | 87 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0087/c0087InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0087/c0087InferenceCompiler_CODE'
+[11:08:29] c0087 score -0.037 (6 s) | best c0075 0.657 | 88 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0088/c0088InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0088/c0088InferenceCompiler_CODE'
+[11:08:36] c0088 score -0.023 (8 s) | best c0075 0.657 | 89 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0089/c0089InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0089/c0089InferenceCompiler_CODE'
+[11:08:43] c0089 score 0.634 (6 s) | best c0075 0.657 | 90 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0090/c0090InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0090/c0090InferenceCompiler_CODE'
+[11:08:50] c0090 score 0.628 (7 s) | best c0075 0.657 | 91 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0091/c0091InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0091/c0091InferenceCompiler_CODE'
+[11:08:57] c0091 score 0.663 (7 s) | best c0091 0.663 | 92 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0092/c0092InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0092/c0092InferenceCompiler_CODE'
+[11:09:17] c0092 score 0.359 (19 s) | best c0091 0.663 | 93 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0093/c0093InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0093/c0093InferenceCompiler_CODE'
+[11:09:25] c0093 score 0.352 (8 s) | best c0091 0.663 | 94 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0094/c0094InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0094/c0094InferenceCompiler_CODE'
+[11:09:18] c0094 score 0.337 (-7 s) | best c0091 0.663 | 95 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0095/c0095InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0095/c0095InferenceCompiler_CODE'
+[11:09:24] c0095 score 0.642 (6 s) | best c0091 0.663 | 96 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0096/c0096InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0096/c0096InferenceCompiler_CODE'
+[11:09:31] c0096 score 0.406 (6 s) | best c0091 0.663 | 97 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0097/c0097InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0097/c0097InferenceCompiler_CODE'
+[11:09:38] c0097 score -0.209 (7 s) | best c0091 0.663 | 98 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0098/c0098InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0098/c0098InferenceCompiler_CODE'
+[11:09:44] c0098 score 0.347 (6 s) | best c0091 0.663 | 99 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0099/c0099InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0099/c0099InferenceCompiler_CODE'
+[11:09:51] c0099 score 0.608 (7 s) | best c0091 0.663 | 100 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0100/c0100InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0100/c0100InferenceCompiler_CODE'
+[11:09:58] c0100 score 0.609 (6 s) | best c0091 0.663 | 101 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0101/c0101InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0101/c0101InferenceCompiler_CODE'
+[11:10:05] c0101 score -0.107 (7 s) | best c0091 0.663 | 102 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0102/c0102InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0102/c0102InferenceCompiler_CODE'
+[11:10:11] c0102 score 0.606 (7 s) | best c0091 0.663 | 103 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0103/c0103InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0103/c0103InferenceCompiler_CODE'
+[11:10:18] c0103 score -0.050 (6 s) | best c0091 0.663 | 104 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0104/c0104InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0104/c0104InferenceCompiler_CODE'
+[11:10:25] c0104 score 0.628 (7 s) | best c0091 0.663 | 105 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0105/c0105InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0105/c0105InferenceCompiler_CODE'
+[11:10:31] c0105 score -0.186 (6 s) | best c0091 0.663 | 106 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0106/c0106InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0106/c0106InferenceCompiler_CODE'
+[11:10:38] c0106 score 0.655 (6 s) | best c0091 0.663 | 107 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0107/c0107InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0107/c0107InferenceCompiler_CODE'
+[11:10:45] c0107 score 0.647 (7 s) | best c0091 0.663 | 108 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0108/c0108InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0108/c0108InferenceCompiler_CODE'
+[11:10:52] c0108 score 0.651 (7 s) | best c0091 0.663 | 109 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0109/c0109InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0109/c0109InferenceCompiler_CODE'
+[11:10:59] c0109 score 0.541 (8 s) | best c0091 0.663 | 110 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0110/c0110InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0110/c0110InferenceCompiler_CODE'
+[11:11:06] c0110 score -0.110 (7 s) | best c0091 0.663 | 111 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0111/c0111InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0111/c0111InferenceCompiler_CODE'
+[11:11:13] c0111 score 0.637 (6 s) | best c0091 0.663 | 112 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0112/c0112InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0112/c0112InferenceCompiler_CODE'
+[11:11:21] c0112 score 0.643 (8 s) | best c0091 0.663 | 113 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0113/c0113InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0113/c0113InferenceCompiler_CODE'
+[11:11:28] c0113 score 0.637 (7 s) | best c0091 0.663 | 114 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0114/c0114InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0114/c0114InferenceCompiler_CODE'
+[11:11:34] c0114 score -0.044 (7 s) | best c0091 0.663 | 115 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0115/c0115InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0115/c0115InferenceCompiler_CODE'
+[11:11:41] c0115 score 0.648 (7 s) | best c0091 0.663 | 116 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0116/c0116InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0116/c0116InferenceCompiler_CODE'
+[11:11:48] c0116 score 0.648 (7 s) | best c0091 0.663 | 117 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0117/c0117InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0117/c0117InferenceCompiler_CODE'
+[11:11:55] c0117 score 0.668 (7 s) | best c0117 0.668 | 118 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0118/c0118InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0118/c0118InferenceCompiler_CODE'
+[11:12:02] c0118 score 0.677 (7 s) | best c0118 0.677 | 119 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0119/c0119InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0119/c0119InferenceCompiler_CODE'
+[11:12:08] c0119 score 0.677 (6 s) | best c0119 0.677 | 120 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0120/c0120InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0120/c0120InferenceCompiler_CODE'
+[11:12:15] c0120 score 0.591 (6 s) | best c0119 0.677 | 121 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0121/c0121InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0121/c0121InferenceCompiler_CODE'
+[11:12:21] c0121 score 0.626 (6 s) | best c0119 0.677 | 122 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0122/c0122InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0122/c0122InferenceCompiler_CODE'
+[11:12:27] c0122 score 0.624 (6 s) | best c0119 0.677 | 123 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0123/c0123InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0123/c0123InferenceCompiler_CODE'
+[11:12:33] c0123 score 0.664 (6 s) | best c0119 0.677 | 124 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0124/c0124InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0124/c0124InferenceCompiler_CODE'
+[11:12:41] c0124 score 0.614 (7 s) | best c0119 0.677 | 125 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0125/c0125InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0125/c0125InferenceCompiler_CODE'
+[11:12:49] c0125 score 0.096 (8 s) | best c0119 0.677 | 126 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0126/c0126InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0126/c0126InferenceCompiler_CODE'
+[11:12:56] c0126 score 0.675 (6 s) | best c0119 0.677 | 127 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0127/c0127InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0127/c0127InferenceCompiler_CODE'
+[11:13:02] c0127 score 0.693 (6 s) | best c0127 0.693 | 128 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0128/c0128InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0128/c0128InferenceCompiler_CODE'
+[11:13:08] c0128 score 0.673 (6 s) | best c0127 0.693 | 129 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0129/c0129InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0129/c0129InferenceCompiler_CODE'
+[11:13:15] c0129 score 0.021 (6 s) | best c0127 0.693 | 130 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0130/c0130InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0130/c0130InferenceCompiler_CODE'
+[11:13:21] c0130 score 0.649 (6 s) | best c0127 0.693 | 131 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0131/c0131InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0131/c0131InferenceCompiler_CODE'
+[11:13:28] c0131 score -0.047 (7 s) | best c0127 0.693 | 132 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0132/c0132InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0132/c0132InferenceCompiler_CODE'
+[11:13:35] c0132 score 0.674 (6 s) | best c0127 0.693 | 133 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0133/c0133InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0133/c0133InferenceCompiler_CODE'
+[11:13:42] c0133 score 0.022 (7 s) | best c0127 0.693 | 134 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0134/c0134InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0134/c0134InferenceCompiler_CODE'
+[11:13:48] c0134 score 0.690 (6 s) | best c0127 0.693 | 135 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0135/c0135InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0135/c0135InferenceCompiler_CODE'
+[11:13:55] c0135 score 0.671 (7 s) | best c0127 0.693 | 136 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0136/c0136InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0136/c0136InferenceCompiler_CODE'
+[11:14:01] c0136 score 0.651 (6 s) | best c0127 0.693 | 137 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0137/c0137InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0137/c0137InferenceCompiler_CODE'
+[11:14:07] c0137 score 0.677 (6 s) | best c0127 0.693 | 138 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0138/c0138InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0138/c0138InferenceCompiler_CODE'
+[11:14:13] c0138 score 0.659 (6 s) | best c0127 0.693 | 139 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0139/c0139InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0139/c0139InferenceCompiler_CODE'
+[11:14:20] c0139 score 0.647 (7 s) | best c0127 0.693 | 140 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0140/c0140InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0140/c0140InferenceCompiler_CODE'
+[11:14:26] c0140 score 0.664 (6 s) | best c0127 0.693 | 141 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0141/c0141InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0141/c0141InferenceCompiler_CODE'
+[11:14:32] c0141 score 0.651 (6 s) | best c0127 0.693 | 142 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0142/c0142InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0142/c0142InferenceCompiler_CODE'
+[11:14:39] c0142 score 0.374 (6 s) | best c0127 0.693 | 143 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0143/c0143InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0143/c0143InferenceCompiler_CODE'
+[11:14:46] c0143 score 0.362 (7 s) | best c0127 0.693 | 144 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0144/c0144InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0144/c0144InferenceCompiler_CODE'
+[11:14:53] c0144 score -0.015 (7 s) | best c0127 0.693 | 145 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0145/c0145InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0145/c0145InferenceCompiler_CODE'
+[11:14:59] c0145 score 0.637 (6 s) | best c0127 0.693 | 146 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0146/c0146InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0146/c0146InferenceCompiler_CODE'
+[11:15:05] c0146 score 0.658 (6 s) | best c0127 0.693 | 147 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0147/c0147InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0147/c0147InferenceCompiler_CODE'
+[11:15:11] c0147 score 0.670 (6 s) | best c0127 0.693 | 148 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0148/c0148InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0148/c0148InferenceCompiler_CODE'
+[11:15:17] c0148 score 0.658 (6 s) | best c0127 0.693 | 149 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0149/c0149InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0149/c0149InferenceCompiler_CODE'
+[11:15:25] c0149 score 0.555 (8 s) | best c0127 0.693 | 150 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0150/c0150InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0150/c0150InferenceCompiler_CODE'
+[11:15:32] c0150 score 0.675 (7 s) | best c0127 0.693 | 151 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0151/c0151InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0151/c0151InferenceCompiler_CODE'
+[11:15:39] c0151 score 0.676 (7 s) | best c0127 0.693 | 152 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0152/c0152InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0152/c0152InferenceCompiler_CODE'
+[11:15:46] c0152 score 0.590 (6 s) | best c0127 0.693 | 153 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0153/c0153InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0153/c0153InferenceCompiler_CODE'
+[11:15:53] c0153 score 0.531 (7 s) | best c0127 0.693 | 154 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0154/c0154InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0154/c0154InferenceCompiler_CODE'
+[11:15:59] c0154 score 0.663 (6 s) | best c0127 0.693 | 155 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0155/c0155InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0155/c0155InferenceCompiler_CODE'
+[11:16:06] c0155 score 0.554 (7 s) | best c0127 0.693 | 156 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0156/c0156InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0156/c0156InferenceCompiler_CODE'
+[11:16:13] c0156 score 0.684 (6 s) | best c0127 0.693 | 157 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0157/c0157InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0157/c0157InferenceCompiler_CODE'
+[11:16:20] c0157 score -0.042 (7 s) | best c0127 0.693 | 158 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0158/c0158InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0158/c0158InferenceCompiler_CODE'
+[11:16:27] c0158 score 0.657 (7 s) | best c0127 0.693 | 159 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0159/c0159InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0159/c0159InferenceCompiler_CODE'
+[11:16:34] c0159 score 0.605 (7 s) | best c0127 0.693 | 160 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0160/c0160InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0160/c0160InferenceCompiler_CODE'
+[11:16:41] c0160 score -0.077 (7 s) | best c0127 0.693 | 161 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0161/c0161InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0161/c0161InferenceCompiler_CODE'
+[11:16:48] c0161 score 0.693 (8 s) | best c0127 0.693 | 162 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0162/c0162InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0162/c0162InferenceCompiler_CODE'
+[11:16:55] c0162 score 0.685 (-6 s) | best c0127 0.693 | 163 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0163/c0163InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0163/c0163InferenceCompiler_CODE'
+[11:17:02] c0163 score 0.661 (7 s) | best c0127 0.693 | 164 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0164/c0164InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0164/c0164InferenceCompiler_CODE'
+[11:17:08] c0164 score 0.673 (6 s) | best c0127 0.693 | 165 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0165/c0165InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0165/c0165InferenceCompiler_CODE'
+[11:17:15] c0165 score 0.630 (7 s) | best c0127 0.693 | 166 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0166/c0166InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0166/c0166InferenceCompiler_CODE'
+[11:17:22] c0166 score 0.659 (7 s) | best c0127 0.693 | 167 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0167/c0167InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0167/c0167InferenceCompiler_CODE'
+[11:17:29] c0167 score 0.676 (7 s) | best c0127 0.693 | 168 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0168/c0168InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0168/c0168InferenceCompiler_CODE'
+[11:17:36] c0168 score 0.602 (7 s) | best c0127 0.693 | 169 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0169/c0169InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0169/c0169InferenceCompiler_CODE'
+[11:17:43] c0169 score 0.611 (7 s) | best c0127 0.693 | 170 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0170/c0170InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0170/c0170InferenceCompiler_CODE'
+[11:17:49] c0170 score 0.672 (6 s) | best c0127 0.693 | 171 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0171/c0171InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0171/c0171InferenceCompiler_CODE'
+[11:17:56] c0171 score 0.685 (7 s) | best c0127 0.693 | 172 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0172/c0172InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0172/c0172InferenceCompiler_CODE'
+[11:18:03] c0172 score 0.674 (6 s) | best c0127 0.693 | 173 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0173/c0173InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0173/c0173InferenceCompiler_CODE'
+[11:18:10] c0173 score 0.695 (6 s) | best c0173 0.695 | 174 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0174/c0174InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0174/c0174InferenceCompiler_CODE'
+[11:18:17] c0174 score -0.051 (8 s) | best c0173 0.695 | 175 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0175/c0175InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0175/c0175InferenceCompiler_CODE'
+[11:18:24] c0175 score 0.694 (6 s) | best c0173 0.695 | 176 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0176/c0176InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0176/c0176InferenceCompiler_CODE'
+[11:18:30] c0176 score 0.681 (7 s) | best c0173 0.695 | 177 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0177/c0177InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0177/c0177InferenceCompiler_CODE'
+[11:18:38] c0177 score -0.373 (7 s) | best c0173 0.695 | 178 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0178/c0178InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0178/c0178InferenceCompiler_CODE'
+[11:18:58] c0178 score 0.620 (20 s) | best c0173 0.695 | 179 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0179/c0179InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0179/c0179InferenceCompiler_CODE'
+[11:18:53] c0179 score 0.665 (-5 s) | best c0173 0.695 | 180 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0180/c0180InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0180/c0180InferenceCompiler_CODE'
+[11:19:00] c0180 score -0.058 (7 s) | best c0173 0.695 | 181 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0181/c0181InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0181/c0181InferenceCompiler_CODE'
+Process SpawnPoolWorker-182:
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/home/user/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0181/c0181InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0181/c0181InferenceCompiler_CODE'
+[11:19:14] c0181 score 0.394 (7 s) | best c0120 0.422 | 182 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0182/c0182InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0182/c0182InferenceCompiler_CODE'
+[11:19:21] c0182 score 0.400 (7 s) | best c0120 0.422 | 183 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0183/c0183InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0183/c0183InferenceCompiler_CODE'
+[11:19:28] c0183 score 0.400 (7 s) | best c0120 0.422 | 184 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0184/c0184InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0184/c0184InferenceCompiler_CODE'
+[11:19:34] c0184 score 0.393 (6 s) | best c0120 0.422 | 185 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0185/c0185InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0185/c0185InferenceCompiler_CODE'
+[11:19:40] c0185 score 0.188 (6 s) | best c0120 0.422 | 186 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0186/c0186InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0186/c0186InferenceCompiler_CODE'
+[11:19:47] c0186 score 0.414 (7 s) | best c0120 0.422 | 187 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0187/c0187InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0187/c0187InferenceCompiler_CODE'
+[11:19:53] c0187 score 0.387 (6 s) | best c0120 0.422 | 188 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0188/c0188InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0188/c0188InferenceCompiler_CODE'
+[11:20:00] c0188 score 0.388 (6 s) | best c0120 0.422 | 189 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0189/c0189InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0189/c0189InferenceCompiler_CODE'
+[11:20:06] c0189 score 0.364 (6 s) | best c0120 0.422 | 190 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0190/c0190InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0190/c0190InferenceCompiler_CODE'
+[11:20:13] c0190 score 0.364 (7 s) | best c0120 0.422 | 191 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0191/c0191InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0191/c0191InferenceCompiler_CODE'
+[11:20:20] c0191 score -0.260 (7 s) | best c0120 0.422 | 192 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0192/c0192InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0192/c0192InferenceCompiler_CODE'
+[11:20:27] c0192 score 0.400 (6 s) | best c0120 0.422 | 193 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0193/c0193InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0193/c0193InferenceCompiler_CODE'
+[11:20:33] c0193 score 0.144 (6 s) | best c0120 0.422 | 194 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0194/c0194InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0194/c0194InferenceCompiler_CODE'
+[11:20:39] c0194 score 0.013 (6 s) | best c0120 0.422 | 195 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0195/c0195InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0195/c0195InferenceCompiler_CODE'
+[11:20:47] c0195 score -0.044 (8 s) | best c0120 0.422 | 196 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0196/c0196InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0196/c0196InferenceCompiler_CODE'
+[11:20:54] c0196 score -0.214 (6 s) | best c0120 0.422 | 197 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0197/c0197InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0197/c0197InferenceCompiler_CODE'
+[11:21:00] c0197 score 0.389 (6 s) | best c0120 0.422 | 198 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0198/c0198InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0198/c0198InferenceCompiler_CODE'
+[11:21:07] c0198 score 0.254 (7 s) | best c0120 0.422 | 199 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0199/c0199InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0199/c0199InferenceCompiler_CODE'
+[11:21:14] c0199 score 0.411 (6 s) | best c0120 0.422 | 200 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0200/c0200InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0200/c0200InferenceCompiler_CODE'
+[11:21:20] c0200 score 0.403 (6 s) | best c0120 0.422 | 201 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0201/c0201InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0201/c0201InferenceCompiler_CODE'
+[11:21:27] c0201 score 0.300 (6 s) | best c0120 0.422 | 202 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0202/c0202InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0202/c0202InferenceCompiler_CODE'
+[11:21:34] c0202 score 0.409 (7 s) | best c0120 0.422 | 203 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0203/c0203InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0203/c0203InferenceCompiler_CODE'
+[11:21:39] c0203 score 0.395 (6 s) | best c0120 0.422 | 204 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0204/c0204InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0204/c0204InferenceCompiler_CODE'
+[11:21:46] c0204 score 0.411 (7 s) | best c0120 0.422 | 205 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0205/c0205InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0205/c0205InferenceCompiler_CODE'
+[11:21:52] c0205 score 0.403 (6 s) | best c0120 0.422 | 206 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0206/c0206InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0206/c0206InferenceCompiler_CODE'
+[11:21:59] c0206 score 0.401 (19 s) | best c0120 0.422 | 207 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0207/c0207InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0207/c0207InferenceCompiler_CODE'
+[11:22:06] c0207 score 0.412 (7 s) | best c0120 0.422 | 208 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0208/c0208InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0208/c0208InferenceCompiler_CODE'
+[11:22:13] c0208 score 0.394 (7 s) | best c0120 0.422 | 209 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0209/c0209InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0209/c0209InferenceCompiler_CODE'
+[11:22:19] c0209 score 0.021 (7 s) | best c0120 0.422 | 210 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0210/c0210InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0210/c0210InferenceCompiler_CODE'
+[11:22:26] c0210 score 0.400 (6 s) | best c0120 0.422 | 211 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0211/c0211InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0211/c0211InferenceCompiler_CODE'
+[11:22:32] c0211 score 0.405 (7 s) | best c0120 0.422 | 212 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0212/c0212InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0212/c0212InferenceCompiler_CODE'
+[11:22:39] c0212 score 0.381 (7 s) | best c0120 0.422 | 213 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0213/c0213InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0213/c0213InferenceCompiler_CODE'
+[11:22:46] c0213 score 0.416 (6 s) | best c0120 0.422 | 214 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0214/c0214InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0214/c0214InferenceCompiler_CODE'
+[11:22:54] c0214 score -0.239 (8 s) | best c0120 0.422 | 215 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0215/c0215InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0215/c0215InferenceCompiler_CODE'
+[11:23:01] c0215 score 0.392 (7 s) | best c0120 0.422 | 216 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0216/c0216InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0216/c0216InferenceCompiler_CODE'
+[11:23:08] c0216 score 0.414 (7 s) | best c0120 0.422 | 217 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0217/c0217InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0217/c0217InferenceCompiler_CODE'
+[11:23:15] c0217 score -0.163 (7 s) | best c0120 0.422 | 218 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0218/c0218InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0218/c0218InferenceCompiler_CODE'
+[11:23:22] c0218 score 0.373 (7 s) | best c0120 0.422 | 219 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0219/c0219InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0219/c0219InferenceCompiler_CODE'
+[11:23:29] c0219 score 0.416 (7 s) | best c0120 0.422 | 220 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0220/c0220InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0220/c0220InferenceCompiler_CODE'
+[11:23:36] c0220 score 0.284 (7 s) | best c0120 0.422 | 221 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0221/c0221InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0221/c0221InferenceCompiler_CODE'
+[11:23:43] c0221 score 0.405 (7 s) | best c0120 0.422 | 222 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0222/c0222InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0222/c0222InferenceCompiler_CODE'
+[11:23:50] c0222 score 0.416 (7 s) | best c0120 0.422 | 223 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0223/c0223InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0223/c0223InferenceCompiler_CODE'
+[11:23:56] c0223 score 0.387 (7 s) | best c0120 0.422 | 224 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0224/c0224InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0224/c0224InferenceCompiler_CODE'
+[11:24:04] c0224 score 0.074 (7 s) | best c0120 0.422 | 225 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0225/c0225InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0225/c0225InferenceCompiler_CODE'
+[11:24:10] c0225 score 0.400 (6 s) | best c0120 0.422 | 226 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0226/c0226InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0226/c0226InferenceCompiler_CODE'
+[11:24:17] c0226 score 0.432 (7 s) | best c0226 0.432 | 227 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0227/c0227InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0227/c0227InferenceCompiler_CODE'
+[11:24:23] c0227 score 0.281 (6 s) | best c0226 0.432 | 228 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0228/c0228InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0228/c0228InferenceCompiler_CODE'
+[11:24:31] c0228 score -0.112 (8 s) | best c0226 0.432 | 229 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0229/c0229InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0229/c0229InferenceCompiler_CODE'
+[11:24:39] c0229 score 0.397 (7 s) | best c0226 0.432 | 230 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0230/c0230InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0230/c0230InferenceCompiler_CODE'
+[11:24:46] c0230 score 0.432 (6 s) | best c0230 0.432 | 231 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0231/c0231InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0231/c0231InferenceCompiler_CODE'
+[11:24:53] c0231 score 0.251 (7 s) | best c0230 0.432 | 232 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0232/c0232InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0232/c0232InferenceCompiler_CODE'
+[11:25:00] c0232 score 0.422 (7 s) | best c0230 0.432 | 233 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0233/c0233InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0233/c0233InferenceCompiler_CODE'
+[11:25:06] c0233 score 0.320 (7 s) | best c0230 0.432 | 234 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0234/c0234InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0234/c0234InferenceCompiler_CODE'
+[11:25:13] c0234 score -0.212 (6 s) | best c0230 0.432 | 235 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0235/c0235InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0235/c0235InferenceCompiler_CODE'
+[11:25:20] c0235 score -0.165 (7 s) | best c0230 0.432 | 236 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0236/c0236InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0236/c0236InferenceCompiler_CODE'
+[11:25:28] c0236 score 0.386 (8 s) | best c0230 0.432 | 237 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0237/c0237InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0237/c0237InferenceCompiler_CODE'
+[11:25:35] c0237 score 0.430 (6 s) | best c0230 0.432 | 238 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0238/c0238InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0238/c0238InferenceCompiler_CODE'
+[11:25:42] c0238 score 0.426 (7 s) | best c0230 0.432 | 239 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0239/c0239InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0239/c0239InferenceCompiler_CODE'
+[11:25:48] c0239 score 0.417 (6 s) | best c0230 0.432 | 240 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0240/c0240InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0240/c0240InferenceCompiler_CODE'
+[11:25:55] c0240 score 0.122 (7 s) | best c0230 0.432 | 241 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0241/c0241InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0241/c0241InferenceCompiler_CODE'
+[11:26:03] c0241 score 0.381 (7 s) | best c0230 0.432 | 242 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0242/c0242InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0242/c0242InferenceCompiler_CODE'
+[11:26:10] c0242 score 0.410 (6 s) | best c0230 0.432 | 243 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0243/c0243InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0243/c0243InferenceCompiler_CODE'
+[11:26:17] c0243 score 0.388 (7 s) | best c0230 0.432 | 244 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0244/c0244InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0244/c0244InferenceCompiler_CODE'
+[11:26:24] c0244 score -0.119 (7 s) | best c0230 0.432 | 245 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0245/c0245InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0245/c0245InferenceCompiler_CODE'
+[11:26:32] c0245 score 0.361 (8 s) | best c0230 0.432 | 246 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0246/c0246InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0246/c0246InferenceCompiler_CODE'
+[11:26:38] c0246 score 0.410 (6 s) | best c0230 0.432 | 247 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0247/c0247InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0247/c0247InferenceCompiler_CODE'
+[11:26:45] c0247 score 0.430 (6 s) | best c0230 0.432 | 248 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0248/c0248InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0248/c0248InferenceCompiler_CODE'
+[11:26:51] c0248 score 0.382 (7 s) | best c0230 0.432 | 249 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0249/c0249InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0249/c0249InferenceCompiler_CODE'
+[11:26:58] c0249 score 0.418 (7 s) | best c0230 0.432 | 250 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0250/c0250InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0250/c0250InferenceCompiler_CODE'
+[11:27:05] c0250 score 0.422 (6 s) | best c0230 0.432 | 251 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0251/c0251InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0251/c0251InferenceCompiler_CODE'
+[11:27:13] c0251 score 0.391 (9 s) | best c0230 0.432 | 252 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0252/c0252InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0252/c0252InferenceCompiler_CODE'
+[11:27:20] c0252 score 0.384 (6 s) | best c0230 0.432 | 253 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0253/c0253InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0253/c0253InferenceCompiler_CODE'
+[11:27:27] c0253 score 0.363 (7 s) | best c0230 0.432 | 254 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0254/c0254InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0254/c0254InferenceCompiler_CODE'
+[11:27:35] c0254 score -0.120 (7 s) | best c0230 0.432 | 255 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0255/c0255InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0255/c0255InferenceCompiler_CODE'
+[11:27:54] c0255 score 0.430 (20 s) | best c0230 0.432 | 256 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0256/c0256InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0256/c0256InferenceCompiler_CODE'
+[11:28:02] c0256 score 0.427 (8 s) | best c0230 0.432 | 257 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0257/c0257InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0257/c0257InferenceCompiler_CODE'
+[11:27:55] c0257 score 0.430 (-7 s) | best c0230 0.432 | 258 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0258/c0258InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0258/c0258InferenceCompiler_CODE'
+[11:28:02] c0258 score 0.419 (7 s) | best c0230 0.432 | 259 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0259/c0259InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0259/c0259InferenceCompiler_CODE'
+[11:28:09] c0259 score 0.433 (7 s) | best c0259 0.433 | 260 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0260/c0260InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0260/c0260InferenceCompiler_CODE'
+[11:28:16] c0260 score 0.431 (7 s) | best c0259 0.433 | 261 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0261/c0261InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0261/c0261InferenceCompiler_CODE'
+[11:28:23] c0261 score 0.144 (7 s) | best c0259 0.433 | 262 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0262/c0262InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0262/c0262InferenceCompiler_CODE'
+[11:28:31] c0262 score 0.090 (8 s) | best c0259 0.433 | 263 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0263/c0263InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0263/c0263InferenceCompiler_CODE'
+[11:28:39] c0263 score 0.054 (8 s) | best c0259 0.433 | 264 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0264/c0264InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0264/c0264InferenceCompiler_CODE'
+[11:28:46] c0264 score -0.165 (7 s) | best c0259 0.433 | 265 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0265/c0265InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0265/c0265InferenceCompiler_CODE'
+[11:28:53] c0265 score 0.416 (7 s) | best c0259 0.433 | 266 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0266/c0266InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0266/c0266InferenceCompiler_CODE'
+[11:29:00] c0266 score 0.410 (7 s) | best c0259 0.433 | 267 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0267/c0267InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0267/c0267InferenceCompiler_CODE'
+[11:29:07] c0267 score -0.158 (7 s) | best c0259 0.433 | 268 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0268/c0268InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0268/c0268InferenceCompiler_CODE'
+[11:29:15] c0268 score 0.200 (8 s) | best c0259 0.433 | 269 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0269/c0269InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0269/c0269InferenceCompiler_CODE'
+[11:29:22] c0269 score 0.428 (7 s) | best c0259 0.433 | 270 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0270/c0270InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0270/c0270InferenceCompiler_CODE'
+[11:29:30] c0270 score 0.358 (8 s) | best c0259 0.433 | 271 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0271/c0271InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0271/c0271InferenceCompiler_CODE'
+[11:29:37] c0271 score 0.422 (-5 s) | best c0259 0.433 | 272 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0272/c0272InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0272/c0272InferenceCompiler_CODE'
+[11:29:44] c0272 score 0.375 (6 s) | best c0259 0.433 | 273 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0273/c0273InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0273/c0273InferenceCompiler_CODE'
+[11:29:50] c0273 score -0.188 (7 s) | best c0259 0.433 | 274 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0274/c0274InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0274/c0274InferenceCompiler_CODE'
+[11:29:58] c0274 score 0.163 (8 s) | best c0259 0.433 | 275 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0275/c0275InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0275/c0275InferenceCompiler_CODE'
+[11:30:05] c0275 score 0.394 (6 s) | best c0259 0.433 | 276 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0276/c0276InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0276/c0276InferenceCompiler_CODE'
+[11:30:12] c0276 score 0.391 (7 s) | best c0259 0.433 | 277 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0277/c0277InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0277/c0277InferenceCompiler_CODE'
+[11:30:19] c0277 score 0.405 (7 s) | best c0259 0.433 | 278 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0278/c0278InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0278/c0278InferenceCompiler_CODE'
+[11:30:25] c0278 score 0.425 (6 s) | best c0259 0.433 | 279 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0279/c0279InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0279/c0279InferenceCompiler_CODE'
+[11:30:32] c0279 score 0.377 (7 s) | best c0259 0.433 | 280 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0280/c0280InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0280/c0280InferenceCompiler_CODE'
+[11:30:39] c0280 score 0.416 (6 s) | best c0259 0.433 | 281 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0281/c0281InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0281/c0281InferenceCompiler_CODE'
+[11:30:45] c0281 score -0.124 (6 s) | best c0259 0.433 | 282 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0282/c0282InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0282/c0282InferenceCompiler_CODE'
+[11:30:52] c0282 score 0.405 (7 s) | best c0259 0.433 | 283 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0283/c0283InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0283/c0283InferenceCompiler_CODE'
+[11:30:58] c0283 score 0.396 (6 s) | best c0259 0.433 | 284 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0284/c0284InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0284/c0284InferenceCompiler_CODE'
+[11:31:05] c0284 score -0.187 (6 s) | best c0259 0.433 | 285 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0285/c0285InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0285/c0285InferenceCompiler_CODE'
+[11:31:12] c0285 score -0.295 (7 s) | best c0259 0.433 | 286 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0286/c0286InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0286/c0286InferenceCompiler_CODE'
+[11:31:19] c0286 score 0.428 (7 s) | best c0259 0.433 | 287 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0287/c0287InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0287/c0287InferenceCompiler_CODE'
+[11:31:25] c0287 score 0.425 (6 s) | best c0259 0.433 | 288 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0288/c0288InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0288/c0288InferenceCompiler_CODE'
+[11:31:32] c0288 score -0.211 (7 s) | best c0259 0.433 | 289 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0289/c0289InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0289/c0289InferenceCompiler_CODE'
+[11:31:40] c0289 score 0.412 (7 s) | best c0259 0.433 | 290 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0290/c0290InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0290/c0290InferenceCompiler_CODE'
+[11:31:46] c0290 score 0.370 (6 s) | best c0259 0.433 | 291 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0291/c0291InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0291/c0291InferenceCompiler_CODE'
+[11:31:53] c0291 score 0.416 (6 s) | best c0259 0.433 | 292 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0292/c0292InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0292/c0292InferenceCompiler_CODE'
+[11:31:59] c0292 score 0.380 (6 s) | best c0259 0.433 | 293 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0293/c0293InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0293/c0293InferenceCompiler_CODE'
+[11:32:06] c0293 score 0.405 (7 s) | best c0259 0.433 | 294 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0294/c0294InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0294/c0294InferenceCompiler_CODE'
+[11:32:12] c0294 score 0.431 (6 s) | best c0259 0.433 | 295 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0295/c0295InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0295/c0295InferenceCompiler_CODE'
+[11:32:19] c0295 score 0.373 (7 s) | best c0259 0.433 | 296 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0296/c0296InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0296/c0296InferenceCompiler_CODE'
+[11:32:26] c0296 score 0.425 (6 s) | best c0259 0.433 | 297 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0297/c0297InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0297/c0297InferenceCompiler_CODE'
+[11:32:33] c0297 score 0.425 (7 s) | best c0259 0.433 | 298 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0298/c0298InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0298/c0298InferenceCompiler_CODE'
+[11:32:40] c0298 score 0.428 (7 s) | best c0259 0.433 | 299 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0299/c0299InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0299/c0299InferenceCompiler_CODE'
+[11:32:47] c0299 score 0.431 (7 s) | best c0259 0.433 | 300 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0300/c0300InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0300/c0300InferenceCompiler_CODE'
+[11:32:53] c0300 score 0.426 (6 s) | best c0259 0.433 | 301 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0301/c0301InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0301/c0301InferenceCompiler_CODE'
+[11:33:00] c0301 score 0.418 (7 s) | best c0259 0.433 | 302 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0302/c0302InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0302/c0302InferenceCompiler_CODE'
+[11:33:07] c0302 score 0.408 (7 s) | best c0259 0.433 | 303 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0303/c0303InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0303/c0303InferenceCompiler_CODE'
+[11:33:14] c0303 score 0.424 (7 s) | best c0259 0.433 | 304 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0304/c0304InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0304/c0304InferenceCompiler_CODE'
+[11:33:20] c0304 score 0.424 (19 s) | best c0259 0.433 | 305 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0305/c0305InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0305/c0305InferenceCompiler_CODE'
+[11:33:26] c0305 score 0.433 (6 s) | best c0305 0.433 | 306 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0306/c0306InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0306/c0306InferenceCompiler_CODE'
+[11:33:33] c0306 score 0.405 (7 s) | best c0305 0.433 | 307 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0307/c0307InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0307/c0307InferenceCompiler_CODE'
+[11:33:40] c0307 score 0.396 (7 s) | best c0305 0.433 | 308 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0308/c0308InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0308/c0308InferenceCompiler_CODE'
+[11:33:46] c0308 score 0.427 (6 s) | best c0305 0.433 | 309 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0309/c0309InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0309/c0309InferenceCompiler_CODE'
+[11:33:52] c0309 score 0.429 (6 s) | best c0305 0.433 | 310 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0310/c0310InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0310/c0310InferenceCompiler_CODE'
+[11:33:59] c0310 score 0.371 (7 s) | best c0305 0.433 | 311 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0311/c0311InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0311/c0311InferenceCompiler_CODE'
+[11:34:05] c0311 score -0.175 (6 s) | best c0305 0.433 | 312 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0312/c0312InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0312/c0312InferenceCompiler_CODE'
+[11:34:12] c0312 score 0.429 (6 s) | best c0305 0.433 | 313 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0313/c0313InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0313/c0313InferenceCompiler_CODE'
+[11:34:18] c0313 score 0.427 (6 s) | best c0305 0.433 | 314 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0314/c0314InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0314/c0314InferenceCompiler_CODE'
+[11:34:24] c0314 score 0.421 (6 s) | best c0305 0.433 | 315 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0315/c0315InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0315/c0315InferenceCompiler_CODE'
+[11:34:30] c0315 score -0.066 (6 s) | best c0305 0.433 | 316 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0316/c0316InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0316/c0316InferenceCompiler_CODE'
+[11:34:36] c0316 score -0.316 (-6 s) | best c0305 0.433 | 317 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0317/c0317InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0317/c0317InferenceCompiler_CODE'
+[11:34:43] c0317 score 0.431 (6 s) | best c0305 0.433 | 318 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0318/c0318InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0318/c0318InferenceCompiler_CODE'
+[11:34:49] c0318 score 0.254 (6 s) | best c0305 0.433 | 319 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0319/c0319InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0319/c0319InferenceCompiler_CODE'
+[11:34:55] c0319 score 0.402 (19 s) | best c0305 0.433 | 320 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0320/c0320InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0320/c0320InferenceCompiler_CODE'
+[11:35:01] c0320 score -0.025 (6 s) | best c0305 0.433 | 321 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0321/c0321InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0321/c0321InferenceCompiler_CODE'
+[11:35:08] c0321 score 0.431 (6 s) | best c0305 0.433 | 322 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0322/c0322InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0322/c0322InferenceCompiler_CODE'
+[11:35:15] c0322 score -0.097 (8 s) | best c0305 0.433 | 323 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0323/c0323InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0323/c0323InferenceCompiler_CODE'
+[11:35:22] c0323 score 0.430 (6 s) | best c0305 0.433 | 324 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0324/c0324InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0324/c0324InferenceCompiler_CODE'
+[11:35:28] c0324 score 0.429 (6 s) | best c0305 0.433 | 325 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0325/c0325InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0325/c0325InferenceCompiler_CODE'
+[11:35:34] c0325 score 0.429 (6 s) | best c0305 0.433 | 326 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0326/c0326InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0326/c0326InferenceCompiler_CODE'
+[11:35:41] c0326 score -0.084 (7 s) | best c0305 0.433 | 327 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0327/c0327InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0327/c0327InferenceCompiler_CODE'
+[11:35:47] c0327 score 0.414 (6 s) | best c0305 0.433 | 328 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0328/c0328InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0328/c0328InferenceCompiler_CODE'
+[11:35:54] c0328 score -0.009 (7 s) | best c0305 0.433 | 329 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0329/c0329InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0329/c0329InferenceCompiler_CODE'
+[11:36:00] c0329 score 0.431 (6 s) | best c0305 0.433 | 330 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0330/c0330InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0330/c0330InferenceCompiler_CODE'
+[11:36:06] c0330 score 0.387 (6 s) | best c0305 0.433 | 331 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0331/c0331InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0331/c0331InferenceCompiler_CODE'
+[11:36:13] c0331 score 0.357 (6 s) | best c0305 0.433 | 332 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0332/c0332InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0332/c0332InferenceCompiler_CODE'
+[11:36:19] c0332 score 0.431 (6 s) | best c0305 0.433 | 333 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0333/c0333InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0333/c0333InferenceCompiler_CODE'
+[11:36:25] c0333 score 0.389 (6 s) | best c0305 0.433 | 334 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0334/c0334InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0334/c0334InferenceCompiler_CODE'
+[11:36:31] c0334 score 0.381 (6 s) | best c0305 0.433 | 335 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0335/c0335InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0335/c0335InferenceCompiler_CODE'
+[11:36:37] c0335 score 0.400 (5 s) | best c0305 0.433 | 336 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0336/c0336InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0336/c0336InferenceCompiler_CODE'
+[11:36:43] c0336 score 0.416 (6 s) | best c0305 0.433 | 337 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0337/c0337InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0337/c0337InferenceCompiler_CODE'
+[11:36:50] c0337 score 0.157 (6 s) | best c0305 0.433 | 338 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0338/c0338InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0338/c0338InferenceCompiler_CODE'
+[11:36:56] c0338 score 0.427 (6 s) | best c0305 0.433 | 339 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0339/c0339InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0339/c0339InferenceCompiler_CODE'
+[11:37:02] c0339 score 0.420 (6 s) | best c0305 0.433 | 340 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0340/c0340InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0340/c0340InferenceCompiler_CODE'
+[11:37:08] c0340 score -0.190 (6 s) | best c0305 0.433 | 341 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0341/c0341InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0341/c0341InferenceCompiler_CODE'
+[11:37:15] c0341 score 0.326 (7 s) | best c0305 0.433 | 342 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0342/c0342InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0342/c0342InferenceCompiler_CODE'
+[11:37:21] c0342 score 0.356 (6 s) | best c0305 0.433 | 343 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0343/c0343InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0343/c0343InferenceCompiler_CODE'
+[11:37:27] c0343 score 0.427 (6 s) | best c0305 0.433 | 344 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0344/c0344InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0344/c0344InferenceCompiler_CODE'
+[11:37:33] c0344 score 0.388 (6 s) | best c0305 0.433 | 345 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0345/c0345InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0345/c0345InferenceCompiler_CODE'
+[11:37:40] c0345 score 0.430 (6 s) | best c0305 0.433 | 346 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0346/c0346InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0346/c0346InferenceCompiler_CODE'
+[11:37:45] c0346 score -0.236 (6 s) | best c0305 0.433 | 347 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0347/c0347InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0347/c0347InferenceCompiler_CODE'
+[11:37:53] c0347 score -0.037 (7 s) | best c0305 0.433 | 348 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0348/c0348InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0348/c0348InferenceCompiler_CODE'
+[11:37:59] c0348 score 0.429 (6 s) | best c0305 0.433 | 349 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0349/c0349InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0349/c0349InferenceCompiler_CODE'
+[11:38:05] c0349 score 0.429 (7 s) | best c0305 0.433 | 350 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0350/c0350InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0350/c0350InferenceCompiler_CODE'
+[11:38:11] c0350 score 0.406 (5 s) | best c0305 0.433 | 351 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0351/c0351InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0351/c0351InferenceCompiler_CODE'
+[11:38:18] c0351 score 0.416 (7 s) | best c0305 0.433 | 352 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0352/c0352InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0352/c0352InferenceCompiler_CODE'
+[11:38:25] c0352 score -0.187 (7 s) | best c0305 0.433 | 353 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0353/c0353InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0353/c0353InferenceCompiler_CODE'
+[11:38:31] c0353 score 0.425 (6 s) | best c0305 0.433 | 354 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0354/c0354InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0354/c0354InferenceCompiler_CODE'
+[11:38:37] c0354 score 0.431 (6 s) | best c0305 0.433 | 355 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0355/c0355InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0355/c0355InferenceCompiler_CODE'
+[11:38:43] c0355 score 0.424 (6 s) | best c0305 0.433 | 356 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0356/c0356InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0356/c0356InferenceCompiler_CODE'
+[11:38:50] c0356 score 0.382 (7 s) | best c0305 0.433 | 357 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0357/c0357InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0357/c0357InferenceCompiler_CODE'
+[11:38:56] c0357 score 0.418 (5 s) | best c0305 0.433 | 358 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0358/c0358InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0358/c0358InferenceCompiler_CODE'
+[11:39:02] c0358 score 0.429 (6 s) | best c0305 0.433 | 359 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0359/c0359InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0359/c0359InferenceCompiler_CODE'
+[11:39:08] c0359 score 0.433 (6 s) | best c0305 0.433 | 360 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0360/c0360InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0360/c0360InferenceCompiler_CODE'
+[11:39:14] c0360 score 0.392 (6 s) | best c0305 0.433 | 361 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0361/c0361InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0361/c0361InferenceCompiler_CODE'
+[11:39:20] c0361 score 0.417 (6 s) | best c0305 0.433 | 362 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0362/c0362InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0362/c0362InferenceCompiler_CODE'
+[11:39:27] c0362 score -0.332 (6 s) | best c0305 0.433 | 363 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0363/c0363InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0363/c0363InferenceCompiler_CODE'
+[11:39:33] c0363 score 0.428 (6 s) | best c0305 0.433 | 364 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0364/c0364InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0364/c0364InferenceCompiler_CODE'
+[11:39:39] c0364 score -0.147 (6 s) | best c0305 0.433 | 365 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0365/c0365InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0365/c0365InferenceCompiler_CODE'
+[11:39:46] c0365 score -0.204 (6 s) | best c0305 0.433 | 366 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0366/c0366InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0366/c0366InferenceCompiler_CODE'
+[11:39:52] c0366 score 0.421 (6 s) | best c0305 0.433 | 367 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0367/c0367InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0367/c0367InferenceCompiler_CODE'
+[11:40:11] c0367 score 0.408 (19 s) | best c0305 0.433 | 368 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0368/c0368InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0368/c0368InferenceCompiler_CODE'
+[11:40:18] c0368 score 0.371 (7 s) | best c0305 0.433 | 369 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0369/c0369InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0369/c0369InferenceCompiler_CODE'
+[11:40:10] c0369 score 0.431 (-8 s) | best c0305 0.433 | 370 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0370/c0370InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0370/c0370InferenceCompiler_CODE'
+[11:40:16] c0370 score 0.378 (6 s) | best c0305 0.433 | 371 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0371/c0371InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0371/c0371InferenceCompiler_CODE'
+[11:40:22] c0371 score 0.418 (6 s) | best c0305 0.433 | 372 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0372/c0372InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0372/c0372InferenceCompiler_CODE'
+[11:40:29] c0372 score -0.148 (7 s) | best c0305 0.433 | 373 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0373/c0373InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0373/c0373InferenceCompiler_CODE'
+[11:40:35] c0373 score 0.241 (6 s) | best c0305 0.433 | 374 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0374/c0374InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0374/c0374InferenceCompiler_CODE'
+[11:40:41] c0374 score 0.391 (6 s) | best c0305 0.433 | 375 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0375/c0375InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0375/c0375InferenceCompiler_CODE'
+[11:40:47] c0375 score -0.276 (6 s) | best c0305 0.433 | 376 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0376/c0376InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0376/c0376InferenceCompiler_CODE'
+[11:40:53] c0376 score 0.361 (6 s) | best c0305 0.433 | 377 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0377/c0377InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0377/c0377InferenceCompiler_CODE'
+[11:41:00] c0377 score 0.434 (7 s) | best c0377 0.434 | 378 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0378/c0378InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0378/c0378InferenceCompiler_CODE'
+[11:41:06] c0378 score -0.235 (6 s) | best c0377 0.434 | 379 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0379/c0379InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0379/c0379InferenceCompiler_CODE'
+[11:41:13] c0379 score -0.261 (7 s) | best c0377 0.434 | 380 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0380/c0380InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0380/c0380InferenceCompiler_CODE'
+[11:41:19] c0380 score 0.399 (6 s) | best c0377 0.434 | 381 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0381/c0381InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0381/c0381InferenceCompiler_CODE'
+[11:41:25] c0381 score 0.149 (6 s) | best c0377 0.434 | 382 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0382/c0382InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0382/c0382InferenceCompiler_CODE'
+[11:41:31] c0382 score 0.370 (6 s) | best c0377 0.434 | 383 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0383/c0383InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0383/c0383InferenceCompiler_CODE'
+[11:41:37] c0383 score 0.395 (6 s) | best c0377 0.434 | 384 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0384/c0384InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0384/c0384InferenceCompiler_CODE'
+[11:41:43] c0384 score 0.354 (6 s) | best c0377 0.434 | 385 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0385/c0385InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0385/c0385InferenceCompiler_CODE'
+[11:41:49] c0385 score 0.387 (6 s) | best c0377 0.434 | 386 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0386/c0386InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0386/c0386InferenceCompiler_CODE'
+[11:41:56] c0386 score 0.420 (6 s) | best c0377 0.434 | 387 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0387/c0387InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0387/c0387InferenceCompiler_CODE'
+[11:42:03] c0387 score 0.344 (7 s) | best c0377 0.434 | 388 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0388/c0388InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0388/c0388InferenceCompiler_CODE'
+[11:42:10] c0388 score 0.369 (7 s) | best c0377 0.434 | 389 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0389/c0389InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0389/c0389InferenceCompiler_CODE'
+[11:42:16] c0389 score 0.429 (6 s) | best c0377 0.434 | 390 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0390/c0390InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0390/c0390InferenceCompiler_CODE'
+[11:42:21] c0390 score 0.394 (5 s) | best c0377 0.434 | 391 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0391/c0391InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0391/c0391InferenceCompiler_CODE'
+[11:42:28] c0391 score 0.392 (7 s) | best c0377 0.434 | 392 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0392/c0392InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0392/c0392InferenceCompiler_CODE'
+[11:42:35] c0392 score -0.192 (7 s) | best c0377 0.434 | 393 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0393/c0393InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0393/c0393InferenceCompiler_CODE'
+[11:42:41] c0393 score 0.425 (6 s) | best c0377 0.434 | 394 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0394/c0394InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0394/c0394InferenceCompiler_CODE'
+[11:42:48] c0394 score 0.387 (6 s) | best c0377 0.434 | 395 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0395/c0395InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0395/c0395InferenceCompiler_CODE'
+[11:42:54] c0395 score 0.402 (6 s) | best c0377 0.434 | 396 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0396/c0396InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0396/c0396InferenceCompiler_CODE'
+[11:43:00] c0396 score 0.433 (6 s) | best c0377 0.434 | 397 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0397/c0397InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0397/c0397InferenceCompiler_CODE'
+[11:43:06] c0397 score 0.426 (6 s) | best c0377 0.434 | 398 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0398/c0398InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0398/c0398InferenceCompiler_CODE'
+[11:43:12] c0398 score 0.379 (6 s) | best c0377 0.434 | 399 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0399/c0399InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0399/c0399InferenceCompiler_CODE'
+[11:43:18] c0399 score 0.397 (6 s) | best c0377 0.434 | 400 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0400/c0400InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0400/c0400InferenceCompiler_CODE'
+[11:43:24] c0400 score 0.251 (6 s) | best c0377 0.434 | 401 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0401/c0401InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0401/c0401InferenceCompiler_CODE'
+[11:43:31] c0401 score 0.429 (6 s) | best c0377 0.434 | 402 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0402/c0402InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0402/c0402InferenceCompiler_CODE'
+[11:43:37] c0402 score 0.369 (6 s) | best c0377 0.434 | 403 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0403/c0403InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0403/c0403InferenceCompiler_CODE'
+[11:43:44] c0403 score 0.312 (8 s) | best c0377 0.434 | 404 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0404/c0404InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0404/c0404InferenceCompiler_CODE'
+[11:43:50] c0404 score 0.427 (6 s) | best c0377 0.434 | 405 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0405/c0405InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0405/c0405InferenceCompiler_CODE'
+[11:43:57] c0405 score -0.063 (6 s) | best c0377 0.434 | 406 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0406/c0406InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0406/c0406InferenceCompiler_CODE'
+[11:44:03] c0406 score 0.391 (6 s) | best c0377 0.434 | 407 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0407/c0407InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0407/c0407InferenceCompiler_CODE'
+[11:44:09] c0407 score 0.436 (6 s) | best c0407 0.436 | 408 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0408/c0408InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0408/c0408InferenceCompiler_CODE'
+[11:44:16] c0408 score 0.384 (6 s) | best c0407 0.436 | 409 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0409/c0409InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0409/c0409InferenceCompiler_CODE'
+[11:44:21] c0409 score -0.130 (5 s) | best c0407 0.436 | 410 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0410/c0410InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0410/c0410InferenceCompiler_CODE'
+[11:44:28] c0410 score 0.244 (6 s) | best c0407 0.436 | 411 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0411/c0411InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0411/c0411InferenceCompiler_CODE'
+[11:44:34] c0411 score 0.423 (6 s) | best c0407 0.436 | 412 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0412/c0412InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0412/c0412InferenceCompiler_CODE'
+[11:44:41] c0412 score 0.399 (7 s) | best c0407 0.436 | 413 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0413/c0413InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0413/c0413InferenceCompiler_CODE'
+[11:44:46] c0413 score -0.084 (6 s) | best c0407 0.436 | 414 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0414/c0414InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0414/c0414InferenceCompiler_CODE'
+[11:44:53] c0414 score 0.414 (6 s) | best c0407 0.436 | 415 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0415/c0415InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0415/c0415InferenceCompiler_CODE'
+[11:44:59] c0415 score 0.422 (6 s) | best c0407 0.436 | 416 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0416/c0416InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0416/c0416InferenceCompiler_CODE'
+[11:45:05] c0416 score 0.431 (6 s) | best c0407 0.436 | 417 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0417/c0417InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0417/c0417InferenceCompiler_CODE'
+[11:45:12] c0417 score -0.154 (6 s) | best c0407 0.436 | 418 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0418/c0418InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0418/c0418InferenceCompiler_CODE'
+[11:45:18] c0418 score 0.365 (6 s) | best c0407 0.436 | 419 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0419/c0419InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0419/c0419InferenceCompiler_CODE'
+[11:45:26] c0419 score 0.393 (7 s) | best c0407 0.436 | 420 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0420/c0420InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0420/c0420InferenceCompiler_CODE'
+[11:45:32] c0420 score 0.367 (6 s) | best c0407 0.436 | 421 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0421/c0421InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0421/c0421InferenceCompiler_CODE'
+[11:45:38] c0421 score -0.156 (6 s) | best c0407 0.436 | 422 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0422/c0422InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0422/c0422InferenceCompiler_CODE'
+[11:45:46] c0422 score 0.015 (8 s) | best c0407 0.436 | 423 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0423/c0423InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0423/c0423InferenceCompiler_CODE'
+[11:45:52] c0423 score -0.136 (6 s) | best c0407 0.436 | 424 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0424/c0424InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0424/c0424InferenceCompiler_CODE'
+[11:45:58] c0424 score 0.429 (7 s) | best c0407 0.436 | 425 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0425/c0425InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0425/c0425InferenceCompiler_CODE'
+[11:46:05] c0425 score -0.221 (7 s) | best c0407 0.436 | 426 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0426/c0426InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0426/c0426InferenceCompiler_CODE'
+[11:46:12] c0426 score 0.432 (6 s) | best c0407 0.436 | 427 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0427/c0427InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0427/c0427InferenceCompiler_CODE'
+[11:46:19] c0427 score 0.432 (7 s) | best c0407 0.436 | 428 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0428/c0428InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0428/c0428InferenceCompiler_CODE'
+[11:46:25] c0428 score 0.421 (6 s) | best c0407 0.436 | 429 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0429/c0429InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0429/c0429InferenceCompiler_CODE'
+[11:46:31] c0429 score -0.180 (19 s) | best c0407 0.436 | 430 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0430/c0430InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0430/c0430InferenceCompiler_CODE'
+[11:46:39] c0430 score 0.383 (7 s) | best c0407 0.436 | 431 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0431/c0431InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0431/c0431InferenceCompiler_CODE'
+[11:46:45] c0431 score 0.428 (6 s) | best c0407 0.436 | 432 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0432/c0432InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0432/c0432InferenceCompiler_CODE'
+[11:46:52] c0432 score 0.433 (6 s) | best c0407 0.436 | 433 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0433/c0433InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0433/c0433InferenceCompiler_CODE'
+[11:46:57] c0433 score 0.432 (6 s) | best c0407 0.436 | 434 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0434/c0434InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0434/c0434InferenceCompiler_CODE'
+[11:47:04] c0434 score 0.243 (6 s) | best c0407 0.436 | 435 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0435/c0435InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0435/c0435InferenceCompiler_CODE'
+[11:47:11] c0435 score 0.044 (7 s) | best c0407 0.436 | 436 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0436/c0436InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0436/c0436InferenceCompiler_CODE'
+[11:47:17] c0436 score 0.367 (6 s) | best c0407 0.436 | 437 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0437/c0437InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0437/c0437InferenceCompiler_CODE'
+[11:47:23] c0437 score 0.381 (6 s) | best c0407 0.436 | 438 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0438/c0438InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0438/c0438InferenceCompiler_CODE'
+[11:47:30] c0438 score 0.429 (6 s) | best c0407 0.436 | 439 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0439/c0439InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0439/c0439InferenceCompiler_CODE'
+[11:47:36] c0439 score -0.211 (6 s) | best c0407 0.436 | 440 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0440/c0440InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0440/c0440InferenceCompiler_CODE'
+[11:47:42] c0440 score 0.429 (6 s) | best c0407 0.436 | 441 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0441/c0441InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0441/c0441InferenceCompiler_CODE'
+[11:47:48] c0441 score 0.429 (6 s) | best c0407 0.436 | 442 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0442/c0442InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0442/c0442InferenceCompiler_CODE'
+[11:47:54] c0442 score 0.392 (6 s) | best c0407 0.436 | 443 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0443/c0443InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0443/c0443InferenceCompiler_CODE'
+[11:48:01] c0443 score 0.431 (6 s) | best c0407 0.436 | 444 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0444/c0444InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0444/c0444InferenceCompiler_CODE'
+[11:48:07] c0444 score 0.430 (6 s) | best c0407 0.436 | 445 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0445/c0445InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0445/c0445InferenceCompiler_CODE'
+[11:48:13] c0445 score 0.431 (6 s) | best c0407 0.436 | 446 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0446/c0446InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0446/c0446InferenceCompiler_CODE'
+[11:48:19] c0446 score -0.192 (6 s) | best c0407 0.436 | 447 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0447/c0447InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0447/c0447InferenceCompiler_CODE'
+[11:48:25] c0447 score 0.421 (6 s) | best c0407 0.436 | 448 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0448/c0448InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0448/c0448InferenceCompiler_CODE'
+[11:48:32] c0448 score 0.262 (6 s) | best c0407 0.436 | 449 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0449/c0449InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0449/c0449InferenceCompiler_CODE'
+[11:48:38] c0449 score -0.205 (6 s) | best c0407 0.436 | 450 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0450/c0450InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0450/c0450InferenceCompiler_CODE'
+[11:48:44] c0450 score -0.221 (6 s) | best c0407 0.436 | 451 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0451/c0451InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0451/c0451InferenceCompiler_CODE'
+[11:48:51] c0451 score 0.123 (7 s) | best c0407 0.436 | 452 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0452/c0452InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0452/c0452InferenceCompiler_CODE'
+[11:48:57] c0452 score 0.290 (6 s) | best c0407 0.436 | 453 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0453/c0453InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0453/c0453InferenceCompiler_CODE'
+[11:49:04] c0453 score 0.414 (7 s) | best c0407 0.436 | 454 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0454/c0454InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0454/c0454InferenceCompiler_CODE'
+[11:49:11] c0454 score 0.433 (6 s) | best c0407 0.436 | 455 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0455/c0455InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0455/c0455InferenceCompiler_CODE'
+[11:49:17] c0455 score 0.400 (6 s) | best c0407 0.436 | 456 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0456/c0456InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0456/c0456InferenceCompiler_CODE'
+[11:49:23] c0456 score 0.393 (6 s) | best c0407 0.436 | 457 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0457/c0457InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0457/c0457InferenceCompiler_CODE'
+[11:49:30] c0457 score 0.193 (6 s) | best c0407 0.436 | 458 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0458/c0458InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0458/c0458InferenceCompiler_CODE'
+[11:49:37] c0458 score -0.057 (7 s) | best c0407 0.436 | 459 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0459/c0459InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0459/c0459InferenceCompiler_CODE'
+[11:49:43] c0459 score 0.408 (6 s) | best c0407 0.436 | 460 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0460/c0460InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0460/c0460InferenceCompiler_CODE'
+[11:49:50] c0460 score 0.341 (7 s) | best c0407 0.436 | 461 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0461/c0461InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0461/c0461InferenceCompiler_CODE'
+[11:49:56] c0461 score 0.427 (6 s) | best c0407 0.436 | 462 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0462/c0462InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0462/c0462InferenceCompiler_CODE'
+[11:50:16] c0462 score 0.139 (20 s) | best c0407 0.436 | 463 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0463/c0463InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0463/c0463InferenceCompiler_CODE'
+[11:50:23] c0463 score 0.388 (7 s) | best c0407 0.436 | 464 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0464/c0464InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0464/c0464InferenceCompiler_CODE'
+[11:50:15] c0464 score -0.158 (-8 s) | best c0407 0.436 | 465 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0465/c0465InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0465/c0465InferenceCompiler_CODE'
+[11:50:21] c0465 score -0.190 (6 s) | best c0407 0.436 | 466 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0466/c0466InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0466/c0466InferenceCompiler_CODE'
+[11:50:27] c0466 score 0.152 (6 s) | best c0407 0.436 | 467 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0467/c0467InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0467/c0467InferenceCompiler_CODE'
+[11:50:33] c0467 score 0.383 (6 s) | best c0407 0.436 | 468 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0468/c0468InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0468/c0468InferenceCompiler_CODE'
+[11:50:40] c0468 score 0.364 (6 s) | best c0407 0.436 | 469 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0469/c0469InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0469/c0469InferenceCompiler_CODE'
+[11:50:47] c0469 score -0.138 (8 s) | best c0407 0.436 | 470 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0470/c0470InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0470/c0470InferenceCompiler_CODE'
+[11:50:53] c0470 score 0.403 (6 s) | best c0407 0.436 | 471 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0471/c0471InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0471/c0471InferenceCompiler_CODE'
+[11:51:01] c0471 score -0.064 (8 s) | best c0407 0.436 | 472 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0472/c0472InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0472/c0472InferenceCompiler_CODE'
+[11:51:07] c0472 score 0.430 (6 s) | best c0407 0.436 | 473 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0473/c0473InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0473/c0473InferenceCompiler_CODE'
+[11:51:14] c0473 score -0.203 (7 s) | best c0407 0.436 | 474 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0474/c0474InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0474/c0474InferenceCompiler_CODE'
+[11:51:21] c0474 score 0.427 (6 s) | best c0407 0.436 | 475 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0475/c0475InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_small_v2_l5/work/c0475/c0475InferenceCompiler_CODE'
+Process SpawnPoolWorker-295:
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/home/user/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

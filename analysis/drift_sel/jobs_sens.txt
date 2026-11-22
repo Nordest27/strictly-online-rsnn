@@ -1,0 +1,12 @@
+sens_reward/sel_sc_s0
+sens_reward/sel_s_s0
+sens_reward/sel_sc_s1
+sens_reward/sel_s_s1
+sens_reward/con_scA_s0
+sens_reward/con_sA_s0
+sens_reward/con_scB_s0
+sens_reward/con_sB_s0
+sens_reward/con_scA_s1
+sens_reward/con_sA_s1
+sens_reward/con_scB_s1
+sens_reward/con_sB_s1

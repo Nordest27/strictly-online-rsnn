@@ -1,0 +1,65 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.139,
+  "p_max": 0.468,
+  "input_sigma_cells": 1.0,
+  "inhibition_scale": 4.739,
+  "feedforward_inhibition": false,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.462,
+    "mean_scale": 0.75,
+    "sd_scale": 0.15000000000000002
+   },
+   "shape": 6,
+   "neuron": {
+    "tau_mem": 7.0,
+    "tau_adapt": 300.0,
+    "beta": 0.0174
+   }
+  },
+  "layers": [
+   {
+    "neuron": {
+     "tau_mem": 7.0,
+     "tau_adapt": 300.0,
+     "beta": 0.0174
+    }
+   }
+  ],
+  "input": {
+   "mean_scale": 0.20744312666954037,
+   "sd_scale": 0.10372156333477019
+  }
+ },
+ "ei_layers": 1,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "_meta": {
+  "architecture_search": {
+   "idx": 2,
+   "score": -0.11532290799827774,
+   "genome": {
+    "tau_mem": 7.0,
+    "tau_adapt": 300.0,
+    "beta": 0.0174,
+    "ff_inhibition": false,
+    "inh_sigma_ratio": 1.0,
+    "sigma_cells": 1.1390697444460147,
+    "p_max": 0.4683509296694966,
+    "input_sigma_cells": 1.0,
+    "inhibition_scale": 4.738693973710625,
+    "field_sigma": 0.4615654910315049,
+    "field_shape": "excitatory",
+    "target_hz": 20.0
+   }
+  }
+ }
+}

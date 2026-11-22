@@ -1,0 +1,116 @@
+\documentclass[11pt]{report}
+\usepackage{float}
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=3cm,bottom=3cm,left=3cm,right=3cm]{geometry}
+\usepackage{amsmath}
+\newcommand*{\defeq}{\stackrel{\text{def}}{=}}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{subcaption}
+\usepackage{bbm}
+\usepackage[T1]{fontenc}
+\usepackage[authoryear]{natbib}
+\bibliographystyle{plainnat} % Common for engineering / CS TFMs
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{\leftmark} % chapter name on the left
+\fancyhead[R]{\thepage}  % page number on the right
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+
+\begin{document}
+
+% Cover
+\includepdf[pages=-]{pdfs/portada_TFM.pdf}
+
+% Abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Training recurrent neural networks online, without storing past activity or
+performing backward passes through time, remains an open problem,
+particularly in reinforcement learning settings where feedback is delayed and 
+sparse. This thesis studies this
+problem in spiking recurrent neural networks (SRNNs) using e-prop
+\citep{eprop2020}, a learning framework that decomposes the loss gradient
+into locally computable eligibility traces and a neuron-specific learning
+signal, avoiding the unbounded memory requirements of Backpropagation
+Through Time and the prohibitive computational cost of Real-Time Recurrent
+Learning.
+
+The thesis makes two main contributions. The first is the implementation
+of a continuously running reinforcement-learning agent based on an
+excitatory-inhibitory SRNN, trained online using the e-prop
+framework, without episodic resets, in a GPU-accelerated, event-based
+simulation substrate. As part of this implementation, we integrate
+$TD(\lambda)$ into the e-prop update rule, decoupling the discount factor
+$\gamma$ from the credit-assignment decay $\lambda$. Stable value
+estimation requires a small $\gamma$, while effective action-credit
+assignment requires a longer horizon, and a single shared parameter cannot
+satisfy both. This decoupling preserves long-range credit assignment
+without destabilizing the critic.
+
+The second contribution is \emph{distributed e-prop}, a new
+learning algorithm that eliminates the structured feedback weights used by
+standard e-prop to route loss information back to each neuron. Building on
+the connection between perturbation-based learning and policy gradient
+methods, every neuron is instead treated as an independent stochastic
+actor that perturbs its own membrane dynamics and correlates this local
+exploration with a single, identical, globally broadcast
+temporal-difference error, relying entirely on its own local activity,
+with no main policy gradient information required.
+
+We evaluate this agent and learning rule on Snake, Pac-Man and Connect Four 
+variants designed to probe reward credit assignment,
+working memory, and behavioral adaptation under partial observability.
+Across these tasks, distributed e-prop is found to be competitive with,
+and in several settings more robust than, standard e-prop variants relying on  
+adaptively learned feedback weights. The two
+families of learning rules nonetheless differ systematically in their
+sensitivity to architectural depth, $\lambda$,
+and assumptions about neuron dynamics such as refractory-period
+integration, indicating that local, perturbation-based credit assignment
+and structured feedback-based credit assignment occupy different regions of the bias-variance tradeoff inherent to
+online learning in SRNNs.
+
+% Acknowledgments
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+I would like to thank my supervisor for their guidance and support throughout this project. I am particularly grateful for providing the Pac-Man code used to run the experiments and produce the results presented in this work.
+I also thank the developers and contributors of \texttt{ml\_genn} \cite{Yavuz2016GeNN} for making their open-source software and documentation available, which supported the implementation and evaluation of the experiments in this project.
+
+\clearpage
+
+\chapter*{Note on the Use of AI Assistance}
+
+Parts of this thesis were produced with the assistance of large language models. These tools were used in three ways: as an
+aid for understanding and exploring source material and related literature, as a
+writing assistant for phrasing, restructuring, and improving the clarity of prose,
+and as a coding aid in the development of parts of the experimental implementation.
+All technical content, mathematical derivations, experimental design, results, and
+conclusions are entirely the author's own work. The author takes full responsibility
+for the accuracy and integrity of everything presented in this document.
+
+% Table of contents
+\tableofcontents
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\include{chapters/01_introduction}
+\include{chapters/03_sota}
+\include{chapters/04_methodology}
+\include{chapters/05_experiments}
+\include{chapters/06_conclusions}
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{references}
+
+\end{document}

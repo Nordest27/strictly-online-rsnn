@@ -1,0 +1,42 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "ei_layers": 3,
+  "monitor": true,
+  "monitor_every": 5000,
+  "probe": {
+   "moves": 5000
+  }
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_f100"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "f_target": 100.0,
+    "c_reg": 0.001
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "adaptive_f100"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true,
+    "f_target": 100.0,
+    "c_reg": 0.001
+   }
+  }
+ ]
+}

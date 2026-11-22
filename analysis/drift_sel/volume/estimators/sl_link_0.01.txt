@@ -1,0 +1,2 @@
+  link corr with W2 +0.82
+route_link per 2000 trials: 0.27 0.29 0.32 0.32 0.36 0.38 0.45 0.50 0.53 0.59

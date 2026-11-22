@@ -1,0 +1,36 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "legacy",
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 10000,
+ "_meta": {
+  "study": "cpu_dale",
+  "config": 0,
+  "point": {
+   "*": {
+    "_meta": {
+     "variant": "proposed"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    }
+   }
+  },
+  "final_rung_score": -0.02437192786735847,
+  "rungs": [
+   2000000.0
+  ],
+  "seeds": [
+   2
+  ]
+ },
+ "hidden_rule": {
+  "preset": "proposed"
+ }
+}

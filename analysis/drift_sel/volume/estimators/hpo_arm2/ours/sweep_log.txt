@@ -1,0 +1,236 @@
+[arm2_ours] rung 0: 24 configs x 1 seeds x 5e+05 timesteps (24 runs to do)
+  start r0_c00_s0
+  start r0_c01_s0
+  done  r0_c01_s0: ok, score +0.2992, 16 min
+  start r0_c02_s0
+  done  r0_c00_s0: ok, score +0.0165, 21 min
+  start r0_c03_s0
+  done  r0_c02_s0: ok, score +0.0720, 17 min
+  start r0_c04_s0
+  done  r0_c03_s0: ok, score +0.0642, 17 min
+  start r0_c05_s0
+  done  r0_c04_s0: ok, score +0.0818, 15 min
+  start r0_c06_s0
+  done  r0_c05_s0: ok, score +0.1014, 17 min
+  start r0_c07_s0
+  done  r0_c06_s0: ok, score +0.0860, 14 min
+  start r0_c08_s0
+  done  r0_c07_s0: ok, score +0.1124, 15 min
+  start r0_c09_s0
+stopped by signal 15
+[arm2_ours] rung 0: 24 configs x 1 seeds x 5e+05 timesteps (16 runs to do)
+  start r0_c08_s0
+  start r0_c09_s0
+stopped by signal 15
+[arm2_ours] rung 0: 57 configs x 1 seeds x 5e+05 timesteps (49 runs to do)
+  start r0_c08_s0
+  start r0_c09_s0
+  done  r0_c08_s0: ok, score +0.0008, 19 min
+  start r0_c10_s0
+  done  r0_c09_s0: ok, score +0.0122, 20 min
+  start r0_c11_s0
+  done  r0_c10_s0: ok, score +0.0092, 15 min
+  start r0_c12_s0
+  done  r0_c11_s0: ok, score +0.0032, 16 min
+  start r0_c13_s0
+  done  r0_c13_s0: ok, score +0.0119, 16 min
+  start r0_c14_s0
+  done  r0_c12_s0: ok, score +0.0010, 19 min
+  start r0_c15_s0
+  done  r0_c14_s0: ok, score +0.0027, 17 min
+  start r0_c16_s0
+  done  r0_c15_s0: ok, score +0.0043, 17 min
+  start r0_c17_s0
+  done  r0_c16_s0: ok, score +0.0132, 15 min
+  start r0_c18_s0
+  done  r0_c17_s0: ok, score +0.0059, 15 min
+  start r0_c19_s0
+  done  r0_c18_s0: ok, score +0.0054, 16 min
+  done  r0_c19_s0: ok, score +0.0055, 15 min
+  start r0_c20_s0
+  start r0_c21_s0
+  done  r0_c21_s0: ok, score +0.0147, 15 min
+  start r0_c22_s0
+  done  r0_c20_s0: ok, score -0.0001, 31 min
+  start r0_c23_s0
+  done  r0_c22_s0: ok, score +0.0003, 23 min
+  start r0_c24_s0
+  done  r0_c23_s0: ok, score +0.0023, 14 min
+  start r0_c25_s0
+  done  r0_c24_s0: ok, score +0.0031, 18 min
+  start r0_c26_s0
+  done  r0_c25_s0: ok, score +0.0107, 17 min
+  start r0_c27_s0
+  done  r0_c27_s0: ok, score +0.0008, 14 min
+  start r0_c28_s0
+  done  r0_c26_s0: ok, score -0.0004, 26 min
+  start r0_c29_s0
+  done  r0_c28_s0: ok, score +0.0062, 16 min
+  start r0_c30_s0
+  done  r0_c29_s0: ok, score +0.0033, 15 min
+  start r0_c31_s0
+  done  r0_c30_s0: ok, score +0.0034, 17 min
+  start r0_c32_s0
+  done  r0_c31_s0: ok, score +0.0071, 15 min
+  start r0_c33_s0
+  done  r0_c33_s0: ok, score +0.0051, 16 min
+  start r0_c34_s0
+  done  r0_c32_s0: ok, score -0.0006, 26 min
+  start r0_c35_s0
+  done  r0_c35_s0: ok, score +0.0132, 14 min
+  start r0_c36_s0
+  done  r0_c34_s0: ok, score +0.0001, 29 min
+  start r0_c37_s0
+  done  r0_c36_s0: ok, score +0.0062, 16 min
+  start r0_c38_s0
+  done  r0_c37_s0: ok, score +0.0258, 13 min
+  start r0_c39_s0
+  done  r0_c38_s0: ok, score +0.0016, 16 min
+  start r0_c40_s0
+  done  r0_c39_s0: ok, score +0.0054, 15 min
+  start r0_c41_s0
+  done  r0_c40_s0: ok, score +0.0045, 17 min
+  start r0_c42_s0
+  done  r0_c41_s0: ok, score +0.0210, 15 min
+  start r0_c43_s0
+  done  r0_c42_s0: ok, score +0.0033, 33 min
+  start r0_c44_s0
+  done  r0_c43_s0: ok, score +0.0045, 32 min
+  start r0_c45_s0
+  done  r0_c45_s0: ok, score +0.0072, 16 min
+  start r0_c46_s0
+  done  r0_c44_s0: ok, score -0.0003, 25 min
+  start r0_c47_s0
+  done  r0_c47_s0: ok, score +0.0094, 14 min
+  start r0_c48_s0
+  done  r0_c46_s0: ok, score +0.0007, 23 min
+  start r0_c49_s0
+  done  r0_c48_s0: ok, score -0.0049, 16 min
+  start r0_c50_s0
+  done  r0_c49_s0: ok, score +0.0087, 16 min
+  start r0_c51_s0
+  done  r0_c50_s0: ok, score +0.0033, 13 min
+  start r0_c52_s0
+  done  r0_c51_s0: ok, score -0.0019, 15 min
+  start r0_c53_s0
+  done  r0_c52_s0: ok, score +0.0057, 15 min
+  start r0_c54_s0
+  done  r0_c53_s0: ok, score +0.0080, 15 min
+  start r0_c55_s0
+  done  r0_c54_s0: ok, score +0.0032, 33 min
+  start r0_c56_s0
+  done  r0_c55_s0: ok, score +0.0064, 33 min
+  done  r0_c56_s0: ok, score +0.0009, 13 min
+[arm2_ours] rung 1: 8 configs x 2 seeds x 1.5e+06 timesteps (16 runs to do)
+  start r1_c01_s0
+  start r1_c01_s1
+  done  r1_c01_s1: ok, score +0.0329, 41 min
+  start r1_c37_s0
+  done  r1_c01_s0: ok, score +0.0209, 41 min
+  start r1_c37_s1
+  done  r1_c37_s1: ok, score +0.0307, 63 min
+  start r1_c41_s0
+  done  r1_c37_s0: ok, score +0.0279, 66 min
+  start r1_c41_s1
+  done  r1_c41_s1: ok, score +0.0329, 41 min
+  start r1_c21_s0
+  done  r1_c41_s0: ok, score +0.0192, 45 min
+  start r1_c21_s1
+  done  r1_c21_s1: ok, score +0.0196, 46 min
+  start r1_c35_s0
+  done  r1_c21_s0: ok, score +0.0133, 48 min
+  start r1_c35_s1
+  done  r1_c35_s1: ok, score +0.0110, 390 min
+  start r1_c16_s0
+  done  r1_c35_s0: ok, score +0.0083, 392 min
+  start r1_c16_s1
+  done  r1_c16_s0: ok, score +0.0214, 48 min
+  start r1_c09_s0
+  done  r1_c16_s1: ok, score +0.0198, 47 min
+  start r1_c09_s1
+  done  r1_c09_s0: ok, score +0.0089, 71 min
+  start r1_c13_s0
+  done  r1_c09_s1: ok, score +0.0202, 71 min
+  start r1_c13_s1
+  done  r1_c13_s0: ok, score +0.0231, 48 min
+  done  r1_c13_s1: ok, score +0.0136, 50 min
+[arm2_ours] rung 2: 3 configs x 2 seeds x 3e+06 timesteps (6 runs to do)
+  start r2_c37_s0
+  start r2_c37_s1
+stopped by signal 15
+[arm2_ours] rung 0: 57 configs x 1 seeds x 5e+05 timesteps (0 runs to do)
+[arm2_ours] rung 1: 8 configs x 2 seeds x 1.5e+06 timesteps (0 runs to do)
+[arm2_ours] rung 2: 3 configs x 2 seeds x 3e+06 timesteps (6 runs to do)
+  start r2_c37_s0
+  start r2_c37_s1
+  done  r2_c37_s1: ok, score +0.0327, 93 min
+  start r2_c01_s0
+  done  r2_c37_s0: ok, score +0.0289, 96 min
+  start r2_c01_s1
+  done  r2_c01_s0: ok, score +0.0206, 879 min
+  start r2_c41_s0
+  done  r2_c01_s1: ok, score +0.0368, 879 min
+  start r2_c41_s1
+  done  r2_c41_s1: ok, score +0.0384, 97 min
+  done  r2_c41_s0: ok, score +0.0253, 104 min
+[arm2_ours] best: config 41 {'lr': 4.519e-05, 'hidden_rule.log_syn_sigma': 1.319, 'hidden_rule.local.vreg': 0.003559, 'hidden_rule.local.rate': 0.144, 'hidden_rule.local.decorr': 0.06182, 'hidden_rule.local.contrast': 0.2346, 'intrinsic_plasticity.psi_target': 0.1642, 'intrinsic_plasticity.eta': 1.053e-06, '*': {}} -> /home/user/repos/personal/analysis/drift_sel/volume/estimators/hpo_arm2/ours/arm2_ours/best.json
+
+[arm2_ours] score = reward per env step, last 0.33 of each run; mean over seeds
+  config              lr   log_syn_sigma            vreg            rate          decorr        contrast      psi_target             eta               *      rung 0 (5e+05)    rung 1 (1.5e+06)      rung 2 (3e+06)
+      41       4.519e-05           1.319        0.003559           0.144         0.06182          0.2346          0.1642       1.053e-06         variant              0.0210              0.0260              0.0319
+      37       2.136e-05           1.122        0.007651        0.002149        0.001316          0.1401          0.1677       1.362e-06         variant              0.0258              0.0293              0.0308
+       1       3.091e-05           1.294         0.01225         0.01241       0.0003629          0.6733         0.09606       6.004e-06         variant              0.0322              0.0269              0.0287
+      16       2.485e-05         -0.3237         0.04815         0.00427         0.06667           0.965          0.1298        1.23e-06         variant              0.0132              0.0206                    
+      13       1.255e-05          0.7658        0.004624          0.8311          0.2273           1.738           0.101       7.557e-06         variant              0.0119              0.0184                    
+      21       1.667e-05           1.488          0.7131        0.002741       0.0001187          0.1234          0.1483       3.728e-06         variant              0.0147              0.0165                    
+       9       4.896e-05          0.6631          0.3228        0.001259         0.02828           2.004         0.05218       2.734e-05         variant              0.0122              0.0145                    
+      35       2.754e-06           1.247          0.3033         0.06201          0.1475           1.076          0.1861       1.947e-06         variant              0.0132              0.0096                    
+      25       3.474e-05          0.9582         0.05901         0.03263          0.5992          0.3165          0.1391       5.131e-06         variant              0.0107                                        
+      47       5.669e-06          0.8118          0.1421        0.005118       0.0009928           2.292          0.1911       2.678e-06         variant              0.0094                                        
+      10       7.903e-06         -0.5432        0.001871          0.1199       0.0008013          0.1016          0.1342       3.141e-06         variant              0.0092                                        
+      49       2.642e-05          0.9279          0.4799         0.01499        0.003242          0.7636         0.02581       2.926e-06         variant              0.0087                                        
+      53       1.515e-05          0.6431        0.001325         0.05721       0.0004618           1.013         0.08096       9.333e-05         variant              0.0080                                        
+      45       1.417e-05           0.109           0.186        0.007268          0.7659          0.4889          0.1241       3.484e-05         variant              0.0072                                        
+      31       4.831e-06           1.172        0.001529        0.001161        0.008875           2.891          0.1263        7.34e-06         variant              0.0071                                        
+      55       7.436e-06            1.44          0.0287           0.433          0.5207          0.1957         0.05803       1.322e-06         variant              0.0064                                        
+      28        2.06e-05         -0.1291        0.002385        0.008153         0.02029           0.177         0.06953       1.811e-06         variant              0.0062                                        
+      36        1.14e-05          -1.462        0.001665        0.002443        0.005623          0.2986         0.09027       2.258e-05         variant              0.0062                                        
+      17       2.378e-05         0.08476        0.002239          0.3129        0.001713          0.2121          0.1835       1.301e-05         variant              0.0059                                        
+      52       1.339e-05         -0.2568        0.009614         0.09491       0.0001108           2.103          0.1827       3.178e-06         variant              0.0057                                        
+       6       3.262e-06        -0.01683         0.02246        0.001766          0.1587          0.3231          0.1532       2.224e-06         variant              0.0055                                        
+      19       2.372e-06          0.8813         0.01836         0.07904         0.01417          0.8878          0.1157       9.475e-06         variant              0.0055                                        
+      39       8.732e-06          0.2313        0.005246         0.01716         0.01036          0.5898          0.1456       5.886e-05         variant              0.0054                                        
+      18       6.046e-06         -0.2104          0.3883           0.019          0.4831           1.766          0.0926       1.133e-06         variant              0.0054                                        
+      33       2.738e-05          0.4509         0.08772          0.6147        0.000163          0.1846          0.1191       4.756e-05         variant              0.0051                                        
+       7       9.577e-06           1.074          0.2006          0.3585         0.05375          0.1614         0.07801       4.828e-06         variant              0.0049                                        
+       4       1.049e-05         -0.6171          0.5821         0.05104        0.001064           2.551          0.1123       1.548e-06         variant              0.0047                                        
+       5       1.971e-05          0.2769          0.1235          0.1065        0.004514           1.165         0.05575       1.916e-05         variant              0.0046                                        
+      40       3.613e-05        -0.06384          0.9041          0.2791       0.0003893          0.3832          0.0629       6.824e-06         variant              0.0045                                        
+      43       4.394e-06          0.7095         0.01105          0.2538        0.006974           1.884          0.1421       7.674e-05         variant              0.0045                                        
+      15       6.318e-06           0.156        0.008368         0.04389        0.000188          0.2679         0.03377       1.071e-05         variant              0.0043                                        
+      30       2.856e-06         -0.7355          0.1456          0.2293       0.0003026          0.5583          0.1045       1.463e-06         variant              0.0034                                        
+      42       7.115e-06          -1.199          0.6176        0.001048       0.0002335          0.8461         0.06693       1.212e-05         variant              0.0033                                        
+      50       6.551e-06          -1.053         0.00278          0.3966          0.1219          0.5026          0.1156       2.544e-05         variant              0.0033                                        
+      29       1.212e-05          0.4694          0.0267         0.02083         0.08645          0.3676          0.1941       1.698e-05         variant              0.0033                                        
+      11       4.005e-06           1.367         0.07523         0.02959        0.002713          0.5292         0.07442       3.416e-06         variant              0.0032                                        
+      54       3.755e-06         -0.3772           0.241        0.003285          0.0176          0.2849          0.1726       8.115e-06         variant              0.0032                                        
+      24       4.237e-05         -0.4242        0.006319          0.5478        0.004019          0.4644         0.08287       2.494e-06         variant              0.0031                                        
+      14       2.027e-06          -1.026          0.8407        0.005743        0.006465          0.2061          0.1975       8.683e-05         variant              0.0027                                        
+       2       5.112e-06          -1.414         0.07096          0.4793         0.01281           0.437            0.18       6.968e-05         variant              0.0026                                        
+       3       2.472e-06          0.4031         0.00318        0.002968          0.3723          0.1292         0.02882       1.334e-05         variant              0.0025                                        
+      23       6.839e-06          0.5975         0.03667        0.008747          0.1138           0.706          0.1711       2.865e-05         variant              0.0023                                        
+      38       3.623e-06         -0.8611         0.04173         0.08749          0.3469           2.764         0.08585       1.579e-05         variant              0.0016                                        
+       0          (base)          (base)          (base)          (base)          (base)          (base)          (base)          (base)          (base)              0.0010                                        
+      12       1.575e-05          -1.152         0.01377          0.2003          0.9492          0.8147           0.157       3.925e-05         variant              0.0010                                        
+      56       4.722e-05          -1.267          0.1652         0.01107        0.001379           1.629          0.1505        1.15e-05         variant              0.0009                                        
+       8       4.066e-05         -0.9071        0.001155         0.01336       0.0001515           1.362           0.176       5.604e-05         variant              0.0008                                        
+      27       3.408e-06          0.3492          0.4343          0.7265        0.000713           1.473          0.1619       2.102e-05         variant              0.0008                                        
+      46        2.23e-06         -0.3693        0.001014          0.6569        0.002905          0.7531          0.0399       4.007e-06         variant              0.0007                                        
+      22       4.239e-06          -1.221         0.00389         0.06859         0.03391           2.405         0.06064       3.245e-05         variant              0.0003                                        
+      34       4.645e-06         -0.5707         0.01521        0.009674         0.04316           1.556         0.02235       5.513e-06         variant              0.0001                                        
+      20       1.469e-05          -1.101          0.1008        0.001917       0.0004979          0.2495         0.02534       8.247e-05         variant             -0.0001                                        
+      44       1.773e-05         -0.4953         0.06068         0.02335          0.1829          0.2233         0.04397       8.826e-06         variant             -0.0003                                        
+      26       8.185e-06         -0.8326         0.01024        0.004628        0.002124           1.125         0.04731       4.421e-05         variant             -0.0004                                        
+      32       2.921e-05          -1.345          0.2635          0.1614          0.2513          0.1485         0.03723       6.324e-05         variant             -0.0006                                        
+      51       2.107e-06         0.03692         0.05253        0.001597         0.04205           0.108         0.09376       3.655e-05         variant             -0.0019                                        
+      48       2.286e-05          -0.979         0.02447         0.03662         0.02642          0.1161          0.1078        3.08e-05         variant             -0.0049                                        

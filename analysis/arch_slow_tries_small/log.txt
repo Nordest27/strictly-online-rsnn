@@ -1,0 +1,44 @@
+seeding with 10 genomes from 
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0000/c0000InferenceCompiler_CODE'
+[15:43:24] c0000 score 0.532 (19 s) | best c0000 0.532 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0001/c0001InferenceCompiler_CODE'
+[15:44:11] c0001 score 0.568 (46 s) | best c0001 0.568 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0002/c0002InferenceCompiler_CODE'
+[15:44:13] c0002 score 0.566 (2 s) | best c0001 0.568 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0003/c0003InferenceCompiler_CODE'
+[15:44:43] c0003 score 0.490 (30 s) | best c0001 0.568 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0004/c0004InferenceCompiler_CODE'
+[15:45:04] c0004 score 0.489 (21 s) | best c0001 0.568 | 5 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0005/c0005InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0005/c0005InferenceCompiler_CODE'
+[15:45:28] c0005 score 0.500 (24 s) | best c0001 0.568 | 6 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0006/c0006InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0006/c0006InferenceCompiler_CODE'
+[15:46:01] c0006 score 0.439 (8 s) | best c0001 0.568 | 7 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0007/c0007InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0007/c0007InferenceCompiler_CODE'
+[15:46:20] c0007 score 0.581 (19 s) | best c0007 0.581 | 8 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0008/c0008InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0008/c0008InferenceCompiler_CODE'
+[15:46:59] c0008 score 0.527 (39 s) | best c0007 0.581 | 9 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0009/c0009InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_slow_tries_small/work/c0009/c0009InferenceCompiler_CODE'
+[15:47:51] c0009 score 0.538 (52 s) | best c0007 0.581 | 10 done
+10 candidates; best 10:
+    idx  score    L1 field  weak   mem   mix  resp  pen  wire  kept per stage (L2.., fields)  genome
+      7  0.581  0.60  0.78  0.78  0.49  0.29  0.32  0.0  0.00  LR 0.00 | 0.93 0.88 0.85 0.81 0.78 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L1=10.00
+      1  0.568  0.60  0.75  0.75  0.48  0.31  0.34  0.0  0.00  LR 0.00 | 0.93 0.88 0.84 0.81 0.75 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L1=40.00
+      2  0.566  0.62  0.71  0.71  0.50  0.33  0.34  0.0  0.00  LR 0.00 | 0.92 0.85 0.81 0.75 0.71 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L1=80.00
+      9  0.538  0.60  0.68  0.68  0.47  0.31  0.31  0.0  0.00  LR 0.00 | 0.93 0.88 0.84 0.81 0.68 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L5=10.00
+      0  0.532  0.59  0.67  0.67  0.47  0.29  0.34  0.0  0.00  LR 0.00 | 0.92 0.87 0.79 0.69 0.68 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00
+      8  0.527  0.59  0.66  0.66  0.47  0.26  0.31  0.0  0.00  LR 0.00 | 0.93 0.87 0.79 0.73 0.66 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L1=10.00, slow_tau_L2=10.00, slow_tau_L3=10.00, slow_tau_L4=10.00, slow_tau_L5=10.00
+      5  0.500  0.61  0.58  0.58  0.47  0.30  0.32  0.0  0.00  LR 0.00 | 0.93 0.85 0.77 0.74 0.58 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L1=40.00, slow_tau_L5=40.00
+      3  0.490  0.59  0.56  0.56  0.49  0.30  0.34  0.0  0.00  LR 0.00 | 0.93 0.88 0.79 0.69 0.56 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L1=40.00, slow_tau_L2=40.00, slow_tau_L3=40.00, slow_tau_L4=40.00, slow_tau_L5=40.00
+      4  0.489  0.60  0.59  0.59  0.43  0.30  0.32  0.0  0.00  LR 0.00 | 0.92 0.87 0.83 0.79 0.59 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L5=40.00
+      6  0.439  0.59  0.46  0.46  0.43  0.33  0.30  0.0  0.00  LR 0.00 | 0.91 0.85 0.74 0.59 0.47 tau_adapt=246.09, beta=0.02, ff_inhibition=False, ff_targets=both, inh_sigma_ratio=0.82, sigma_cells=2.43, p_max=1.00, input_sigma_cells=1.00, inhibition_scale=5.75, ff_sigma=0.60, field_sigma=0.78, field_shape=excitatory, target_hz=30.00, tau_mem_L1=10.00, tau_mem_L2=10.00, tau_mem_L3=10.00, tau_mem_L4=10.00, tau_mem_L5=10.00, tau_mem_fields=10.00, slow_tau_L1=80.00, slow_tau_L2=80.00, slow_tau_L3=80.00, slow_tau_L4=80.00, slow_tau_L5=80.00
+exported the best 3 as Snake configs (network keys only; add a hidden_rule) to /home/user/repos/personal/analysis/arch_slow_tries_small/best_configs

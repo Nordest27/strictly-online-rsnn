@@ -1,0 +1,4 @@
+sgd_ce_s0
+sgd_hom_s0
+sgd_ce_s1
+sgd_hom_s1

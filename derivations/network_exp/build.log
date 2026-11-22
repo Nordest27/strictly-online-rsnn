@@ -1,0 +1,18 @@
+Processing ./.
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.17 in /home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages (from pygenn==5.4.0) (2.4.6)
+Requirement already satisfied: psutil in /home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages (from pygenn==5.4.0) (7.2.2)
+Requirement already satisfied: setuptools in /home/user/repos/personal/derivations/network_exp/.venv/lib/python3.11/site-packages (from pygenn==5.4.0) (84.0.0)
+Building wheels for collected packages: pygenn
+  Building wheel for pygenn (pyproject.toml): started
+  Building wheel for pygenn (pyproject.toml): finished with status 'done'
+  Created wheel for pygenn: filename=pygenn-5.4.0-cp311-cp311-linux_x86_64.whl size=8751303 sha256=dfaff183bde7e7fbe3c7684ba641521b9a516f7b66479fd30a10479bf5a259ea
+  Stored in directory: /tmp/pip-ephem-wheel-cache-ipejokvb/wheels/6a/7c/39/4447962434a0c8d543ec07eabb714d46b61fa79854d4b1f67a
+Successfully built pygenn
+Installing collected packages: pygenn
+Successfully installed pygenn-5.4.0

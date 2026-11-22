@@ -1,0 +1,12 @@
+direct/sel_dd_s0
+direct/sel_d_s0
+direct/sel_dd_s1
+direct/sel_d_s1
+direct/con_ddA_s0
+direct/con_dA_s0
+direct/con_ddB_s0
+direct/con_dB_s0
+direct/con_ddA_s1
+direct/con_dA_s1
+direct/con_ddB_s1
+direct/con_dB_s1

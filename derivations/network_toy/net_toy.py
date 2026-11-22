@@ -1,0 +1,238 @@
+"""Network-level CPU toy of the live weight-dist rule (ml_genn eprop_alif_td_model).
+
+One numpy batch holds every (variant, seed) pair as an independent network, so a single run
+compares all variants. Single-threaded; set OMP_NUM_THREADS=1.
+
+Faithful to the ml_genn code (eprop_compiler.py, snake.py):
+- ALIF hidden neurons (v_th 0.61, tau_mem 10, tau_refrac 3, tau_adapt 300, beta 0.0174,
+  relative reset), psi = (0.3/v_th) max(0, 1-|V-A|/v_th), zero while refractory.
+- Shared per-post-neuron noise per timestep, delivered on each presynaptic spike:
+  eps_ij = SynSig * n_j * z_i ; NoiseTrace_ij = Alpha*NoiseTrace + eps_ij.
+- score = e_ij * NoiseTrace_ij / SynSig^2 (e = psi_j (zbar_i - beta epsA_ij)).
+- RLNoiseTrace = Lambda*RLNoiseTrace + <variant input>;  DeltaG += delta * RLNoiseTrace (+ regs);
+  AdaBelief(beta1 .99, beta2 .99999) DESCENDS on DeltaG every timestep (the code's sign).
+- delta = gamma*V_t + r_t - V_{t-1} broadcast to all synapses; r decays by reward_decay per step.
+- Policy readout (softmax over LI voltages, GENERIC head): DeltaG += delta*RLTrace,
+  RLTrace = Lambda*RLTrace + zbar*PG with PG = p - onehot present for one step after a decision.
+- Value readout: DeltaG += RLTrace*delta, RLTrace = gamma*lambda*RLTrace - zbar.
+- Readouts read only from small policy/value "field" ALIF layers fed sparsely by the hidden layer.
+
+Variants (RLNoiseTrace input):  full = score;  drift = EMA(score);  fluct = score - EMA(score);
+frozen = full with readouts not learning;  reservoir = hidden frozen, readouts learning;
+prop = the current proposed rule: gate psi - 2 psibar (psibar = per-neuron EMA of psi, decay 0.99) and
+presynaptic factor zbar alone (no epsA) in the score.
+--opt adam uses Adam (beta1 .99, beta2 .99999, no L2-init) for every weight, as the current Snake runs.
+"""
+import argparse, time
+import numpy as np
+
+p = argparse.ArgumentParser()
+p.add_argument("--variants", default="full,drift,fluct,frozen,reservoir")
+p.add_argument("--seeds", type=int, default=4)
+p.add_argument("--env-steps", type=int, default=20000)
+p.add_argument("--K", type=int, default=10, help="sim steps per env step")
+p.add_argument("--L", type=int, default=6, help="corridor length")
+p.add_argument("--N", type=int, default=48, help="hidden neurons")
+p.add_argument("--NF", type=int, default=12, help="neurons per field layer")
+p.add_argument("--rep", type=int, default=3, help="input neurons per one-hot cell")
+p.add_argument("--p-in", type=float, default=0.3)
+p.add_argument("--p-rec", type=float, default=0.15)
+p.add_argument("--fan-field", type=int, default=6, help="hidden->field fan-in")
+p.add_argument("--w-in", type=float, default=0.35)
+p.add_argument("--w-rec", type=float, default=0.15)
+p.add_argument("--w-field", type=float, default=0.5)
+p.add_argument("--w-out", type=float, default=0.5)
+p.add_argument("--in-rate", type=float, default=0.3, help="spike prob per step of an active input")
+p.add_argument("--lr", type=float, default=1e-4)
+p.add_argument("--lr-out", type=float, default=None, help="readout lr (default = lr)")
+p.add_argument("--log-sig", type=float, default=0.0, help="LogSynSig; SynSig = exp(LogSynSig-5)")
+p.add_argument("--beta-score", type=float, default=0.99)
+p.add_argument("--creg", type=float, default=1e-4)
+p.add_argument("--regs", type=int, default=1, help="include the code's regulariser terms")
+p.add_argument("--sign", type=float, default=-1.0, help="-1 = code sign (descend on DeltaG)")
+p.add_argument("--block", type=int, default=2000, help="env steps per report line")
+p.add_argument("--seed", type=int, default=0)
+p.add_argument("--mirror", type=int, default=0, help="flag (redrawn with each food) that swaps left/right")
+p.add_argument("--opt", default="adabelief", choices=["adabelief", "adam"])
+a = p.parse_args()
+
+rng = np.random.default_rng(a.seed)
+f32 = np.float32
+VARS = a.variants.split(",")
+B = len(VARS) * a.seeds                       # batch = variants x seeds
+var_of = np.repeat(np.arange(len(VARS)), a.seeds)
+K, L, N, NF = a.K, a.L, a.N, a.NF
+NCELL = 2 * L + (2 if a.mirror else 0)
+NIN = NCELL * a.rep
+PRE, POST = NIN + N, N + 2 * NF               # learnable hidden block: [inp, hid] -> [hid, pf, vf]
+NA = 2                                         # actions: left, right
+
+# --- constants (snake.py / eprop_compiler defaults) ---
+v_th, n_ref, beta_a = 0.61, 3, 0.0174
+alpha, rho = np.exp(-1 / 10), np.exp(-1 / 300)
+alpha_o = np.exp(-1 / 10)
+gamma = 0.5 ** (1 / K); lam = 0.8 ** (1 / K); rdecay = 0.1 ** (1 / K)
+SIG = np.exp(a.log_sig - 5)
+b1, b2, eps_opt, l2 = 0.99, 0.99999, 1e-8, 1e-5
+alpha_fav = np.exp(-1 / 500); f_target = 10 * 1 / 1000
+
+# --- connectivity mask and weights ---
+M = np.zeros((PRE, POST), f32)
+M[:NIN, :N] = rng.random((NIN, N)) < a.p_in
+M[NIN:, :N] = rng.random((N, N)) < a.p_rec
+np.fill_diagonal(M[NIN:, :N], 0)
+for j in range(N, POST):                       # sparse hidden -> field
+    M[NIN + rng.choice(N, a.fan_field, replace=False), j] = 1
+scale = np.zeros((PRE, POST), f32)
+scale[:NIN, :N] = a.w_in; scale[NIN:, :N] = a.w_rec; scale[NIN:, N:] = a.w_field
+# batch index i = variant i // seeds, seed i % seeds; seed s has the same init in every variant
+W = np.zeros((B, PRE, POST), f32)
+for s in range(a.seeds):
+    W[np.arange(B) % a.seeds == s] = np.random.default_rng(1000 + s).normal(0, 1, (PRE, POST)) * scale * M
+Winit = W.copy()
+Wp = np.stack([np.random.default_rng(2000 + i % a.seeds).normal(0, a.w_out, (NF, NA)) for i in range(B)]).astype(f32)
+Wv = np.stack([np.random.default_rng(3000 + i % a.seeds).normal(0, a.w_out, (NF, 1)) for i in range(B)]).astype(f32)
+Wp0, Wv0 = Wp.copy(), Wv.copy()
+
+# per-variant switches
+c_score = np.array([{"drift": 0.0}.get(v, 1.0) for v in VARS], f32)[var_of][:, None, None]
+c_mean = np.array([{"drift": 1.0, "fluct": -1.0}.get(v, 0.0) for v in VARS], f32)[var_of][:, None, None]
+lr_h = np.array([0.0 if v == "reservoir" else a.lr for v in VARS], f32)[var_of][:, None, None]
+is_prop = np.array([v == "prop" for v in VARS])[var_of]
+lr_o = np.array([0.0 if v == "frozen" else (a.lr_out or a.lr) for v in VARS], f32)[var_of][:, None, None]
+
+# --- state ---
+z = lambda *s: np.zeros(s, f32)
+v, ad, zs, ref = z(B, POST), z(B, POST), z(B, POST), np.zeros((B, POST), np.int32)
+zin = z(B, NIN)
+zbar = z(B, PRE)                               # ZFilter of presynaptic [inp, hid]
+xi, epsA, efilt, rln, smean = z(B, PRE, POST), z(B, PRE, POST), z(B, PRE, POST), z(B, PRE, POST), z(B, PRE, POST)
+m_h, s_h = z(B, PRE, POST), z(B, PRE, POST)
+fav, favtr = z(B, POST), z(B, POST)
+psibar = z(B, POST)
+vp, vv, vprev, r = z(B, NA), z(B, 1), z(B, 1), z(B, 1)
+zbar_pf, zbar_vf = z(B, NF), z(B, NF)
+rlp, rlv = z(B, NF, NA), z(B, NF, 1)
+m_p, s_p, m_v, s_v = z(B, NF, NA), z(B, NF, NA), z(B, NF, 1), z(B, NF, 1)
+PG = z(B, NA)
+step_count = 0
+
+# --- environment: corridor, food +1, wall bump -1 (death, respawn) ---
+pos = rng.integers(0, L, B); food = rng.integers(0, L, B)
+food = np.where(food == pos, (food + 1) % L, food)
+flip = rng.integers(0, 2, B) * (1 if a.mirror else 0)
+def obs_rates():
+    o = np.zeros((B, NCELL), f32)
+    o[np.arange(B), pos] = 1; o[np.arange(B), L + food] = 1
+    if a.mirror: o[np.arange(B), 2 * L + flip] = 1
+    return np.repeat(o, a.rep, axis=1) * a.in_rate
+
+def adabelief(Wt, m, s, g, lr, init, t):
+    if a.opt == "adam":                       # Adam: s is the running second moment of g, no L2-init
+        m *= b1; m += (1 - b1) * g
+        s *= b2; s += (1 - b2) * g * g
+        mh = m / (1 - b1 ** t); sh = s / (1 - b2 ** t)
+        Wt -= lr * (mh / (np.sqrt(sh) + eps_opt))
+        return
+    m *= b1; m += (1 - b1) * g
+    d = g - m; s *= b2; s += (1 - b2) * d * d + eps_opt
+    mh = m / (1 - b1 ** t); sh = s / (1 - b2 ** t)
+    Wt -= lr * (mh / (np.sqrt(sh) + eps_opt)) + lr * l2 * (Wt - init)
+
+rates = obs_rates()
+stats = {k: np.zeros(B) for k in ("rew", "food", "death", "steps", "spk", "spkf", "psi_open")}
+hist = []
+t0 = time.time()
+for es in range(a.env_steps):
+    for k in range(K):
+        step_count += 1
+        decision = (k == K - 1)
+        # ---- presynaptic spikes of the previous step drive this step ----
+        zpre = np.concatenate([zin, zs[:, :N]], 1)                     # (B, PRE)
+        nz = rng.standard_normal((B, POST)).astype(f32)                 # shared per post neuron
+        applied = SIG * nz[:, None, :] * zpre[:, :, None] * M           # eps_ij
+        I = np.einsum("bi,bij->bj", zpre, W) + applied.sum(1)
+        xi += applied                                                  # NoiseTrace (decays at end)
+        # ---- ALIF update (same ordering as the single-neuron toys) ----
+        ad = rho * ad + zs
+        A = v_th + beta_a * ad
+        v = alpha * v + I - v_th * zs
+        ref = np.maximum(ref - 1, 0); refr = ref > 0
+        zs = ((v >= A) & ~refr).astype(f32); ref = np.where(zs > 0, n_ref, ref)
+        psi = np.where(refr, 0.0, (0.3 / v_th) * np.maximum(0, 1 - np.abs(v - A) / v_th)).astype(f32)
+        # ---- readouts (LI, var readout) from field spikes ----
+        zpf, zvf = zs[:, N:N + NF], zs[:, N + NF:]
+        vp = alpha_o * vp + np.einsum("bi,bik->bk", zpf, Wp)
+        vv = alpha_o * vv + np.einsum("bi,bik->bk", zvf, Wv)
+        zbar_pf = alpha * zbar_pf + zpf; zbar_vf = alpha * zbar_vf + zvf
+        # ---- TD error ----
+        delta = gamma * vv + r - vprev; vprev = vv.copy(); r *= rdecay
+        d3 = delta[:, :, None]                                           # (B,1,1)
+        # ---- hidden e-prop eligibility (input inp spikes update ZFilter) ----
+        zbar = alpha * zbar + zpre
+        pre_term = zbar[:, :, None] - beta_a * epsA
+        e = psi[:, None, :] * pre_term
+        epsA = psi[:, None, :] * zbar[:, :, None] + (rho - psi[:, None, :] * beta_a) * epsA
+        efilt = alpha * efilt + e
+        score = e * xi / (SIG * SIG + 1e-6)
+        psibar = 0.99 * psibar + 0.01 * psi
+        if is_prop.any():                     # current rule: gate psi - 2 psibar, presynaptic factor zbar
+            sp = ((psi - 2 * psibar)[:, None, :] * zbar[:, :, None]) * xi / (SIG * SIG + 1e-6)
+            score = np.where(is_prop[:, None, None], sp, score)
+        # ---- DeltaG (uses RLNoiseTrace before its update, as in the code) ----
+        g = d3 * rln
+        if a.regs:
+            fav = fav * alpha_fav + (1 - alpha_fav) * zs
+            fire_reg = fav - f_target
+            favtr = lam * favtr + (1 - lam) * np.abs(fire_reg)
+            fire_rr = favtr - np.abs(fire_reg)
+            vreg = np.maximum(0, v - A) + np.maximum(0, -v - A)
+            dV = v_th * zs                                              # |dV| acts as a spike term
+            g = g + (-0.01 * dV - a.creg * vreg + a.creg * fire_rr)[:, None, :] * rln \
+                  + a.creg * fire_reg[:, None, :] * efilt
+        smean = a.beta_score * smean + (1 - a.beta_score) * score
+        rln = lam * rln + c_score * score + c_mean * smean
+        xi *= alpha
+        # code sign: optimiser descends on DeltaG (sign=-1). sign=+1 ascends.
+        adabelief(W, m_h, s_h, -a.sign * g * M, lr_h, Winit, step_count)    # = g*M for sign=-1
+        # ---- readout learning (exact TD(lambda) actor-critic, descends on DeltaG) ----
+        gp = delta[:, :, None] * rlp
+        rlp = lam * rlp + zbar_pf[:, :, None] * PG[:, None, :]
+        gv = rlv * delta[:, :, None]
+        rlv = gamma * lam * rlv - zbar_vf[:, :, None]
+        adabelief(Wp, m_p, s_p, gp, lr_o, Wp0, step_count)
+        adabelief(Wv, m_v, s_v, gv, lr_o, Wv0, step_count)
+        PG[:] = 0
+        stats["spk"] += zs[:, :N].mean(1); stats["spkf"] += zs[:, N:].mean(1); stats["psi_open"] += (psi[:, :N] > 0).mean(1)
+        # ---- decision + environment step ----
+        if decision:
+            lg = vp - vp.max(1, keepdims=True); pr = np.exp(lg); pr /= pr.sum(1, keepdims=True)
+            act = (rng.random(B) < pr[:, 1]).astype(int)               # 0 left, 1 right
+            PG = pr.copy(); PG[np.arange(B), act] -= 1                 # used by the next step only
+            pos = pos + np.where((act ^ flip) == 1, 1, -1)
+            dead = (pos < 0) | (pos >= L)
+            ate = ~dead & (pos == food)
+            rew = ate.astype(f32) - dead.astype(f32)
+            pos = np.where(dead, rng.integers(0, L, B), pos)
+            newf = rng.integers(0, L, B)
+            food = np.where(ate | dead, newf, food)
+            food = np.where(food == pos, (food + 1) % L, food)
+            if a.mirror: flip = np.where(ate | dead, rng.integers(0, 2, B), flip)
+            r = np.where(rew[:, None] != 0, rew[:, None], r)            # set_var("reward") replaces
+            stats["rew"] += rew; stats["food"] += ate; stats["death"] += dead; stats["steps"] += 1
+            rates = obs_rates()
+        zin = (rng.random((B, NIN)) < rates).astype(f32)
+    if (es + 1) % a.block == 0:
+        st = stats["steps"]
+        rate = stats["rew"] / st
+        line = f"[{es+1:6d} env steps, {time.time()-t0:5.0f}s] "
+        for vi, vn in enumerate(VARS):
+            sel = var_of == vi
+            hz = 1000 * stats["spk"][sel].mean() / (st[sel].mean() * K)
+            hzf = 1000 * stats["spkf"][sel].mean() / (st[sel].mean() * K)
+            line += f"{vn}: {rate[sel].mean():+.3f}±{rate[sel].std():.3f} ({hz:3.0f}/{hzf:3.0f}Hz)  "
+        print(line, flush=True)
+        hist.append(rate.copy())
+        stats = {k: np.zeros(B) for k in stats}
+
+np.savez("net_toy_last.npz", variants=VARS, var_of=var_of, hist=np.array(hist), args=str(vars(a)))

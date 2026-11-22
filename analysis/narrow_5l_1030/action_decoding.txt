@@ -1,0 +1,32 @@
+
+== trained network: 4903 samples; action shares straight/cw/acw [0.55843361 0.08484601 0.35672038]
+features              action       apple_y  danger_ahead
+input frame           +0.188        +0.539        +0.298
+L1_E                  +0.175        +0.513        +0.309
+L1_I                  +0.164        +0.496        +0.297
+L2_E                  +0.170        +0.452        +0.294
+L2_I                  +0.172        +0.440        +0.292
+L3_E                  +0.173        +0.424        +0.299
+L3_I                  +0.147        +0.398        +0.278
+L4_E                  +0.167        +0.414        +0.271
+L4_I                  +0.158        +0.401        +0.260
+L5_E                  +0.170        +0.408        +0.302
+L5_I                  +0.165        +0.393        +0.276
+policy_field          +0.172        +0.404        +0.268
+value_field           +0.165        +0.404        +0.266
+
+== reservoir replay (same frames, the trained agent's actions): 4806 samples; action shares straight/cw/acw [0.55555556 0.08468581 0.35975864]
+features              action       apple_y  danger_ahead
+input frame           +0.173        +0.539        +0.298
+L1_E                  +0.169        +0.229        +0.315
+L1_I                  +0.162        +0.221        +0.313
+L2_E                  +0.149        +0.208        +0.279
+L2_I                  +0.140        +0.221        +0.261
+L3_E                  +0.145        +0.211        +0.273
+L3_I                  +0.135        +0.194        +0.274
+L4_E                  +0.147        +0.220        +0.293
+L4_I                  +0.150        +0.217        +0.270
+L5_E                  +0.154        +0.234        +0.301
+L5_I                  +0.142        +0.217        +0.295
+policy_field          +0.151        +0.217        +0.301
+value_field           +0.159        +0.228        +0.299

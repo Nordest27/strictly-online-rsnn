@@ -1,0 +1,30 @@
+{
+ "L1": {
+  "syn vs de/dW": 0.9504355294418734,
+  "soma plain vs de/dW": 0.9154291990900432,
+  "soma fix vs de/dW": 0.9802747452418014,
+  "soma plain vs dgate/dW": 0.8869797840586687,
+  "reliability syn_score": 0.9984239216157852,
+  "reliability soma_score": 0.9985422878499308,
+  "reliability soma_fix_score": 0.9993911850992399,
+  "reliability syn_deriv": 0.9995141791150133,
+  "reliability soma_deriv": 0.9993318927901355,
+  "soma_sigma_mean": 0.02430751491185856,
+  "n_synapses": 24,
+  "windows": 64
+ },
+ "L5": {
+  "syn vs de/dW": 0.631265518303826,
+  "soma plain vs de/dW": 0.751518349049532,
+  "soma fix vs de/dW": 0.7451733580865851,
+  "soma plain vs dgate/dW": 0.755423998544352,
+  "reliability syn_score": 0.9056366743096234,
+  "reliability soma_score": 0.9750528042843687,
+  "reliability soma_fix_score": 0.9753747798768049,
+  "reliability syn_deriv": 0.9778275285891711,
+  "reliability soma_deriv": 0.9634719361184021,
+  "soma_sigma_mean": 0.008623835545977305,
+  "n_synapses": 24,
+  "windows": 64
+ }
+}

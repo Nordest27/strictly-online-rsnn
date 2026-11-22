@@ -1,0 +1,39 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "monitor": true,
+ "monitor_every": 5000,
+ "probe": {
+  "moves": 5000
+ },
+ "ei_layers": 1,
+ "network": {
+  "layers": [
+   {}
+  ],
+  "fields": {
+   "conn": {
+    "mean_scale": 0.5
+   },
+   "conn_i": {
+    "mean_scale": 0.033
+   }
+  }
+ },
+ "_meta": {
+  "variant": "adaptive"
+ },
+ "hidden_rule": {
+  "preset": "eprop"
+ },
+ "feedback_type": "adaptive",
+ "optimise_feedback": true,
+ "seed": 1,
+ "max_timesteps": 2000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c03_s1",
+ "repetition": 0,
+ "trace_log": false
+}

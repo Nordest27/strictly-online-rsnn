@@ -1,0 +1,103 @@
+{
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 2.418,
+  "p_max": 1.0,
+  "input_sigma_cells": 1.791,
+  "inhibition_scale": 3.554,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 0.642
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 0.708,
+    "mean_scale": 0.8397108160697896,
+    "sd_scale": 0.16794216321395794
+   },
+   "shape": 20,
+   "conn_i": {
+    "sigma_cells": 0.708,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "layers": [
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.525585525784876,
+     "sd_scale": 0.1525585525784876
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.2112541406054058,
+     "sd_scale": 0.12112541406054059
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.5,
+     "sd_scale": 0.15000000000000002
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {
+    "to_next": {
+     "sigma_cells": 0.791,
+     "mean_scale": 1.216744824601665,
+     "sd_scale": 0.1216744824601665
+    },
+    "to_next_i": {
+     "sigma_cells": 0.791,
+     "mean_scale": 0.5,
+     "sd_scale": 0.05
+    }
+   },
+   {}
+  ],
+  "input": {
+   "mean_scale": 0.10237748983040307,
+   "sd_scale": 0.051188744915201534
+  }
+ },
+ "feedforward_targets": "both",
+ "ei_layers": 5,
+ "_meta": {
+  "architecture_search": {
+   "idx": 22,
+   "score": 0.7914414148381232,
+   "genome": {
+    "ff_inhibition": true,
+    "ff_targets": "both",
+    "inh_sigma_ratio": 0.6417206462396919,
+    "sigma_cells": 2.4179865233900215,
+    "p_max": 1.0,
+    "input_sigma_cells": 1.7914691026066978,
+    "inhibition_scale": 3.55350050175778,
+    "ff_sigma": 0.7913433673691237,
+    "field_sigma": 0.7079330739135573,
+    "field_shape": "excitatory",
+    "target_hz": 20.0
+   }
+  }
+ }
+}

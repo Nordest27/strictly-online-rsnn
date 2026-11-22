@@ -1,0 +1,54 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu"
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "proposed_homeostat_centred"
+    },
+    "hidden_rule": {
+     "preset": "proposed_homeostat",
+     "homeostat": 1.0,
+     "center_drift": true
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "adaptive_eprop"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    },
+    "feedback_type": "adaptive",
+    "optimise_feedback": true
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "random_eprop"
+    },
+    "hidden_rule": {
+     "preset": "eprop"
+    }
+   }
+  }
+ ]
+}

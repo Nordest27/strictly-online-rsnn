@@ -1,0 +1,20 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "_meta": {
+  "variant": "proposed_homeostat_centred"
+ },
+ "hidden_rule": {
+  "preset": "proposed_homeostat",
+  "homeostat": 1.0,
+  "center_drift": true
+ },
+ "seed": 1,
+ "max_timesteps": 2000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c01_s1",
+ "repetition": 0,
+ "trace_log": false
+}

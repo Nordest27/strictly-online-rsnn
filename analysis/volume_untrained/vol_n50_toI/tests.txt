@@ -1,0 +1,35 @@
+
+/home/user/repos/personal/analysis/volume_untrained/vol_n50_toI/outputs/untrained_vol_n50_toI(0)_probe.npz  [last window, 1200 aligned samples]
+  1. task decoding: balanced accuracy above chance, linear (lin) and non-linear (nl) decoder
+     features              danger_l      danger_u      danger_r      danger_d       apple_y       apple_x   mean lin/nl
+     input frame      +0.500/+0.471 +0.500/+0.498 +0.500/+0.500 +0.500/+0.500 +0.506/+0.505 +0.566/+0.563 +0.512/+0.506
+     L1_E             +0.412/+0.412 +0.490/+0.500 +0.483/+0.485 +0.364/+0.362 +0.073/+0.181 +0.145/+0.171 +0.328/+0.352
+     L1_I             +0.412/+0.471 +0.500/+0.500 +0.500/+0.500 +0.364/+0.409 +0.072/+0.173 +0.161/+0.200 +0.335/+0.375
+     L2_E             +0.500/+0.500 +0.490/+0.500 +0.500/+0.500 +0.409/+0.409 +0.061/+0.095 +0.126/+0.127 +0.348/+0.355
+     L2_I             +0.500/+0.500 +0.490/+0.471 +0.500/+0.498 +0.409/+0.409 +0.064/+0.097 +0.110/+0.072 +0.346/+0.341
+     L3_E             +0.500/+0.500 +0.471/+0.479 +0.470/+0.483 +0.409/+0.406 +0.076/+0.119 +0.103/+0.123 +0.338/+0.352
+     L3_I             +0.499/+0.499 +0.461/+0.476 +0.455/+0.482 +0.453/+0.362 +0.075/+0.052 +0.106/+0.115 +0.341/+0.331
+     L4_E             +0.265/+0.310 +0.327/+0.369 +0.258/+0.347 +0.041/+0.216 +0.057/+0.056 +0.084/+0.051 +0.172/+0.225
+     L4_I             +0.204/+0.363 +0.317/+0.407 +0.226/+0.271 +0.044/+0.213 +0.065/+0.061 +0.084/+0.061 +0.157/+0.229
+     L5_E             +0.113/+0.134 +0.132/+0.211 +0.148/+0.163 +0.038/+0.077 +0.028/+0.005 +0.081/+0.054 +0.090/+0.107
+     L5_I             +0.174/+0.134 +0.132/+0.209 +0.129/+0.147 +0.037/+0.212 +0.018/+0.010 +0.061/+0.073 +0.092/+0.131
+     policy_field     +0.024/+0.018 +0.013/+0.007 +0.011/+0.012 -0.001/-0.026 +0.003/-0.005 +0.004/+0.027 +0.009/+0.005
+     value_field      +0.024/-0.017 +0.026/-0.010 -0.003/+0.019 -0.001/-0.037 -0.001/-0.002 +0.010/+0.008 +0.009/-0.006
+  4. memory: past input recovered beyond the current frame (lags 1, 2, 3 frames; state = V + adaptation A), and previous heading
+     input frame      prev heading +0.336
+     L1_E             prev heading +0.331 | memory lag 1/2/3: 0.159 0.146 0.079
+     L2_E             prev heading +0.352 | memory lag 1/2/3: 0.121 0.123 0.070
+     L3_E             prev heading +0.378 | memory lag 1/2/3: 0.050 0.053 0.028
+     L4_E             prev heading +0.219 | memory lag 1/2/3: 0.000 0.000 0.000
+     L5_E             prev heading +0.092 | memory lag 1/2/3: 0.000 0.000 0.000
+     policy_field     prev heading +0.034 | memory lag 1/2/3: 0.000 0.000 0.000
+     value_field      prev heading +0.032 | memory lag 1/2/3: 0.000 0.000 0.000
+  6. input -> population: R2 of its top principal components from the input (current frame linear / input history linear / input history non-linear)
+     population       current lin history lin  history nl non-linear part unexplained
+     L1_E                   0.831       0.782       0.729          -0.053       0.218
+     L2_E                   0.846       0.829       0.700          -0.129       0.171
+     L3_E                   0.745       0.716       0.485          -0.231       0.284
+     L4_E                   0.238       0.191      -0.512          -0.703       0.809
+     L5_E                   0.044      -0.010      -1.032          -1.022       1.010
+     policy_field          -0.036      -0.111      -1.356          -1.245       1.111
+     value_field           -0.025      -0.077      -0.961          -0.884       1.077

@@ -1,0 +1,35 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "toroidal": "legacy",
+ "probe": {
+  "moves": 5000
+ },
+ "monitor": true,
+ "monitor_every": 10000,
+ "dale": {
+  "every_episodes": 1,
+  "local": true
+ },
+ "_meta": {
+  "variant": "scale_homeo1"
+ },
+ "hidden_rule": {
+  "preset": "proposed_homeostat",
+  "psi_target_warmup": 3000.0,
+  "homeostat": 1.0
+ },
+ "plastic_inhibition": {
+  "eta": 0.0001,
+  "mode": "covariance",
+  "scaling": 0.001
+ },
+ "seed": 1,
+ "max_timesteps": 2000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c01_s1",
+ "repetition": 0,
+ "trace_log": false
+}

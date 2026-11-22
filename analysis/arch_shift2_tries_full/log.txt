@@ -1,0 +1,36 @@
+seeding with 1 genomes from 
+make: Entering directory '/home/user/repos/personal/analysis/arch_shift2_tries_full/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_shift2_tries_full/work/c0000/c0000InferenceCompiler_CODE'
+[16:24:14] c0000 score 0.872 (172 s) | best c0000 0.872 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_shift2_tries_full/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_shift2_tries_full/work/c0001/c0001InferenceCompiler_CODE'
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/home/user/repos/ml_genn/examples/eprop/architecture_evolution.py", line 354, in _child
+    conn.send(evaluate_genome(task))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/user/repos/ml_genn/examples/eprop/architecture_evolution.py", line 356, in _child
+    conn.send({"error": repr(e)})
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe

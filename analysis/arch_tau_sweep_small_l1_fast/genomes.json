@@ -1,0 +1,38 @@
+[
+ {
+  "sigma_cells": 1.1390697444460147,
+  "p_max": 0.4683509296694966,
+  "input_sigma_cells": 1.0,
+  "inhibition_scale": 4.738693973710625,
+  "field_sigma": 0.4615654910315049,
+  "field_shape": "excitatory",
+  "target_hz": 20.0,
+  "tau_mem": 3.0,
+  "tau_adapt": 300.0,
+  "beta": 0.0174
+ },
+ {
+  "sigma_cells": 1.1390697444460147,
+  "p_max": 0.4683509296694966,
+  "input_sigma_cells": 1.0,
+  "inhibition_scale": 4.738693973710625,
+  "field_sigma": 0.4615654910315049,
+  "field_shape": "excitatory",
+  "target_hz": 20.0,
+  "tau_mem": 5.0,
+  "tau_adapt": 300.0,
+  "beta": 0.0174
+ },
+ {
+  "sigma_cells": 1.1390697444460147,
+  "p_max": 0.4683509296694966,
+  "input_sigma_cells": 1.0,
+  "inhibition_scale": 4.738693973710625,
+  "field_sigma": 0.4615654910315049,
+  "field_shape": "excitatory",
+  "target_hz": 20.0,
+  "tau_mem": 7.0,
+  "tau_adapt": 300.0,
+  "beta": 0.0174
+ }
+]

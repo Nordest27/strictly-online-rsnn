@@ -1,0 +1,4 @@
+spike_slow_s0 {"late_gap": 0.24967105263157896, "early_gap": 0.17291360772552433, "field_dead": 0.1042, "e_hz": 41.66, "decisions": 11803, "fitness": 0.23594977508460627}
+noise_slow_s0 {"late_gap": 0.21879206212251945, "early_gap": 0.1877798548518984, "field_dead": 0.1042, "e_hz": 37.06, "decisions": 11906, "fitness": 0.18219816575782996}
+spike_slow_s1 {"late_gap": -0.08763726835964314, "early_gap": -0.01258477389841256, "field_dead": 0.3542, "e_hz": 48.89, "decisions": 13457, "fitness": -0.2647372683596432}
+noise_slow_s1 {"late_gap": 0.17055368772607848, "early_gap": 0.08798873072145835, "field_dead": 0.3125, "e_hz": 57.07, "decisions": 12973, "fitness": 0.05558616622838855}

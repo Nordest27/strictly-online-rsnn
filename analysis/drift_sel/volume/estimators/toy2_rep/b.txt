@@ -1,0 +1,2 @@
+arch [('relu', 64), ('gsm', 32), ('relu', 64), ('gsm', 16), ('out', None)] kappa 3.0 eta 0.001; mean reward per 2000-trial block (chance 0.25), mean of seeds
+m_ldfa_ys      b1  0.379  b3  0.803  b6  0.844  b11 0.828  b20 0.854   mean 0.810 (seed sd 0.057)  74s

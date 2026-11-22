@@ -1,0 +1,98 @@
+{
+ "name": "matched-cal",
+ "hp": {
+  "toroidal": "matched"
+ },
+ "calibrated": true,
+ "per_pop": [
+  {
+   "pop": "L1_E",
+   "n": 1200,
+   "hz": 20.824855555555555,
+   "dim": 10.434306335425104,
+   "dim_counts": 9.753801488390403,
+   "decode": 0.11377777777777777,
+   "active": 1.0,
+   "input_r2": 0.6560293313617561,
+   "psi": 0.19192062318325043,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "L1_I",
+   "n": 675,
+   "hz": 22.152316049382712,
+   "dim": 10.240749755083606,
+   "dim_counts": 9.598689426149429,
+   "decode": 0.09622222222222225,
+   "active": 1.0,
+   "input_r2": 0.6479180439486987,
+   "psi": 0.19066864252090454,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "policy_field",
+   "n": 675,
+   "hz": 21.37827160493827,
+   "dim": 10.036354045107883,
+   "dim_counts": 9.38471663640378,
+   "decode": 0.02266666666666667,
+   "active": 1.0,
+   "input_r2": 0.6294552047395947,
+   "psi": 0.09320834279060364,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "value_field",
+   "n": 675,
+   "hz": 21.23043950617284,
+   "dim": 10.03242482394055,
+   "dim_counts": 9.45877668714409,
+   "decode": 0.027555555555555545,
+   "active": 1.0,
+   "input_r2": 0.6299822715464733,
+   "psi": 0.09375423938035965,
+   "psi_dead": 0.0
+  }
+ ],
+ "reach": {
+  "L1": 0.6545964540138844
+ },
+ "score": {
+  "dim_ratio": 1.0,
+  "decode_last": 0.11377777777777777,
+  "decode_ratio": 1.0,
+  "input_r2_ratio": 1.0,
+  "reach_min_max": 1.0
+ },
+ "calibration_factors": {
+  "1": 0.9399437775236491,
+  "fields": 5.954407025753566
+ },
+ "snake_config": {
+  "toroidal": "matched",
+  "ei_layers": 1,
+  "network": {
+   "input": {
+    "mean_scale": 0.09399437775236491,
+    "sd_scale": 0.046997188876182455
+   },
+   "layers": [
+    {}
+   ],
+   "fields": {
+    "conn": {
+     "mean_scale": 0.5954407025753566,
+     "sd_scale": 0.2977203512876783
+    }
+   }
+  }
+ },
+ "seconds": 504.4,
+ "log": [
+  "    calibrate L1_E:   28.8 Hz -> x0.83",
+  "    calibrate L1_E:   15.7 Hz -> x1.13",
+  "    calibrate policy_field:    0.0 Hz -> x3.00",
+  "    calibrate policy_field:    0.1 Hz -> x3.00",
+  "    calibrate policy_field:   45.7 Hz -> x0.66"
+ ]
+}

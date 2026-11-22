@@ -1,0 +1,18 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "_meta": {
+  "variant": "prop_homeo_c+backprop"
+ },
+ "hidden_rule": {
+  "preset": "proposed_homeostat_backprop"
+ },
+ "seed": 0,
+ "max_timesteps": 2000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c03_s0",
+ "repetition": 0,
+ "trace_log": false
+}

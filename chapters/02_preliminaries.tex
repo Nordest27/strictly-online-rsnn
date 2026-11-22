@@ -1,0 +1,160 @@
+\chapter{Preliminaries and Notation}
+\label{ch:preliminaries}
+
+This chapter introduces the core concepts and notation used throughout this work.
+The aim is to provide a common framework for interpreting the methods discussed
+in the following chapters.
+
+\section{Recurrent Neural Networks}
+
+We consider recurrent neural networks (RNNs) that process sequences of inputs
+$(x_t)_{t \geq 0}$ over discrete time steps. The network maintains a hidden
+state $h_t \in \mathbb{R}^n$, updated according to
+\begin{equation}
+    h_t = f(h_{t-1}, x_t; \theta),
+\end{equation}
+where $\theta$ denotes the set of parameters. The network produces outputs
+$y_t$ that depend on the hidden state.
+
+\section{Spiking Neural Networks}
+
+Spiking neural networks (SNNs) are a class of recurrent neural networks in
+which neurons communicate through discrete binary events called \emph{spikes},
+rather than continuous-valued activations. The output of neuron $j$ at time
+$t$ is a binary variable $z^t_j \in \{0, 1\}$, where $z^t_j = 1$ indicates
+that the neuron emits a spike at that timestep.
+
+The most widely used model for spiking neurons is the leaky integrate-and-fire
+(LIF) neuron. Each neuron maintains a scalar internal variable called the
+\emph{membrane potential} $v^t_j$, which integrates incoming spikes from
+connected neurons and decays over time. When $v^t_j$ exceeds a fixed threshold
+$v_{th}$, the neuron emits a spike and the membrane potential is reset.
+
+A key challenge arising from this formulation is that the spike generation
+function is discontinuous, making standard gradient-based
+optimization inapplicable. This issue and the techniques used to address it
+are discussed in detail in Chapter~\ref{ch:sota}, in the context of the
+learning algorithms that require it.
+
+\section{Loss Functions and Temporal Dependencies}
+
+We denote by $E$ a scalar loss function that depends on the sequence of
+outputs. In recurrent systems, the effect of parameters at time $t$ may only
+influence the loss at later times, leading to complex temporal dependencies
+in the gradient $\frac{\mathrm{d}E}{\mathrm{d}\theta}$. Handling these 
+dependencies efficiently is one of the central challenges in
+training recurrent networks, and different methods address this problem in
+different ways.
+
+\section{Eligibility Traces}
+
+Eligibility traces are variables associated with synaptic connections that
+capture how past activity influences current updates. For a weight $W_{ji}$,
+we denote the eligibility trace at time $t$ by $e^t_{ji}$. Intuitively, 
+$e^t_{ji}$ measures the sensitivity of the current activity of
+neuron $j$ to changes in $W_{ji}$, based only on locally available
+information. 
+
+In many methods, eligibility traces can be computed recursively
+in forward time, making them well suited to online learning. Eligibility 
+traces play a central role in online learning algorithms and provide an 
+alternative mechanism for temporal credit assignment to the commonly used 
+backpropagation variants.
+
+\section{Reinforcement Learning}
+
+In reinforcement learning (RL), an agent interacts with an environment over
+discrete time steps with the goal of maximizing cumulative reward. At each
+step $t$, the agent observes a state $S_t$, selects an action $A_t$, receives
+a scalar reward $R_{t+1}$, and transitions to a new state $S_{t+1}$.
+
+\paragraph{Policy.}
+A \emph{policy} $\pi$ defines the agent's behavior as a mapping from states
+to actions, either deterministic or stochastic. In the stochastic case,
+$\pi(a \mid s)$ denotes the probability of selecting action $a$ in state $s$.
+The objective of learning is to find a policy that maximizes expected return.
+
+\paragraph{Return.}
+The \emph{return} $G_t$ is the total discounted reward from time $t$ onward:
+\begin{equation}
+    G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+1+k},
+\end{equation}
+where $\gamma \in [0,1)$ is a discount factor controlling the relative weight
+of immediate versus future rewards.
+
+\paragraph{Value function.}
+Let $V_t \defeq V(S_t)$ denote the agent's estimate of the expected future
+return from state $S_t$. Formally, the \emph{state-value function}
+$v_\pi(s)$ measures the expected return starting from state $s$ under
+policy $\pi$:
+\begin{equation}
+    v_\pi(s) = \mathbb{E}_\pi \left[ G_t \mid S_t = s \right].
+\end{equation}
+In practice, this is approximated by a learned estimate $V_t \approx
+v_\pi(S_t)$, which the agent updates incrementally as it gains experience.
+
+\paragraph{Bellman equations.}
+The value function satisfies a recursive consistency condition known as the
+\emph{Bellman equation}, which follows directly from expanding the definition
+of $v_\pi(s)$ using the definition of $G_t$:
+\begin{equation}
+    v_\pi(s) = \mathbb{E}_\pi \left[ R_{t+1} + \gamma v_\pi(S_{t+1}) \mid S_t = s \right].
+\end{equation}
+This equation expresses the fundamental consistency requirement that the value of
+a state must equal the expected immediate reward plus the discounted value
+of the successor state. If our estimate $V_t$ were perfect, this condition
+would hold exactly at every state. The degree to which it is violated at
+any given timestep provides a natural signal for improving the estimate,
+which is the basis of temporal-difference learning.
+
+\paragraph{Temporal credit assignment.}
+Because rewards may be delayed with respect to the actions that caused them,
+the agent must determine which past decisions were responsible for the reward
+currently being received. This is known as the \emph{temporal credit
+assignment problem}, and is one of the central difficulties in reinforcement
+learning, particularly in tasks with long time horizons.
+
+\paragraph{Temporal-difference learning.}
+Rather than waiting until the end of an episode to update value estimates,
+temporal-difference (TD) learning exploits the Bellman equation directly.
+If $V_t$ were a perfect estimate, the Bellman equation would require
+$V_t = R_{t+1} + \gamma V_{t+1}$. The \emph{TD error} measures how far
+the current estimate is from satisfying this condition:
+\begin{equation}
+    \delta_t = R_{t+1} + \gamma V_{t+1} - V_t,
+\end{equation}
+and provides an online, low-variance signal for updating both value estimates
+and policy parameters. This quantity will appear repeatedly as a learning
+signal throughout the following sections.
+
+\clearpage
+\section{Summary of Notation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} \\
+\midrule
+$h_t$                       & Hidden state at time $t$ \\
+$x_t$                       & Input at time $t$ \\
+$z^t_j$                     & Spike output of neuron $j$ at time $t$ \\
+$v^t_j$                     & Membrane potential of neuron $j$ at time $t$ \\
+$v_{th}$                    & Spike threshold \\
+$\alpha$                    & Membrane decay factor \\
+$\mathcal{F}_\alpha$        & Exponential decay filter with parameter $\alpha$ \\
+$W_{ji}$                    & Synaptic weight from neuron $i$ to $j$ \\
+$e^t_{ji}$                  & Eligibility trace for synapse $ji$ at time $t$ \\
+$L^t_j$                     & Learning signal for neuron $j$ at time $t$ \\
+$E$                         & Loss function \\
+$S_t,\ A_t,\ R_t$           & RL state, action, and reward at time $t$ \\
+$\pi(a \mid s)$             & Stochastic policy \\
+$G_t$                       & Discounted return at time $t$ \\
+$\gamma$                    & Discount factor \\
+$V_t$                       & Value estimate at time $t$ \\
+$\delta_t$                  & Temporal-difference error \\
+$\epsilon_j,\ \epsilon_{ji}$& Perturbation at neuron $j$ or synapse $ji$ \\
+\bottomrule
+\end{tabular}
+\caption{Summary of notation used throughout this work.}
+\end{table}

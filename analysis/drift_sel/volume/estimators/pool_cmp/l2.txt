@@ -1,0 +1,2 @@
+homeo_s0 {"late_gap": 0.07987509542579857, "early_gap": 0.05293957832196461, "field_dead": 0.08333, "e_hz": 42.74, "decisions": 13015, "fitness": 0.05167785397771555}
+local_credit_s0 {"late_gap": 0.1466496956767962, "early_gap": 0.12323789271509544, "field_dead": 0.1875, "e_hz": 65.33, "decisions": 11855, "fitness": 0.06460559715764658}

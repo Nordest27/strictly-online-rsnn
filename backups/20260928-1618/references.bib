@@ -1,0 +1,555 @@
+@article{eprop2020,
+author = {Bellec, Guillaume and Scherr, Franz and Subramoney, Anand and Hajek, Elias and Salaj, Darjan and Legenstein, Robert and Maass, Wolfgang},
+year = {2020},
+month = {07},
+pages = {3625},
+number = {1},
+title = {A solution to the learning dilemma for recurrent networks of spiking neurons},
+volume = {11},
+journal = {Nature Communications},
+doi = {10.1038/s41467-020-17236-y}
+}
+@ARTICLE{learningLongTermHard,
+  author={Bengio, Y. and Simard, P. and Frasconi, P.},
+  journal={IEEE Transactions on Neural Networks}, 
+  title={Learning long-term dependencies with gradient descent is difficult}, 
+  year={1994},
+  volume={5},
+  number={2},
+  pages={157-166},
+  keywords={Recurrent neural networks;Production;Delay effects;Intelligent networks;Neural networks;Discrete transforms;Computer networks;Cost function;Neurofeedback;Displays},
+  doi={10.1109/72.279181}}
+@article{Werbos1990BackpropagationTT,
+  author  = {Werbos, Paul J.},
+  title   = {Backpropagation Through Time: What It Does and How to Do It},
+  journal = {Proceedings of the IEEE},
+  year    = {1990},
+  volume  = {78},
+  number  = {10},
+  pages   = {1550--1560},
+  doi     = {10.1109/5.58337}
+}
+@article{OSTL,
+  author  = {Bohnstingl, Thomas and Wo{\'z}niak, Stanis{\l}aw and Pantazi, Angeliki and Eleftheriou, Evangelos},
+  title   = {Online Spatio-Temporal Learning in Deep Neural Networks},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  year    = {2023},
+  volume  = {34},
+  number  = {11},
+  pages   = {8894--8908},
+  doi     = {10.1109/TNNLS.2022.3153985}
+}
+@inbook{WilliamsZipser1995,
+author = {Williams, Ronald J. and Zipser, David},
+title = {Gradient-based learning algorithms for recurrent networks and their computational complexity},
+year = {1995},
+isbn = {0805812598},
+publisher = {L. Erlbaum Associates Inc.},
+address = {USA},
+booktitle = {Backpropagation: Theory, Architectures, and Applications},
+pages = {433–486},
+numpages = {54}
+}
+@inproceedings{Jaderberg2016,
+author = {Jaderberg, Max and Czarnecki, Wojciech Marian and Osindero, Simon and Vinyals, Oriol and Graves, Alex and Silver, David and Kavukcuoglu, Koray},
+title = {Decoupled neural interfaces using synthetic gradients},
+year = {2017},
+publisher = {JMLR.org},
+abstract = {Training directed neural networks typically requires forward-propagating data through a computation graph, followed by backpropagating error signal, to produce weight updates. All layers, or more generally, modules, of the network are therefore locked, in the sense that they must wait for the remainder of the network to execute forwards and propagate error backwards before they can be updated. In this work we break this constraint by decoupling modules by introducing a model of the future computation of the network graph. These models predict what the result of the modelled subgraph will produce using only local information. In particular we focus on modelling error gradients: by using the modelled synthetic gradient in place of true backpropagated error gradients we decouple subgraphs, and can update them independently and asynchronously i.e. we realise decoupled neural interfaces. We show results for feed-forward models, where every layer is trained asynchronously, recurrent neural networks (RNNs) where predicting one's future gradient extends the time over which the RNN can effectively model, and also a hierarchical RNN system with ticking at different timescales. Finally, we demonstrate that in addition to predicting gradients, the same framework can be used to predict inputs, resulting in models which are decoupled in both the forward and backwards pass - amounting to independent networks which co-learn such that they can be composed into a single functioning corporation.},
+booktitle = {Proceedings of the 34th International Conference on Machine Learning - Volume 70},
+pages = {1627–1635},
+numpages = {9},
+location = {Sydney, NSW, Australia},
+series = {ICML'17}
+}
+@inproceedings{UORO,
+  author    = {Tallec, Corentin and Ollivier, Yann},
+  title     = {Unbiased Online Recurrent Optimization},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2018}
+}
+
+@article{RTRL,
+author = {Williams, Ronald and Zipser, David},
+year = {1989},
+month = {06},
+pages = {270-280},
+title = {A Learning Algorithm for Continually Running Fully Recurrent Neural Networks},
+volume = {1},
+number = {2},
+journal = {Neural Computation},
+doi = {10.1162/neco.1989.1.2.270}
+}
+@article{GradDescForSNNs,
+author = {Huh, Dongsung and Sejnowski, Terrence},
+year = {2017},
+month = {06},
+pages = {},
+title = {Gradient Descent for Spiking Neural Networks},
+doi = {10.48550/arXiv.1706.04698}
+}
+
+@book{SuttonBarto2018,
+  author    = {Sutton, Richard S. and Barto, Andrew G.},
+  title     = {Reinforcement Learning: An Introduction},
+  edition   = {2nd},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  year      = {2018}
+}
+
+@article{Lillicrap2016,
+  author    = {Lillicrap, Timothy P. and Cownden, Daniel and Tweed, Douglas B. and Akerman, Colin J.},
+  title     = {Random synaptic feedback weights support error backpropagation for deep learning},
+  journal   = {Nature Communications},
+  year      = {2016},
+  volume    = {7},
+  number    = {1},
+  pages     = {13276},
+  doi       = {10.1038/ncomms13276},
+  url       = {https://doi.org/10.1038/ncomms13276},
+  abstract  = {The brain processes information through multiple layers of neurons. This deep architecture is representationally powerful, but complicates learning because it is difficult to identify the responsible neurons when a mistake is made. In machine learning, the backpropagation algorithm assigns blame by multiplying error signals with all the synaptic weights on each neuron’s axon and further downstream. However, this involves a precise, symmetric backward connectivity pattern, which is thought to be impossible in the brain. Here we demonstrate that this strong architectural constraint is not required for effective error propagation. We present a surprisingly simple mechanism that assigns blame by multiplying errors by even random synaptic weights. This mechanism can transmit teaching signals across multiple layers of neurons and performs as effectively as backpropagation on a variety of tasks. Our results help reopen questions about how the brain could use error signals and dispel long-held assumptions about algorithmic constraints on learning.},
+  issn      = {2041-1723},
+  month     = {Nov 8}
+}
+@article {OneShotEprop,
+	author = {Scherr, Franz and St{\"o}ckl, Christoph and Maass, Wolfgang},
+	title = {One-shot learning with spiking neural networks},
+	elocation-id = {2020.06.17.156513},
+	year = {2020},
+	doi = {10.1101/2020.06.17.156513},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Understanding how one-shot learning can be accomplished through synaptic plasticity in neural networks of the brain is a major open problem. We propose that approximations to BPTT in recurrent networks of spiking neurons (RSNNs) such as e-prop cannot achieve this because their local synaptic plasticity is gated by learning signals that are rather ad hoc from a biological perspective: Random projections of instantaneously arising losses at the network outputs, analogously as in Broadcast Alignment for feedforward networks. In contrast, synaptic plasticity is gated in the brain by learning signals such as dopamine, which are emitted by specialized brain areas, e.g. VTA. These brain areas have arguably been optimized by evolution to gate synaptic plasticity in such a way that fast learning of survival-relevant tasks is enabled. We found that a corresponding model architecture, where learning signals are emitted by a separate RSNN that is optimized to facilitate fast learning, enables one-shot learning via local synaptic plasticity in RSNNs for large families of learning tasks. The same learning approach also supports fast spike-based learning of posterior probabilities of potential input sources, thereby providing a new basis for probabilistic reasoning in RSNNs. Our new learning approach also solves an open problem in neuromorphic engineering, where on-chip one-shot learning capability is highly desirable for spike-based neuromorphic devices, but could so far not be achieved. Our method can easily be mapped into neuromorphic hardware, and thereby solves this problem.Competing Interest StatementThe authors have declared no competing interest.},
+	URL = {https://www.biorxiv.org/content/early/2020/06/19/2020.06.17.156513},
+	eprint = {https://www.biorxiv.org/content/early/2020/06/19/2020.06.17.156513.full.pdf},
+	journal = {bioRxiv}
+}
+
+@inproceedings{guan2024artificialdopamine,
+author = {Guan, Jonas and Verch, Shon Eduard and Voelcker, Claas and Jackson, Ethan C. and Papernot, Nicolas and Cunningham, William A.},
+title = {Temporal-difference learning using distributed error signals},
+year = {2024},
+isbn = {9798331314385},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {A computational problem in biological reward-based learning is how credit assignment is performed in the nucleus accumbens (NAc) to update synaptic weights. Much research suggests that NAc dopamine encodes temporal-difference (TD) errors for learning value predictions. However, dopamine is synchronously distributed in regionally homogeneous concentrations, which does not support explicit credit assignment (like used by backpropagation). It is unclear whether distributed errors alone are sufficient for synapses to make coordinated updates to learn complex, nonlinear reward-based learning tasks. We design a new deep Q-learning algorithm, ARTIFICIAL DOPAMINE, to computationally demonstrate that synchronously distributed, per-layer TD errors may be sufficient to learn surprisingly complex RL tasks. We empirically evaluate our algorithm on MinAtar, the DeepMind Control Suite, and classic control tasks, and show it often achieves comparable performance to deep RL algorithms that use backpropagation.},
+booktitle = {Proceedings of the 38th International Conference on Neural Information Processing Systems},
+articleno = {3452},
+numpages = {25},
+location = {Vancouver, BC, Canada},
+series = {NIPS '24}
+}
+
+@article {murray2019local,
+article_type = {journal},
+title = {Local online learning in recurrent networks with random feedback},
+author = {Murray, James M},
+editor = {Latham, Peter and Frank, Michael J and DePasquale, Brian},
+volume = 8,
+year = 2019,
+month = {may},
+pub_date = {2019-05-24},
+pages = {e43299},
+citation = {eLife 2019;8:e43299},
+doi = {10.7554/eLife.43299},
+url = {https://doi.org/10.7554/eLife.43299},
+abstract = {Recurrent neural networks (RNNs) enable the production and processing of time-dependent signals such as those involved in movement or working memory. Classic gradient-based algorithms for training RNNs have been available for decades, but are inconsistent with biological features of the brain, such as causality and locality. We derive an approximation to gradient-based learning that comports with these constraints by requiring synaptic weight updates to depend only on local information about pre- and postsynaptic activities, in addition to a random feedback projection of the RNN output error. In addition to providing mathematical arguments for the effectiveness of the new learning rule, we show through simulations that it can be used to train an RNN to perform a variety of tasks. Finally, to overcome the difficulty of training over very large numbers of timesteps, we propose an augmented circuit architecture that allows the RNN to concatenate short-duration patterns into longer sequences.},
+keywords = {recurrent neural networks, supervised learning, motor control, working memory, machine learning},
+journal = {eLife},
+issn = {2050-084X},
+publisher = {eLife Sciences Publications, Ltd},
+}
+
+@article{Frmaux2013ReinforcementLU,
+  author  = {Fr{\'e}maux, Nicolas and Sprekeler, Henning and Gerstner, Wulfram},
+  title   = {Reinforcement Learning Using a Continuous Time Actor-Critic Framework with Spiking Neurons},
+  journal = {PLoS Computational Biology},
+  year    = {2013},
+  volume  = {9},
+  number  = {4},
+  pages   = {e1003024},
+  doi     = {10.1371/journal.pcbi.1003024}
+}
+
+@misc{salimans2017evolutionstrategiesscalablealternative,
+      title={Evolution Strategies as a Scalable Alternative to Reinforcement Learning}, 
+      author={Tim Salimans and Jonathan Ho and Xi Chen and Szymon Sidor and Ilya Sutskever},
+      year={2017},
+      eprint={1703.03864},
+      archivePrefix={arXiv},
+      primaryClass={stat.ML},
+      url={https://arxiv.org/abs/1703.03864}, 
+}
+
+@article{dale1935pharmacology,
+author = {Henry Dale},
+title ={Pharmacology and Nerve-Endings},
+
+journal = {Proceedings of the Royal Society of Medicine},
+volume = {28},
+number = {3},
+pages = {319-332},
+year = {1935},
+doi = {10.1177/003591573502800330},
+
+URL = { 
+    
+        https://doi.org/10.1177/003591573502800330
+    
+    
+
+},
+eprint = { 
+    
+        https://doi.org/10.1177/003591573502800330
+    
+    
+
+}
+,
+    abstract = { A brief account is given of the scientific career of Walter Ernest Dixon, and of the importance of his work and his influence for the development of Pharmacology in England. It is suggested that the Memorial Lecture may appropriately deal with some matter of new interest, from one of the fields of research in which Dixon himself was active. Special mention is made of his work with Brodie on the physiology and pharmacology of the bronchioles and the pulmonary blood-vessels, as probably showing the beginning of Dixon's interest in the actions of the alkaloids and organic bases which reproduce the effects of autonomic nerves.An account is given of Dixon's early interest in the suggestion, first made by Elliott, that autonomic nerves transmit their effects by releasing, at their endings, specific substances, which reproduce their actions; and of his attempt to obtain experimental support for this conception. After the War it was established by the experiments of O. Loewi; and it is now generally recognized that parasympathetic effects are so transmitted by release of acetylcholine, sympathetic effects by that of a substance related to adrenaline.Very recent evidence indicates that acetylcholine, by virtue of its other (“nicotine-like”) action, also acts as transmitter of activity at synapses in autonomic ganglia, and from motor nerve to voluntary muscle.The terms “cholinergic” and “adrenergic” have been introduced to describe nerve-fibres which transmit their actions by the release at their endings of acetylcholine, and of a substance related to adrenaline, respectively. It is shown that Langley and Anderson's evidence, long available, as to the kinds of peripheral efferent fibres which can replace one another in regeneration, can be summarized by the statement, that cholinergic can replace cholinergic fibres, and that adrenergic can replace adrenergic fibres; but that fibres of different chemical function cannot replace one another. The bearing of this new evidence on conceptions of the mode of action of “neuromimetic” drugs is discussed. The pharmacological problem can now be more clearly defined, and Dixon's participation in further attempts at its solution will be sadly missed. }
+}
+
+@article{vanVreeswijk1996Chaos,
+  author  = {van Vreeswijk, Carl and Sompolinsky, Haim},
+  title   = {Chaos in neuronal networks with balanced excitatory and inhibitory activity},
+  journal = {Science},
+  year    = {1996},
+  volume  = {274},
+  number  = {5293},
+  pages   = {1724--1726},
+  month   = dec,
+  doi     = {10.1126/science.274.5293.1724},
+  pmid    = {8939866}
+}
+
+@article{Fremaux2016NeuromodulatedSTDP,
+  author  = {Fr{\'e}maux, Nicolas and Gerstner, Wulfram},
+  title   = {Neuromodulated Spike-Timing-Dependent Plasticity, and Theory of Three-Factor Learning Rules},
+  journal = {Frontiers in Neural Circuits},
+  year    = {2016},
+  volume  = {9},
+  pages   = {85},
+  doi     = {10.3389/fncir.2015.00085},
+  pmid    = {26834568},
+  pmcid   = {PMC4717313}
+}
+@article{fiete2006gradient,
+  title   = {Gradient learning in spiking neural networks by dynamic perturbation of conductances},
+  author  = {Fiete, Ila R. and Seung, H. Sebastian},
+  journal = {Physical Review Letters},
+  volume  = {97},
+  number  = {4},
+  pages   = {048104},
+  year    = {2006},
+  doi     = {10.1103/PhysRevLett.97.048104}
+}
+@article{Davies2018Loihi,
+  author  = {Davies, Mike and Srinivasa, Narayan and Lin, Tsung-Han and Chinya, Gautham and Cao, Yongqiang and Choday, Sri Harsha and Dimou, Georgios and Joshi, Prasad and Imam, Nabil and Jain, Shweta and Liao, Yuyun and Lin, Chit-Kwan and Lines, Andrew and Liu, Ruokun and Mathaikutty, Deepak and McCoy, Steven and Paul, Arnab and Tse, Jonathan and Venkataramanan, Guruguhanathan and Weng, Yi-Hsin and Wild, Andreas and Yang, Yoonseok and Wang, Hong},
+  title   = {Loihi: A Neuromorphic Manycore Processor with On-Chip Learning},
+  journal = {IEEE Micro},
+  year    = {2018},
+  volume  = {38},
+  number  = {1},
+  pages   = {82--99},
+  doi     = {10.1109/MM.2018.112130359}
+}
+
+@article{Painkras2013SpiNNaker,
+  author  = {Painkras, Eustace and Plana, Luis A. and Garside, Jim and Temple, Steve and Galluppi, Francesco and Patterson, Cameron and Lester, David R. and Brown, Andrew D. and Furber, Steve B.},
+  title   = {SpiNNaker: A 1-W 18-Core System-on-Chip for Massively-Parallel Neural Network Simulation},
+  journal = {IEEE Journal of Solid-State Circuits},
+  year    = {2013},
+  volume  = {48},
+  number  = {8},
+  pages   = {1943--1953},
+  doi     = {10.1109/JSSC.2013.2259038}
+}
+
+@article{Yavuz2016GeNN,
+  author  = {Yavuz, Esin and Turner, James and Nowotny, Thomas},
+  title   = {{GeNN}: a code generation framework for accelerated brain simulations},
+  journal = {Scientific Reports},
+  year    = {2016},
+  volume  = {6},
+  pages   = {18854},
+  doi     = {10.1038/srep18854}
+}
+
+@incollection{Konda2000ActorCritic,
+  author    = {Konda, Vijay R. and Tsitsiklis, John N.},
+  title     = {Actor-Critic Algorithms},
+  booktitle = {Advances in Neural Information Processing Systems 12},
+  editor    = {Solla, S. A. and Leen, T. K. and M{\"u}ller, K.-R.},
+  publisher = {MIT Press},
+  year      = {2000},
+  pages     = {1008--1014}
+}
+
+@article{Williams1992REINFORCE,
+  author  = {Williams, Ronald J.},
+  title   = {Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning},
+  journal = {Machine Learning},
+  year    = {1992},
+  volume  = {8},
+  pages   = {229--256},
+  doi     = {10.1007/BF00992696}
+}
+
+@article{Song2016DaleEI,
+  author  = {Song, H. Francis and Yang, Guangyu R. and Wang, Xiao-Jing},
+  title   = {Training Excitatory-Inhibitory Recurrent Neural Networks for Cognitive Tasks: A Simple and Flexible Framework},
+  journal = {PLoS Computational Biology},
+  year    = {2016},
+  volume  = {12},
+  number  = {2},
+  pages   = {e1004792},
+  doi     = {10.1371/journal.pcbi.1004792}
+}
+
+@inproceedings{Cornford2021DaleANN,
+  author    = {Cornford, Jonathan and Kalajdzievski, Damjan and Leite, Marco and Lamarquette, Am{\'e}lie and Kullmann, Dimitri M. and Richards, Blake A.},
+  title     = {Learning to Live with {Dale's} Principle: {ANNs} with Separate Excitatory and Inhibitory Units},
+  booktitle = {Proceedings of the 9th International Conference on Learning Representations (ICLR 2021)},
+  year      = {2021}
+}
+
+@article{Spreizer2019Toroidal,
+  author  = {Spreizer, Sebastian and Aertsen, Ad and Kumar, Arvind},
+  title   = {From Space to Time: Spatial Inhomogeneities Lead to the Emergence of Spatiotemporal Sequences in Spiking Neuronal Networks},
+  journal = {PLoS Computational Biology},
+  year    = {2019},
+  volume  = {15},
+  number  = {10},
+  pages   = {e1007432},
+  doi     = {10.1371/journal.pcbi.1007432}
+}
+
+@article{Maass2002LSM,
+  author  = {Maass, Wolfgang and Natschl{\"a}ger, Thomas and Markram, Henry},
+  title   = {Real-Time Computing Without Stable States: A New Framework for Neural Computation Based on Perturbations},
+  journal = {Neural Computation},
+  year    = {2002},
+  volume  = {14},
+  number  = {11},
+  pages   = {2531--2560},
+  doi     = {10.1162/089976602760407955}
+}
+
+@article{Neftci2019Surrogate,
+  author  = {Neftci, Emre O. and Mostafa, Hesham and Zenke, Friedemann},
+  title   = {Surrogate Gradient Learning in Spiking Neural Networks: Bringing the Power of Gradient-Based Optimization to Spiking Neural Networks},
+  journal = {IEEE Signal Processing Magazine},
+  year    = {2019},
+  volume  = {36},
+  number  = {6},
+  pages   = {51--63},
+  doi     = {10.1109/MSP.2019.2931595}
+}
+
+@misc{Chen2022SpikingQLearning,
+  author        = {Chen, Ding and Peng, Peixi and Huang, Tiejun and Tian, Yonghong},
+  title         = {Deep Reinforcement Learning with Spiking Q-learning},
+  year          = {2022},
+  eprint        = {2201.09754},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NE}
+}
+
+@article{Izhikevich2007DistalReward,
+  author  = {Izhikevich, Eugene M.},
+  title   = {Solving the Distal Reward Problem through Linkage of {STDP} and Dopamine Signaling},
+  journal = {Cerebral Cortex},
+  year    = {2007},
+  volume  = {17},
+  number  = {10},
+  pages   = {2443--2452},
+  doi     = {10.1093/cercor/bhl152}
+}
+
+@article{Florian2007RewardSTDP,
+  author  = {Florian, R{\u{a}}zvan V.},
+  title   = {Reinforcement Learning Through Modulation of Spike-Timing-Dependent Synaptic Plasticity},
+  journal = {Neural Computation},
+  year    = {2007},
+  volume  = {19},
+  number  = {6},
+  pages   = {1468--1502},
+  doi     = {10.1162/neco.2007.19.6.1468}
+}
+
+@article{Legenstein2008RewardSTDP,
+  author  = {Legenstein, Robert and Pecevski, Dejan and Maass, Wolfgang},
+  title   = {A Learning Theory for Reward-Modulated Spike-Timing-Dependent Plasticity with Application to Biofeedback},
+  journal = {PLoS Computational Biology},
+  year    = {2008},
+  volume  = {4},
+  number  = {10},
+  pages   = {e1000180},
+  doi     = {10.1371/journal.pcbi.1000180}
+}
+
+@misc{schulman2017ppo,
+  title={Proximal Policy Optimization Algorithms},
+  author={Schulman, John and Wolski, Filip and Dhariwal, Prafulla and Radford, Alec and Klimov, Oleg},
+  year={2017},
+  eprint={1707.06347},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+
+@inproceedings{schulman2016gae,
+  title={High-Dimensional Continuous Control Using Generalized Advantage Estimation},
+  author={Schulman, John and Moritz, Philipp and Levine, Sergey and Jordan, Michael I. and Abbeel, Pieter},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2016}
+}
+
+@inproceedings{denero2010pacman,
+  author    = {DeNero, John and Klein, Dan},
+  title     = {Teaching Introductory Artificial Intelligence with {Pac-Man}},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {24},
+  number    = {3},
+  pages     = {1885--1889},
+  year      = {2010},
+  doi       = {10.1609/aaai.v24i3.18829}
+}
+@inproceedings{Cauwenberghs1992,
+  author    = {Cauwenberghs, Gert},
+  title     = {A Fast Stochastic Error-Descent Algorithm for Supervised Learning and Optimization},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {5},
+  year      = {1993},
+  publisher = {Morgan-Kaufmann}
+}
+
+@inproceedings{Lin2017DeepGradientCompression,
+  title={Deep Gradient Compression: Reducing the Communication Bandwidth for Distributed Training},
+  author={Lin, Yujun and Han, Song and Mao, Huizi and Wang, Yu and Dally, William J.},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2018}
+}
+
+@inproceedings{Stich2018SparsifiedSGD,
+  title={Sparsified {SGD} with Memory},
+  author={Stich, Sebastian U. and Cordonnier, Jean-Baptiste and Jaggi, Martin},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2018}
+}
+
+@inproceedings{Astrom2002ComparisonPeriodicEventBased,
+  title={Comparison of Riemann and {L}ebesgue sampling for first order stochastic systems},
+  author={{\AA}str{\"o}m, Karl Johan and Bernhardsson, Bo},
+  booktitle={IEEE Conference on Decision and Control},
+  year={2002}
+}
+
+@inproceedings{kingma2014adam,
+  title     = {Adam: A Method for Stochastic Optimization},
+  author    = {Kingma, Diederik P. and Ba, Jimmy},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2015},
+  eprint    = {1412.6980},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@inproceedings{zhuang2020adabelief,
+  title     = {AdaBelief Optimizer: Adapting Stepsizes by the Belief in Observed Gradients},
+  author    = {Zhuang, Juntang and Tang, Tommy and Ding, Yifan and Tatikonda, Sekhar C. and Dvornek, Nicha and Papademetris, Xenophon and Duncan, James},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020},
+  eprint    = {2010.07468},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@inproceedings{kumar2023maintaining,
+  author    = {Kumar, Saurabh and Marklund, Henrik and Van Roy, Benjamin},
+  title     = {Maintaining Plasticity in Continual Learning via Regenerative Regularization},
+  booktitle = {Proceedings of the 3rd Conference on Lifelong Learning Agents (CoLLAs)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {274},
+  year      = {2025},
+  url       = {https://proceedings.mlr.press/v274/kumar25a.html}
+}
+
+@book{koch1999biophysics,
+  title={Biophysics of Computation: Information Processing in Single Neurons},
+  author={Koch, Christof},
+  year={1999},
+  publisher={Oxford University Press}
+}
+
+@article{stockel2017point,
+  title={Point neurons with conductance-based synapses in the neural engineering framework},
+  author={St{\"o}ckel, Andreas and Voelker, Aaron R and Eliasmith, Chris},
+  journal={arXiv preprint arXiv:1710.07659},
+  year={2017}
+}
+
+@article{Miconi2017,
+  author  = {Miconi, Thomas},
+  title   = {Biologically Plausible Learning in Recurrent Neural Networks Reproduces Neural Dynamics Observed During Cognitive Tasks},
+  journal = {eLife},
+  year    = {2017},
+  volume  = {6},
+  pages   = {e20899},
+  doi     = {10.7554/eLife.20899}
+}
+
+@article{Legenstein2010EH,
+  author  = {Legenstein, Robert and Chase, Steven M. and Schwartz, Andrew B. and Maass, Wolfgang},
+  title   = {A Reward-Modulated {Hebbian} Learning Rule Can Explain Experimentally Observed Network Reorganization in a Brain Control Task},
+  journal = {Journal of Neuroscience},
+  year    = {2010},
+  volume  = {30},
+  number  = {25},
+  pages   = {8400--8410},
+  doi     = {10.1523/JNEUROSCI.4284-09.2010}
+}
+
+@article{Hoerzer2014,
+  author  = {Hoerzer, Gregor M. and Legenstein, Robert and Maass, Wolfgang},
+  title   = {Emergence of Complex Computational Structures From Chaotic Neural Networks Through Reward-Modulated {Hebbian} Learning},
+  journal = {Cerebral Cortex},
+  year    = {2014},
+  volume  = {24},
+  number  = {3},
+  pages   = {677--690},
+  doi     = {10.1093/cercor/bhs348}
+}
+
+@article{Wawrzynski2015,
+  author  = {Wawrzy{\'n}ski, Pawe{\l}},
+  title   = {Control Policy with Autocorrelated Noise in Reinforcement Learning for Robotics},
+  journal = {International Journal of Machine Learning and Computing},
+  year    = {2015},
+  volume  = {5},
+  number  = {2},
+  pages   = {91--95},
+  doi     = {10.7763/IJMLC.2015.V5.489}
+}
+
+@article{vanHoof2017,
+  author  = {van Hoof, Herke and Tanneberg, Daniel and Peters, Jan},
+  title   = {Generalized Exploration in Policy Search},
+  journal = {Machine Learning},
+  year    = {2017},
+  volume  = {106},
+  number  = {9--10},
+  pages   = {1705--1724},
+  doi     = {10.1007/s10994-017-5657-1}
+}
+
+@article{Lansdell2023,
+  author  = {Lansdell, Benjamin James and Kording, Konrad Paul},
+  title   = {Neural Spiking for Causal Inference and Learning},
+  journal = {PLOS Computational Biology},
+  year    = {2023},
+  volume  = {19},
+  number  = {4},
+  pages   = {e1011005},
+  doi     = {10.1371/journal.pcbi.1011005}
+}

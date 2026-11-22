@@ -1,0 +1,107 @@
+{
+ "name": "local_field20_narrow-cal",
+ "hp": {
+  "toroidal": "local",
+  "network": {
+   "fields": {
+    "shape": 20,
+    "conn": {
+     "sigma_cells": 0.6
+    }
+   }
+  }
+ },
+ "calibrated": true,
+ "per_pop": [
+  {
+   "pop": "L1_E",
+   "n": 1200,
+   "hz": 20.42096666666667,
+   "dim": 13.119039701333715,
+   "dim_counts": 10.75452308319874,
+   "decode": 0.132,
+   "active": 1.0,
+   "input_r2": 0.650349327672163,
+   "psi": 0.17982378602027893,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "L1_I",
+   "n": 675,
+   "hz": 21.221688888888888,
+   "dim": 12.27167061988711,
+   "dim_counts": 10.576797674751129,
+   "decode": 0.10666666666666667,
+   "active": 1.0,
+   "input_r2": 0.6467746731601292,
+   "psi": 0.1796911507844925,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "policy_field",
+   "n": 1200,
+   "hz": 18.619744444444446,
+   "dim": 13.171132969229603,
+   "dim_counts": 10.473261348490775,
+   "decode": 0.07133333333333333,
+   "active": 1.0,
+   "input_r2": 0.6635667942772115,
+   "psi": 0.07384158670902252,
+   "psi_dead": 0.0
+  },
+  {
+   "pop": "value_field",
+   "n": 1200,
+   "hz": 18.57677777777778,
+   "dim": 13.213031080381723,
+   "dim_counts": 10.4969708357206,
+   "decode": 0.06999999999999999,
+   "active": 1.0,
+   "input_r2": 0.6640469048892698,
+   "psi": 0.07408939301967621,
+   "psi_dead": 0.0
+  }
+ ],
+ "reach": {
+  "L1": 0.904783289312076
+ },
+ "score": {
+  "dim_ratio": 1.0,
+  "decode_last": 0.132,
+  "decode_ratio": 1.0,
+  "input_r2_ratio": 1.0,
+  "reach_min_max": 1.0
+ },
+ "calibration_factors": {
+  "1": 0.8586871286693348,
+  "fields": 1.9776354323721361
+ },
+ "snake_config": {
+  "toroidal": "local",
+  "network": {
+   "fields": {
+    "shape": 20,
+    "conn": {
+     "sigma_cells": 0.6,
+     "mean_scale": 0.49440885809303403,
+     "sd_scale": 0.09888177161860681
+    }
+   },
+   "input": {
+    "mean_scale": 0.08586871286693348,
+    "sd_scale": 0.04293435643346674
+   },
+   "layers": [
+    {}
+   ]
+  },
+  "ei_layers": 1
+ },
+ "seconds": 655.6,
+ "log": [
+  "    calibrate L1_E:   31.9 Hz -> x0.79",
+  "    calibrate L1_E:   17.0 Hz -> x1.08",
+  "    calibrate policy_field:    3.4 Hz -> x2.42",
+  "    calibrate policy_field:   29.9 Hz -> x0.82"
+ ]
+}

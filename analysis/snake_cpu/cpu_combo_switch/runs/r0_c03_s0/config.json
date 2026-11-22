@@ -1,0 +1,35 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "switch": {
+  "criterion": -0.08,
+  "window": 5000,
+  "mangles": [
+   "channels",
+   "actions"
+  ],
+  "seed": 0
+ },
+ "monitor": true,
+ "monitor_every": 5000,
+ "_meta": {
+  "variant": "adaptive+dg0.1+homeo1"
+ },
+ "hidden_rule": {
+  "preset": "eprop_plus_proposed_homeostat",
+  "drift": 0.1,
+  "gradient": 0.1,
+  "homeostat": 1.0,
+  "center_drift": true
+ },
+ "feedback_type": "adaptive",
+ "optimise_feedback": true,
+ "seed": 0,
+ "max_timesteps": 6000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c03_s0",
+ "repetition": 0,
+ "trace_log": false
+}

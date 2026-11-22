@@ -1,0 +1,31 @@
+# Ignore compiled Python
+/**/*.pyc
+
+# Ignore GNU Make files
+**/*.o
+**/*.d
+**/*.gcda
+**/*.gcno
+
+# Ignore MSBuild/Visual Studio files
+**/*.exe
+**/*.pdb
+**/*.ilk
+**/*.suo
+**/*.sdf
+**/*.vcxproj.user
+**/*.vcxproj.filters
+**/*.opensdf
+**/x64
+**/.vs
+**/*.ipdb
+**/*.iobj
+**/*.testdurations
+
+/dist
+/lib
+/documentation/
+/build/
+/pygenn.egg-info/
+.vscode/
+/pygenn/share/

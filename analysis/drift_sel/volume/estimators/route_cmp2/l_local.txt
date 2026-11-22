@@ -1,0 +1,2 @@
+spike_local_s0 {"late_gap": 0.17024292410548136, "early_gap": 0.17390305832894037, "field_dead": 0.1042, "e_hz": 45.24, "decisions": 12515, "fitness": 0.11814292410548136}
+spike_local_s1 {"late_gap": 0.1752110966243814, "early_gap": 0.07268276447596306, "field_dead": 0.375, "e_hz": 46.61, "decisions": 12526, "fitness": 0.03897526269859056}

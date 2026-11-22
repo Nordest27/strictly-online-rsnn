@@ -1,0 +1,50 @@
+{
+ "base": {
+  "hid_e": 6,
+  "hid_i": 4,
+  "fan_in": 50,
+  "backend": "single_threaded_cpu",
+  "toroidal": "legacy",
+  "probe": {
+   "moves": 5000
+  },
+  "monitor": true,
+  "monitor_every": 10000,
+  "dale": {
+   "every_episodes": 1,
+   "local": true
+  }
+ },
+ "points": [
+  {
+   "*": {
+    "_meta": {
+     "variant": "cov_scale_eta1e-3_s1e-2"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 0.001,
+     "mode": "covariance",
+     "scaling": 0.01
+    }
+   }
+  },
+  {
+   "*": {
+    "_meta": {
+     "variant": "cov_scale_eta3e-4_s3e-3"
+    },
+    "hidden_rule": {
+     "preset": "proposed"
+    },
+    "plastic_inhibition": {
+     "eta": 0.0003,
+     "mode": "covariance",
+     "scaling": 0.003
+    }
+   }
+  }
+ ]
+}

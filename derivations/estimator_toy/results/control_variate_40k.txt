@@ -1,0 +1,29 @@
+cos(random feedback, forward readout weights) = -0.00
+   fitted beta: oracle/nf=0.968, sym/nf=2.03, sym/noisy=2.77, rand/nf=2.56, rand/noisy=3
+
+== near threshold  (truth uncertainty 2.9%, -23s)   cells: cosine to truth / relative noise
+   exact              1.000 /    5.90
+   dist_eprop         0.999 /    3.76
+   CV_oracle          1.000 /    4.73
+   CV_sym_nf          1.000 /    5.47
+   CV_sym_noisy       1.000 /    5.91
+   CV_rand_nf         1.000 /    5.29
+   CV_rand_noisy      1.000 /    5.80
+   eprop_sym          0.484 /    1.01
+   eprop_rand         0.988 /    0.31
+   eprop_sym_nopsi    0.278 /    0.88
+   oracle_path        0.999 /     nan
+   fitted beta: oracle/nf=0.989, sym/nf=-0.244, sym/noisy=-0.226, rand/nf=-0.279, rand/noisy=-0.269
+
+== inhibited  (truth uncertainty 3.1%, 6s)   cells: cosine to truth / relative noise
+   exact              1.000 /    6.21
+   dist_eprop         0.988 /    2.80
+   CV_oracle          1.000 /    4.24
+   CV_sym_nf          1.000 /    5.66
+   CV_sym_noisy       1.000 /    5.72
+   CV_rand_nf         1.000 /    5.61
+   CV_rand_noisy      1.000 /    5.67
+   eprop_sym         -0.929 /    0.07
+   eprop_rand        -0.950 /    0.05
+   eprop_sym_nopsi   -0.494 /    0.07
+   oracle_path        1.000 /    0.00

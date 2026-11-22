@@ -1,0 +1,6 @@
+action/dk_s0
+action/k_s0
+action/d_s0
+action/dk_s1
+action/k_s1
+action/d_s1

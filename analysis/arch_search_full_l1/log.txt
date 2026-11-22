@@ -1,0 +1,86 @@
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0000/c0000InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0000/c0000InferenceCompiler_CODE'
+[12:54:12] c0000 score 0.345 (87 s) | best c0000 0.345 | 1 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0001/c0001InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0001/c0001InferenceCompiler_CODE'
+[12:54:42] c0001 score 0.653 (30 s) | best c0001 0.653 | 2 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0002/c0002InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0002/c0002InferenceCompiler_CODE'
+[12:55:38] c0002 score 0.933 (56 s) | best c0002 0.933 | 3 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0003/c0003InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0003/c0003InferenceCompiler_CODE'
+[12:56:24] c0003 score 0.702 (46 s) | best c0002 0.933 | 4 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0004/c0004InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0004/c0004InferenceCompiler_CODE'
+[12:56:58] c0004 score 0.660 (34 s) | best c0002 0.933 | 5 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0005/c0005InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0005/c0005InferenceCompiler_CODE'
+[12:57:34] c0005 score 0.185 (35 s) | best c0002 0.933 | 6 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0006/c0006InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0006/c0006InferenceCompiler_CODE'
+[12:58:15] c0006 score 0.303 (42 s) | best c0002 0.933 | 7 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0007/c0007InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0007/c0007InferenceCompiler_CODE'
+[12:58:46] c0007 score 0.319 (30 s) | best c0002 0.933 | 8 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0008/c0008InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0008/c0008InferenceCompiler_CODE'
+[12:59:13] c0008 score 0.384 (27 s) | best c0002 0.933 | 9 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0009/c0009InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0009/c0009InferenceCompiler_CODE'
+[12:59:46] c0009 score 0.107 (33 s) | best c0002 0.933 | 10 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0010/c0010InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0010/c0010InferenceCompiler_CODE'
+[13:00:22] c0010 score 0.670 (36 s) | best c0002 0.933 | 11 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0011/c0011InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0011/c0011InferenceCompiler_CODE'
+[13:00:49] c0011 score 0.283 (27 s) | best c0002 0.933 | 12 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0012/c0012InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0012/c0012InferenceCompiler_CODE'
+[13:01:23] c0012 score 0.678 (34 s) | best c0002 0.933 | 13 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0013/c0013InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0013/c0013InferenceCompiler_CODE'
+[13:01:59] c0013 score 0.274 (36 s) | best c0002 0.933 | 14 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0014/c0014InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0014/c0014InferenceCompiler_CODE'
+[13:02:53] c0014 score 0.287 (53 s) | best c0002 0.933 | 15 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0015/c0015InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0015/c0015InferenceCompiler_CODE'
+[13:04:15] c0015 score 0.199 (82 s) | best c0002 0.933 | 16 done
+make: Entering directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0016/c0016InferenceCompiler_CODE'
+make: Leaving directory '/home/user/repos/personal/analysis/arch_search_full_l1/work/c0016/c0016InferenceCompiler_CODE'
+Process SpawnPoolWorker-17:
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/home/user/miniconda3/lib/python3.11/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/home/user/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

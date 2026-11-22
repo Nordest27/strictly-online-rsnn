@@ -1,0 +1,4 @@
+rule_sur_motor_s01_s0 done
+eprop_ctd_s01_drive_s0 done
+eprop_ctd_s01_drive_s0: episodes 4557  score first/last quarter +0.389 / +0.276  toward target first/last 0.17 / 0.22  moves with motor spikes first/last 0.47 / 0.81
+rule_sur_motor_s01_s0: episodes 4889  score first/last quarter +0.384 / +0.426  toward target first/last 0.16 / 0.18  moves with motor spikes first/last 0.49 / 0.48

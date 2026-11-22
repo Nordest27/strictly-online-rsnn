@@ -1,0 +1,3 @@
+par3pol_eprop_s0
+par3pol_ours_s0
+par3pol_reservoir_s0

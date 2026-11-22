@@ -1,0 +1,21 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "memory": {
+  "visible_moves": 2
+ },
+ "_meta": {
+  "variant": "random_eprop"
+ },
+ "hidden_rule": {
+  "preset": "eprop"
+ },
+ "seed": 1,
+ "max_timesteps": 3000000.0,
+ "min_episodes": 0,
+ "csv_prefix": "r0_c00_s1",
+ "repetition": 0,
+ "trace_log": false
+}

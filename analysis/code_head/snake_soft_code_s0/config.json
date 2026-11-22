@@ -1,0 +1,47 @@
+{
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50,
+ "backend": "single_threaded_cpu",
+ "ei_layers": 0,
+ "probe": null,
+ "monitor": false,
+ "monitor_every": 10000,
+ "hidden_rule": {
+  "preset": "proposed"
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 1.0,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": null,
+  "input": {
+   "mean_scale": 0.06904800665162496,
+   "sd_scale": 0.03452400332581248
+  }
+ },
+ "seed": 0,
+ "max_timesteps": 2000000,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "reward_decay_env": 0.5,
+ "reward_decay_normalise": true,
+ "optimiser": "adam",
+ "optimiser_betas": [
+  0.99,
+  0.99999
+ ],
+ "csv_prefix": "snake_soft_code_s0",
+ "lr": 5e-06,
+ "episodic_traces": true,
+ "td_lambda_env": 0.8,
+ "code": {
+  "type": "sparse_expansion",
+  "n": 2000,
+  "active": 0.05,
+  "seed": 0
+ }
+}

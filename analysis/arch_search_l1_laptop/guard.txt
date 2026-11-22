@@ -1,0 +1,16 @@
+10:30:56 {'gpu': 52.0} | 1 running, 0 paused
+10:31:14 {'gpu': 52.0} | 1 running, 0 paused
+10:31:33 {'gpu': 56.0} | 1 running, 0 paused
+10:31:51 {'gpu': 56.0} | 1 running, 0 paused
+10:32:09 {'gpu': 58.0} | 1 running, 0 paused
+10:32:28 {'gpu': 57.0} | 1 running, 0 paused
+10:32:46 {'gpu': 57.0} | 1 running, 0 paused
+10:33:04 {'gpu': 56.0} | 1 running, 0 paused
+10:33:23 {'gpu': 60.0} | 1 running, 0 paused
+10:33:41 {'gpu': 59.0} | 1 running, 0 paused
+10:33:59 {'gpu': 60.0} | 1 running, 0 paused
+10:34:18 {'gpu': 63.0} | 1 running, 0 paused
+10:34:36 {'gpu': 60.0} | 1 running, 0 paused
+10:34:54 {'gpu': 58.0} | 1 running, 0 paused
+10:35:13 {'gpu': 59.0} | 1 running, 0 paused
+resumed 0 paused processes; exiting

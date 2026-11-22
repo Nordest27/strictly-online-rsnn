@@ -1,0 +1,110 @@
+{
+ "monitor": true,
+ "monitor_every": 10000,
+ "backend": "single_threaded_cpu",
+ "hidden_rule": {
+  "preset": "proposed",
+  "gradient": 0.0,
+  "drift": 1.0,
+  "center_drift": false,
+  "local": {
+   "route": "GRADIENT_INSTANT",
+   "dv": 0.0,
+   "vreg": 0.0,
+   "rate": 0.0,
+   "decorr": 0.001,
+   "contrast": 1.0,
+   "contrast_route": "GRADIENT_TRACE"
+  },
+  "credit": 1.0,
+  "credit_eta": 0.001
+ },
+ "c_reg": 0.0,
+ "seed": 1,
+ "max_timesteps": 600000,
+ "min_episodes": 0,
+ "repetition": 0,
+ "trace_log": false,
+ "csv_prefix": "credit1_s1",
+ "gamma_env": 0.5,
+ "td_lambda_env": 0.5,
+ "episodic_traces": true,
+ "entropy_bonus": 0.0,
+ "headless": {
+  "seed": 1,
+  "decoder": "lse",
+  "beta": 1.0
+ },
+ "selection": {
+  "n_candidates": 8,
+  "seed": 1
+ },
+ "move_log": {
+  "probe_every": 1000000000000,
+  "probe_moves": 16
+ },
+ "toroidal": "local",
+ "local": {
+  "sigma_cells": 0.75,
+  "p_max": 0.791,
+  "input_sigma_cells": 1.857,
+  "inhibition_scale": 7.963,
+  "feedforward_inhibition": true,
+  "p_global": 0.0,
+  "inhibition_sigma_ratio": 1.891,
+  "input_sigma_ref": "source"
+ },
+ "network": {
+  "fields": {
+   "conn": {
+    "sigma_cells": 1.124,
+    "mean_scale": 1.0339077940834285,
+    "sd_scale": 0.2067815588166857
+   },
+   "shape": 4,
+   "conn_i": {
+    "sigma_cells": 1.124,
+    "mean_scale": 0.25,
+    "sd_scale": 0.05
+   }
+  },
+  "input": {
+   "mean_scale": 0.15752505888574084,
+   "sd_scale": 0.07876252944287042
+  },
+  "layers": [
+   {
+    "volume": {
+     "depth": 8,
+     "input_depth": 1,
+     "output_depth": 3,
+     "sigma_cells": 1.0,
+     "p_max": 0.8,
+     "p_global": 0.01,
+     "z_shift": 1.5,
+     "inh_sigma_ratio": 1.0,
+     "field_sigma_cells": 1.0
+    },
+    "internal": {
+     "mean_scale": 0.6
+    },
+    "internal_i": {
+     "mean_scale": 0.1
+    }
+   }
+  ],
+  "credit": {
+   "sources": [
+    "policy_field",
+    "value_field"
+   ],
+   "k": 16,
+   "self_k": 16,
+   "seed": 0
+  }
+ },
+ "ei_layers": 1,
+ "hid_e": 6,
+ "hid_i": 4,
+ "fan_in": 50
+}
