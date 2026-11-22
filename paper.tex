@@ -30,10 +30,12 @@
 \usepackage[letterpaper,margin=0.5in,bottom=0.9in,footskip=0.4in,columnsep=0.2in]{geometry}
 
 \usepackage{fontspec}
-\setmainfont{Latin Modern Roman}   % keeps your current serif body font
-\setsansfont{Fira Sans}[UprightFont=*-Light, BoldFont=*-Regular]
-\setsansfont{Fira Sans}[LetterSpace=2.0]
-\setsansfont{IBM Plex Sans}
+% Fonts are loaded by file name (from the TeX distribution / tectonic bundle),
+% not by system font name, so the build does not depend on installed fonts.
+\setmainfont{lmroman10}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]   % Latin Modern Roman
+\setsansfont{IBMPlexSans}[Extension=.otf, UprightFont=*-Regular, BoldFont=*-Bold,
+  ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic]   % IBM Plex Sans
 \usepackage{amsmath,amssymb,amsfonts}
 \IfFileExists{bbm.sty}{\usepackage{bbm}}{\providecommand{\mathbbm}[1]{\mathbf{##1}}} % \mathbbm{1} (bbm if available, else bold fallback)
 \usepackage{graphicx}
